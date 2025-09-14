@@ -85,8 +85,8 @@ echo -e "${GREEN}✅ Emergency cleanup completed!${NC}"
 echo -e "${BLUE}💡 You can now run './setup-podman.sh' to start fresh${NC}
 
 # Show what's left
-echo -e "\n${BLUE}📊 Remaining containers:${NC}"
+echo -e "\n${BLUE} Remaining containers:${NC}"
 podman ps -a
 
-echo -e "\n${BLUE}📊 Remaining images:${NC}"
+echo -e "\n${BLUE} Remaining images:${NC}"
 podman images | grep -E "(myotel|postgres)" || echo "None found"
