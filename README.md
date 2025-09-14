@@ -109,7 +109,7 @@ MyOpenTelemetryApi/
 ## Example Requests
 
 ### Create a Contact
-```json
+```http
 POST /api/contacts
 {
   "firstName": "John",
@@ -133,7 +133,7 @@ POST /api/contacts
 ```
 
 ### Create a Group
-```json
+```http
 POST /api/groups
 {
   "name": "Friends",
@@ -142,7 +142,7 @@ POST /api/groups
 ```
 
 ### Create a Tag
-```json
+```http
 POST /api/tags
 {
   "name": "VIP",
