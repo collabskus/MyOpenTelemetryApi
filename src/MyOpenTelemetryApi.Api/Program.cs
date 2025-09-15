@@ -166,7 +166,16 @@ builder.Services.AddScoped<ITagService, TagService>();
 // Add HTTP context accessor for tracing context
 builder.Services.AddHttpContextAccessor();
 
+// Add this to your Program.cs
+builder.Services.AddOpenApi(); // Built-in OpenAPI support
+
 WebApplication app = builder.Build();
+
+// Add OpenAPI endpoint
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi(); // Serves OpenAPI JSON at /openapi/v1.json
+}
 
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();
@@ -416,13 +425,19 @@ app.MapGet("/", () => Results.Content("""
                         /api/health/ready - Check service readiness
                     </a>
                 </li>
+                <li>
+                    <a href="/openapi/v1.json">
+                        <span class="method">GET</span>
+                        /openapi/v1.json - OpenAPI specification
+                    </a>
+                </li>
             </ul>
         </div>
         
         <div class="coming-soon">
-            <strong>🚀 Coming Soon:</strong>
-            Interactive API documentation with Swagger/OpenAPI will be available here soon. 
-            For now, you can use the health endpoints above to verify the service is running.
+            <strong>🚀 Available Now:</strong>
+            The OpenAPI specification is available at /openapi/v1.json. 
+            Interactive Swagger UI documentation coming soon!
         </div>
         
         <div class="footer">
