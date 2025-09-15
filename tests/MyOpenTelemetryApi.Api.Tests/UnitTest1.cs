@@ -1,6 +1,4 @@
 ﻿// tests/MyOpenTelemetryApi.Api.Tests/ApiTests.cs
-using Microsoft.AspNetCore.Mvc;
-using MyOpenTelemetryApi.Api.Controllers;
 using MyOpenTelemetryApi.Application.DTOs;
 
 namespace MyOpenTelemetryApi.Api.Tests;

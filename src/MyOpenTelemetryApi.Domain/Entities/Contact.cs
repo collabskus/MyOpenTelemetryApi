@@ -1,7 +1,4 @@
 ﻿// src/MyOpenTelemetryApi.Domain/Entities/Contact.cs
-using System.Net;
-using System.Net.Mail;
-
 namespace MyOpenTelemetryApi.Domain.Entities;
 
 public class Contact

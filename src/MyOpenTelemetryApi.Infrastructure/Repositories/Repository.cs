@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using MyOpenTelemetryApi.Domain.Interfaces;
 using MyOpenTelemetryApi.Infrastructure.Data;
-using System.Collections.Generic;
 
 namespace MyOpenTelemetryApi.Infrastructure.Repositories;
 

@@ -1,8 +1,6 @@
 ﻿// src/MyOpenTelemetryApi.Infrastructure/Data/AppDbContext.cs
 using Microsoft.EntityFrameworkCore;
 using MyOpenTelemetryApi.Domain.Entities;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 
 namespace MyOpenTelemetryApi.Infrastructure.Data;
 

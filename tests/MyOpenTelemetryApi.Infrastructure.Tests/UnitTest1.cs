@@ -1,7 +1,6 @@
 ﻿// tests/MyOpenTelemetryApi.Infrastructure.Tests/InfrastructureTests.cs
 using MyOpenTelemetryApi.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using MyOpenTelemetryApi.Infrastructure.Data;
 
 namespace MyOpenTelemetryApi.Infrastructure.Tests;
 
