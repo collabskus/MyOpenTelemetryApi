@@ -1,6 +1,6 @@
 ﻿# MyOpenTelemetryApi
 
-A RESTful API for managing personal contacts, built with .NET 9, Entity Framework Core, and PostgreSQL. This project demonstrates clean architecture principles, repository pattern, and modern API development practices.
+A RESTful API for managing personal contacts, built with .NET 10, Entity Framework Core, PostgreSQL, and comprehensive OpenTelemetry observability. This project demonstrates clean architecture principles, repository pattern, and modern API development practices with full telemetry integration.
 
 ## Features
 
@@ -11,13 +11,16 @@ A RESTful API for managing personal contacts, built with .NET 9, Entity Framewor
 - **Clean Architecture**: Separation of concerns with Domain, Application, Infrastructure, and API layers
 - **Repository Pattern**: Abstracted data access with Unit of Work pattern
 - **PostgreSQL Database**: Using Npgsql provider with Entity Framework Core
+- **OpenTelemetry Integration**: Full observability with logs, traces, and metrics
 - **Health Checks**: Built-in health and readiness endpoints
+- **OpenAPI Documentation**: Built-in API specification generation
 
 ## Technology Stack
 
-- **.NET 9.0**: Latest framework for high-performance APIs
-- **Entity Framework Core 9.0**: Code-first ORM with migrations
+- **.NET 10.0**: Latest framework with native OpenAPI support
+- **Entity Framework Core 10.0**: Code-first ORM with migrations
 - **PostgreSQL**: Open-source relational database
+- **OpenTelemetry**: Comprehensive observability and monitoring
 - **xUnit**: Unit testing framework
 - **C# 13**: With nullable reference types enabled
 
@@ -39,7 +42,7 @@ MyOpenTelemetryApi/
 
 ## Prerequisites
 
-- .NET 9.0 SDK or later
+- .NET 10.0 SDK or later
 - PostgreSQL database
 - Entity Framework Core tools: `dotnet tool install --global dotnet-ef`
 
@@ -76,6 +79,32 @@ MyOpenTelemetryApi/
    dotnet run --project src/MyOpenTelemetryApi.Api
    ```
 
+## OpenTelemetry Configuration
+
+The application includes comprehensive OpenTelemetry integration for observability. Configure exporters in `appsettings.json`:
+
+```json
+{
+  "OpenTelemetry": {
+    "ServiceName": "MyOpenTelemetryApi",
+    "ServiceVersion": "1.0.0",
+    "Exporter": {
+      "Console": { "Enabled": true },
+      "OTLP": { "Enabled": false, "Endpoint": "http://localhost:4317" },
+      "File": { "Enabled": true, "LogPath": "logs/otel-logs.json" }
+    },
+    "Sampling": { "AlwaysOn": true, "Ratio": 1.0 }
+  }
+}
+```
+
+### Available Telemetry Features
+
+- **Distributed Tracing**: ASP.NET Core, HTTP Client, and Entity Framework Core instrumentation
+- **Metrics**: Runtime, process, and custom application metrics
+- **Structured Logging**: JSON-formatted logs with correlation IDs
+- **Multiple Exporters**: Console, file, and OTLP (OpenTelemetry Protocol) support
+
 ## API Endpoints
 
 ### Contacts
@@ -105,6 +134,9 @@ MyOpenTelemetryApi/
 ### Health
 - `GET /api/health` - Basic health check
 - `GET /api/health/ready` - Readiness check with migration status
+
+### API Documentation
+- `GET /openapi/v1.json` - OpenAPI specification document
 
 ## Example Requests
 
@@ -175,6 +207,10 @@ dotnet publish -c Release -o ./publish
 - **Manual Mapping**: No dependency on AutoMapper for simple, explicit mapping
 - **FOSS Only**: Uses only free and open-source libraries
 - **Minimal Dependencies**: Avoids unnecessary packages to reduce complexity
+
+## 🤖 AI-Assisted Development
+
+This project includes code generated and assisted by large language models (LLMs) such as Claude. While all code has been reviewed and tested, please be aware that some portions were created with AI assistance.
 
 ## License
 This project is open source and available under the AGPL license.
