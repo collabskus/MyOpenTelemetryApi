@@ -428,7 +428,7 @@ app.MapGet("/", () => Results.Content("""
         <div class="footer">
             <p>Built with ❤️ using modern technologies</p>
             <div class="tech-stack">
-                <span class="tech-badge">.NET 9</span>
+                <span class="tech-badge">.NET 10</span>
                 <span class="tech-badge">PostgreSQL</span>
                 <span class="tech-badge">OpenTelemetry</span>
                 <span class="tech-badge">Docker</span>
