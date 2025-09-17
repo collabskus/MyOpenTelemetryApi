@@ -13,7 +13,8 @@ $ProjectPath = "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"
 Set-Location $ProjectPath
 
 try {
-    # Phase 0: format dotnet 
+    # Phase 0: format dotnet
+    Write-TimestampedLog "running dotnet format..." 
     dotnet format
 
     Write-TimestampedLog "Staging existing files..."
