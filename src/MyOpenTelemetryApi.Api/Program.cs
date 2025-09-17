@@ -1,20 +1,27 @@
 ﻿
 // src/MyOpenTelemetryApi.Api/Program.cs - Updated version with configuration-based setup
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
+using MyOpenTelemetryApi.Api.Authentication;
+using MyOpenTelemetryApi.Api.Telemetry;
 using MyOpenTelemetryApi.Application.Services;
 using MyOpenTelemetryApi.Domain.Interfaces;
 using MyOpenTelemetryApi.Infrastructure.Data;
 using MyOpenTelemetryApi.Infrastructure.Repositories;
-using MyOpenTelemetryApi.Api.Telemetry;
+using OpenTelemetry.Exporter;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
-using OpenTelemetry.Exporter;
 using System.Diagnostics;
 using System.Reflection;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+// Add authentication
+builder.Services.AddAuthentication("ApiKey")
+    .AddScheme<ApiKeyAuthenticationOptions, ApiKeyAuthenticationHandler>("ApiKey", null);
+
 
 // Define service name and version for OpenTelemetry
 string serviceName = builder.Configuration.GetValue<string>("OpenTelemetry:ServiceName") ?? "MyOpenTelemetryApi";
@@ -149,8 +156,19 @@ builder.Services.AddOpenTelemetry()
 builder.Services.AddControllers();
 
 // Configure PostgreSQL
+//builder.Services.AddDbContext<AppDbContext>(options =>
+//    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Program.cs - Add retry policies for database operations
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), npgsqlOptions =>
+    {
+        npgsqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 3,
+            maxRetryDelay: TimeSpan.FromSeconds(30),
+            errorCodesToAdd: null);
+    });
+});
 
 // Register repositories and unit of work
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -196,6 +214,7 @@ app.Use(async (context, next) =>
     activity?.SetTag("http.response.body.size", context.Response.ContentLength ?? 0);
 });
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
@@ -453,5 +472,19 @@ app.MapGet("/", () => Results.Content("""
 </body>
 </html>
 """, "text/html"));
+
+app.UseExceptionHandler("/error");
+
+app.Map("/error", (HttpContext context) =>
+{
+    var feature = context.Features.Get<IExceptionHandlerFeature>();
+    var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+
+    logger.LogError(feature?.Error, "Unhandled exception occurred");
+
+    return Results.Problem(
+        detail: "An error occurred processing your request",
+        statusCode: 500);
+});
 
 app.Run();

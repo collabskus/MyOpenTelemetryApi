@@ -1,10 +1,7 @@
-﻿// src/MyOpenTelemetryApi.Domain/Interfaces/IUnitOfWork.cs
-namespace MyOpenTelemetryApi.Domain.Interfaces;
+﻿using MyOpenTelemetryApi.Domain.Interfaces;
 
-public interface IUnitOfWork : IDisposable
+public interface IUnitOfWork
 {
     IContactRepository Contacts { get; }
-    IGroupRepository Groups { get; }
-    ITagRepository Tags { get; }
-    Task<int> SaveChangesAsync();
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

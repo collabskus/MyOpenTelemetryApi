@@ -329,3 +329,21 @@ GET {{host}}/api/contacts/search?q=
 Accept: {{contentType}}
 
 ###
+
+### Test without auth (should fail)
+GET https://localhost:5001/api/contacts
+
+### Test with API key (should work)
+GET https://localhost:5001/api/contacts
+X-API-Key: your-super-secret-key-here
+
+### Create contact with auth
+POST https://localhost:5001/api/contacts
+X-API-Key: your-super-secret-key-here
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@example.com"
+}
