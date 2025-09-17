@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 13:25:02
+Generated: 09/17/2025 13:30:00
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -12,6 +12,7 @@ Folder PATH listing
 Volume serial number is 9892-5BAD
 C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   .dockerignore
+|   .editorconfig
 |   .gitattributes
 |   .gitignore
 |   appsettings.Container.json
@@ -6636,14 +6637,14 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 222.47 KB
-MODIFIED: 09/17/2025 13:25:03
+SIZE: 222.49 KB
+MODIFIED: 09/17/2025 13:30:00
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 13:25:02
+Generated: 09/17/2025 13:30:00
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -6654,6 +6655,7 @@ Folder PATH listing
 Volume serial number is 9892-5BAD
 C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   .dockerignore
+|   .editorconfig
 |   .gitattributes
 |   .gitignore
 |   appsettings.Container.json
@@ -13278,8 +13280,8 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 222.47 KB
-MODIFIED: 09/17/2025 13:25:03
+SIZE: 222.49 KB
+MODIFIED: 09/17/2025 13:30:00
 ================================================================================
 
 
@@ -13907,14 +13909,14 @@ MODIFIED: 09/14/2025 18:12:26
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Authentication\ApiKeyAuthenticationHandler.cs
 SIZE: 1.87 KB
-MODIFIED: 09/17/2025 13:24:53
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // Api/Authentication/ApiKeyAuthenticationHandler.cs
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.Extensions.Options;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.Options;
 
 namespace MyOpenTelemetryApi.Api.Authentication;
 
@@ -13966,16 +13968,17 @@ public class ApiKeyAuthenticationHandler : AuthenticationHandler<ApiKeyAuthentic
 public class ApiKeyAuthenticationOptions : AuthenticationSchemeOptions { }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\ContactsController.cs
 SIZE: 3.29 KB
-MODIFIED: 09/17/2025 12:28:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/ContactsController.cs
 using Microsoft.AspNetCore.Mvc;
-using MyOpenTelemetryApi.Application.Services;
 using MyOpenTelemetryApi.Application.DTOs;
+using MyOpenTelemetryApi.Application.Services;
 
 namespace MyOpenTelemetryApi.Api.Controllers;
 
@@ -14074,10 +14077,11 @@ public class ContactsController : ControllerBase
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\GroupsController.cs
 SIZE: 2.15 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/GroupsController.cs
@@ -14156,10 +14160,11 @@ public class GroupsController(IGroupService groupService, ILogger<GroupsControll
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\HealthController.cs
-SIZE: 2.26 KB
-MODIFIED: 09/14/2025 18:12:26
+SIZE: 2.27 KB
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/HealthController.cs
@@ -14239,6 +14244,7 @@ public class HealthController(AppDbContext dbContext, ILogger<HealthController> 
         }
     }
 }
+
 
 
 ================================================================================
@@ -14572,11 +14578,13 @@ MODIFIED: 09/17/2025 11:25:19
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Program.cs
 SIZE: 16.31 KB
-MODIFIED: 09/17/2025 11:24:02
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 
 // src/MyOpenTelemetryApi.Api/Program.cs - Updated version with configuration-based setup
+using System.Diagnostics;
+using System.Reflection;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using MyOpenTelemetryApi.Api.Authentication;
@@ -14590,8 +14598,6 @@ using OpenTelemetry.Logs;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
-using System.Diagnostics;
-using System.Reflection;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -15067,6 +15073,7 @@ app.Map("/error", (HttpContext context) =>
 app.Run();
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Properties\launchSettings.json
 SIZE: 0.63 KB
@@ -15294,8 +15301,8 @@ public static class TelemetryExtensions
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\AddressDto.cs
-SIZE: 0.91 KB
-MODIFIED: 09/14/2025 18:12:26
+SIZE: 0.92 KB
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/AddressDto.cs
@@ -15327,10 +15334,11 @@ public class CreateAddressDto
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\ContactDto.cs
 SIZE: 0.92 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/ContactDto.cs
@@ -15358,10 +15366,11 @@ public class ContactDto
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\ContactSummaryDto.cs
 SIZE: 0.43 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/ContactSummaryDto.cs
@@ -15378,10 +15387,11 @@ public class ContactSummaryDto
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\CreateContactDto.cs
 SIZE: 0.83 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/CreateContactDto.cs
@@ -15404,6 +15414,7 @@ public class CreateContactDto
     public List<Guid> GroupIds { get; set; } = [];
     public List<Guid> TagIds { get; set; } = [];
 }
+
 
 
 ================================================================================
@@ -15516,7 +15527,7 @@ public class CreatePhoneNumberDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\TagDto.cs
 SIZE: 0.42 KB
-MODIFIED: 09/17/2025 12:43:50
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/TagDto.cs
@@ -15534,6 +15545,7 @@ public class CreateTagDto
     public string Name { get; set; } = string.Empty;
     public string ColorHex { get; set; } = string.Empty;
 }
+
 
 
 ================================================================================
@@ -15588,16 +15600,16 @@ MODIFIED: 09/17/2025 11:48:52
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ContactService.cs
 SIZE: 14.49 KB
-MODIFIED: 09/17/2025 13:09:08
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ContactService.cs
+using System.Diagnostics;
+using System.Diagnostics.Metrics;
+using Microsoft.Extensions.Logging;
 using MyOpenTelemetryApi.Application.DTOs;
 using MyOpenTelemetryApi.Domain.Entities;
 using MyOpenTelemetryApi.Domain.Interfaces;
-using Microsoft.Extensions.Logging;
-using System.Diagnostics;
-using System.Diagnostics.Metrics;
 
 namespace MyOpenTelemetryApi.Application.Services;
 
@@ -15979,7 +15991,7 @@ public class ContactService : IContactService
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\GroupService.cs
 SIZE: 2.37 KB
-MODIFIED: 09/17/2025 12:00:06
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/GroupService.cs
@@ -16065,6 +16077,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\IContactService.cs
 SIZE: 1.16 KB
@@ -16094,7 +16107,7 @@ public interface IContactService
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\IGroupService.cs
 SIZE: 0.43 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/IGroupService.cs
@@ -16112,10 +16125,11 @@ public interface IGroupService
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ITagService.cs
 SIZE: 0.42 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ITagService.cs
@@ -16133,10 +16147,11 @@ public interface ITagService
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\TagService.cs
-SIZE: 2.44 KB
-MODIFIED: 09/14/2025 18:12:26
+SIZE: 2.45 KB
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/TagService.cs
@@ -16225,10 +16240,11 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\Address.cs
 SIZE: 0.62 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/Address.cs
@@ -16252,10 +16268,11 @@ public class Address
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\AddressType.cs
 SIZE: 0.17 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Enums/AddressType.cs
@@ -16269,10 +16286,11 @@ public enum AddressType
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\Contact.cs
 SIZE: 0.95 KB
-MODIFIED: 09/15/2025 05:12:04
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/Contact.cs
@@ -16301,10 +16319,11 @@ public class Contact
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\ContactGroup.cs
 SIZE: 0.4 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/ContactGroup.cs (Join table)
@@ -16320,6 +16339,7 @@ public class ContactGroup
     public Contact Contact { get; set; } = null!;
     public Group Group { get; set; } = null!;
 }
+
 
 
 ================================================================================
@@ -16345,8 +16365,8 @@ public class ContactTag
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\EmailAddress.cs
-SIZE: 0.42 KB
-MODIFIED: 09/14/2025 18:12:26
+SIZE: 0.43 KB
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/EmailAddress.cs
@@ -16365,10 +16385,11 @@ public class EmailAddress
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\EmailType.cs
 SIZE: 0.17 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Enums/EmailType.cs
@@ -16382,10 +16403,11 @@ public enum EmailType
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\Group.cs
 SIZE: 0.39 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/Group.cs
@@ -16403,10 +16425,11 @@ public class Group
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\PhoneNumber.cs
-SIZE: 0.42 KB
-MODIFIED: 09/14/2025 18:12:26
+SIZE: 0.43 KB
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/PhoneNumber.cs
@@ -16423,6 +16446,7 @@ public class PhoneNumber
     // Navigation property
     public Contact Contact { get; set; } = null!;
 }
+
 
 
 ================================================================================
@@ -16490,7 +16514,7 @@ public interface IContactRepository : IRepository<Contact>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IGroupRepository.cs
 SIZE: 0.27 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IGroupRepository.cs
@@ -16504,10 +16528,11 @@ public interface IGroupRepository : IRepository<Group>
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IRepository.cs
-SIZE: 0.37 KB
-MODIFIED: 09/14/2025 18:12:26
+SIZE: 0.38 KB
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IRepository.cs
@@ -16524,10 +16549,11 @@ public interface IRepository<T> where T : class
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\ITagRepository.cs
 SIZE: 0.26 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/ITagRepository.cs
@@ -16539,6 +16565,7 @@ public interface ITagRepository : IRepository<Tag>
 {
     Task<Tag?> GetByNameAsync(string name);
 }
+
 
 
 ================================================================================
@@ -16583,7 +16610,7 @@ MODIFIED: 09/14/2025 18:14:51
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\AppDbContext.cs
 SIZE: 1.03 KB
-MODIFIED: 09/15/2025 05:12:04
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/AppDbContext.cs
@@ -16613,10 +16640,11 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\AddressConfiguration.cs
-SIZE: 0.95 KB
-MODIFIED: 09/14/2025 18:12:26
+SIZE: 0.96 KB
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/AddressConfiguration.cs
@@ -16646,10 +16674,11 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactConfiguration.cs
-SIZE: 1.58 KB
-MODIFIED: 09/14/2025 18:12:26
+SIZE: 1.59 KB
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/ContactConfiguration.cs
@@ -16706,10 +16735,11 @@ public class ContactConfiguration : IEntityTypeConfiguration<Contact>
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactGroupConfiguration.cs
 SIZE: 0.79 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/ContactGroupConfiguration.cs
@@ -16736,10 +16766,11 @@ public class ContactGroupConfiguration : IEntityTypeConfiguration<ContactGroup>
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactTagConfiguration.cs
 SIZE: 0.76 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/ContactTagConfiguration.cs
@@ -16764,6 +16795,7 @@ public class ContactTagConfiguration : IEntityTypeConfiguration<ContactTag>
             .HasForeignKey(ct => ct.TagId);
     }
 }
+
 
 
 ================================================================================
@@ -16800,7 +16832,7 @@ public class EmailAddressConfiguration : IEntityTypeConfiguration<EmailAddress>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\GroupConfiguration.cs
 SIZE: 0.64 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/GroupConfiguration.cs
@@ -16826,10 +16858,11 @@ public class GroupConfiguration : IEntityTypeConfiguration<Group>
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\PhoneNumberConfiguration.cs
 SIZE: 0.7 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/PhoneNumberConfiguration.cs
@@ -16856,10 +16889,11 @@ public class PhoneNumberConfiguration : IEntityTypeConfiguration<PhoneNumber>
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\TagConfiguration.cs
 SIZE: 0.7 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/TagConfiguration.cs
@@ -16885,6 +16919,7 @@ public class TagConfiguration : IEntityTypeConfiguration<Tag>
         builder.HasIndex(t => t.Name).IsUnique();
     }
 }
+
 
 
 ================================================================================
@@ -17899,7 +17934,7 @@ MODIFIED: 09/14/2025 18:16:54
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\ContactRepository.cs
 SIZE: 2.21 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/ContactRepository.cs
@@ -17960,10 +17995,11 @@ public class ContactRepository(AppDbContext context) : Repository<Contact>(conte
 }
 
 
+
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\GroupRepository.cs
 SIZE: 0.66 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/GroupRepository.cs
@@ -17984,6 +18020,7 @@ public class GroupRepository(AppDbContext context) : Repository<Group>(context),
             .FirstOrDefaultAsync(g => g.Id == id);
     }
 }
+
 
 
 ================================================================================
@@ -18043,7 +18080,7 @@ public class Repository<T>(AppDbContext context) : IRepository<T> where T : clas
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\TagRepository.cs
 SIZE: 0.58 KB
-MODIFIED: 09/14/2025 18:12:26
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/TagRepository.cs
@@ -18062,6 +18099,7 @@ public class TagRepository(AppDbContext context) : Repository<Tag>(context), ITa
             .FirstOrDefaultAsync(t => t.Name.ToLower() == name.ToLower());
     }
 }
+
 
 
 ================================================================================
@@ -18462,13 +18500,13 @@ MODIFIED: 09/14/2025 18:16:54
 
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Infrastructure.Tests\UnitTest1.cs
-SIZE: 5.6 KB
-MODIFIED: 09/15/2025 05:12:04
+SIZE: 5.61 KB
+MODIFIED: 09/17/2025 13:29:43
 ================================================================================
 
 // tests/MyOpenTelemetryApi.Infrastructure.Tests/InfrastructureTests.cs
-using MyOpenTelemetryApi.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using MyOpenTelemetryApi.Domain.Entities;
 
 namespace MyOpenTelemetryApi.Infrastructure.Tests;
 
@@ -18662,8 +18700,9 @@ public class InfrastructureTests
 }
 
 
+
 ===============================================================================
-EXPORT COMPLETED: 09/17/2025 13:25:03
+EXPORT COMPLETED: 09/17/2025 13:30:01
 Total Files Exported: 86
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
