@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 12:34:45
+Generated: 09/17/2025 12:53:48
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -195,7 +195,7 @@ updates:
 ================================================================================
 FILE: .github\workflows\ci.yml
 SIZE: 7.12 KB
-MODIFIED: 09/17/2025 12:34:45
+MODIFIED: 09/17/2025 12:53:48
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -234,10 +234,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
@@ -6633,13 +6633,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.45 KB
-MODIFIED: 09/17/2025 12:34:46
+MODIFIED: 09/17/2025 12:53:49
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 12:34:45
+Generated: 09/17/2025 12:53:48
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -6833,7 +6833,7 @@ updates:
 ================================================================================
 FILE: .github\workflows\ci.yml
 SIZE: 7.12 KB
-MODIFIED: 09/17/2025 12:34:45
+MODIFIED: 09/17/2025 12:53:48
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -6872,10 +6872,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
@@ -13271,7 +13271,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.45 KB
-MODIFIED: 09/17/2025 12:34:46
+MODIFIED: 09/17/2025 12:53:49
 ================================================================================
 
 
@@ -18555,7 +18555,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 09/17/2025 12:34:46
+EXPORT COMPLETED: 09/17/2025 12:53:50
 Total Files Exported: 85
 Output File: D:\DEV\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
