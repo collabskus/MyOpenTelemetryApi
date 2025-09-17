@@ -14,8 +14,8 @@ public class FileLogExporter : BaseExporter<LogRecord>
     public FileLogExporter(string filePath)
     {
         _filePath = filePath;
-        _jsonOptions = new JsonSerializerOptions 
-        { 
+        _jsonOptions = new JsonSerializerOptions
+        {
             WriteIndented = false,
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
@@ -35,7 +35,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
             lock (_lockObject)
             {
                 using StreamWriter writer = new(_filePath, append: true);
-                
+
                 foreach (LogRecord logRecord in batch)
                 {
                     var logEntry = new
@@ -57,7 +57,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
                     writer.WriteLine(json);
                 }
             }
-            
+
             return ExportResult.Success;
         }
         catch (Exception ex)
@@ -70,7 +70,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
     private static List<object> ExtractScopeValues(LogRecord logRecord)
     {
         List<object> scopes = [];
-        
+
         logRecord.ForEachScope((scope, state) =>
         {
             if (!scope.Equals(default(LogRecordScope)))
@@ -78,14 +78,14 @@ public class FileLogExporter : BaseExporter<LogRecord>
                 scopes.Add(scope.ToString() ?? "null");
             }
         }, scopes);
-        
+
         return scopes;
     }
 
     private static Dictionary<string, object?> ExtractAttributes(LogRecord logRecord)
     {
         Dictionary<string, object?> attributes = [];
-        
+
         if (logRecord.Attributes != null)
         {
             foreach (KeyValuePair<string, object?> attribute in logRecord.Attributes)
@@ -93,7 +93,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
                 attributes[attribute.Key] = attribute.Value;
             }
         }
-        
+
         return attributes;
     }
 }

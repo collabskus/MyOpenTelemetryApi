@@ -8,12 +8,12 @@ namespace MyOpenTelemetryApi.Api.Telemetry;
 public static class TelemetryExtensions
 {
     public static OpenTelemetryLoggerOptions AddFileExporter(
-        this OpenTelemetryLoggerOptions options, 
+        this OpenTelemetryLoggerOptions options,
         string filePath)
     {
         return options.AddProcessor(new SimpleLogRecordExportProcessor(new FileLogExporter(filePath)));
     }
-    
+
     public static TracerProviderBuilder AddFileExporter(
         this TracerProviderBuilder builder,
         IConfiguration configuration)
@@ -26,7 +26,7 @@ public static class TelemetryExtensions
             // For traces, we'd implement a similar FileTraceExporter
             // For now, we'll use console exporter as file trace export is complex
         }
-        
+
         return builder;
     }
 }
