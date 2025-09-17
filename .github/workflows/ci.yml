@@ -101,8 +101,8 @@ jobs:
       with:
         name: build-artifacts
         path: |
-          src/MyOpenTelemetryApi.Api/bin/Release/net9.0/
-          !src/MyOpenTelemetryApi.Api/bin/Release/net9.0/*.pdb
+          src/MyOpenTelemetryApi.Api/bin/Release/net10.0/
+          !src/MyOpenTelemetryApi.Api/bin/Release/net10.0/*.pdb
         retention-days: 7
 
   code-analysis:
@@ -110,12 +110,12 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         fetch-depth: 0  # Shallow clones should be disabled for better analysis
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
@@ -138,13 +138,13 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Create Dockerfile
       run: |
         cat > Dockerfile << 'EOF'
         # Build stage
-        FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+        FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
         WORKDIR /src
         
         # Copy csproj files and restore dependencies
@@ -162,7 +162,7 @@ jobs:
         RUN dotnet publish "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj" -c Release -o /app/publish
         
         # Runtime stage
-        FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
+        FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
         WORKDIR /app
         
         # Install OpenTelemetry Collector (optional)
