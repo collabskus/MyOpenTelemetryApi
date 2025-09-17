@@ -172,8 +172,9 @@ jobs:
         
         COPY --from=build /app/publish .
         
-        # Create non-root user
-        RUN adduser --disabled-password --gecos '' appuser && chown -R appuser /app
+        # Create non-root user using correct commands for Microsoft .NET images
+        RUN groupadd -r appuser && useradd -r -g appuser -d /app -s /bin/false appuser \
+            && chown -R appuser:appuser /app
         USER appuser
         
         EXPOSE 8080
@@ -211,4 +212,3 @@ jobs:
         name: docker-image
         path: myopentelemetryapi.tar.gz
         retention-days: 7
-
