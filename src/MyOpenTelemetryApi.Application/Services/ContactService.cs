@@ -79,7 +79,6 @@ public class ContactService : IContactService
         List<Contact> contacts = allContacts.ToList();
 
         int totalCount = contacts.Count;
-        int totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
 
         List<Contact> pageContacts = contacts
             .Skip((pageNumber - 1) * pageSize)
@@ -97,10 +96,8 @@ public class ContactService : IContactService
             Items = contactSummaries,
             PageNumber = pageNumber,
             PageSize = pageSize,
-            TotalPages = totalPages,
-            TotalCount = totalCount,
-            HasPreviousPage = pageNumber > 1,
-            HasNextPage = pageNumber < totalPages
+            TotalCount = totalCount
+            // Removed: TotalPages, HasPreviousPage, HasNextPage - now calculated automatically
         };
     }
 
@@ -163,14 +160,15 @@ public class ContactService : IContactService
         {
             if (Enum.TryParse<EmailType>(emailDto.Type, true, out EmailType emailType))
             {
-                contact.EmailAddresses.Add(new EmailAddress
+                EmailAddress email = new()
                 {
                     Id = Guid.NewGuid(),
                     ContactId = contact.Id,
                     Email = emailDto.Email,
                     Type = emailType,
                     IsPrimary = emailDto.IsPrimary
-                });
+                };
+                contact.EmailAddresses.Add(email);
             }
         }
 
@@ -179,14 +177,15 @@ public class ContactService : IContactService
         {
             if (Enum.TryParse<PhoneType>(phoneDto.Type, true, out PhoneType phoneType))
             {
-                contact.PhoneNumbers.Add(new PhoneNumber
+                PhoneNumber phone = new()
                 {
                     Id = Guid.NewGuid(),
                     ContactId = contact.Id,
                     Number = phoneDto.Number,
                     Type = phoneType,
                     IsPrimary = phoneDto.IsPrimary
-                });
+                };
+                contact.PhoneNumbers.Add(phone);
             }
         }
 
@@ -195,7 +194,7 @@ public class ContactService : IContactService
         {
             if (Enum.TryParse<AddressType>(addressDto.Type, true, out AddressType addressType))
             {
-                contact.Addresses.Add(new Address
+                Address address = new()
                 {
                     Id = Guid.NewGuid(),
                     ContactId = contact.Id,
@@ -207,7 +206,8 @@ public class ContactService : IContactService
                     Country = addressDto.Country,
                     Type = addressType,
                     IsPrimary = addressDto.IsPrimary
-                });
+                };
+                contact.Addresses.Add(address);
             }
         }
 
@@ -215,7 +215,7 @@ public class ContactService : IContactService
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         _contactsCreatedCounter.Add(1);
-        _logger.LogInformation("Contact created successfully with ID: {ContactId}", contact.Id);
+        _logger.LogInformation("Contact created successfully: {ContactId}", contact.Id);
 
         return MapToDto(contact);
     }
@@ -356,8 +356,7 @@ public class ContactService : IContactService
                 Id = cg.Group.Id,
                 Name = cg.Group.Name,
                 Description = cg.Group.Description,
-                CreatedAt = cg.Group.CreatedAt,
-                ContactCount = 0 // Will be calculated elsewhere if needed
+                CreatedAt = cg.Group.CreatedAt
             }).ToList() ?? [],
             Tags = contact.Tags?.Select(ct => new TagDto
             {
@@ -370,29 +369,14 @@ public class ContactService : IContactService
 
     private static ContactSummaryDto MapToSummaryDto(Contact contact)
     {
-        string? primaryEmail = null;
-        string? primaryPhone = null;
-
-        if (contact.EmailAddresses != null && contact.EmailAddresses.Count > 0)
-        {
-            primaryEmail = contact.EmailAddresses.FirstOrDefault(e => e.IsPrimary)?.Email
-                          ?? contact.EmailAddresses.First().Email;
-        }
-
-        if (contact.PhoneNumbers != null && contact.PhoneNumbers.Count > 0)
-        {
-            primaryPhone = contact.PhoneNumbers.FirstOrDefault(p => p.IsPrimary)?.Number
-                          ?? contact.PhoneNumbers.First().Number;
-        }
-
         return new ContactSummaryDto
         {
             Id = contact.Id,
             FirstName = contact.FirstName,
             LastName = contact.LastName,
             Company = contact.Company,
-            PrimaryEmail = primaryEmail,
-            PrimaryPhone = primaryPhone
+            PrimaryEmail = contact.EmailAddresses?.FirstOrDefault(e => e.IsPrimary)?.Email,
+            PrimaryPhone = contact.PhoneNumbers?.FirstOrDefault(p => p.IsPrimary)?.Number
         };
     }
 }
