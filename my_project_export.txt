@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 11:48:52
+Generated: 09/17/2025 12:34:45
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -195,7 +195,7 @@ updates:
 ================================================================================
 FILE: .github\workflows\ci.yml
 SIZE: 7.12 KB
-MODIFIED: 09/17/2025 11:48:04
+MODIFIED: 09/17/2025 12:34:45
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -251,7 +251,7 @@ jobs:
       run: dotnet test --no-build --configuration Release --verbosity normal --logger "console;verbosity=detailed" --collect:"XPlat Code Coverage" --results-directory ./coverage
 
     - name: Generate coverage report
-      uses: danielpalme/ReportGenerator-GitHub-Action@5.4.11
+      uses: danielpalme/ReportGenerator-GitHub-Action@5.4.13
       with:
         reports: coverage/**/coverage.cobertura.xml
         targetdir: coverage-report
@@ -6633,13 +6633,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.45 KB
-MODIFIED: 09/17/2025 11:48:53
+MODIFIED: 09/17/2025 12:34:46
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 11:48:52
+Generated: 09/17/2025 12:34:45
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -6833,7 +6833,7 @@ updates:
 ================================================================================
 FILE: .github\workflows\ci.yml
 SIZE: 7.12 KB
-MODIFIED: 09/17/2025 11:48:04
+MODIFIED: 09/17/2025 12:34:45
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -6889,7 +6889,7 @@ jobs:
       run: dotnet test --no-build --configuration Release --verbosity normal --logger "console;verbosity=detailed" --collect:"XPlat Code Coverage" --results-directory ./coverage
 
     - name: Generate coverage report
-      uses: danielpalme/ReportGenerator-GitHub-Action@5.4.11
+      uses: danielpalme/ReportGenerator-GitHub-Action@5.4.13
       with:
         reports: coverage/**/coverage.cobertura.xml
         targetdir: coverage-report
@@ -13271,7 +13271,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.45 KB
-MODIFIED: 09/17/2025 11:48:53
+MODIFIED: 09/17/2025 12:34:46
 ================================================================================
 
 
@@ -15002,8 +15002,8 @@ MODIFIED: 09/17/2025 11:07:20
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs
-SIZE: 3.12 KB
-MODIFIED: 09/17/2025 11:07:20
+SIZE: 3.06 KB
+MODIFIED: 09/17/2025 12:34:45
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Telemetry/FileExporter.cs
@@ -15022,8 +15022,8 @@ public class FileLogExporter : BaseExporter<LogRecord>
     public FileLogExporter(string filePath)
     {
         _filePath = filePath;
-        _jsonOptions = new JsonSerializerOptions 
-        { 
+        _jsonOptions = new JsonSerializerOptions
+        {
             WriteIndented = false,
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
@@ -15043,7 +15043,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
             lock (_lockObject)
             {
                 using StreamWriter writer = new(_filePath, append: true);
-                
+
                 foreach (LogRecord logRecord in batch)
                 {
                     var logEntry = new
@@ -15065,7 +15065,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
                     writer.WriteLine(json);
                 }
             }
-            
+
             return ExportResult.Success;
         }
         catch (Exception ex)
@@ -15078,7 +15078,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
     private static List<object> ExtractScopeValues(LogRecord logRecord)
     {
         List<object> scopes = [];
-        
+
         logRecord.ForEachScope((scope, state) =>
         {
             if (!scope.Equals(default(LogRecordScope)))
@@ -15086,14 +15086,14 @@ public class FileLogExporter : BaseExporter<LogRecord>
                 scopes.Add(scope.ToString() ?? "null");
             }
         }, scopes);
-        
+
         return scopes;
     }
 
     private static Dictionary<string, object?> ExtractAttributes(LogRecord logRecord)
     {
         Dictionary<string, object?> attributes = [];
-        
+
         if (logRecord.Attributes != null)
         {
             foreach (KeyValuePair<string, object?> attribute in logRecord.Attributes)
@@ -15101,7 +15101,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
                 attributes[attribute.Key] = attribute.Value;
             }
         }
-        
+
         return attributes;
     }
 }
@@ -15154,8 +15154,8 @@ public static class TelemetryConstants
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Telemetry\TelemetryExtensions.cs
-SIZE: 1.11 KB
-MODIFIED: 09/17/2025 11:07:20
+SIZE: 1.09 KB
+MODIFIED: 09/17/2025 12:34:45
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Telemetry/TelemetryExtensions.cs
@@ -15168,12 +15168,12 @@ namespace MyOpenTelemetryApi.Api.Telemetry;
 public static class TelemetryExtensions
 {
     public static OpenTelemetryLoggerOptions AddFileExporter(
-        this OpenTelemetryLoggerOptions options, 
+        this OpenTelemetryLoggerOptions options,
         string filePath)
     {
         return options.AddProcessor(new SimpleLogRecordExportProcessor(new FileLogExporter(filePath)));
     }
-    
+
     public static TracerProviderBuilder AddFileExporter(
         this TracerProviderBuilder builder,
         IConfiguration configuration)
@@ -15186,7 +15186,7 @@ public static class TelemetryExtensions
             // For traces, we'd implement a similar FileTraceExporter
             // For now, we'll use console exporter as file trace export is complex
         }
-        
+
         return builder;
     }
 }
@@ -18555,7 +18555,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 09/17/2025 11:48:53
+EXPORT COMPLETED: 09/17/2025 12:34:46
 Total Files Exported: 85
 Output File: D:\DEV\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
