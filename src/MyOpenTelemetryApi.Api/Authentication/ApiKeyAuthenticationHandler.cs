@@ -1,8 +1,8 @@
 ﻿// Api/Authentication/ApiKeyAuthenticationHandler.cs
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.Extensions.Options;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.Options;
 
 namespace MyOpenTelemetryApi.Api.Authentication;
 

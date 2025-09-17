@@ -1,10 +1,10 @@
 ﻿// src/MyOpenTelemetryApi.Application/Services/ContactService.cs
+using System.Diagnostics;
+using System.Diagnostics.Metrics;
+using Microsoft.Extensions.Logging;
 using MyOpenTelemetryApi.Application.DTOs;
 using MyOpenTelemetryApi.Domain.Entities;
 using MyOpenTelemetryApi.Domain.Interfaces;
-using Microsoft.Extensions.Logging;
-using System.Diagnostics;
-using System.Diagnostics.Metrics;
 
 namespace MyOpenTelemetryApi.Application.Services;
 

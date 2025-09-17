@@ -1,5 +1,7 @@
 ﻿
 // src/MyOpenTelemetryApi.Api/Program.cs - Updated version with configuration-based setup
+using System.Diagnostics;
+using System.Reflection;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using MyOpenTelemetryApi.Api.Authentication;
@@ -13,8 +15,6 @@ using OpenTelemetry.Logs;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
-using System.Diagnostics;
-using System.Reflection;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

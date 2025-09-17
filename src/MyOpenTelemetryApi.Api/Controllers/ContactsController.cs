@@ -1,7 +1,7 @@
 ﻿// src/MyOpenTelemetryApi.Api/Controllers/ContactsController.cs
 using Microsoft.AspNetCore.Mvc;
-using MyOpenTelemetryApi.Application.Services;
 using MyOpenTelemetryApi.Application.DTOs;
+using MyOpenTelemetryApi.Application.Services;
 
 namespace MyOpenTelemetryApi.Api.Controllers;
 
