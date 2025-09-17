@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Text.Encodings.Web;
 
 namespace MyOpenTelemetryApi.Api.Authentication;
+
 public class ApiKeyAuthenticationHandler : AuthenticationHandler<ApiKeyAuthenticationOptions>
 {
     private const string ApiKeyHeaderName = "X-API-Key";

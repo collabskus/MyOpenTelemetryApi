@@ -13,6 +13,15 @@ $ProjectPath = "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"
 Set-Location $ProjectPath
 
 try {
+    # Phase 0: format dotnet 
+    dotnet format
+
+    Write-TimestampedLog "Staging existing files..."
+    git add .
+    
+    Write-TimestampedLog "Committing existing files..."
+    git commit --message "add existing files"
+
     # Phase 1: Clean and build project
     Write-TimestampedLog "Starting project clean..."
     dotnet clean
