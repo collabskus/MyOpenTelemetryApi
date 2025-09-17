@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 12:53:48
+Generated: 09/17/2025 13:05:07
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -194,8 +194,8 @@ updates:
 
 ================================================================================
 FILE: .github\workflows\ci.yml
-SIZE: 7.12 KB
-MODIFIED: 09/17/2025 12:53:48
+SIZE: 7.22 KB
+MODIFIED: 09/17/2025 13:05:07
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -372,8 +372,9 @@ jobs:
         
         COPY --from=build /app/publish .
         
-        # Create non-root user
-        RUN adduser --disabled-password --gecos '' appuser && chown -R appuser /app
+        # Create non-root user using correct commands for Microsoft .NET images
+        RUN groupadd -r appuser && useradd -r -g appuser -d /app -s /bin/false appuser \
+            && chown -R appuser:appuser /app
         USER appuser
         
         EXPOSE 8080
@@ -414,11 +415,10 @@ jobs:
 
 
 
-
 ================================================================================
 FILE: .github\workflows\codeql.yml
 SIZE: 0.92 KB
-MODIFIED: 09/17/2025 11:48:04
+MODIFIED: 09/17/2025 13:05:07
 ================================================================================
 
 # .github/workflows/codeql.yml
@@ -448,7 +448,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
@@ -6632,14 +6632,14 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 222.45 KB
-MODIFIED: 09/17/2025 12:53:49
+SIZE: 222.55 KB
+MODIFIED: 09/17/2025 13:05:07
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 12:53:48
+Generated: 09/17/2025 13:05:07
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -6832,8 +6832,8 @@ updates:
 
 ================================================================================
 FILE: .github\workflows\ci.yml
-SIZE: 7.12 KB
-MODIFIED: 09/17/2025 12:53:48
+SIZE: 7.22 KB
+MODIFIED: 09/17/2025 13:05:07
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -7010,8 +7010,9 @@ jobs:
         
         COPY --from=build /app/publish .
         
-        # Create non-root user
-        RUN adduser --disabled-password --gecos '' appuser && chown -R appuser /app
+        # Create non-root user using correct commands for Microsoft .NET images
+        RUN groupadd -r appuser && useradd -r -g appuser -d /app -s /bin/false appuser \
+            && chown -R appuser:appuser /app
         USER appuser
         
         EXPOSE 8080
@@ -7052,11 +7053,10 @@ jobs:
 
 
 
-
 ================================================================================
 FILE: .github\workflows\codeql.yml
 SIZE: 0.92 KB
-MODIFIED: 09/17/2025 11:48:04
+MODIFIED: 09/17/2025 13:05:07
 ================================================================================
 
 # .github/workflows/codeql.yml
@@ -7086,7 +7086,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
@@ -13270,8 +13270,8 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 222.45 KB
-MODIFIED: 09/17/2025 12:53:49
+SIZE: 222.55 KB
+MODIFIED: 09/17/2025 13:05:07
 ================================================================================
 
 
@@ -18555,7 +18555,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 09/17/2025 12:53:50
+EXPORT COMPLETED: 09/17/2025 13:05:09
 Total Files Exported: 85
 Output File: D:\DEV\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
