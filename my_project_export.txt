@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 11:24:06
+Generated: 09/17/2025 11:48:04
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -195,7 +195,7 @@ updates:
 ================================================================================
 FILE: .github\workflows\ci.yml
 SIZE: 7.12 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/17/2025 11:48:04
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -301,8 +301,8 @@ jobs:
       with:
         name: build-artifacts
         path: |
-          src/MyOpenTelemetryApi.Api/bin/Release/net9.0/
-          !src/MyOpenTelemetryApi.Api/bin/Release/net9.0/*.pdb
+          src/MyOpenTelemetryApi.Api/bin/Release/net10.0/
+          !src/MyOpenTelemetryApi.Api/bin/Release/net10.0/*.pdb
         retention-days: 7
 
   code-analysis:
@@ -310,12 +310,12 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         fetch-depth: 0  # Shallow clones should be disabled for better analysis
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
@@ -338,13 +338,13 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Create Dockerfile
       run: |
         cat > Dockerfile << 'EOF'
         # Build stage
-        FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+        FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
         WORKDIR /src
         
         # Copy csproj files and restore dependencies
@@ -362,7 +362,7 @@ jobs:
         RUN dotnet publish "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj" -c Release -o /app/publish
         
         # Runtime stage
-        FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
+        FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
         WORKDIR /app
         
         # Install OpenTelemetry Collector (optional)
@@ -418,7 +418,7 @@ jobs:
 ================================================================================
 FILE: .github\workflows\codeql.yml
 SIZE: 0.92 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/17/2025 11:48:04
 ================================================================================
 
 # .github/workflows/codeql.yml
@@ -456,7 +456,7 @@ jobs:
         languages: ${{ matrix.language }}
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: '10.0.x'
 
@@ -6633,13 +6633,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.45 KB
-MODIFIED: 09/17/2025 11:24:07
+MODIFIED: 09/17/2025 11:48:05
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 11:24:06
+Generated: 09/17/2025 11:48:04
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -6833,7 +6833,7 @@ updates:
 ================================================================================
 FILE: .github\workflows\ci.yml
 SIZE: 7.12 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/17/2025 11:48:04
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -6939,8 +6939,8 @@ jobs:
       with:
         name: build-artifacts
         path: |
-          src/MyOpenTelemetryApi.Api/bin/Release/net9.0/
-          !src/MyOpenTelemetryApi.Api/bin/Release/net9.0/*.pdb
+          src/MyOpenTelemetryApi.Api/bin/Release/net10.0/
+          !src/MyOpenTelemetryApi.Api/bin/Release/net10.0/*.pdb
         retention-days: 7
 
   code-analysis:
@@ -6948,12 +6948,12 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         fetch-depth: 0  # Shallow clones should be disabled for better analysis
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
@@ -6976,13 +6976,13 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Create Dockerfile
       run: |
         cat > Dockerfile << 'EOF'
         # Build stage
-        FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+        FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
         WORKDIR /src
         
         # Copy csproj files and restore dependencies
@@ -7000,7 +7000,7 @@ jobs:
         RUN dotnet publish "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj" -c Release -o /app/publish
         
         # Runtime stage
-        FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
+        FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
         WORKDIR /app
         
         # Install OpenTelemetry Collector (optional)
@@ -7056,7 +7056,7 @@ jobs:
 ================================================================================
 FILE: .github\workflows\codeql.yml
 SIZE: 0.92 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/17/2025 11:48:04
 ================================================================================
 
 # .github/workflows/codeql.yml
@@ -7094,7 +7094,7 @@ jobs:
         languages: ${{ matrix.language }}
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: '10.0.x'
 
@@ -13271,7 +13271,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.45 KB
-MODIFIED: 09/17/2025 11:24:07
+MODIFIED: 09/17/2025 11:48:05
 ================================================================================
 
 
@@ -18555,7 +18555,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 09/17/2025 11:24:09
+EXPORT COMPLETED: 09/17/2025 11:48:05
 Total Files Exported: 85
 Output File: D:\DEV\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
