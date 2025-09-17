@@ -1,17 +1,26 @@
-﻿// src/MyOpenTelemetryApi.Application/Services/IContactService.cs
+﻿// Application/Services/IContactService.cs
 using MyOpenTelemetryApi.Application.DTOs;
-
-namespace MyOpenTelemetryApi.Application.Services;
 
 public interface IContactService
 {
-    Task<ContactDto?> GetByIdAsync(Guid id);
-    Task<ContactDto?> GetWithDetailsAsync(Guid id);
-    Task<PaginatedResultDto<ContactSummaryDto>> GetPaginatedAsync(int pageNumber, int pageSize);
-    Task<List<ContactSummaryDto>> SearchAsync(string searchTerm);
-    Task<ContactDto> CreateAsync(CreateContactDto dto);
-    Task<ContactDto?> UpdateAsync(Guid id, UpdateContactDto dto);
-    Task<bool> DeleteAsync(Guid id);
-    Task<List<ContactSummaryDto>> GetByGroupAsync(Guid groupId);
-    Task<List<ContactSummaryDto>> GetByTagAsync(Guid tagId);
+    Task<PaginatedResultDto<ContactSummaryDto>> GetPaginatedContactsAsync(
+        int pageNumber, int pageSize, string? sort, string? filter,
+        CancellationToken cancellationToken = default);
+
+    Task<ContactDto?> GetContactByIdAsync(Guid id,
+        CancellationToken cancellationToken = default);
+
+    Task<ContactDto> CreateContactAsync(CreateContactDto dto,
+        CancellationToken cancellationToken = default);
+
+    Task<ContactDto?> UpdateContactAsync(Guid id, UpdateContactDto dto,
+        CancellationToken cancellationToken = default);
+
+    Task DeleteContactAsync(Guid id,
+        CancellationToken cancellationToken = default);
+
+    Task<List<ContactSummaryDto>> SearchContactsAsync(string query,
+        CancellationToken cancellationToken = default);
+
+    // Update ALL other async methods similarly...
 }
