@@ -161,45 +161,54 @@ public class ContactService : IContactService
         // Map Email Addresses
         foreach (CreateEmailAddressDto emailDto in dto.EmailAddresses)
         {
-            contact.EmailAddresses.Add(new EmailAddress
+            if (Enum.TryParse<EmailType>(emailDto.Type, true, out EmailType emailType))
             {
-                Id = Guid.NewGuid(),
-                ContactId = contact.Id,
-                Email = emailDto.Email,
-                Type = emailDto.Type,
-                IsPrimary = emailDto.IsPrimary
-            });
+                contact.EmailAddresses.Add(new EmailAddress
+                {
+                    Id = Guid.NewGuid(),
+                    ContactId = contact.Id,
+                    Email = emailDto.Email,
+                    Type = emailType,
+                    IsPrimary = emailDto.IsPrimary
+                });
+            }
         }
 
         // Map Phone Numbers
         foreach (CreatePhoneNumberDto phoneDto in dto.PhoneNumbers)
         {
-            contact.PhoneNumbers.Add(new PhoneNumber
+            if (Enum.TryParse<PhoneType>(phoneDto.Type, true, out PhoneType phoneType))
             {
-                Id = Guid.NewGuid(),
-                ContactId = contact.Id,
-                Number = phoneDto.Number,
-                Type = phoneDto.Type,
-                IsPrimary = phoneDto.IsPrimary
-            });
+                contact.PhoneNumbers.Add(new PhoneNumber
+                {
+                    Id = Guid.NewGuid(),
+                    ContactId = contact.Id,
+                    Number = phoneDto.Number,
+                    Type = phoneType,
+                    IsPrimary = phoneDto.IsPrimary
+                });
+            }
         }
 
         // Map Addresses
         foreach (CreateAddressDto addressDto in dto.Addresses)
         {
-            contact.Addresses.Add(new Address
+            if (Enum.TryParse<AddressType>(addressDto.Type, true, out AddressType addressType))
             {
-                Id = Guid.NewGuid(),
-                ContactId = contact.Id,
-                StreetLine1 = addressDto.StreetLine1,
-                StreetLine2 = addressDto.StreetLine2,
-                City = addressDto.City,
-                StateProvince = addressDto.StateProvince,
-                PostalCode = addressDto.PostalCode,
-                Country = addressDto.Country,
-                Type = addressDto.Type,
-                IsPrimary = addressDto.IsPrimary
-            });
+                contact.Addresses.Add(new Address
+                {
+                    Id = Guid.NewGuid(),
+                    ContactId = contact.Id,
+                    StreetLine1 = addressDto.StreetLine1,
+                    StreetLine2 = addressDto.StreetLine2,
+                    City = addressDto.City,
+                    StateProvince = addressDto.StateProvince,
+                    PostalCode = addressDto.PostalCode,
+                    Country = addressDto.Country,
+                    Type = addressType,
+                    IsPrimary = addressDto.IsPrimary
+                });
+            }
         }
 
         await _unitOfWork.Contacts.AddAsync(contact);
@@ -320,14 +329,14 @@ public class ContactService : IContactService
             {
                 Id = e.Id,
                 Email = e.Email,
-                Type = e.Type,
+                Type = e.Type.ToString(),
                 IsPrimary = e.IsPrimary
             }).ToList() ?? [],
             PhoneNumbers = contact.PhoneNumbers?.Select(p => new PhoneNumberDto
             {
                 Id = p.Id,
                 Number = p.Number,
-                Type = p.Type,
+                Type = p.Type.ToString(),
                 IsPrimary = p.IsPrimary
             }).ToList() ?? [],
             Addresses = contact.Addresses?.Select(a => new AddressDto
@@ -339,7 +348,7 @@ public class ContactService : IContactService
                 StateProvince = a.StateProvince,
                 PostalCode = a.PostalCode,
                 Country = a.Country,
-                Type = a.Type,
+                Type = a.Type.ToString(),
                 IsPrimary = a.IsPrimary
             }).ToList() ?? [],
             Groups = contact.ContactGroups?.Select(cg => new GroupDto
