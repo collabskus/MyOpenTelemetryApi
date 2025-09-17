@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 13:19:45
+Generated: 09/17/2025 13:25:02
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -6637,13 +6637,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.47 KB
-MODIFIED: 09/17/2025 13:19:46
+MODIFIED: 09/17/2025 13:25:03
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 13:19:45
+Generated: 09/17/2025 13:25:02
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -13279,7 +13279,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.47 KB
-MODIFIED: 09/17/2025 13:19:46
+MODIFIED: 09/17/2025 13:25:03
 ================================================================================
 
 
@@ -13906,8 +13906,8 @@ MODIFIED: 09/14/2025 18:12:26
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Authentication\ApiKeyAuthenticationHandler.cs
-SIZE: 1.86 KB
-MODIFIED: 09/17/2025 11:17:17
+SIZE: 1.87 KB
+MODIFIED: 09/17/2025 13:24:53
 ================================================================================
 
 // Api/Authentication/ApiKeyAuthenticationHandler.cs
@@ -13917,6 +13917,7 @@ using System.Security.Claims;
 using System.Text.Encodings.Web;
 
 namespace MyOpenTelemetryApi.Api.Authentication;
+
 public class ApiKeyAuthenticationHandler : AuthenticationHandler<ApiKeyAuthenticationOptions>
 {
     private const string ApiKeyHeaderName = "X-API-Key";
@@ -18662,7 +18663,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 09/17/2025 13:19:46
+EXPORT COMPLETED: 09/17/2025 13:25:03
 Total Files Exported: 86
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
