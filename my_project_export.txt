@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 14:33:45
+Generated: 09/17/2025 14:51:00
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -6636,13 +6636,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.64 KB
-MODIFIED: 09/17/2025 14:33:45
+MODIFIED: 09/17/2025 14:51:01
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 09/17/2025 14:33:45
+Generated: 09/17/2025 14:51:00
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -13277,7 +13277,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.64 KB
-MODIFIED: 09/17/2025 14:33:45
+MODIFIED: 09/17/2025 14:51:01
 ================================================================================
 
 
@@ -15498,25 +15498,25 @@ public class UpdateContactDto
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj
-SIZE: 0.48 KB
-MODIFIED: 09/17/2025 11:07:20
+SIZE: 0.47 KB
+MODIFIED: 09/17/2025 14:51:00
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0-rc.1.25451.107" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0-rc.1.25451.107" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj" />
+	</ItemGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
 </Project>
 
@@ -15524,17 +15524,15 @@ MODIFIED: 09/17/2025 11:07:20
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ContactService.cs
-SIZE: 19.03 KB
-MODIFIED: 09/17/2025 14:33:44
+SIZE: 18.95 KB
+MODIFIED: 09/17/2025 14:51:00
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ContactService.cs
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MyOpenTelemetryApi.Application.DTOs;
 using MyOpenTelemetryApi.Domain.Entities;
 using MyOpenTelemetryApi.Domain.Interfaces;
-using MyOpenTelemetryApi.Infrastructure.Data;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
 
@@ -15963,7 +15961,7 @@ public class ContactService : IContactService
                 .Where(cg => cg.Group != null)
                 .Select(cg => new GroupDto
                 {
-                    Id = cg.Group.Id,
+                    Id = cg.Group!.Id,
                     Name = cg.Group.Name,
                     Description = cg.Group.Description,
                     CreatedAt = cg.Group.CreatedAt
@@ -15976,7 +15974,7 @@ public class ContactService : IContactService
                 .Where(ct => ct.Tag != null)
                 .Select(ct => new TagDto
                 {
-                    Id = ct.Tag.Id,
+                    Id = ct.Tag!.Id,
                     Name = ct.Tag.Name,
                     ColorHex = ct.Tag.ColorHex
                 }).ToList();
@@ -18110,8 +18108,8 @@ public class TagRepository(AppDbContext context) : Repository<Tag>(context), ITa
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\UnitOfWork.cs
-SIZE: 0.82 KB
-MODIFIED: 09/17/2025 11:07:20
+SIZE: 1.31 KB
+MODIFIED: 09/17/2025 14:51:00
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/UnitOfWork.cs
@@ -18120,26 +18118,47 @@ using MyOpenTelemetryApi.Infrastructure.Data;
 
 namespace MyOpenTelemetryApi.Infrastructure.Repositories;
 
-public class UnitOfWork(AppDbContext context) : IUnitOfWork
+public class UnitOfWork : IUnitOfWork, IDisposable
 {
+    private readonly AppDbContext _context;
     private IContactRepository? _contacts;
     private IGroupRepository? _groups;
     private ITagRepository? _tags;
+    private bool _disposed;
 
-    public IContactRepository Contacts => _contacts ??= new ContactRepository(context);
-    public IGroupRepository Groups => _groups ??= new GroupRepository(context);
-    public ITagRepository Tags => _tags ??= new TagRepository(context);
-
-    public async Task<int> SaveChangesAsync()
+    public UnitOfWork(AppDbContext context)
     {
-        return await context.SaveChangesAsync();
+        _context = context;
+    }
+
+    public IContactRepository Contacts => _contacts ??= new ContactRepository(_context);
+    public IGroupRepository Groups => _groups ??= new GroupRepository(_context);
+    public ITagRepository Tags => _tags ??= new TagRepository(_context);
+
+    public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        return await _context.SaveChangesAsync(cancellationToken);
     }
 
     public void Dispose()
     {
-        context.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!_disposed)
+        {
+            if (disposing)
+            {
+                _context.Dispose();
+            }
+            _disposed = true;
+        }
     }
 }
+
 
 
 ================================================================================
@@ -18686,7 +18705,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 09/17/2025 14:33:47
+EXPORT COMPLETED: 09/17/2025 14:51:02
 Total Files Exported: 86
 Output File: D:\DEV\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
