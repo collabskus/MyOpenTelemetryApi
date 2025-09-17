@@ -1,10 +1,8 @@
 ﻿// src/MyOpenTelemetryApi.Application/Services/ContactService.cs
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MyOpenTelemetryApi.Application.DTOs;
 using MyOpenTelemetryApi.Domain.Entities;
 using MyOpenTelemetryApi.Domain.Interfaces;
-using MyOpenTelemetryApi.Infrastructure.Data;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
 
@@ -433,7 +431,7 @@ public class ContactService : IContactService
                 .Where(cg => cg.Group != null)
                 .Select(cg => new GroupDto
                 {
-                    Id = cg.Group.Id,
+                    Id = cg.Group!.Id,
                     Name = cg.Group.Name,
                     Description = cg.Group.Description,
                     CreatedAt = cg.Group.CreatedAt
@@ -446,7 +444,7 @@ public class ContactService : IContactService
                 .Where(ct => ct.Tag != null)
                 .Select(ct => new TagDto
                 {
-                    Id = ct.Tag.Id,
+                    Id = ct.Tag!.Id,
                     Name = ct.Tag.Name,
                     ColorHex = ct.Tag.ColorHex
                 }).ToList();
