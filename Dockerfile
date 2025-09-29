@@ -23,6 +23,7 @@ WORKDIR /app
 
 # Copy published application
 COPY --from=build /app/publish .
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # Create non-root user using proper commands for this base image
 RUN groupadd -r appuser && useradd -r -g appuser -d /app -s /bin/false appuser \
