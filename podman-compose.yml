@@ -1,6 +1,5 @@
 # podman-compose.yml - Alternative compose file optimized for Podman
 version: '3.8'
-
 services:
   db:
     image: docker.io/library/postgres:16-alpine
@@ -25,14 +24,13 @@ services:
     networks:
       - myotel-network
     restart: unless-stopped
-
   api:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: myotel-api
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://0.0.0.0:8080
       - ASPNETCORE_HTTP_PORTS=8080
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=myoteldb;Username=myoteluser;Password=myotelpass123;Include Error Detail=true;
@@ -44,9 +42,9 @@ services:
       - OpenTelemetry__Exporter__OTLP__Enabled=false
       - OpenTelemetry__Sampling__AlwaysOn=true
       - Logging__LogLevel__Default=Information
-      - Logging__LogLevel__Microsoft.AspNetCore=Information
-      - Logging__LogLevel__Microsoft.EntityFrameworkCore.Database.Command=Information
-      - Logging__LogLevel__MyOpenTelemetryApi=Debug
+      - Logging__LogLevel__Microsoft.AspNetCore=Warning
+      - Logging__LogLevel__Microsoft.EntityFrameworkCore.Database.Command=Warning
+      - Logging__LogLevel__MyOpenTelemetryApi=Information
     ports:
       - "0.0.0.0:5174:8080"
     depends_on:
@@ -63,7 +61,6 @@ services:
       retries: 3
       start_period: 40s
     restart: unless-stopped
-
   # Optional: Jaeger for OpenTelemetry tracing (uncomment if needed)
   # jaeger:
   #   image: docker.io/jaegertracing/all-in-one:latest
@@ -80,7 +77,6 @@ services:
   #     - myotel-network
   #   profiles:
   #     - observability
-
   # Optional: Prometheus for metrics collection (uncomment if needed)
   # prometheus:
   #   image: docker.io/prom/prometheus:latest
@@ -93,7 +89,6 @@ services:
   #     - myotel-network
   #   profiles:
   #     - observability
-
   # Optional: Grafana for visualization (uncomment if needed)
   # grafana:
   #   image: docker.io/grafana/grafana:latest
@@ -108,13 +103,11 @@ services:
   #     - myotel-network
   #   profiles:
   #     - observability
-
 volumes:
   postgres_data:
     driver: local
   # grafana_data:
   #   driver: local
-
 networks:
   myotel-network:
     driver: bridge
