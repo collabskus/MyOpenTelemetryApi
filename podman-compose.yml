@@ -50,8 +50,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    volumes:
-      - ./logs:/app/logs:Z
+    # volumes:
+    #   - ./logs:/app/logs:Z
     networks:
       - myotel-network
     healthcheck:
