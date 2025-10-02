@@ -37,7 +37,7 @@ services:
       - OpenTelemetry__ServiceName=MyOpenTelemetryApi-Podman
       - OpenTelemetry__ServiceVersion=1.0.0-podman
       - OpenTelemetry__Exporter__Console__Enabled=true
-      - OpenTelemetry__Exporter__File__Enabled=true
+      - OpenTelemetry__Exporter__File__Enabled=false
       - OpenTelemetry__Exporter__File__LogPath=/app/logs/otel-logs.json
       - OpenTelemetry__Exporter__OTLP__Enabled=false
       - OpenTelemetry__Sampling__AlwaysOn=true
