@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/01/2025 18:02:57
+Generated: 10/01/2025 21:35:50
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -6638,13 +6638,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.67 KB
-MODIFIED: 10/01/2025 18:02:57
+MODIFIED: 10/01/2025 21:35:50
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/01/2025 18:02:57
+Generated: 10/01/2025 21:35:50
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -13281,7 +13281,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.67 KB
-MODIFIED: 10/01/2025 18:02:57
+MODIFIED: 10/01/2025 21:35:50
 ================================================================================
 
 
@@ -13435,7 +13435,7 @@ EndGlobal
 ================================================================================
 FILE: podman-compose.yml
 SIZE: 3.52 KB
-MODIFIED: 10/01/2025 17:59:59
+MODIFIED: 10/01/2025 21:33:56
 ================================================================================
 
 # podman-compose.yml - Alternative compose file optimized for Podman
@@ -13477,7 +13477,7 @@ services:
       - OpenTelemetry__ServiceName=MyOpenTelemetryApi-Podman
       - OpenTelemetry__ServiceVersion=1.0.0-podman
       - OpenTelemetry__Exporter__Console__Enabled=true
-      - OpenTelemetry__Exporter__File__Enabled=true
+      - OpenTelemetry__Exporter__File__Enabled=false
       - OpenTelemetry__Exporter__File__LogPath=/app/logs/otel-logs.json
       - OpenTelemetry__Exporter__OTLP__Enabled=false
       - OpenTelemetry__Sampling__AlwaysOn=true
@@ -13490,8 +13490,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    volumes:
-      - ./logs:/app/logs:Z
+    # volumes:
+    #   - ./logs:/app/logs:Z
     networks:
       - myotel-network
     healthcheck:
@@ -18695,7 +18695,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/01/2025 18:03:00
+EXPORT COMPLETED: 10/01/2025 21:35:53
 Total Files Exported: 86
 Output File: D:\DEV\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
