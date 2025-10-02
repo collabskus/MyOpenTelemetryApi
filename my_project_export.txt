@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/02/2025 18:31:07
+Generated: 10/02/2025 18:32:35
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -6638,13 +6638,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.49 KB
-MODIFIED: 10/02/2025 18:31:08
+MODIFIED: 10/02/2025 18:32:35
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/02/2025 18:31:07
+Generated: 10/02/2025 18:32:35
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -13281,7 +13281,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.49 KB
-MODIFIED: 10/02/2025 18:31:08
+MODIFIED: 10/02/2025 18:32:35
 ================================================================================
 
 
@@ -14529,7 +14529,7 @@ MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj
 SIZE: 1.82 KB
-MODIFIED: 09/17/2025 14:25:19
+MODIFIED: 10/02/2025 18:32:07
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -14548,10 +14548,10 @@ MODIFIED: 09/17/2025 14:25:19
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0-rc.1" />
-    <PackageReference Include="OpenTelemetry" Version="1.12.0" />
-    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.12.0" />
-    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.12.0" />
-    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.12.0" />
+    <PackageReference Include="OpenTelemetry" Version="1.13.0" />
+    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.13.0" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.13.0" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.13.0" />
     <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.12.0" />
     <PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.12.0-beta.2" />
     <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.12.0" />
@@ -18153,7 +18153,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj
 SIZE: 1.08 KB
-MODIFIED: 09/14/2025 21:16:54
+MODIFIED: 10/02/2025 18:32:06
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -18170,9 +18170,9 @@ MODIFIED: 09/14/2025 21:16:54
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
     <PackageReference Include="xunit" Version="2.9.3" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4">
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -18277,7 +18277,7 @@ public class ApiTests
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj
 SIZE: 1.09 KB
-MODIFIED: 09/14/2025 21:16:54
+MODIFIED: 10/02/2025 18:32:06
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -18294,9 +18294,9 @@ MODIFIED: 09/14/2025 21:16:54
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
     <PackageReference Include="xunit" Version="2.9.3" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4">
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -18454,7 +18454,7 @@ public class ApplicationTests
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj
 SIZE: 1.1 KB
-MODIFIED: 09/14/2025 21:16:54
+MODIFIED: 10/02/2025 18:32:06
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -18471,9 +18471,9 @@ MODIFIED: 09/14/2025 21:16:54
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
     <PackageReference Include="xunit" Version="2.9.3" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4">
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -18695,7 +18695,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/02/2025 18:31:08
+EXPORT COMPLETED: 10/02/2025 18:32:36
 Total Files Exported: 86
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
