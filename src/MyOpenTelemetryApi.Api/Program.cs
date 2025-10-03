@@ -219,25 +219,41 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Apply migrations on startup (optional - remove in production)
-if (app.Environment.IsDevelopment())
+// Replace the migration section in src/MyOpenTelemetryApi.Api/Program.cs
+// Find this section (around line 140-160) and replace it with this code:
+
+// Apply migrations on startup - safe for educational/small production deployments
+using (IServiceScope scope = app.Services.CreateScope())
 {
-    using IServiceScope scope = app.Services.CreateScope();
     AppDbContext dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     ILogger<Program> logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
 
     using Activity? activity = Activity.Current?.Source.StartActivity("DatabaseMigration");
     try
     {
-        logger.LogInformation("Applying database migrations...");
-        await dbContext.Database.MigrateAsync();
-        logger.LogInformation("Database migrations applied successfully.");
+        logger.LogInformation("Checking for pending database migrations...");
+        var pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync();
+        
+        if (pendingMigrations.Any())
+        {
+            logger.LogInformation("Found {Count} pending migrations: {Migrations}", 
+                pendingMigrations.Count(), 
+                string.Join(", ", pendingMigrations));
+            
+            logger.LogInformation("Applying database migrations...");
+            await dbContext.Database.MigrateAsync();
+            logger.LogInformation("Database migrations applied successfully.");
+        }
+        else
+        {
+            logger.LogInformation("Database is up to date - no migrations needed.");
+        }
     }
     catch (Exception ex)
     {
         logger.LogError(ex, "Error applying database migrations");
         activity?.SetStatus(ActivityStatusCode.Error, ex.Message);
-        throw;
+        throw; // Fail startup if migrations fail
     }
 }
 
