@@ -1,6 +1,5 @@
 ﻿// src/MyOpenTelemetryApi.Application/Services/ContactService.cs
 using System.Diagnostics;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MyOpenTelemetryApi.Application.DTOs;
 using MyOpenTelemetryApi.Domain.Entities;
@@ -78,20 +77,19 @@ public class ContactService(
 
         _logger.LogInformation("Getting paginated contacts - Page: {PageNumber}, Size: {PageSize}", pageNumber, pageSize);
 
-        // Build the query - don't execute yet!
-        var query = _unitOfWork.Contacts.GetQueryable()
+        // Get the queryable from repository and let it handle the pagination
+        IQueryable<Contact> query = _unitOfWork.Contacts.GetQueryable();
+
+        // Get total count
+        int totalCount = query.Count();
+
+        // Apply ordering and pagination - these are IQueryable operations, not EF-specific
+        var contacts = query
             .OrderBy(c => c.LastName)
             .ThenBy(c => c.FirstName)
-            .AsNoTracking(); // Read-only for better performance
-
-        // Get total count from database
-        int totalCount = await query.CountAsync(cancellationToken);
-
-        // Apply pagination in the DATABASE, not in memory
-        var contacts = await query
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
-            .ToListAsync(cancellationToken);
+            .ToList(); // This executes the query
 
         // Map to DTOs
         List<ContactSummaryDto> contactSummaries = contacts
@@ -129,6 +127,28 @@ public class ContactService(
         }
 
         return results;
+    }
+
+    public async Task<List<ContactSummaryDto>> GetByGroupAsync(Guid groupId, CancellationToken cancellationToken = default)
+    {
+        using Activity? activity = _activitySource.StartActivity("GetContactsByGroup", ActivityKind.Internal);
+        activity?.SetTag("group.id", groupId);
+
+        _logger.LogInformation("Getting contacts by group: {GroupId}", groupId);
+
+        var contacts = await _unitOfWork.Contacts.GetContactsByGroupAsync(groupId);
+        return contacts.Select(MapToSummaryDto).ToList();
+    }
+
+    public async Task<List<ContactSummaryDto>> GetByTagAsync(Guid tagId, CancellationToken cancellationToken = default)
+    {
+        using Activity? activity = _activitySource.StartActivity("GetContactsByTag", ActivityKind.Internal);
+        activity?.SetTag("tag.id", tagId);
+
+        _logger.LogInformation("Getting contacts by tag: {TagId}", tagId);
+
+        var contacts = await _unitOfWork.Contacts.GetContactsByTagAsync(tagId);
+        return contacts.Select(MapToSummaryDto).ToList();
     }
 
     public async Task<ContactDto> CreateAsync(CreateContactDto dto, CancellationToken cancellationToken = default)
