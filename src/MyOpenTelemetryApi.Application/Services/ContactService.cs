@@ -42,7 +42,7 @@ public class ContactService(
         Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id);
         if (contact == null)
         {
-            _logger.LogWarning("Contact not found with ID: {ContactId}", id);
+            _logger.LogWarning("Contact not found: {ContactId}", id);
             return null;
         }
 
@@ -54,12 +54,12 @@ public class ContactService(
         using Activity? activity = _activitySource.StartActivity("GetContactWithDetails", ActivityKind.Internal);
         activity?.SetTag("contact.id", id);
 
-        _logger.LogInformation("Getting contact with details by ID: {ContactId}", id);
+        _logger.LogInformation("Getting contact with details: {ContactId}", id);
 
         Contact? contact = await _unitOfWork.Contacts.GetContactWithDetailsAsync(id);
         if (contact == null)
         {
-            _logger.LogWarning("Contact not found with ID: {ContactId}", id);
+            _logger.LogWarning("Contact not found: {ContactId}", id);
             return null;
         }
 
@@ -67,41 +67,28 @@ public class ContactService(
     }
 
     public async Task<PaginatedResultDto<ContactSummaryDto>> GetPaginatedAsync(
-        int pageNumber,
-        int pageSize,
-        CancellationToken cancellationToken = default)
+        int pageNumber, int pageSize, CancellationToken cancellationToken = default)
     {
         using Activity? activity = _activitySource.StartActivity("GetPaginatedContacts", ActivityKind.Internal);
         activity?.SetTag("page.number", pageNumber);
         activity?.SetTag("page.size", pageSize);
 
-        _logger.LogInformation("Getting paginated contacts - Page: {PageNumber}, Size: {PageSize}", pageNumber, pageSize);
+        _logger.LogInformation("Getting paginated contacts: Page {PageNumber}, Size {PageSize}", pageNumber, pageSize);
 
-        // Get the queryable from repository and let it handle the pagination
-        IQueryable<Contact> query = _unitOfWork.Contacts.GetQueryable();
+        var query = _unitOfWork.Contacts.GetQueryable();
+        var totalCount = query.Count();
 
-        // Get total count
-        int totalCount = query.Count();
-
-        // Apply ordering and pagination
         var contacts = query
-            .OrderBy(c => c.LastName)
-            .ThenBy(c => c.FirstName)
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .ToList();
 
-        // Map to DTOs
-        List<ContactSummaryDto> contactSummaries = contacts
-            .Select(MapToSummaryDto)
-            .ToList();
-
         return new PaginatedResultDto<ContactSummaryDto>
         {
-            Items = contactSummaries,
+            Items = contacts.Select(MapToSummaryDto).ToList(),
+            TotalCount = totalCount,
             PageNumber = pageNumber,
-            PageSize = pageSize,
-            TotalCount = totalCount
+            PageSize = pageSize
         };
     }
 
@@ -112,21 +99,8 @@ public class ContactService(
 
         _logger.LogInformation("Searching contacts with term: {SearchTerm}", searchTerm);
 
-        IEnumerable<Contact> allContacts = await _unitOfWork.Contacts.GetAllAsync();
-        List<Contact> matchingContacts = allContacts
-            .Where(c =>
-                c.FirstName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                c.LastName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                (c.Company != null && c.Company.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
-            .ToList();
-
-        List<ContactSummaryDto> results = [];
-        foreach (Contact contact in matchingContacts)
-        {
-            results.Add(MapToSummaryDto(contact));
-        }
-
-        return results;
+        var contacts = await _unitOfWork.Contacts.SearchContactsAsync(searchTerm);
+        return contacts.Select(MapToSummaryDto).ToList();
     }
 
     public async Task<List<ContactSummaryDto>> GetByGroupAsync(Guid groupId, CancellationToken cancellationToken = default)

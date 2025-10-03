@@ -9,7 +9,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
 {
     public async Task<GroupDto?> GetByIdAsync(Guid id)
     {
-        Group? group = await unitOfWork.Groups.GetGroupWithContactsAsync(id);
+        Group? group = await unitOfWork.Groups.GetByIdAsync(id);
         return group == null ? null : MapToDto(group);
     }
 
@@ -20,8 +20,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
 
         foreach (Group group in groups)
         {
-            Group? groupWithContacts = await unitOfWork.Groups.GetGroupWithContactsAsync(group.Id);
-            groupDtos.Add(MapToDto(groupWithContacts!));
+            groupDtos.Add(MapToDto(group));
         }
 
         return groupDtos;
@@ -51,7 +50,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
         group.Name = dto.Name;
         group.Description = dto.Description;
 
-        await unitOfWork.Groups.UpdateAsync(group);
+        unitOfWork.Groups.Update(group);
         await unitOfWork.SaveChangesAsync();
 
         return MapToDto(group);
@@ -62,7 +61,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
         Group? group = await unitOfWork.Groups.GetByIdAsync(id);
         if (group == null) return false;
 
-        await unitOfWork.Groups.DeleteAsync(group);
+        unitOfWork.Groups.Delete(group);
         await unitOfWork.SaveChangesAsync();
         return true;
     }

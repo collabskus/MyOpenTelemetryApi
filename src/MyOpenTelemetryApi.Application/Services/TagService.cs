@@ -54,9 +54,9 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
         }
 
         tag.Name = dto.Name;
-        tag.ColorHex = dto.ColorHex;
+        tag.ColorHex = dto.ColorHex ?? tag.ColorHex;
 
-        await unitOfWork.Tags.UpdateAsync(tag);
+        unitOfWork.Tags.Update(tag);
         await unitOfWork.SaveChangesAsync();
 
         return MapToDto(tag);
@@ -67,12 +67,12 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
         Tag? tag = await unitOfWork.Tags.GetByIdAsync(id);
         if (tag == null) return false;
 
-        await unitOfWork.Tags.DeleteAsync(tag);
+        unitOfWork.Tags.Delete(tag);
         await unitOfWork.SaveChangesAsync();
         return true;
     }
 
-    private TagDto MapToDto(Tag tag)
+    private static TagDto MapToDto(Tag tag)
     {
         return new TagDto
         {
