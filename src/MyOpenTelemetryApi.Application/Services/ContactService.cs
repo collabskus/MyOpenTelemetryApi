@@ -83,13 +83,13 @@ public class ContactService(
         // Get total count
         int totalCount = query.Count();
 
-        // Apply ordering and pagination - these are IQueryable operations, not EF-specific
+        // Apply ordering and pagination
         var contacts = query
             .OrderBy(c => c.LastName)
             .ThenBy(c => c.FirstName)
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
-            .ToList(); // This executes the query
+            .ToList();
 
         // Map to DTOs
         List<ContactSummaryDto> contactSummaries = contacts
@@ -177,13 +177,13 @@ public class ContactService(
 
         if (dto.EmailAddresses != null)
         {
-            foreach (EmailAddressDto emailDto in dto.EmailAddresses)
+            foreach (var emailDto in dto.EmailAddresses)
             {
                 contact.EmailAddresses.Add(new EmailAddress
                 {
                     Id = Guid.NewGuid(),
                     Email = emailDto.Email,
-                    Type = emailDto.Type,
+                    Type = Enum.Parse<EmailType>(emailDto.Type),
                     IsPrimary = emailDto.IsPrimary
                 });
             }
@@ -191,13 +191,13 @@ public class ContactService(
 
         if (dto.PhoneNumbers != null)
         {
-            foreach (PhoneNumberDto phoneDto in dto.PhoneNumbers)
+            foreach (var phoneDto in dto.PhoneNumbers)
             {
                 contact.PhoneNumbers.Add(new PhoneNumber
                 {
                     Id = Guid.NewGuid(),
                     Number = phoneDto.Number,
-                    Type = phoneDto.Type,
+                    Type = Enum.Parse<PhoneType>(phoneDto.Type),
                     IsPrimary = phoneDto.IsPrimary
                 });
             }
@@ -205,7 +205,7 @@ public class ContactService(
 
         if (dto.Addresses != null)
         {
-            foreach (AddressDto addressDto in dto.Addresses)
+            foreach (var addressDto in dto.Addresses)
             {
                 contact.Addresses.Add(new Address
                 {
@@ -216,7 +216,7 @@ public class ContactService(
                     StateProvince = addressDto.StateProvince,
                     PostalCode = addressDto.PostalCode,
                     Country = addressDto.Country,
-                    Type = addressDto.Type,
+                    Type = Enum.Parse<AddressType>(addressDto.Type),
                     IsPrimary = addressDto.IsPrimary
                 });
             }
@@ -302,13 +302,13 @@ public class ContactService(
             EmailAddresses = contact.EmailAddresses?.Select(e => new EmailAddressDto
             {
                 Email = e.Email,
-                Type = e.Type,
+                Type = e.Type.ToString(),
                 IsPrimary = e.IsPrimary
             }).ToList() ?? [],
             PhoneNumbers = contact.PhoneNumbers?.Select(p => new PhoneNumberDto
             {
                 Number = p.Number,
-                Type = p.Type,
+                Type = p.Type.ToString(),
                 IsPrimary = p.IsPrimary
             }).ToList() ?? [],
             Addresses = contact.Addresses?.Select(a => new AddressDto
@@ -319,7 +319,7 @@ public class ContactService(
                 StateProvince = a.StateProvince,
                 PostalCode = a.PostalCode,
                 Country = a.Country,
-                Type = a.Type,
+                Type = a.Type.ToString(),
                 IsPrimary = a.IsPrimary
             }).ToList() ?? []
         };
