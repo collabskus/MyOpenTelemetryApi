@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/03/2025 18:59:01
+Generated: 10/03/2025 19:02:29
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -6640,13 +6640,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.63 KB
-MODIFIED: 10/03/2025 18:59:01
+MODIFIED: 10/03/2025 19:02:30
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/03/2025 18:59:01
+Generated: 10/03/2025 19:02:29
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -13285,7 +13285,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.63 KB
-MODIFIED: 10/03/2025 18:59:01
+MODIFIED: 10/03/2025 19:02:30
 ================================================================================
 
 
@@ -15612,8 +15612,8 @@ MODIFIED: 09/17/2025 14:48:52
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ContactService.cs
-SIZE: 12.62 KB
-MODIFIED: 10/03/2025 18:57:08
+SIZE: 11.69 KB
+MODIFIED: 10/03/2025 19:01:50
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ContactService.cs
@@ -15660,7 +15660,7 @@ public class ContactService(
         Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id);
         if (contact == null)
         {
-            _logger.LogWarning("Contact not found with ID: {ContactId}", id);
+            _logger.LogWarning("Contact not found: {ContactId}", id);
             return null;
         }
 
@@ -15672,12 +15672,12 @@ public class ContactService(
         using Activity? activity = _activitySource.StartActivity("GetContactWithDetails", ActivityKind.Internal);
         activity?.SetTag("contact.id", id);
 
-        _logger.LogInformation("Getting contact with details by ID: {ContactId}", id);
+        _logger.LogInformation("Getting contact with details: {ContactId}", id);
 
         Contact? contact = await _unitOfWork.Contacts.GetContactWithDetailsAsync(id);
         if (contact == null)
         {
-            _logger.LogWarning("Contact not found with ID: {ContactId}", id);
+            _logger.LogWarning("Contact not found: {ContactId}", id);
             return null;
         }
 
@@ -15685,41 +15685,28 @@ public class ContactService(
     }
 
     public async Task<PaginatedResultDto<ContactSummaryDto>> GetPaginatedAsync(
-        int pageNumber,
-        int pageSize,
-        CancellationToken cancellationToken = default)
+        int pageNumber, int pageSize, CancellationToken cancellationToken = default)
     {
         using Activity? activity = _activitySource.StartActivity("GetPaginatedContacts", ActivityKind.Internal);
         activity?.SetTag("page.number", pageNumber);
         activity?.SetTag("page.size", pageSize);
 
-        _logger.LogInformation("Getting paginated contacts - Page: {PageNumber}, Size: {PageSize}", pageNumber, pageSize);
+        _logger.LogInformation("Getting paginated contacts: Page {PageNumber}, Size {PageSize}", pageNumber, pageSize);
 
-        // Get the queryable from repository and let it handle the pagination
-        IQueryable<Contact> query = _unitOfWork.Contacts.GetQueryable();
+        var query = _unitOfWork.Contacts.GetQueryable();
+        var totalCount = query.Count();
 
-        // Get total count
-        int totalCount = query.Count();
-
-        // Apply ordering and pagination
         var contacts = query
-            .OrderBy(c => c.LastName)
-            .ThenBy(c => c.FirstName)
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .ToList();
 
-        // Map to DTOs
-        List<ContactSummaryDto> contactSummaries = contacts
-            .Select(MapToSummaryDto)
-            .ToList();
-
         return new PaginatedResultDto<ContactSummaryDto>
         {
-            Items = contactSummaries,
+            Items = contacts.Select(MapToSummaryDto).ToList(),
+            TotalCount = totalCount,
             PageNumber = pageNumber,
-            PageSize = pageSize,
-            TotalCount = totalCount
+            PageSize = pageSize
         };
     }
 
@@ -15730,21 +15717,8 @@ public class ContactService(
 
         _logger.LogInformation("Searching contacts with term: {SearchTerm}", searchTerm);
 
-        IEnumerable<Contact> allContacts = await _unitOfWork.Contacts.GetAllAsync();
-        List<Contact> matchingContacts = allContacts
-            .Where(c =>
-                c.FirstName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                c.LastName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                (c.Company != null && c.Company.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
-            .ToList();
-
-        List<ContactSummaryDto> results = [];
-        foreach (Contact contact in matchingContacts)
-        {
-            results.Add(MapToSummaryDto(contact));
-        }
-
-        return results;
+        var contacts = await _unitOfWork.Contacts.SearchContactsAsync(searchTerm);
+        return contacts.Select(MapToSummaryDto).ToList();
     }
 
     public async Task<List<ContactSummaryDto>> GetByGroupAsync(Guid groupId, CancellationToken cancellationToken = default)
@@ -15961,8 +15935,8 @@ public class ContactService(
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\GroupService.cs
-SIZE: 2.37 KB
-MODIFIED: 09/17/2025 16:29:43
+SIZE: 2.22 KB
+MODIFIED: 10/03/2025 19:00:46
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/GroupService.cs
@@ -15976,7 +15950,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
 {
     public async Task<GroupDto?> GetByIdAsync(Guid id)
     {
-        Group? group = await unitOfWork.Groups.GetGroupWithContactsAsync(id);
+        Group? group = await unitOfWork.Groups.GetByIdAsync(id);
         return group == null ? null : MapToDto(group);
     }
 
@@ -15987,8 +15961,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
 
         foreach (Group group in groups)
         {
-            Group? groupWithContacts = await unitOfWork.Groups.GetGroupWithContactsAsync(group.Id);
-            groupDtos.Add(MapToDto(groupWithContacts!));
+            groupDtos.Add(MapToDto(group));
         }
 
         return groupDtos;
@@ -16018,7 +15991,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
         group.Name = dto.Name;
         group.Description = dto.Description;
 
-        await unitOfWork.Groups.UpdateAsync(group);
+        unitOfWork.Groups.Update(group);
         await unitOfWork.SaveChangesAsync();
 
         return MapToDto(group);
@@ -16029,7 +16002,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
         Group? group = await unitOfWork.Groups.GetByIdAsync(id);
         if (group == null) return false;
 
-        await unitOfWork.Groups.DeleteAsync(group);
+        unitOfWork.Groups.Delete(group);
         await unitOfWork.SaveChangesAsync();
         return true;
     }
@@ -16122,7 +16095,7 @@ public interface ITagService
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\TagService.cs
 SIZE: 2.45 KB
-MODIFIED: 09/17/2025 16:29:43
+MODIFIED: 10/03/2025 19:01:03
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/TagService.cs
@@ -16181,9 +16154,9 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
         }
 
         tag.Name = dto.Name;
-        tag.ColorHex = dto.ColorHex;
+        tag.ColorHex = dto.ColorHex ?? tag.ColorHex;
 
-        await unitOfWork.Tags.UpdateAsync(tag);
+        unitOfWork.Tags.Update(tag);
         await unitOfWork.SaveChangesAsync();
 
         return MapToDto(tag);
@@ -16194,12 +16167,12 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
         Tag? tag = await unitOfWork.Tags.GetByIdAsync(id);
         if (tag == null) return false;
 
-        await unitOfWork.Tags.DeleteAsync(tag);
+        unitOfWork.Tags.Delete(tag);
         await unitOfWork.SaveChangesAsync();
         return true;
     }
 
-    private TagDto MapToDto(Tag tag)
+    private static TagDto MapToDto(Tag tag)
     {
         return new TagDto
         {
@@ -19100,7 +19073,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/03/2025 18:59:01
+EXPORT COMPLETED: 10/03/2025 19:02:30
 Total Files Exported: 88
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
