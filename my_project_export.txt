@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/03/2025 18:51:28
+Generated: 10/03/2025 18:55:46
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -6640,13 +6640,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.63 KB
-MODIFIED: 10/03/2025 18:51:28
+MODIFIED: 10/03/2025 18:55:47
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/03/2025 18:51:28
+Generated: 10/03/2025 18:55:46
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -13285,7 +13285,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.63 KB
-MODIFIED: 10/03/2025 18:51:28
+MODIFIED: 10/03/2025 18:55:47
 ================================================================================
 
 
@@ -15612,13 +15612,12 @@ MODIFIED: 09/17/2025 14:48:52
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ContactService.cs
-SIZE: 11.67 KB
-MODIFIED: 10/03/2025 18:46:31
+SIZE: 12.62 KB
+MODIFIED: 10/03/2025 18:55:09
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ContactService.cs
 using System.Diagnostics;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MyOpenTelemetryApi.Application.DTOs;
 using MyOpenTelemetryApi.Domain.Entities;
@@ -15696,20 +15695,19 @@ public class ContactService(
 
         _logger.LogInformation("Getting paginated contacts - Page: {PageNumber}, Size: {PageSize}", pageNumber, pageSize);
 
-        // Build the query - don't execute yet!
-        var query = _unitOfWork.Contacts.GetQueryable()
+        // Get the queryable from repository and let it handle the pagination
+        IQueryable<Contact> query = _unitOfWork.Contacts.GetQueryable();
+
+        // Get total count
+        int totalCount = query.Count();
+
+        // Apply ordering and pagination - these are IQueryable operations, not EF-specific
+        var contacts = query
             .OrderBy(c => c.LastName)
             .ThenBy(c => c.FirstName)
-            .AsNoTracking(); // Read-only for better performance
-
-        // Get total count from database
-        int totalCount = await query.CountAsync(cancellationToken);
-
-        // Apply pagination in the DATABASE, not in memory
-        var contacts = await query
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
-            .ToListAsync(cancellationToken);
+            .ToList(); // This executes the query
 
         // Map to DTOs
         List<ContactSummaryDto> contactSummaries = contacts
@@ -15747,6 +15745,28 @@ public class ContactService(
         }
 
         return results;
+    }
+
+    public async Task<List<ContactSummaryDto>> GetByGroupAsync(Guid groupId, CancellationToken cancellationToken = default)
+    {
+        using Activity? activity = _activitySource.StartActivity("GetContactsByGroup", ActivityKind.Internal);
+        activity?.SetTag("group.id", groupId);
+
+        _logger.LogInformation("Getting contacts by group: {GroupId}", groupId);
+
+        var contacts = await _unitOfWork.Contacts.GetContactsByGroupAsync(groupId);
+        return contacts.Select(MapToSummaryDto).ToList();
+    }
+
+    public async Task<List<ContactSummaryDto>> GetByTagAsync(Guid tagId, CancellationToken cancellationToken = default)
+    {
+        using Activity? activity = _activitySource.StartActivity("GetContactsByTag", ActivityKind.Internal);
+        activity?.SetTag("tag.id", tagId);
+
+        _logger.LogInformation("Getting contacts by tag: {TagId}", tagId);
+
+        var contacts = await _unitOfWork.Contacts.GetContactsByTagAsync(tagId);
+        return contacts.Select(MapToSummaryDto).ToList();
     }
 
     public async Task<ContactDto> CreateAsync(CreateContactDto dto, CancellationToken cancellationToken = default)
@@ -19080,7 +19100,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/03/2025 18:51:28
+EXPORT COMPLETED: 10/03/2025 18:55:47
 Total Files Exported: 88
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
