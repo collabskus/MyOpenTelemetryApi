@@ -76,12 +76,12 @@ public class ContactService(
         _logger.LogInformation("Getting paginated contacts: Page {PageNumber}, Size {PageSize}", pageNumber, pageSize);
 
         var query = _unitOfWork.Contacts.GetQueryable();
-        var totalCount = query.Count();
+        var totalCount = await Task.Run(() => query.Count(), cancellationToken);
 
-        var contacts = query
+        var contacts = await Task.Run(() => query
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
-            .ToList();
+            .ToList(), cancellationToken);
 
         return new PaginatedResultDto<ContactSummaryDto>
         {

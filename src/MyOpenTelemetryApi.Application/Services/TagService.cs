@@ -54,7 +54,7 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
         }
 
         tag.Name = dto.Name;
-        tag.ColorHex = dto.ColorHex ?? tag.ColorHex;
+        tag.ColorHex = string.IsNullOrEmpty(dto.ColorHex) ? tag.ColorHex : dto.ColorHex;
 
         unitOfWork.Tags.Update(tag);
         await unitOfWork.SaveChangesAsync();
