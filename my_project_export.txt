@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/03/2025 18:25:48
+Generated: 10/03/2025 18:33:33
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -131,6 +131,8 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |       |   \---Migrations
 |       |           20250804231722_InitialCreate.cs
 |       |           20250804231722_InitialCreate.Designer.cs
+|       |           20251003222820_AddContactPaginationIndexes.cs
+|       |           20251003222820_AddContactPaginationIndexes.Designer.cs
 |       |           AppDbContextModelSnapshot.cs
 |       |           
 |       \---Repositories
@@ -6637,14 +6639,14 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 222.49 KB
-MODIFIED: 10/03/2025 18:25:48
+SIZE: 222.63 KB
+MODIFIED: 10/03/2025 18:33:33
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/03/2025 18:25:48
+Generated: 10/03/2025 18:33:33
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -6774,6 +6776,8 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |       |   \---Migrations
 |       |           20250804231722_InitialCreate.cs
 |       |           20250804231722_InitialCreate.Designer.cs
+|       |           20251003222820_AddContactPaginationIndexes.cs
+|       |           20251003222820_AddContactPaginationIndexes.Designer.cs
 |       |           AppDbContextModelSnapshot.cs
 |       |           
 |       \---Repositories
@@ -13280,8 +13284,8 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 222.49 KB
-MODIFIED: 10/03/2025 18:25:48
+SIZE: 222.63 KB
+MODIFIED: 10/03/2025 18:33:33
 ================================================================================
 
 
@@ -14570,8 +14574,8 @@ MODIFIED: 10/02/2025 18:32:07
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Program.cs
-SIZE: 16.31 KB
-MODIFIED: 09/17/2025 16:29:43
+SIZE: 17.03 KB
+MODIFIED: 10/03/2025 18:30:21
 ================================================================================
 
 
@@ -14795,25 +14799,41 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Apply migrations on startup (optional - remove in production)
-if (app.Environment.IsDevelopment())
+// Replace the migration section in src/MyOpenTelemetryApi.Api/Program.cs
+// Find this section (around line 140-160) and replace it with this code:
+
+// Apply migrations on startup - safe for educational/small production deployments
+using (IServiceScope scope = app.Services.CreateScope())
 {
-    using IServiceScope scope = app.Services.CreateScope();
     AppDbContext dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     ILogger<Program> logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
 
     using Activity? activity = Activity.Current?.Source.StartActivity("DatabaseMigration");
     try
     {
-        logger.LogInformation("Applying database migrations...");
-        await dbContext.Database.MigrateAsync();
-        logger.LogInformation("Database migrations applied successfully.");
+        logger.LogInformation("Checking for pending database migrations...");
+        var pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync();
+        
+        if (pendingMigrations.Any())
+        {
+            logger.LogInformation("Found {Count} pending migrations: {Migrations}", 
+                pendingMigrations.Count(), 
+                string.Join(", ", pendingMigrations));
+            
+            logger.LogInformation("Applying database migrations...");
+            await dbContext.Database.MigrateAsync();
+            logger.LogInformation("Database migrations applied successfully.");
+        }
+        else
+        {
+            logger.LogInformation("Database is up to date - no migrations needed.");
+        }
     }
     catch (Exception ex)
     {
         logger.LogError(ex, "Error applying database migrations");
         activity?.SetStatus(ActivityStatusCode.Error, ex.Message);
-        throw;
+        throw; // Fail startup if migrations fail
     }
 }
 
@@ -17531,9 +17551,439 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 
 
 ================================================================================
+FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.cs
+SIZE: 1.96 KB
+MODIFIED: 10/03/2025 18:31:06
+================================================================================
+
+// This is what to paste into the generated migration file
+// After running: dotnet ef migrations add AddContactPaginationIndexes
+// Find the file in: src/MyOpenTelemetryApi.Infrastructure/Data/Migrations/
+// It will be named something like: 20251003182600_AddContactPaginationIndexes.cs
+
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
+{
+    /// <inheritdoc />
+    public partial class AddContactPaginationIndexes : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            // Primary pagination index - for default sort by LastName, FirstName
+            // This will dramatically improve query performance for the default sort order
+            migrationBuilder.CreateIndex(
+                name: "IX_Contacts_LastName_FirstName_Id",
+                table: "Contacts",
+                columns: new[] { "LastName", "FirstName", "Id" });
+
+            // Additional sort option indexes for other sort orders
+            migrationBuilder.CreateIndex(
+                name: "IX_Contacts_Company_Id",
+                table: "Contacts",
+                columns: new[] { "Company", "Id" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Contacts_FirstName_Id",
+                table: "Contacts",
+                columns: new[] { "FirstName", "Id" });
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropIndex(
+                name: "IX_Contacts_LastName_FirstName_Id",
+                table: "Contacts");
+
+            migrationBuilder.DropIndex(
+                name: "IX_Contacts_Company_Id",
+                table: "Contacts");
+
+            migrationBuilder.DropIndex(
+                name: "IX_Contacts_FirstName_Id",
+                table: "Contacts");
+        }
+    }
+}
+
+
+
+================================================================================
+FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.Designer.cs
+SIZE: 12.96 KB
+MODIFIED: 10/03/2025 18:28:20
+================================================================================
+
+// <auto-generated />
+using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using MyOpenTelemetryApi.Infrastructure.Data;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+
+#nullable disable
+
+namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
+{
+    [DbContext(typeof(AppDbContext))]
+    [Migration("20251003222820_AddContactPaginationIndexes")]
+    partial class AddContactPaginationIndexes
+    {
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        {
+#pragma warning disable 612, 618
+            modelBuilder
+                .HasAnnotation("ProductVersion", "10.0.0-rc.1.25451.107")
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.Address", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("City")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<Guid>("ContactId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Country")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<bool>("IsPrimary")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("PostalCode")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("StateProvince")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("StreetLine1")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("StreetLine2")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContactId");
+
+                    b.ToTable("Addresses");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.Contact", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Company")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("JobTitle")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("MiddleName")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Nickname")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contacts");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.ContactGroup", b =>
+                {
+                    b.Property<Guid>("ContactId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("GroupId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ContactId", "GroupId");
+
+                    b.HasIndex("GroupId");
+
+                    b.ToTable("ContactGroups");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.ContactTag", b =>
+                {
+                    b.Property<Guid>("ContactId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("TagId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("ContactId", "TagId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("ContactTags");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.EmailAddress", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ContactId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(254)
+                        .HasColumnType("character varying(254)");
+
+                    b.Property<bool>("IsPrimary")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContactId");
+
+                    b.ToTable("EmailAddresses");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.Group", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Groups");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.PhoneNumber", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ContactId")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsPrimary")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Number")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContactId");
+
+                    b.ToTable("PhoneNumbers");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.Tag", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ColorHex")
+                        .HasMaxLength(7)
+                        .HasColumnType("character varying(7)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Tags");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.Address", b =>
+                {
+                    b.HasOne("MyOpenTelemetryApi.Domain.Entities.Contact", "Contact")
+                        .WithMany("Addresses")
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Contact");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.ContactGroup", b =>
+                {
+                    b.HasOne("MyOpenTelemetryApi.Domain.Entities.Contact", "Contact")
+                        .WithMany("ContactGroups")
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MyOpenTelemetryApi.Domain.Entities.Group", "Group")
+                        .WithMany("ContactGroups")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Contact");
+
+                    b.Navigation("Group");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.ContactTag", b =>
+                {
+                    b.HasOne("MyOpenTelemetryApi.Domain.Entities.Contact", "Contact")
+                        .WithMany("Tags")
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MyOpenTelemetryApi.Domain.Entities.Tag", "Tag")
+                        .WithMany("ContactTags")
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Contact");
+
+                    b.Navigation("Tag");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.EmailAddress", b =>
+                {
+                    b.HasOne("MyOpenTelemetryApi.Domain.Entities.Contact", "Contact")
+                        .WithMany("EmailAddresses")
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Contact");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.PhoneNumber", b =>
+                {
+                    b.HasOne("MyOpenTelemetryApi.Domain.Entities.Contact", "Contact")
+                        .WithMany("PhoneNumbers")
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Contact");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.Contact", b =>
+                {
+                    b.Navigation("Addresses");
+
+                    b.Navigation("ContactGroups");
+
+                    b.Navigation("EmailAddresses");
+
+                    b.Navigation("PhoneNumbers");
+
+                    b.Navigation("Tags");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.Group", b =>
+                {
+                    b.Navigation("ContactGroups");
+                });
+
+            modelBuilder.Entity("MyOpenTelemetryApi.Domain.Entities.Tag", b =>
+                {
+                    b.Navigation("ContactTags");
+                });
+#pragma warning restore 612, 618
+        }
+    }
+}
+
+
+
+================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\AppDbContextModelSnapshot.cs
-SIZE: 12.82 KB
-MODIFIED: 09/14/2025 21:12:26
+SIZE: 12.83 KB
+MODIFIED: 10/03/2025 18:28:20
 ================================================================================
 
 // <auto-generated />
@@ -17555,7 +18005,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.7")
+                .HasAnnotation("ProductVersion", "10.0.0-rc.1.25451.107")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -18695,7 +19145,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/03/2025 18:25:49
-Total Files Exported: 86
+EXPORT COMPLETED: 10/03/2025 18:33:34
+Total Files Exported: 88
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
