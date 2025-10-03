@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/03/2025 19:02:29
+Generated: 10/03/2025 19:04:40
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -6640,13 +6640,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.63 KB
-MODIFIED: 10/03/2025 19:02:30
+MODIFIED: 10/03/2025 19:04:40
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/03/2025 19:02:29
+Generated: 10/03/2025 19:04:40
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -13285,7 +13285,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.63 KB
-MODIFIED: 10/03/2025 19:02:30
+MODIFIED: 10/03/2025 19:04:40
 ================================================================================
 
 
@@ -15612,8 +15612,8 @@ MODIFIED: 09/17/2025 14:48:52
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ContactService.cs
-SIZE: 11.69 KB
-MODIFIED: 10/03/2025 19:01:50
+SIZE: 11.77 KB
+MODIFIED: 10/03/2025 19:03:48
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ContactService.cs
@@ -15694,12 +15694,12 @@ public class ContactService(
         _logger.LogInformation("Getting paginated contacts: Page {PageNumber}, Size {PageSize}", pageNumber, pageSize);
 
         var query = _unitOfWork.Contacts.GetQueryable();
-        var totalCount = query.Count();
+        var totalCount = await Task.Run(() => query.Count(), cancellationToken);
 
-        var contacts = query
+        var contacts = await Task.Run(() => query
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
-            .ToList();
+            .ToList(), cancellationToken);
 
         return new PaginatedResultDto<ContactSummaryDto>
         {
@@ -16094,8 +16094,8 @@ public interface ITagService
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\TagService.cs
-SIZE: 2.45 KB
-MODIFIED: 10/03/2025 19:01:03
+SIZE: 2.48 KB
+MODIFIED: 10/03/2025 19:03:37
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/TagService.cs
@@ -16154,7 +16154,7 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
         }
 
         tag.Name = dto.Name;
-        tag.ColorHex = dto.ColorHex ?? tag.ColorHex;
+        tag.ColorHex = string.IsNullOrEmpty(dto.ColorHex) ? tag.ColorHex : dto.ColorHex;
 
         unitOfWork.Tags.Update(tag);
         await unitOfWork.SaveChangesAsync();
@@ -19073,7 +19073,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/03/2025 19:02:30
+EXPORT COMPLETED: 10/03/2025 19:04:40
 Total Files Exported: 88
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
