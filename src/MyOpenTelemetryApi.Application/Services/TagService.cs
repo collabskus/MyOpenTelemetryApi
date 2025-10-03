@@ -78,7 +78,7 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
         {
             Id = tag.Id,
             Name = tag.Name,
-            ColorHex = tag.ColorHex
+            ColorHex = tag.ColorHex ?? string.Empty // Fixes CS8601: ensures non-null assignment
         };
     }
 }
