@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 11:15:01
+Generated: 10/06/2025 11:33:08
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -6640,13 +6640,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.63 KB
-MODIFIED: 10/06/2025 11:15:01
+MODIFIED: 10/06/2025 11:33:08
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 11:15:01
+Generated: 10/06/2025 11:33:08
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -13285,7 +13285,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 222.63 KB
-MODIFIED: 10/06/2025 11:15:01
+MODIFIED: 10/06/2025 11:33:08
 ================================================================================
 
 
@@ -15089,32 +15089,32 @@ app.Run();
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Properties\launchSettings.json
-SIZE: 0.63 KB
-MODIFIED: 09/14/2025 21:12:26
+SIZE: 0.73 KB
+MODIFIED: 10/06/2025 11:32:06
 ================================================================================
 
 {
-  "$schema": "https://json.schemastore.org/launchsettings.json",
-  "profiles": {
-    "http": {
-      "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": false,
-      "applicationUrl": "http://localhost:5174",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "https": {
-      "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": false,
-      "applicationUrl": "https://localhost:7034;http://localhost:5174",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+    "$schema": "https://json.schemastore.org/launchsettings.json",
+    "profiles": {
+        "http": {
+            "commandName": "Project",
+            "dotnetRunMessages": true,
+            "launchBrowser": false,
+            "applicationUrl": "http://0.0.0.0:5174",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        "https": {
+            "commandName": "Project",
+            "dotnetRunMessages": true,
+            "launchBrowser": false,
+            "applicationUrl": "https://0.0.0.0:7034;http://0.0.0.0:5174",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        }
     }
-  }
 }
 
 
@@ -19073,7 +19073,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/06/2025 11:15:02
+EXPORT COMPLETED: 10/06/2025 11:33:08
 Total Files Exported: 88
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
