@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 13:48:21
+Generated: 10/06/2025 13:49:54
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -17325,13 +17325,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 774.22 KB
-MODIFIED: 10/06/2025 13:48:21
+MODIFIED: 10/06/2025 13:49:55
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 13:48:21
+Generated: 10/06/2025 13:49:54
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -34655,7 +34655,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 774.22 KB
-MODIFIED: 10/06/2025 13:48:21
+MODIFIED: 10/06/2025 13:49:55
 ================================================================================
 
 
@@ -39729,8 +39729,8 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj
-SIZE: 2.29 KB
-MODIFIED: 10/06/2025 13:47:38
+SIZE: 2.25 KB
+MODIFIED: 10/06/2025 13:49:16
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -39743,6 +39743,7 @@ MODIFIED: 10/06/2025 13:47:38
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <DisableMSBuildAssemblyCopyCheck>true</DisableMSBuildAssemblyCopyCheck>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Humanizer.Core" Version="3.0.0-beta.96" />
@@ -39769,9 +39770,6 @@ MODIFIED: 10/06/2025 13:47:38
       Version="10.0.0-rc.1.25451.107" />
     <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.0-rc.1.25451.107" />
   </ItemGroup>
-  <PropertyGroup>
-    <DisableMSBuildAssemblyCopyCheck>true</DisableMSBuildAssemblyCopyCheck>
-  </PropertyGroup>
 </Project>
 
 
@@ -40555,7 +40553,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/06/2025 13:48:21
+EXPORT COMPLETED: 10/06/2025 13:49:55
 Total Files Exported: 90
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
