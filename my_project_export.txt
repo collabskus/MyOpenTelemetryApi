@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 14:01:36
+Generated: 10/06/2025 14:01:50
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -37,110 +37,6 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |           ci.yml
 |           codeql.yml
 |           
-+---artifacts
-|   +---bin
-|   |   +---MyOpenTelemetryApi.Api
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   +---MyOpenTelemetryApi.Api.Tests
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   +---MyOpenTelemetryApi.Application
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   +---MyOpenTelemetryApi.Application.Tests
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   +---MyOpenTelemetryApi.Domain
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   +---MyOpenTelemetryApi.Infrastructure
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   \---MyOpenTelemetryApi.Infrastructure.Tests
-|   |       \---Debug
-|   |           \---net10.0
-|   \---obj
-|       +---MyOpenTelemetryApi.Api
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Api.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Api.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Api.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Api.GlobalUsings.g.cs
-|       |           |   rpswa.dswa.cache.json
-|       |           |   staticwebassets.removed.txt
-|       |           |   
-|       |           +---ref
-|       |           +---refint
-|       |           \---staticwebassets
-|       +---MyOpenTelemetryApi.Api.Tests
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Api.Tests.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Api.Tests.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Api.Tests.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Api.Tests.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
-|       +---MyOpenTelemetryApi.Application
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Application.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Application.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Application.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Application.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
-|       +---MyOpenTelemetryApi.Application.Tests
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Application.Tests.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Application.Tests.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Application.Tests.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Application.Tests.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
-|       +---MyOpenTelemetryApi.Domain
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Domain.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Domain.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Domain.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
-|       +---MyOpenTelemetryApi.Infrastructure
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Infrastructure.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Infrastructure.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Infrastructure.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
-|       \---MyOpenTelemetryApi.Infrastructure.Tests
-|           \---Debug
-|               \---net10.0
-|                   |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|                   |   MyOpenTelemetryApi.Infrastructure.Tests.AssemblyInfo.cs
-|                   |   MyOpenTelemetryApi.Infrastructure.Tests.AssemblyInfoInputs.cache
-|                   |   MyOpenTelemetryApi.Infrastructure.Tests.GeneratedMSBuildEditorConfig.editorconfig
-|                   |   MyOpenTelemetryApi.Infrastructure.Tests.GlobalUsings.g.cs
-|                   |   
-|                   +---ref
-|                   \---refint
 +---docs
 |       contact-manager-specification-sheet-backend.md
 |       contact-manager-specification-sheet.md
@@ -18643,14 +18539,14 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 869.69 KB
-MODIFIED: 10/06/2025 14:01:37
+SIZE: 864.87 KB
+MODIFIED: 10/06/2025 14:01:50
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 14:01:36
+Generated: 10/06/2025 14:01:50
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -18686,110 +18582,6 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |           ci.yml
 |           codeql.yml
 |           
-+---artifacts
-|   +---bin
-|   |   +---MyOpenTelemetryApi.Api
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   +---MyOpenTelemetryApi.Api.Tests
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   +---MyOpenTelemetryApi.Application
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   +---MyOpenTelemetryApi.Application.Tests
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   +---MyOpenTelemetryApi.Domain
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   +---MyOpenTelemetryApi.Infrastructure
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   \---MyOpenTelemetryApi.Infrastructure.Tests
-|   |       \---Debug
-|   |           \---net10.0
-|   \---obj
-|       +---MyOpenTelemetryApi.Api
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Api.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Api.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Api.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Api.GlobalUsings.g.cs
-|       |           |   rpswa.dswa.cache.json
-|       |           |   staticwebassets.removed.txt
-|       |           |   
-|       |           +---ref
-|       |           +---refint
-|       |           \---staticwebassets
-|       +---MyOpenTelemetryApi.Api.Tests
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Api.Tests.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Api.Tests.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Api.Tests.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Api.Tests.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
-|       +---MyOpenTelemetryApi.Application
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Application.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Application.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Application.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Application.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
-|       +---MyOpenTelemetryApi.Application.Tests
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Application.Tests.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Application.Tests.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Application.Tests.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Application.Tests.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
-|       +---MyOpenTelemetryApi.Domain
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Domain.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Domain.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Domain.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
-|       +---MyOpenTelemetryApi.Infrastructure
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Infrastructure.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Infrastructure.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Infrastructure.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
-|       \---MyOpenTelemetryApi.Infrastructure.Tests
-|           \---Debug
-|               \---net10.0
-|                   |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|                   |   MyOpenTelemetryApi.Infrastructure.Tests.AssemblyInfo.cs
-|                   |   MyOpenTelemetryApi.Infrastructure.Tests.AssemblyInfoInputs.cache
-|                   |   MyOpenTelemetryApi.Infrastructure.Tests.GeneratedMSBuildEditorConfig.editorconfig
-|                   |   MyOpenTelemetryApi.Infrastructure.Tests.GlobalUsings.g.cs
-|                   |   
-|                   +---ref
-|                   \---refint
 +---docs
 |       contact-manager-specification-sheet-backend.md
 |       contact-manager-specification-sheet.md
@@ -37292,8 +37084,8 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 869.69 KB
-MODIFIED: 10/06/2025 14:01:37
+SIZE: 864.87 KB
+MODIFIED: 10/06/2025 14:01:50
 ================================================================================
 
 
@@ -43174,7 +42966,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/06/2025 14:01:37
+EXPORT COMPLETED: 10/06/2025 14:01:51
 Total Files Exported: 90
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
