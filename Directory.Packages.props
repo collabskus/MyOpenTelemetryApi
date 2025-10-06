@@ -44,7 +44,7 @@
     
     <!-- Other -->
     <PackageVersion Include="Humanizer.Core" Version="3.0.0-beta.96" />
-    <PackageVersion Include="Microsoft.OpenApi" Version="2.3.3" />
+    <PackageVersion Include="Microsoft.OpenApi" Version="2.3.4" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0-rc.1.25451.107" />
     <PackageVersion Include="System.CodeDom" Version="10.0.0-rc.1.25451.107" />
