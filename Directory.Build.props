@@ -1,72 +1,57 @@
 <Project>
-  
-  <!-- Common Properties for All Projects -->
+
+  <!-- Common properties for all projects -->
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>$(NoWarn);CS1591</NoWarn> <!-- Disable XML documentation warnings -->
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
-  <!-- Assembly and Package Metadata -->
+  <!-- Common package versions -->
   <PropertyGroup>
-    <Company>Kushal's Projects</Company>
-    <Product>MyOpenTelemetryApi</Product>
-    <Copyright>Copyright © 2025</Copyright>
-    <Authors>Kushal</Authors>
-    <Version>1.0.0</Version>
-    <PackageProjectUrl>https://github.com/yourusername/MyOpenTelemetryApi</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/yourusername/MyOpenTelemetryApi</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
+    <!-- OpenTelemetry -->
+    <OpenTelemetryVersion>1.13.0</OpenTelemetryVersion>
+    <OpenTelemetryInstrumentationVersion>1.12.0</OpenTelemetryInstrumentationVersion>
+    
+    <!-- Entity Framework Core -->
+    <EntityFrameworkCoreVersion>10.0.0-rc.1.25451.107</EntityFrameworkCoreVersion>
+    
+    <!-- PostgreSQL / Npgsql -->
+    <NpgsqlVersion>10.0.0-rc.1</NpgsqlVersion>
+    
+    <!-- Microsoft Build -->
+    <MicrosoftBuildVersion>17.15.0-preview-25277-114</MicrosoftBuildVersion>
+    
+    <!-- ASP.NET Core -->
+    <AspNetCoreOpenApiVersion>10.0.0-rc.1.25451.107</AspNetCoreOpenApiVersion>
+    
+    <!-- Testing -->
+    <XunitVersion>2.9.3</XunitVersion>
+    <XunitAnalyzersVersion>1.24.0</XunitAnalyzersVersion>
+    <XunitRunnerVisualStudioVersion>3.1.5</XunitRunnerVisualStudioVersion>
+    <MicrosoftNetTestSdkVersion>18.0.0</MicrosoftNetTestSdkVersion>
+    <CoverletCollectorVersion>6.0.4</CoverletCollectorVersion>
+    
+    <!-- Other -->
+    <HumanizerCoreVersion>3.0.0-beta.96</HumanizerCoreVersion>
+    <MicrosoftOpenApiVersion>2.3.3</MicrosoftOpenApiVersion>
+    <NewtonsoftJsonVersion>13.0.4</NewtonsoftJsonVersion>
+    <MicrosoftBuildLocatorVersion>1.10.2</MicrosoftBuildLocatorVersion>
+    <MicrosoftExtensionsLoggingAbstractionsVersion>10.0.0-rc.1.25451.107</MicrosoftExtensionsLoggingAbstractionsVersion>
+    <SystemCodeDomVersion>10.0.0-rc.1.25451.107</SystemCodeDomVersion>
+    <SystemConfigurationConfigurationManagerVersion>10.0.0-rc.1.25451.107</SystemConfigurationConfigurationManagerVersion>
+    <SystemFormatsNrbfVersion>10.0.0-rc.1.25451.107</SystemFormatsNrbfVersion>
+    <SystemResourcesExtensionsVersion>10.0.0-rc.1.25451.107</SystemResourcesExtensionsVersion>
+    <SystemSecurityCryptographyPkcsVersion>10.0.0-rc.1.25451.107</SystemSecurityCryptographyPkcsVersion>
+    <SystemSecurityCryptographyProtectedDataVersion>10.0.0-rc.1.25451.107</SystemSecurityCryptographyProtectedDataVersion>
+    <SystemDiagnosticsEventLogVersion>10.0.0-rc.1.25451.107</SystemDiagnosticsEventLogVersion>
+    <SystemSecurityCryptographyXmlVersion>10.0.0-rc.1.25451.107</SystemSecurityCryptographyXmlVersion>
   </PropertyGroup>
 
-  <!-- Code Analysis -->
-  <PropertyGroup>
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    <AnalysisLevel>latest</AnalysisLevel>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  <!-- Test project properties -->
+  <PropertyGroup Condition="$(MSBuildProjectName.Contains('.Tests'))">
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
-
-  <!-- Output Paths -->
-  <PropertyGroup>
-    <BaseOutputPath>$(MSBuildThisFileDirectory)artifacts\bin\$(MSBuildProjectName)\</BaseOutputPath>
-    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)artifacts\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
-  </PropertyGroup>
-
-  <!-- Deterministic and reproducible builds -->
-  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true' OR '$(TF_BUILD)' == 'true'">
-    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-
-  <!-- OpenTelemetry Instrumentation -->
-  <ItemGroup>
-    <PackageReference Include="OpenTelemetry" Version="1.10.0" />
-    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.10.0" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.10.0" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.10.0" />
-    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.10.0" />
-    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.10.0" />
-  </ItemGroup>
-
-  <!-- Common Package References for All Projects -->
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
-  </ItemGroup>
-
-  <!-- Test Project Specific Settings -->
-  <ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
-    <PackageReference Include="xUnit" Version="2.9.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Moq" Version="4.20.72" />
-    <PackageReference Include="FluentAssertions" Version="7.0.0" />
-  </ItemGroup>
 
 </Project>
