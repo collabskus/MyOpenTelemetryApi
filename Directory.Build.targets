@@ -1,0 +1,22 @@
+<Project>
+  
+  <!-- Custom Build Targets -->
+  
+  <!-- Display build information -->
+  <Target Name="DisplayBuildInfo" BeforeTargets="Build">
+    <Message Importance="high" Text="Building $(MSBuildProjectName) - $(Configuration) - $(TargetFramework)" />
+  </Target>
+
+  <!-- Clean artifacts on rebuild -->
+  <Target Name="CleanArtifacts" BeforeTargets="Clean">
+    <RemoveDir Directories="$(BaseOutputPath)" />
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+  </Target>
+
+  <!-- Copy OpenTelemetry configuration files to output -->
+  <Target Name="CopyOpenTelemetryConfig" AfterTargets="Build" Condition="Exists('$(ProjectDir)otel-config.json')">
+    <Copy SourceFiles="$(ProjectDir)otel-config.json" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="Copied OpenTelemetry configuration to output directory" />
+  </Target>
+
+</Project>
