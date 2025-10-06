@@ -1,5 +1,4 @@
 <Project>
-
   <!-- Common properties for all projects -->
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -8,50 +7,10 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
-  <!-- Common package versions -->
-  <PropertyGroup>
-    <!-- OpenTelemetry -->
-    <OpenTelemetryVersion>1.13.0</OpenTelemetryVersion>
-    <OpenTelemetryInstrumentationVersion>1.12.0</OpenTelemetryInstrumentationVersion>
-    
-    <!-- Entity Framework Core -->
-    <EntityFrameworkCoreVersion>10.0.0-rc.1.25451.107</EntityFrameworkCoreVersion>
-    
-    <!-- PostgreSQL / Npgsql -->
-    <NpgsqlVersion>10.0.0-rc.1</NpgsqlVersion>
-    
-    <!-- Microsoft Build -->
-    <MicrosoftBuildVersion>17.15.0-preview-25277-114</MicrosoftBuildVersion>
-    
-    <!-- ASP.NET Core -->
-    <AspNetCoreOpenApiVersion>10.0.0-rc.1.25451.107</AspNetCoreOpenApiVersion>
-    
-    <!-- Testing -->
-    <XunitVersion>2.9.3</XunitVersion>
-    <XunitAnalyzersVersion>1.24.0</XunitAnalyzersVersion>
-    <XunitRunnerVisualStudioVersion>3.1.5</XunitRunnerVisualStudioVersion>
-    <MicrosoftNetTestSdkVersion>18.0.0</MicrosoftNetTestSdkVersion>
-    <CoverletCollectorVersion>6.0.4</CoverletCollectorVersion>
-    
-    <!-- Other -->
-    <HumanizerCoreVersion>3.0.0-beta.96</HumanizerCoreVersion>
-    <MicrosoftOpenApiVersion>2.3.4</MicrosoftOpenApiVersion>
-    <NewtonsoftJsonVersion>13.0.4</NewtonsoftJsonVersion>
-    <MicrosoftBuildLocatorVersion>1.10.2</MicrosoftBuildLocatorVersion>
-    <MicrosoftExtensionsLoggingAbstractionsVersion>10.0.0-rc.1.25451.107</MicrosoftExtensionsLoggingAbstractionsVersion>
-    <SystemCodeDomVersion>10.0.0-rc.1.25451.107</SystemCodeDomVersion>
-    <SystemConfigurationConfigurationManagerVersion>10.0.0-rc.1.25451.107</SystemConfigurationConfigurationManagerVersion>
-    <SystemFormatsNrbfVersion>10.0.0-rc.1.25451.107</SystemFormatsNrbfVersion>
-    <SystemResourcesExtensionsVersion>10.0.0-rc.1.25451.107</SystemResourcesExtensionsVersion>
-    <SystemSecurityCryptographyPkcsVersion>10.0.0-rc.1.25451.107</SystemSecurityCryptographyPkcsVersion>
-    <SystemSecurityCryptographyProtectedDataVersion>10.0.0-rc.1.25451.107</SystemSecurityCryptographyProtectedDataVersion>
-    <SystemDiagnosticsEventLogVersion>10.0.0-rc.1.25451.107</SystemDiagnosticsEventLogVersion>
-    <SystemSecurityCryptographyXmlVersion>10.0.0-rc.1.25451.107</SystemSecurityCryptographyXmlVersion>
-  </PropertyGroup>
-
   <!-- Test project properties -->
   <PropertyGroup Condition="$(MSBuildProjectName.Contains('.Tests'))">
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-
+  
+  <!-- Note: Package versions are now managed in Directory.Packages.props -->
 </Project>

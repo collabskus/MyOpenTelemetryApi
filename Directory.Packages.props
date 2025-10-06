@@ -1,0 +1,59 @@
+<Project>
+  <PropertyGroup>
+    <!-- Enable Central Package Management -->
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <!-- Optional: Enforce that all projects must use centrally managed versions -->
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- OpenTelemetry -->
+    <PackageVersion Include="OpenTelemetry" Version="1.13.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.13.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.13.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.13.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.12.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.12.0-beta.2" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.12.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Process" Version="1.12.0-beta.1" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.12.0" />
+    
+    <!-- Entity Framework Core -->
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.0-rc.1.25451.107" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0-rc.1.25451.107" />
+    
+    <!-- PostgreSQL / Npgsql -->
+    <PackageVersion Include="Npgsql" Version="10.0.0-rc.1" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0-rc.1" />
+    
+    <!-- Microsoft Build -->
+    <PackageVersion Include="Microsoft.Build.Framework" Version="17.15.0-preview-25277-114" />
+    <PackageVersion Include="Microsoft.Build.Locator" Version="1.10.2" />
+    <PackageVersion Include="Microsoft.Build.Tasks.Core" Version="17.15.0-preview-25277-114" />
+    <PackageVersion Include="Microsoft.Build.Utilities.Core" Version="17.15.0-preview-25277-114" />
+    
+    <!-- ASP.NET Core -->
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0-rc.1.25451.107" />
+    
+    <!-- Testing -->
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.analyzers" Version="1.24.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.4" />
+    
+    <!-- Other -->
+    <PackageVersion Include="Humanizer.Core" Version="3.0.0-beta.96" />
+    <PackageVersion Include="Microsoft.OpenApi" Version="2.3.4" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0-rc.1.25451.107" />
+    <PackageVersion Include="System.CodeDom" Version="10.0.0-rc.1.25451.107" />
+    <PackageVersion Include="System.Configuration.ConfigurationManager" Version="10.0.0-rc.1.25451.107" />
+    <PackageVersion Include="System.Formats.Nrbf" Version="10.0.0-rc.1.25451.107" />
+    <PackageVersion Include="System.Resources.Extensions" Version="10.0.0-rc.1.25451.107" />
+    <PackageVersion Include="System.Security.Cryptography.Pkcs" Version="10.0.0-rc.1.25451.107" />
+    <PackageVersion Include="System.Security.Cryptography.ProtectedData" Version="10.0.0-rc.1.25451.107" />
+    <PackageVersion Include="System.Diagnostics.EventLog" Version="10.0.0-rc.1.25451.107" />
+    <PackageVersion Include="System.Security.Cryptography.Xml" Version="10.0.0-rc.1.25451.107" />
+  </ItemGroup>
+</Project>

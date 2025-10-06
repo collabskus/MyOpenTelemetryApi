@@ -5,46 +5,48 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Humanizer.Core" Version="$(HumanizerCoreVersion)" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(AspNetCoreOpenApiVersion)" />
-    <PackageReference Include="Microsoft.Build.Framework" Version="$(MicrosoftBuildVersion)">
+    <PackageReference Include="Humanizer.Core" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Microsoft.Build.Framework">
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Build.Locator" Version="$(MicrosoftBuildLocatorVersion)" />
-    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="$(MicrosoftBuildVersion)">
+    <PackageReference Include="Microsoft.Build.Locator" />
+    <PackageReference Include="Microsoft.Build.Tasks.Core">
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="$(MicrosoftBuildVersion)">
+    <PackageReference Include="Microsoft.Build.Utilities.Core">
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="$(EntityFrameworkCoreVersion)">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.OpenApi" Version="$(MicrosoftOpenApiVersion)" />
-    <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" />
-    <PackageReference Include="Npgsql" Version="$(NpgsqlVersion)" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(NpgsqlVersion)" />
-    <PackageReference Include="OpenTelemetry" Version="$(OpenTelemetryVersion)" />
-    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="$(OpenTelemetryVersion)" />
-    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="$(OpenTelemetryVersion)" />
-    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="$(OpenTelemetryVersion)" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="$(OpenTelemetryInstrumentationVersion)" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.12.0-beta.2" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="$(OpenTelemetryInstrumentationVersion)" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Process" Version="1.12.0-beta.1" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="$(OpenTelemetryInstrumentationVersion)" />
-    <PackageReference Include="System.CodeDom" Version="$(SystemCodeDomVersion)" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="$(SystemConfigurationConfigurationManagerVersion)" />
-    <PackageReference Include="System.Formats.Nrbf" Version="$(SystemFormatsNrbfVersion)" />
-    <PackageReference Include="System.Resources.Extensions" Version="$(SystemResourcesExtensionsVersion)" />
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="$(SystemSecurityCryptographyPkcsVersion)" />
-    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="$(SystemSecurityCryptographyProtectedDataVersion)" />
+    <PackageReference Include="Microsoft.OpenApi" />
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="Npgsql" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"/>
+    <PackageReference Include="OpenTelemetry"/>
+    <PackageReference Include="OpenTelemetry.Exporter.Console" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol"/>
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting"/>
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore"/>
+    <PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore"/>
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http"/>
+    <PackageReference Include="OpenTelemetry.Instrumentation.Process"/>
+    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime"/>
+    <PackageReference Include="System.CodeDom"/>
+    <PackageReference Include="System.Configuration.ConfigurationManager"/>
+    <PackageReference Include="System.Formats.Nrbf"/>
+    <PackageReference Include="System.Resources.Extensions"/>
+    <PackageReference Include="System.Security.Cryptography.Pkcs"/>
+    <PackageReference Include="System.Security.Cryptography.ProtectedData"/>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj" />
-    <ProjectReference Include="..\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj" />
+    <ProjectReference
+      Include="..\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj" />
+    <ProjectReference
+      Include="..\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
