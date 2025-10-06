@@ -4,566 +4,64 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
 
 PS C:\Users\kushal>
-PS C:\Users\kushal> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated --pre-release Always; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
+PS C:\Users\kushal> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated --pre-release Always --upgrade; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
     info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
 
 Build succeeded in 0.5s
-2025-10-06-14-13-46
-Restore complete (0.8s)
+2025-10-06-14-25-21
+Restore complete (0.7s)
     info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-  MyOpenTelemetryApi.Domain succeeded (1.7s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-  MyOpenTelemetryApi.Application succeeded (0.6s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-  MyOpenTelemetryApi.Infrastructure succeeded (0.9s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
-  MyOpenTelemetryApi.Api succeeded (1.7s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-  MyOpenTelemetryApi.Infrastructure.Tests succeeded (0.8s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
-  MyOpenTelemetryApi.Application.Tests succeeded (0.8s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
-  MyOpenTelemetryApi.Api.Tests succeeded (0.9s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
+  MyOpenTelemetryApi.Domain succeeded (0.1s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
+  MyOpenTelemetryApi.Application succeeded (0.2s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
+  MyOpenTelemetryApi.Infrastructure succeeded (0.2s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
+  MyOpenTelemetryApi.Api succeeded (0.8s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
+  MyOpenTelemetryApi.Api.Tests succeeded (0.3s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
+  MyOpenTelemetryApi.Application.Tests succeeded (0.3s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
+  MyOpenTelemetryApi.Infrastructure.Tests succeeded (0.4s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
 
-Build succeeded in 6.0s
-2025-10-06-14-13-52
-Restore complete (0.9s)
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-  MyOpenTelemetryApi.Domain succeeded (0.0s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-  MyOpenTelemetryApi.Application succeeded (0.1s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-  MyOpenTelemetryApi.Infrastructure succeeded (0.1s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
-  MyOpenTelemetryApi.Api succeeded (0.5s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-  MyOpenTelemetryApi.Api.Tests succeeded (0.1s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
-  MyOpenTelemetryApi.Application.Tests succeeded (0.1s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
-C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(4903,5): warning MSB3026: Could not copy "obj\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll" to "bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll". Beginning retry 1 in 1000ms. The process cannot access the file 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll' because it is being used by another process. The file is locked by: "testhost (18044), Cryptographic Services (1640)"
-  MyOpenTelemetryApi.Infrastructure.Tests succeeded with 1 warning(s) (1.4s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
-    C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(4903,5): warning MSB3026: Could not copy "obj\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll" to "bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll". Beginning retry 1 in 1000ms. The process cannot access the file 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll' because it is being used by another process. The file is locked by: "testhost (18044), Cryptographic Services (1640)"
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
-[xUnit.net 00:00:01.14]   Discovering: MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:01.19]   Discovering: MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:01.23]   Discovered:  MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:01.25]   Starting:    MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:01.61]   Discovered:  MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:01.64]   Starting:    MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:01.38]   Discovering: MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:01.43]   Discovered:  MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:01.46]   Starting:    MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:01.86]   Finished:    MyOpenTelemetryApi.Application.Tests
-  MyOpenTelemetryApi.Application.Tests test succeeded (3.5s)
-[xUnit.net 00:00:01.99]   Finished:    MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:01.65]   Finished:    MyOpenTelemetryApi.Infrastructure.Tests
-  MyOpenTelemetryApi.Api.Tests test succeeded (3.6s)
-  MyOpenTelemetryApi.Infrastructure.Tests test succeeded (2.3s)
-
-Test summary: total: 44, failed: 0, succeeded: 44, skipped: 0, duration: 3.6s
-Build succeeded with 1 warning(s) in 5.5s
-2025-10-06-14-13-58
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-  MyOpenTelemetryApi.Infrastructure.Tests succeeded with 4 warning(s) (0.4s)
-    C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(5918,5): warning MSB3061: Unable to delete file "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\testhost.dll". Access to the path 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\testhost.dll'is denied. The file is locked by: "testhost (16264)"
-    C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(5918,5): warning MSB3061: Unable to delete file "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\testhost.exe". Access to the path 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\testhost.exe'is denied. The file is locked by: "testhost (16264)"
-    C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(5918,5): warning MSB3061: Unable to delete file "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\Microsoft.TestPlatform.CoreUtilities.dll". Access to the path 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\Microsoft.TestPlatform.CoreUtilities.dll' is denied. The file is locked by: "testhost (16264)"
-    C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(5918,5): warning MSB3061: Unable to delete file "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\Microsoft.TestPlatform.PlatformAbstractions.dll". Access to the path 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\Microsoft.TestPlatform.PlatformAbstractions.dll' is denied. The file is locked by: "testhost (16264)"
-
-Build succeeded with 4 warning(s) in 0.8s
-2025-10-06-14-13-59
-2025-10-06-14-13-59
-On branch main
-Your branch is ahead of 'origin/main' by 3 commits.
-  (use "git push" to publish your local commits)
-
-nothing to commit, working tree clean
-2025-10-06-14-13-59
-* remote origin
-  Fetch URL: https://github.com/collabskus/MyOpenTelemetryApi.git
-  Push  URL: https://github.com/collabskus/MyOpenTelemetryApi.git
-  HEAD branch: main
-  Remote branches:
-    dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.16                       tracked
-    main                                                                                             tracked
-    refs/remotes/origin/dependabot/github_actions/actions/checkout-5                                 stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/actions/setup-dotnet-5                             stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.12   stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.13   stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.14   stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/nuget/tests/MyOpenTelemetryApi.Api.Tests/test-packages-d1750de658 stale (use 'git remote prune' to remove)
-    refs/remotes/origin/feat/dotnet-10                                                               stale (use 'git remote prune' to remove)
-  Local branch configured for 'git pull':
-    main merges with remote main
-  Local ref configured for 'git push':
-    main pushes to main (fast-forwardable)
-2025-10-06-14-13-59
-2025-10-06-14-13-59
-Current branch main is up to date.
-2025-10-06-14-13-59
-On branch main
-Your branch is ahead of 'origin/main' by 3 commits.
-  (use "git push" to publish your local commits)
-
-nothing to commit, working tree clean
-2025-10-06-14-14-00
-Removing .vs/
-Removing artifacts/
-Removing src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj.user
-Removing src/MyOpenTelemetryApi.Api/bin/
-Removing src/MyOpenTelemetryApi.Api/obj/
-Removing src/MyOpenTelemetryApi.Application/bin/
-Removing src/MyOpenTelemetryApi.Application/obj/
-Removing src/MyOpenTelemetryApi.Domain/bin/
-Removing src/MyOpenTelemetryApi.Domain/obj/
-Removing src/MyOpenTelemetryApi.Infrastructure/bin/
-Removing src/MyOpenTelemetryApi.Infrastructure/obj/
-Removing tests/MyOpenTelemetryApi.Api.Tests/bin/
-Removing tests/MyOpenTelemetryApi.Api.Tests/obj/
-Removing tests/MyOpenTelemetryApi.Application.Tests/bin/
-Removing tests/MyOpenTelemetryApi.Application.Tests/obj/
-Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/bin/
-Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/obj/
-2025-10-06-14-14-00
-Starting project export...
-Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
-Output File: my_project_export.txt
-Generating directory structure...
-Collecting files...
-Found 90 files to export
-Processing (1/90): .github\dependabot.yml
-Processing (2/90): .github\workflows\ci.yml
-Processing (3/90): .github\workflows\codeql.yml
-Processing (4/90): appsettings.Container.json
-Processing (5/90): CONTAINER_SETUP.md
-Processing (6/90): docker-compose.yml
-Processing (7/90): docs\contact-manager-specification-sheet.md
-Processing (8/90): docs\contact-manager-specification-sheet-backend.md
-Processing (9/90): docs\scratch.md
-Processing (10/90): docs\Windows PowerShell.txt
-Processing (11/90): LICENSE.txt
-Processing (12/90): my_project_export.txt
-Processing (13/90): MyOpenTelemetryApi.sln
-Processing (14/90): podman-compose.yml
-Processing (15/90): README.md
-Processing (16/90): src\MyOpenTelemetryApi.Api\appsettings.Development.json
-Processing (17/90): src\MyOpenTelemetryApi.Api\appsettings.json
-Processing (18/90): src\MyOpenTelemetryApi.Api\appsettings.Production.json
-Processing (19/90): src\MyOpenTelemetryApi.Api\Authentication\ApiKeyAuthenticationHandler.cs
-Processing (20/90): src\MyOpenTelemetryApi.Api\Controllers\ContactsController.cs
-Processing (21/90): src\MyOpenTelemetryApi.Api\Controllers\GroupsController.cs
-Processing (22/90): src\MyOpenTelemetryApi.Api\Controllers\HealthController.cs
-Processing (23/90): src\MyOpenTelemetryApi.Api\Controllers\TagsController.cs
-Processing (24/90): src\MyOpenTelemetryApi.Api\dependencies.json
-Processing (25/90): src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj
-Processing (26/90): src\MyOpenTelemetryApi.Api\Program.cs
-Processing (27/90): src\MyOpenTelemetryApi.Api\Properties\launchSettings.json
-Processing (28/90): src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs
-Processing (29/90): src\MyOpenTelemetryApi.Api\Telemetry\TelemetryConstants.cs
-Processing (30/90): src\MyOpenTelemetryApi.Api\Telemetry\TelemetryExtensions.cs
-Processing (31/90): src\MyOpenTelemetryApi.Application\DTOs\AddressDto.cs
-Processing (32/90): src\MyOpenTelemetryApi.Application\DTOs\ContactDto.cs
-Processing (33/90): src\MyOpenTelemetryApi.Application\DTOs\ContactSummaryDto.cs
-Processing (34/90): src\MyOpenTelemetryApi.Application\DTOs\CreateContactDto.cs
-Processing (35/90): src\MyOpenTelemetryApi.Application\DTOs\EmailAddressDto.cs
-Processing (36/90): src\MyOpenTelemetryApi.Application\DTOs\GroupDto.cs
-Processing (37/90): src\MyOpenTelemetryApi.Application\DTOs\PaginatedResultDto.cs
-Processing (38/90): src\MyOpenTelemetryApi.Application\DTOs\PhoneNumberDto.cs
-Processing (39/90): src\MyOpenTelemetryApi.Application\DTOs\TagDto.cs
-Processing (40/90): src\MyOpenTelemetryApi.Application\DTOs\UpdateContactDto.cs
-Processing (41/90): src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj
-Processing (42/90): src\MyOpenTelemetryApi.Application\Services\ContactService.cs
-Processing (43/90): src\MyOpenTelemetryApi.Application\Services\GroupService.cs
-Processing (44/90): src\MyOpenTelemetryApi.Application\Services\IContactService.cs
-Processing (45/90): src\MyOpenTelemetryApi.Application\Services\IGroupService.cs
-Processing (46/90): src\MyOpenTelemetryApi.Application\Services\ITagService.cs
-Processing (47/90): src\MyOpenTelemetryApi.Application\Services\TagService.cs
-Processing (48/90): src\MyOpenTelemetryApi.Domain\Entities\Address.cs
-Processing (49/90): src\MyOpenTelemetryApi.Domain\Entities\AddressType.cs
-Processing (50/90): src\MyOpenTelemetryApi.Domain\Entities\Contact.cs
-Processing (51/90): src\MyOpenTelemetryApi.Domain\Entities\ContactGroup.cs
-Processing (52/90): src\MyOpenTelemetryApi.Domain\Entities\ContactTag.cs
-Processing (53/90): src\MyOpenTelemetryApi.Domain\Entities\EmailAddress.cs
-Processing (54/90): src\MyOpenTelemetryApi.Domain\Entities\EmailType.cs
-Processing (55/90): src\MyOpenTelemetryApi.Domain\Entities\Group.cs
-Processing (56/90): src\MyOpenTelemetryApi.Domain\Entities\PhoneNumber.cs
-Processing (57/90): src\MyOpenTelemetryApi.Domain\Entities\PhoneType.cs
-Processing (58/90): src\MyOpenTelemetryApi.Domain\Entities\Tag.cs
-Processing (59/90): src\MyOpenTelemetryApi.Domain\Interfaces\IContactRepository.cs
-Processing (60/90): src\MyOpenTelemetryApi.Domain\Interfaces\IGroupRepository.cs
-Processing (61/90): src\MyOpenTelemetryApi.Domain\Interfaces\IRepository.cs
-Processing (62/90): src\MyOpenTelemetryApi.Domain\Interfaces\ITagRepository.cs
-Processing (63/90): src\MyOpenTelemetryApi.Domain\Interfaces\IUnitOfWork.cs
-Processing (64/90): src\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj
-Processing (65/90): src\MyOpenTelemetryApi.Infrastructure\Data\AppDbContext.cs
-Processing (66/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\AddressConfiguration.cs
-Processing (67/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactConfiguration.cs
-Processing (68/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactGroupConfiguration.cs
-Processing (69/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactTagConfiguration.cs
-Processing (70/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\EmailAddressConfiguration.cs
-Processing (71/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\GroupConfiguration.cs
-Processing (72/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\PhoneNumberConfiguration.cs
-Processing (73/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\TagConfiguration.cs
-Processing (74/90): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.cs
-Processing (75/90): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.Designer.cs
-Processing (76/90): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.cs
-Processing (77/90): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.Designer.cs
-Processing (78/90): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\AppDbContextModelSnapshot.cs
-Processing (79/90): src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj
-Processing (80/90): src\MyOpenTelemetryApi.Infrastructure\Repositories\ContactRepository.cs
-Processing (81/90): src\MyOpenTelemetryApi.Infrastructure\Repositories\GroupRepository.cs
-Processing (82/90): src\MyOpenTelemetryApi.Infrastructure\Repositories\Repository.cs
-Processing (83/90): src\MyOpenTelemetryApi.Infrastructure\Repositories\TagRepository.cs
-Processing (84/90): src\MyOpenTelemetryApi.Infrastructure\Repositories\UnitOfWork.cs
-Processing (85/90): tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj
-Processing (86/90): tests\MyOpenTelemetryApi.Api.Tests\UnitTest1.cs
-Processing (87/90): tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj
-Processing (88/90): tests\MyOpenTelemetryApi.Application.Tests\UnitTest1.cs
-Processing (89/90): tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj
-Processing (90/90): tests\MyOpenTelemetryApi.Infrastructure.Tests\UnitTest1.cs
-
-Export completed successfully!
-Output file: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
-Total files exported: 90
-Output file size: 1.64 MB
-2025-10-06-14-14-01
-On branch main
-Your branch is ahead of 'origin/main' by 3 commits.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   my_project_export.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-2025-10-06-14-14-01
-warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
-2025-10-06-14-14-01
-[main f836e5d] add all files
- 1 file changed, 107 insertions(+), 118 deletions(-)
-2025-10-06-14-14-01
-Enumerating objects: 45, done.
-Counting objects: 100% (45/45), done.
-Delta compression using up to 12 threads
-Compressing objects: 100% (26/26), done.
-Writing objects: 100% (26/26), 8.02 KiB | 547.00 KiB/s, done.
-Total 26 (delta 13), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (13/13), completed with 9 local objects.
-To https://github.com/collabskus/MyOpenTelemetryApi.git
-   0d2958a..f836e5d  main -> main
-2025-10-06-14-14-02
-Discovering projects...
-Analyzing project(s)...
-Analyzing dependencies...
-No outdated dependencies were detected
-Elapsed: 00:00:02.3465240
-2025-10-06-14-14-05
-Discovering projects...
-Analyzing project(s)...
-Analyzing dependencies...
-No outdated dependencies were detected
-Elapsed: 00:00:02.0891244
-2025-10-06-14-14-07
-PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi>
-PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated --pre-release Always; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-
-Build succeeded in 0.5s
-2025-10-06-14-14-17
+Build succeeded in 2.2s
+2025-10-06-14-25-23
 Restore complete (0.8s)
     info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
   MyOpenTelemetryApi.Domain succeeded (0.2s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-  MyOpenTelemetryApi.Application succeeded (0.2s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-  MyOpenTelemetryApi.Infrastructure succeeded (0.2s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
-  MyOpenTelemetryApi.Api succeeded (1.0s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-  MyOpenTelemetryApi.Infrastructure.Tests succeeded (0.4s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
-  MyOpenTelemetryApi.Api.Tests succeeded (0.5s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
-  MyOpenTelemetryApi.Application.Tests succeeded (0.5s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
-
-Build succeeded in 2.7s
-2025-10-06-14-14-20
-Restore complete (0.8s)
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-  MyOpenTelemetryApi.Domain succeeded (0.1s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-  MyOpenTelemetryApi.Application succeeded (0.2s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-  MyOpenTelemetryApi.Infrastructure succeeded (0.3s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
-  MyOpenTelemetryApi.Api succeeded (0.8s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-  MyOpenTelemetryApi.Application.Tests succeeded (0.2s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
+  MyOpenTelemetryApi.Application succeeded (0.4s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
+  MyOpenTelemetryApi.Infrastructure succeeded (0.4s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
+  MyOpenTelemetryApi.Api succeeded (0.9s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
+  MyOpenTelemetryApi.Application.Tests succeeded (0.1s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
   MyOpenTelemetryApi.Api.Tests succeeded (0.2s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
-C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(4903,5): warning MSB3026: Could not copy "obj\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll" to "bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll". Beginning retry 1 in 1000ms. The process cannot access the file 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll' because it is being used by another process. The file is locked by: "testhost (13400)"
-  MyOpenTelemetryApi.Infrastructure.Tests succeeded with 1 warning(s) (1.3s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
-    C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(4903,5): warning MSB3026: Could not copy "obj\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll" to "bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll". Beginning retry 1 in 1000ms. The process cannot access the file 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll' because it is being used by another process. The file is locked by: "testhost (13400)"
+  MyOpenTelemetryApi.Infrastructure.Tests succeeded (0.2s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
-[xUnit.net 00:00:00.17]   Discovering: MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:00.21]   Discovered:  MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:00.23]   Starting:    MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:01.05]   Discovering: MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:01.58]   Finished:    MyOpenTelemetryApi.Infrastructure.Tests
-  MyOpenTelemetryApi.Infrastructure.Tests test succeeded (2.2s)
-[xUnit.net 00:00:01.68]   Discovering: MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:01.74]   Discovered:  MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:01.72]   Discovered:  MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:01.76]   Starting:    MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:01.74]   Starting:    MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:02.30]   Finished:    MyOpenTelemetryApi.Api.Tests
-  MyOpenTelemetryApi.Api.Tests test succeeded (4.0s)
-[xUnit.net 00:00:02.71]   Finished:    MyOpenTelemetryApi.Application.Tests
-  MyOpenTelemetryApi.Application.Tests test succeeded (4.4s)
+[xUnit.net 00:00:01.16]   Discovering: MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:01.20]   Discovered:  MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:01.22]   Starting:    MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:01.44]   Discovering: MyOpenTelemetryApi.Infrastructure.Tests
+[xUnit.net 00:00:01.48]   Discovered:  MyOpenTelemetryApi.Infrastructure.Tests
+[xUnit.net 00:00:01.50]   Starting:    MyOpenTelemetryApi.Infrastructure.Tests
+[xUnit.net 00:00:01.83]   Finished:    MyOpenTelemetryApi.Api.Tests
+  MyOpenTelemetryApi.Api.Tests test succeeded (3.3s)
+[xUnit.net 00:00:01.94]   Discovering: MyOpenTelemetryApi.Application.Tests
+[xUnit.net 00:00:02.22]   Discovered:  MyOpenTelemetryApi.Application.Tests
+[xUnit.net 00:00:02.25]   Starting:    MyOpenTelemetryApi.Application.Tests
+[xUnit.net 00:00:02.20]   Finished:    MyOpenTelemetryApi.Infrastructure.Tests
+  MyOpenTelemetryApi.Infrastructure.Tests test succeeded (3.7s)
+[xUnit.net 00:00:02.42]   Finished:    MyOpenTelemetryApi.Application.Tests
+  MyOpenTelemetryApi.Application.Tests test succeeded (4.0s)
 
-Test summary: total: 44, failed: 0, succeeded: 44, skipped: 0, duration: 4.4s
-Build succeeded with 1 warning(s) in 6.8s
-2025-10-06-14-14-27
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-
-Build succeeded in 0.7s
-2025-10-06-14-14-28
-warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
-2025-10-06-14-14-28
-[main 3d8bf13] add existing files
- 1 file changed, 108 insertions(+), 224 deletions(-)
-2025-10-06-14-14-28
-* remote origin
-  Fetch URL: https://github.com/collabskus/MyOpenTelemetryApi.git
-  Push  URL: https://github.com/collabskus/MyOpenTelemetryApi.git
-  HEAD branch: main
-  Remote branches:
-    dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.16                       tracked
-    main                                                                                             tracked
-    refs/remotes/origin/dependabot/github_actions/actions/checkout-5                                 stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/actions/setup-dotnet-5                             stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.12   stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.13   stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.14   stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/nuget/tests/MyOpenTelemetryApi.Api.Tests/test-packages-d1750de658 stale (use 'git remote prune' to remove)
-    refs/remotes/origin/feat/dotnet-10                                                               stale (use 'git remote prune' to remove)
-  Local branch configured for 'git pull':
-    main merges with remote main
-  Local ref configured for 'git push':
-    main pushes to main (fast-forwardable)
-2025-10-06-14-14-29
-2025-10-06-14-14-29
-Current branch main is up to date.
-2025-10-06-14-14-29
-On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
-  (use "git push" to publish your local commits)
-
-nothing to commit, working tree clean
-2025-10-06-14-14-29
-Removing src/MyOpenTelemetryApi.Api/bin/
-Removing src/MyOpenTelemetryApi.Api/obj/
-Removing src/MyOpenTelemetryApi.Application/bin/
-Removing src/MyOpenTelemetryApi.Application/obj/
-Removing src/MyOpenTelemetryApi.Domain/bin/
-Removing src/MyOpenTelemetryApi.Domain/obj/
-Removing src/MyOpenTelemetryApi.Infrastructure/bin/
-Removing src/MyOpenTelemetryApi.Infrastructure/obj/
-Removing tests/MyOpenTelemetryApi.Api.Tests/bin/
-Removing tests/MyOpenTelemetryApi.Api.Tests/obj/
-Removing tests/MyOpenTelemetryApi.Application.Tests/bin/
-Removing tests/MyOpenTelemetryApi.Application.Tests/obj/
-Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/bin/
-Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/obj/
-2025-10-06-14-14-29
-Starting project export...
-Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
-Output File: my_project_export.txt
-Generating directory structure...
-Collecting files...
-Found 90 files to export
-Processing (1/90): .github\dependabot.yml
-Processing (2/90): .github\workflows\ci.yml
-Processing (3/90): .github\workflows\codeql.yml
-Processing (4/90): appsettings.Container.json
-Processing (5/90): CONTAINER_SETUP.md
-Processing (6/90): docker-compose.yml
-Processing (7/90): docs\contact-manager-specification-sheet.md
-Processing (8/90): docs\contact-manager-specification-sheet-backend.md
-Processing (9/90): docs\scratch.md
-Processing (10/90): docs\Windows PowerShell.txt
-Processing (11/90): LICENSE.txt
-Processing (12/90): my_project_export.txt
-Processing (13/90): MyOpenTelemetryApi.sln
-Processing (14/90): podman-compose.yml
-Processing (15/90): README.md
-Processing (16/90): src\MyOpenTelemetryApi.Api\appsettings.Development.json
-Processing (17/90): src\MyOpenTelemetryApi.Api\appsettings.json
-Processing (18/90): src\MyOpenTelemetryApi.Api\appsettings.Production.json
-Processing (19/90): src\MyOpenTelemetryApi.Api\Authentication\ApiKeyAuthenticationHandler.cs
-Processing (20/90): src\MyOpenTelemetryApi.Api\Controllers\ContactsController.cs
-Processing (21/90): src\MyOpenTelemetryApi.Api\Controllers\GroupsController.cs
-Processing (22/90): src\MyOpenTelemetryApi.Api\Controllers\HealthController.cs
-Processing (23/90): src\MyOpenTelemetryApi.Api\Controllers\TagsController.cs
-Processing (24/90): src\MyOpenTelemetryApi.Api\dependencies.json
-Processing (25/90): src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj
-Processing (26/90): src\MyOpenTelemetryApi.Api\Program.cs
-Processing (27/90): src\MyOpenTelemetryApi.Api\Properties\launchSettings.json
-Processing (28/90): src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs
-Processing (29/90): src\MyOpenTelemetryApi.Api\Telemetry\TelemetryConstants.cs
-Processing (30/90): src\MyOpenTelemetryApi.Api\Telemetry\TelemetryExtensions.cs
-Processing (31/90): src\MyOpenTelemetryApi.Application\DTOs\AddressDto.cs
-Processing (32/90): src\MyOpenTelemetryApi.Application\DTOs\ContactDto.cs
-Processing (33/90): src\MyOpenTelemetryApi.Application\DTOs\ContactSummaryDto.cs
-Processing (34/90): src\MyOpenTelemetryApi.Application\DTOs\CreateContactDto.cs
-Processing (35/90): src\MyOpenTelemetryApi.Application\DTOs\EmailAddressDto.cs
-Processing (36/90): src\MyOpenTelemetryApi.Application\DTOs\GroupDto.cs
-Processing (37/90): src\MyOpenTelemetryApi.Application\DTOs\PaginatedResultDto.cs
-Processing (38/90): src\MyOpenTelemetryApi.Application\DTOs\PhoneNumberDto.cs
-Processing (39/90): src\MyOpenTelemetryApi.Application\DTOs\TagDto.cs
-Processing (40/90): src\MyOpenTelemetryApi.Application\DTOs\UpdateContactDto.cs
-Processing (41/90): src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj
-Processing (42/90): src\MyOpenTelemetryApi.Application\Services\ContactService.cs
-Processing (43/90): src\MyOpenTelemetryApi.Application\Services\GroupService.cs
-Processing (44/90): src\MyOpenTelemetryApi.Application\Services\IContactService.cs
-Processing (45/90): src\MyOpenTelemetryApi.Application\Services\IGroupService.cs
-Processing (46/90): src\MyOpenTelemetryApi.Application\Services\ITagService.cs
-Processing (47/90): src\MyOpenTelemetryApi.Application\Services\TagService.cs
-Processing (48/90): src\MyOpenTelemetryApi.Domain\Entities\Address.cs
-Processing (49/90): src\MyOpenTelemetryApi.Domain\Entities\AddressType.cs
-Processing (50/90): src\MyOpenTelemetryApi.Domain\Entities\Contact.cs
-Processing (51/90): src\MyOpenTelemetryApi.Domain\Entities\ContactGroup.cs
-Processing (52/90): src\MyOpenTelemetryApi.Domain\Entities\ContactTag.cs
-Processing (53/90): src\MyOpenTelemetryApi.Domain\Entities\EmailAddress.cs
-Processing (54/90): src\MyOpenTelemetryApi.Domain\Entities\EmailType.cs
-Processing (55/90): src\MyOpenTelemetryApi.Domain\Entities\Group.cs
-Processing (56/90): src\MyOpenTelemetryApi.Domain\Entities\PhoneNumber.cs
-Processing (57/90): src\MyOpenTelemetryApi.Domain\Entities\PhoneType.cs
-Processing (58/90): src\MyOpenTelemetryApi.Domain\Entities\Tag.cs
-Processing (59/90): src\MyOpenTelemetryApi.Domain\Interfaces\IContactRepository.cs
-Processing (60/90): src\MyOpenTelemetryApi.Domain\Interfaces\IGroupRepository.cs
-Processing (61/90): src\MyOpenTelemetryApi.Domain\Interfaces\IRepository.cs
-Processing (62/90): src\MyOpenTelemetryApi.Domain\Interfaces\ITagRepository.cs
-Processing (63/90): src\MyOpenTelemetryApi.Domain\Interfaces\IUnitOfWork.cs
-Processing (64/90): src\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj
-Processing (65/90): src\MyOpenTelemetryApi.Infrastructure\Data\AppDbContext.cs
-Processing (66/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\AddressConfiguration.cs
-Processing (67/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactConfiguration.cs
-Processing (68/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactGroupConfiguration.cs
-Processing (69/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactTagConfiguration.cs
-Processing (70/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\EmailAddressConfiguration.cs
-Processing (71/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\GroupConfiguration.cs
-Processing (72/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\PhoneNumberConfiguration.cs
-Processing (73/90): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\TagConfiguration.cs
-Processing (74/90): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.cs
-Processing (75/90): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.Designer.cs
-Processing (76/90): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.cs
-Processing (77/90): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.Designer.cs
-Processing (78/90): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\AppDbContextModelSnapshot.cs
-Processing (79/90): src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj
-Processing (80/90): src\MyOpenTelemetryApi.Infrastructure\Repositories\ContactRepository.cs
-Processing (81/90): src\MyOpenTelemetryApi.Infrastructure\Repositories\GroupRepository.cs
-Processing (82/90): src\MyOpenTelemetryApi.Infrastructure\Repositories\Repository.cs
-Processing (83/90): src\MyOpenTelemetryApi.Infrastructure\Repositories\TagRepository.cs
-Processing (84/90): src\MyOpenTelemetryApi.Infrastructure\Repositories\UnitOfWork.cs
-Processing (85/90): tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj
-Processing (86/90): tests\MyOpenTelemetryApi.Api.Tests\UnitTest1.cs
-Processing (87/90): tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj
-Processing (88/90): tests\MyOpenTelemetryApi.Application.Tests\UnitTest1.cs
-Processing (89/90): tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj
-Processing (90/90): tests\MyOpenTelemetryApi.Infrastructure.Tests\UnitTest1.cs
-
-Export completed successfully!
-Output file: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
-Total files exported: 90
-Output file size: 1.58 MB
-2025-10-06-14-14-30
-On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   my_project_export.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-2025-10-06-14-14-30
-warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
-2025-10-06-14-14-30
-[main d203efc] add all files
- 1 file changed, 241 insertions(+), 493 deletions(-)
-2025-10-06-14-14-30
-Enumerating objects: 11, done.
-Counting objects: 100% (11/11), done.
-Delta compression using up to 12 threads
-Compressing objects: 100% (7/7), done.
-Writing objects: 100% (7/7), 4.10 KiB | 381.00 KiB/s, done.
-Total 7 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (5/5), completed with 4 local objects.
-To https://github.com/collabskus/MyOpenTelemetryApi.git
-   f836e5d..d203efc  main -> main
-2025-10-06-14-14-32
-Discovering projects...
-Analyzing project(s)...
-Analyzing dependencies...
-No outdated dependencies were detected
-Elapsed: 00:00:02.3963977
-2025-10-06-14-14-34
-Discovering projects...
-Analyzing project(s)...
-Analyzing dependencies...
-No outdated dependencies were detected
-Elapsed: 00:00:01.8985556
-2025-10-06-14-14-37
-PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated --pre-release Always --upgrade --transitive; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
+Test summary: total: 44, failed: 0, succeeded: 44, skipped: 0, duration: 4.0s
+Build succeeded in 6.3s
+2025-10-06-14-25-30
     info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
 
 Build succeeded in 0.5s
-2025-10-06-14-14-45
-Restore complete (0.8s)
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-  MyOpenTelemetryApi.Domain succeeded (0.1s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-  MyOpenTelemetryApi.Application succeeded (0.2s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-  MyOpenTelemetryApi.Infrastructure succeeded (0.2s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
-  MyOpenTelemetryApi.Api succeeded (0.8s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-  MyOpenTelemetryApi.Application.Tests succeeded (0.3s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
-  MyOpenTelemetryApi.Infrastructure.Tests succeeded (0.3s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
-  MyOpenTelemetryApi.Api.Tests succeeded (0.3s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
-
-Build succeeded in 2.3s
-2025-10-06-14-14-48
-Restore complete (0.9s)
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-  MyOpenTelemetryApi.Domain succeeded (0.1s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-  MyOpenTelemetryApi.Application succeeded (0.2s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-  MyOpenTelemetryApi.Infrastructure succeeded (0.3s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
-  MyOpenTelemetryApi.Api succeeded (0.7s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-  MyOpenTelemetryApi.Infrastructure.Tests succeeded (0.3s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
-C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(4903,5): warning MSB3026: Could not copy "obj\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll" to "bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll". Beginning retry 1 in 1000ms. The process cannot access the file 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll' because it is being used by another process. The file is locked by: "testhost (14692)"
-  MyOpenTelemetryApi.Api.Tests succeeded (0.3s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
-  MyOpenTelemetryApi.Application.Tests succeeded with 1 warning(s) (1.3s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
-    C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(4903,5): warning MSB3026: Could not copy "obj\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll" to "bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll". Beginning retry 1 in 1000ms. The process cannot access the file 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll' because it is being used by another process. The file is locked by: "testhost (14692)"
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
-[xUnit.net 00:00:00.53]   Discovering: MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:00.58]   Discovered:  MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:00.60]   Starting:    MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:01.05]   Discovering: MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:01.09]   Discovered:  MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:01.11]   Starting:    MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:01.20]   Discovering: MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:01.24]   Discovered:  MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:01.27]   Starting:    MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:01.28]   Finished:    MyOpenTelemetryApi.Application.Tests
-  MyOpenTelemetryApi.Application.Tests test succeeded (2.0s)
-[xUnit.net 00:00:01.48]   Finished:    MyOpenTelemetryApi.Infrastructure.Tests
-  MyOpenTelemetryApi.Infrastructure.Tests test succeeded (3.2s)
-[xUnit.net 00:00:01.67]   Finished:    MyOpenTelemetryApi.Api.Tests
-  MyOpenTelemetryApi.Api.Tests test succeeded (3.4s)
-
-Test summary: total: 44, failed: 0, succeeded: 44, skipped: 0, duration: 3.4s
-Build succeeded with 1 warning(s) in 5.9s
-2025-10-06-14-14-54
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-  MyOpenTelemetryApi.Application.Tests succeeded with 3 warning(s) (0.3s)
-    C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(5918,5): warning MSB3061: Unable to delete file "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\testhost.dll". Access to the path 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\testhost.dll' is denied. The file is locked by: "testhost (9760)"
-    C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(5918,5): warning MSB3061: Unable to delete file "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\xunit.abstractions.dll". Access to the path 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\xunit.abstractions.dll' is denied. The file is locked by: "testhost (9760)"
-    C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Microsoft.Common.CurrentVersion.targets(5918,5): warning MSB3061: Unable to delete file "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\testhost.exe". Access to the path 'C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\testhost.exe' is denied. The file is locked by: "testhost (9760)"
-
-Build succeeded with 3 warning(s) in 0.6s
-2025-10-06-14-14-55
-warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
-2025-10-06-14-14-55
+2025-10-06-14-25-31
+2025-10-06-14-25-31
 On branch main
 Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean
-2025-10-06-14-14-55
+2025-10-06-14-25-31
 * remote origin
   Fetch URL: https://github.com/collabskus/MyOpenTelemetryApi.git
   Push  URL: https://github.com/collabskus/MyOpenTelemetryApi.git
@@ -582,15 +80,15 @@ nothing to commit, working tree clean
     main merges with remote main
   Local ref configured for 'git push':
     main pushes to main (up to date)
-2025-10-06-14-14-55
-2025-10-06-14-14-55
+2025-10-06-14-25-31
+2025-10-06-14-25-31
 Already up to date.
-2025-10-06-14-14-56
+2025-10-06-14-25-31
 On branch main
 Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean
-2025-10-06-14-14-56
+2025-10-06-14-25-32
 Removing src/MyOpenTelemetryApi.Api/bin/
 Removing src/MyOpenTelemetryApi.Api/obj/
 Removing src/MyOpenTelemetryApi.Application/bin/
@@ -605,7 +103,7 @@ Removing tests/MyOpenTelemetryApi.Application.Tests/bin/
 Removing tests/MyOpenTelemetryApi.Application.Tests/obj/
 Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/bin/
 Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/obj/
-2025-10-06-14-14-56
+2025-10-06-14-25-32
 Starting project export...
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 Output File: my_project_export.txt
@@ -706,8 +204,8 @@ Processing (90/90): tests\MyOpenTelemetryApi.Infrastructure.Tests\UnitTest1.cs
 Export completed successfully!
 Output file: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 Total files exported: 90
-Output file size: 1.58 MB
-2025-10-06-14-14-56
+Output file size: 1.65 MB
+2025-10-06-14-25-32
 On branch main
 Your branch is up to date with 'origin/main'.
 
@@ -717,67 +215,32 @@ Changes not staged for commit:
         modified:   my_project_export.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
-2025-10-06-14-14-56
+2025-10-06-14-25-32
 warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
-2025-10-06-14-14-56
-[main 8be7caa] add all files
+2025-10-06-14-25-32
+[main 499244b] add all files
  1 file changed, 5 insertions(+), 5 deletions(-)
-2025-10-06-14-14-57
+2025-10-06-14-25-32
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
 Delta compression using up to 12 threads
 Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 370 bytes | 370.00 KiB/s, done.
+Writing objects: 100% (3/3), 372 bytes | 372.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/collabskus/MyOpenTelemetryApi.git
-   d203efc..8be7caa  main -> main
-2025-10-06-14-14-58
+   af6fbfe..499244b  main -> main
+2025-10-06-14-25-34
 Discovering projects...
 Analyzing project(s)...
 Analyzing dependencies...
 No outdated dependencies were detected
-Elapsed: 00:00:02.2803558
-2025-10-06-14-15-00
+Elapsed: 00:00:02.1304584
+2025-10-06-14-25-36
 Discovering projects...
 Analyzing project(s)...
 Analyzing dependencies...
-» MyOpenTelemetryApi.Infrastructure
-  [net10.0]
-  Humanizer.Core [T]                  2.14.1  -> 3.0.0-beta.96
-  Microsoft.Build.Framework [T]       17.14.8 -> 17.15.0-preview-25277-114
-  Microsoft.Build.Locator [T]         1.9.1   -> 1.10.2
-  Microsoft.Build.Tasks.Core [T]      17.14.8 -> 17.15.0-preview-25277-114
-  Microsoft.Build.Utilities.Core [T]  17.14.8 -> 17.15.0-preview-25277-114
-  Newtonsoft.Json [T]                 13.0.3  -> 13.0.4
-  Npgsql [T]                          9.0.3   -> 10.0.0-rc.1
-
-Version color legend:
-<red>   : Major version update or pre-release version. Possible breaking changes.
-<yellow>: Minor version update. Backwards-compatible features added.
-<green> : Patch version update. Backwards-compatible bug fixes.
-
-Upgrading package Humanizer.Core [T]...
-Project MyOpenTelemetryApi.Infrastructure [net10.0] upgraded successfully
-
-Upgrading package Microsoft.Build.Framework [T]...
-Project MyOpenTelemetryApi.Infrastructure [net10.0] upgraded successfully
-
-Upgrading package Microsoft.Build.Locator [T]...
-Project MyOpenTelemetryApi.Infrastructure [net10.0] upgraded successfully
-
-Upgrading package Microsoft.Build.Tasks.Core [T]...
-Project MyOpenTelemetryApi.Infrastructure [net10.0] upgraded successfully
-
-Upgrading package Microsoft.Build.Utilities.Core [T]...
-Project MyOpenTelemetryApi.Infrastructure [net10.0] upgraded successfully
-
-Upgrading package Newtonsoft.Json [T]...
-Project MyOpenTelemetryApi.Infrastructure [net10.0] upgraded successfully
-
-Upgrading package Npgsql [T]...
-Project MyOpenTelemetryApi.Infrastructure [net10.0] upgraded successfully
-
-Elapsed: 00:00:12.3992959
-2025-10-06-14-15-13
-PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi>
+No outdated dependencies were detected
+Elapsed: 00:00:02.0454585
+2025-10-06-14-25-38
+PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated --pre-release Always --upgrade; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
