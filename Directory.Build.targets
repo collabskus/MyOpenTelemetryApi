@@ -1,7 +1,7 @@
 <Project>
-  
+ 
   <!-- Custom Build Targets -->
-  
+ 
   <!-- Display build information -->
   <Target Name="DisplayBuildInfo" BeforeTargets="Build">
     <Message Importance="high" Text="Building $(MSBuildProjectName) - $(Configuration) - $(TargetFramework)" />
@@ -9,14 +9,50 @@
 
   <!-- Clean artifacts on rebuild -->
   <Target Name="CleanArtifacts" BeforeTargets="Clean">
-    <RemoveDir Directories="$(BaseOutputPath)" />
-    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+    <RemoveDir Directories="$(BaseOutputPath)" Condition="Exists('$(BaseOutputPath)')" />
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" Condition="Exists('$(BaseIntermediateOutputPath)')" />
   </Target>
 
-  <!-- Copy OpenTelemetry configuration files to output -->
+  <!-- Copy appsettings files to output for API project -->
+  <Target Name="CopyAppSettings" AfterTargets="Build" Condition="'$(MSBuildProjectName)' == 'MyOpenTelemetryApi.Api'">
+    <!-- Copy base appsettings.json -->
+    <Copy SourceFiles="$(ProjectDir)appsettings.json" 
+          DestinationFolder="$(OutDir)" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('$(ProjectDir)appsettings.json')" />
+    
+    <!-- Copy environment-specific appsettings -->
+    <Copy SourceFiles="$(ProjectDir)appsettings.Development.json" 
+          DestinationFolder="$(OutDir)" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('$(ProjectDir)appsettings.Development.json')" />
+    
+    <Copy SourceFiles="$(ProjectDir)appsettings.Production.json" 
+          DestinationFolder="$(OutDir)" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('$(ProjectDir)appsettings.Production.json')" />
+    
+    <!-- Copy Container-specific appsettings from root -->
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)appsettings.Container.json" 
+          DestinationFolder="$(OutDir)" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('$(MSBuildThisFileDirectory)appsettings.Container.json')" />
+    
+    <Message Importance="high" Text="Copied appsettings files to output directory" />
+  </Target>
+
+  <!-- Copy OpenTelemetry configuration files to output if they exist -->
   <Target Name="CopyOpenTelemetryConfig" AfterTargets="Build" Condition="Exists('$(ProjectDir)otel-config.json')">
-    <Copy SourceFiles="$(ProjectDir)otel-config.json" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(ProjectDir)otel-config.json" 
+          DestinationFolder="$(OutDir)" 
+          SkipUnchangedFiles="true" />
     <Message Importance="high" Text="Copied OpenTelemetry configuration to output directory" />
+  </Target>
+
+  <!-- Ensure bin and obj directories exist before clean -->
+  <Target Name="EnsureCleanDirectories" BeforeTargets="Clean">
+    <MakeDir Directories="$(BaseOutputPath)" Condition="!Exists('$(BaseOutputPath)')" />
+    <MakeDir Directories="$(BaseIntermediateOutputPath)" Condition="!Exists('$(BaseIntermediateOutputPath)')" />
   </Target>
 
 </Project>
