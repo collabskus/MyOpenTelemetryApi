@@ -1,16 +1,16 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 16:30:04
-Project Path: D:\DEV\MyOpenTelemetryApi
+Generated: 10/06/2025 16:32:51
+Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
 DIRECTORY STRUCTURE:
 ===================
 
-Folder PATH listing for volume DATA
-Volume serial number is 128B-05C1
-D:\DEV\MYOPENTELEMETRYAPI
+Folder PATH listing
+Volume serial number is 9892-5BAD
+C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   .dockerignore
 |   .editorconfig
 |   .gitattributes
@@ -171,7 +171,7 @@ FILE CONTENTS:
 ================================================================================
 FILE: .github\dependabot.yml
 SIZE: 0.63 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 # .github/dependabot.yml
@@ -209,8 +209,8 @@ updates:
 
 ================================================================================
 FILE: .github\workflows\ci.yml
-SIZE: 5.06 KB
-MODIFIED: 10/06/2025 16:30:03
+SIZE: 4.9 KB
+MODIFIED: 10/06/2025 16:22:38
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -383,7 +383,7 @@ jobs:
 ================================================================================
 FILE: .github\workflows\codeql.yml
 SIZE: 0.92 KB
-MODIFIED: 09/17/2025 13:05:07
+MODIFIED: 09/17/2025 12:54:22
 ================================================================================
 
 # .github/workflows/codeql.yml
@@ -438,7 +438,7 @@ jobs:
 ================================================================================
 FILE: appsettings.Container.json
 SIZE: 1.12 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 {
@@ -486,7 +486,7 @@ MODIFIED: 09/17/2025 11:07:20
 ================================================================================
 FILE: CONTAINER_SETUP.md
 SIZE: 7.42 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 # ðŸ³ MyOpenTelemetryApi - Podman Setup
@@ -830,7 +830,7 @@ podman inspect myotel-api | jq '.[0].HostConfig'
 ================================================================================
 FILE: docker-compose.yml
 SIZE: 1.33 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:47:46
 ================================================================================
 
 version: '3.8'
@@ -883,7 +883,7 @@ volumes:
 ================================================================================
 FILE: docs\contact-manager-specification-sheet.md
 SIZE: 47 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 I'll review and enhance this Angular Contact Manager Application specification to make it more comprehensive, modern, and aligned with Angular 20+ best practices.I've significantly enhanced the Angular Contact Manager Application specifications with the following improvements:
@@ -2527,7 +2527,7 @@ src/
 ================================================================================
 FILE: docs\contact-manager-specification-sheet-backend.md
 SIZE: 112.4 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 I've completed the comprehensive .NET 9 backend implementation guide that fully supports the enhanced Angular Contact Manager application. Here are the key highlights:
@@ -5890,142 +5890,1123 @@ For your use case (single person), **API Key** is probably the best choice - sim
 
 ================================================================================
 FILE: docs\llm.md
-SIZE: 8.99 KB
-MODIFIED: 10/06/2025 16:30:03
+SIZE: 44.57 KB
+MODIFIED: 10/06/2025 16:32:51
 ================================================================================
 
-Run docker build -t myopentelemetryapi:4bb1b051f8425991592fab1712cd770ed94c790d .
-#0 building with "default" instance using docker driver
+that's right the windows machine doesn't have docker but virginia the debian machine has docker err I mean podman same difference 
+let us review this
 
-#1 [internal] load build definition from Dockerfile
-#1 transferring dockerfile: 1.59kB done
-#1 DONE 0.0s
+kushal@virginia:~$
+kushal@virginia:~$ podman ps -a
+CONTAINER ID  IMAGE                                    COMMAND     CREATED     STATUS               PORTS                             NAMES
+57c23e1715b2  docker.io/library/postgres:16-alpine     postgres    2 days ago  Up 2 days (healthy)  0.0.0.0:5432->5432/tcp            myotel-postgres
+4c80486da197  localhost/myopentelemetryapi_api:latest              2 days ago  Up 2 days (healthy)  0.0.0.0:5174->8080/tcp, 8081/tcp  myotel-api
+kushal@virginia:~$ cd ~/src/dotnet/MyOpenTelemetryApi/; time podman-compose down; git status; git remote show origin; git fetch; git status; git pull; git status; time podman-compose -f podman-compose.yml up --build -d
+myotel-api
+myotel-postgres
+myotel-api
+myotel-postgres
+99aaed22f3e4cd58036f33263f4e3d48b261a168127bbb5b307aa11ca4582c3c
+myopentelemetryapi_myotel-network
 
-#2 [internal] load metadata for mcr.microsoft.com/dotnet/sdk:10.0
-#2 DONE 0.2s
+real    0m1.789s
+user    0m0.833s
+sys     0m0.413s
+On branch main
+Your branch is up to date with 'origin/main'.
 
-#3 [internal] load metadata for mcr.microsoft.com/dotnet/aspnet:10.0
-#3 DONE 0.2s
+nothing to commit, working tree clean
+* remote origin
+  Fetch URL: https://github.com/collabskus/MyOpenTelemetryApi
+  Push  URL: https://github.com/collabskus/MyOpenTelemetryApi
+  HEAD branch: main
+  Remote branches:
+    main                                                                                           tracked
+    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.16 stale (use 'git remote prune' to remove)
+  Local branch configured for 'git pull':
+    main merges with remote main
+  Local ref configured for 'git push':
+    main pushes to main (local out of date)
+remote: Enumerating objects: 376, done.
+remote: Counting objects: 100% (14/14), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 376 (delta 7), reused 10 (delta 6), pack-reused 362 (from 2)
+Receiving objects: 100% (376/376), 903.71 KiB | 4.11 MiB/s, done.
+Resolving deltas: 100% (231/231), completed with 3 local objects.
+From https://github.com/collabskus/MyOpenTelemetryApi
+   4f11177..bd0ead8  main       -> origin/main
+On branch main
+Your branch is behind 'origin/main' by 95 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
 
-#4 [internal] load .dockerignore
-#4 transferring context: 757B done
-#4 DONE 0.0s
+nothing to commit, working tree clean
+Updating 4f11177..bd0ead8
+Fast-forward
+ .github/workflows/ci.yml                                                                     |    64 +-
+ Directory.Build.props                                                                        |    16 +
+ Directory.Build.targets                                                                      |    58 +
+ Directory.Packages.props                                                                     |    59 +
+ Dockerfile                                                                                   |    42 +-
+ Dockerfile.migrations                                                                        |    14 +-
+ docker-compose.yml                                                                           |    76 +-
+ docs/Windows PowerShell.txt                                                                  |   288 +
+ docs/firewall.png                                                                            |   Bin 0 -> 29348 bytes
+ docs/llm.md                                                                                  |   125 +
+ docs/log-sample.txt                                                                          |  8925 +++++++++++++++++++++++++
+ docs/scratch.md                                                                              |  9362 ++++++++++++++++++++++++++
+ my_project_export.txt                                                                        | 38181 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj                                     |    55 +-
+ src/MyOpenTelemetryApi.Api/Program.cs                                                        |     9 +-
+ src/MyOpenTelemetryApi.Api/Properties/launchSettings.json                                    |    40 +-
+ src/MyOpenTelemetryApi.Application/MyOpenTelemetryApi.Application.csproj                     |    18 +-
+ src/MyOpenTelemetryApi.Application/Services/ContactService.cs                                |   138 +-
+ src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj                               |     6 +-
+ src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj               |    14 +-
+ tests/MyOpenTelemetryApi.Api.Tests/MyOpenTelemetryApi.Api.Tests.csproj                       |    19 +-
+ tests/MyOpenTelemetryApi.Application.Tests/MyOpenTelemetryApi.Application.Tests.csproj       |    24 +-
+ tests/MyOpenTelemetryApi.Infrastructure.Tests/MyOpenTelemetryApi.Infrastructure.Tests.csproj |    21 +-
+ 23 files changed, 56875 insertions(+), 679 deletions(-)
+ create mode 100644 Directory.Build.props
+ create mode 100644 Directory.Build.targets
+ create mode 100644 Directory.Packages.props
+ create mode 100644 docs/Windows PowerShell.txt
+ create mode 100644 docs/firewall.png
+ create mode 100644 docs/llm.md
+ create mode 100644 docs/log-sample.txt
+ create mode 100644 docs/scratch.md
+On branch main
+Your branch is up to date with 'origin/main'.
 
-#5 [internal] load build context
-#5 transferring context: 158.85kB 0.0s done
-#5 DONE 0.0s
+nothing to commit, working tree clean
+[1/2] STEP 1/11: FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+[1/2] STEP 2/11: WORKDIR /src
+--> Using cache c734d7b1e551535267151f5976d85d6bc25ec891c718d754863db1fcc85c2ab2
+--> c734d7b1e551
+[1/2] STEP 3/11: COPY ["Directory.Build.props", "./"]
+--> 806e7c5a736f
+[1/2] STEP 4/11: COPY ["Directory.Packages.props", "./"]
+--> 4419c188d9f6
+[1/2] STEP 5/11: COPY ["src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj", "MyOpenTelemetryApi.Api/"]
+--> 84b6c5c88fbc
+[1/2] STEP 6/11: COPY ["src/MyOpenTelemetryApi.Application/MyOpenTelemetryApi.Application.csproj", "MyOpenTelemetryApi.Application/"]
+--> 018a97599a17
+[1/2] STEP 7/11: COPY ["src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj", "MyOpenTelemetryApi.Domain/"]
+--> 3104bf6746ef
+[1/2] STEP 8/11: COPY ["src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj", "MyOpenTelemetryApi.Infrastructure/"]
+--> 938de8affc26
+[1/2] STEP 9/11: RUN dotnet restore "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj"
+  Determining projects to restore...
+  Restored /src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj (in 310 ms).
+  Restored /src/MyOpenTelemetryApi.Application/MyOpenTelemetryApi.Application.csproj (in 3.46 sec).
+  Restored /src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj (in 5.49 sec).
+  Restored /src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj (in 5.49 sec).
+--> 4549e50d527f
+[1/2] STEP 10/11: COPY src/ .
+--> ab70374905a5
+[1/2] STEP 11/11: RUN dotnet publish "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj" -c Release -o /app/publish
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+/usr/share/dotnet/sdk/10.0.100-rc.1.25451.107/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.RuntimeIdentifierInference.targets(345,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [/src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj]
+/usr/share/dotnet/sdk/10.0.100-rc.1.25451.107/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.RuntimeIdentifierInference.targets(345,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [/src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj]
+/usr/share/dotnet/sdk/10.0.100-rc.1.25451.107/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.RuntimeIdentifierInference.targets(345,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [/src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj]
+  MyOpenTelemetryApi.Domain -> /src/MyOpenTelemetryApi.Domain/bin/Release/net10.0/MyOpenTelemetryApi.Domain.dll
+  MyOpenTelemetryApi.Application -> /src/MyOpenTelemetryApi.Application/bin/Release/net10.0/MyOpenTelemetryApi.Application.dll
+  MyOpenTelemetryApi.Infrastructure -> /src/MyOpenTelemetryApi.Infrastructure/bin/Release/net10.0/MyOpenTelemetryApi.Infrastructure.dll
+  MyOpenTelemetryApi.Api -> /src/MyOpenTelemetryApi.Api/bin/Release/net10.0/MyOpenTelemetryApi.Api.dll
+  MyOpenTelemetryApi.Api -> /app/publish/
+--> 516bffb0cd22
+[2/2] STEP 1/9: FROM mcr.microsoft.com/dotnet/aspnet:10.0
+[2/2] STEP 2/9: WORKDIR /app
+--> Using cache 601ef07a6b33606b1ec38699803b23bcb77b1ff822df320047fb42112e09bf27
+--> 601ef07a6b33
+[2/2] STEP 3/9: RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+Get:1 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1519 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1138 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2478 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [34.6 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2612 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1924 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [38.9 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1882 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [33.9 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [49.4 kB]
+Fetched 33.9 MB in 4s (7979 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  krb5-locales libbrotli1 libcurl4t64 libgssapi-krb5-2 libk5crypto3
+  libkeyutils1 libkrb5-3 libkrb5support0 libldap-common libldap2 libnghttp2-14
+  libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libssh-4
+  publicsuffix
+Suggested packages:
+  krb5-doc krb5-user libsasl2-modules-gssapi-mit
+  | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp
+  libsasl2-modules-sql
+The following NEW packages will be installed:
+  curl krb5-locales libbrotli1 libcurl4t64 libgssapi-krb5-2 libk5crypto3
+  libkeyutils1 libkrb5-3 libkrb5support0 libldap-common libldap2 libnghttp2-14
+  libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libssh-4
+  publicsuffix
+0 upgraded, 19 newly installed, 0 to remove and 3 not upgraded.
+Need to get 2405 kB of archives.
+After this operation, 6886 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 krb5-locales all 1.20.1-6ubuntu2.6 [14.8 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libkrb5support0 amd64 1.20.1-6ubuntu2.6 [34.4 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libk5crypto3 amd64 1.20.1-6ubuntu2.6 [82.0 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/main amd64 libkeyutils1 amd64 1.6.3-3build1 [9490 B]
+Get:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libkrb5-3 amd64 1.20.1-6ubuntu2.6 [348 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgssapi-krb5-2 amd64 1.20.1-6ubuntu2.6 [143 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libnghttp2-14 amd64 1.59.0-1ubuntu0.2 [74.3 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble/main amd64 libpsl5t64 amd64 0.21.2-1.1build1 [57.1 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/main amd64 publicsuffix all 20231001.0357-0.1 [129 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 libbrotli1 amd64 1.1.0-2build2 [331 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg1-5ubuntu3.1 [20.4 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsasl2-2 amd64 2.1.28+dfsg1-5ubuntu3.1 [53.2 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libldap2 amd64 2.6.7+dfsg-1~exp1ubuntu8.2 [196 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2build7 [56.3 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssh-4 amd64 0.10.6-2ubuntu0.1 [188 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl4t64 amd64 8.5.0-2ubuntu10.6 [341 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 curl amd64 8.5.0-2ubuntu10.6 [226 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libldap-common all 2.6.7+dfsg-1~exp1ubuntu8.2 [31.7 kB]
+Get:19 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsasl2-modules amd64 2.1.28+dfsg1-5ubuntu3.1 [69.9 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 2405 kB in 2s (1347 kB/s)
+Selecting previously unselected package krb5-locales.
+(Reading database ... 6136 files and directories currently installed.)
+Preparing to unpack .../00-krb5-locales_1.20.1-6ubuntu2.6_all.deb ...
+Unpacking krb5-locales (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../01-libkrb5support0_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../02-libk5crypto3_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../03-libkeyutils1_1.6.3-3build1_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.6.3-3build1) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../04-libkrb5-3_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../05-libgssapi-krb5-2_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../06-libnghttp2-14_1.59.0-1ubuntu0.2_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.59.0-1ubuntu0.2) ...
+Selecting previously unselected package libpsl5t64:amd64.
+Preparing to unpack .../07-libpsl5t64_0.21.2-1.1build1_amd64.deb ...
+Unpacking libpsl5t64:amd64 (0.21.2-1.1build1) ...
+Selecting previously unselected package publicsuffix.
+Preparing to unpack .../08-publicsuffix_20231001.0357-0.1_all.deb ...
+Unpacking publicsuffix (20231001.0357-0.1) ...
+Selecting previously unselected package libbrotli1:amd64.
+Preparing to unpack .../09-libbrotli1_1.1.0-2build2_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.1.0-2build2) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../10-libsasl2-modules-db_2.1.28+dfsg1-5ubuntu3.1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../11-libsasl2-2_2.1.28+dfsg1-5ubuntu3.1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Selecting previously unselected package libldap2:amd64.
+Preparing to unpack .../12-libldap2_2.6.7+dfsg-1~exp1ubuntu8.2_amd64.deb ...
+Unpacking libldap2:amd64 (2.6.7+dfsg-1~exp1ubuntu8.2) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../13-librtmp1_2.4+20151223.gitfa8646d.1-2build7_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2build7) ...
+Selecting previously unselected package libssh-4:amd64.
+Preparing to unpack .../14-libssh-4_0.10.6-2ubuntu0.1_amd64.deb ...
+Unpacking libssh-4:amd64 (0.10.6-2ubuntu0.1) ...
+Selecting previously unselected package libcurl4t64:amd64.
+Preparing to unpack .../15-libcurl4t64_8.5.0-2ubuntu10.6_amd64.deb ...
+Unpacking libcurl4t64:amd64 (8.5.0-2ubuntu10.6) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../16-curl_8.5.0-2ubuntu10.6_amd64.deb ...
+Unpacking curl (8.5.0-2ubuntu10.6) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../17-libldap-common_2.6.7+dfsg-1~exp1ubuntu8.2_all.deb ...
+Unpacking libldap-common (2.6.7+dfsg-1~exp1ubuntu8.2) ...
+Selecting previously unselected package libsasl2-modules:amd64.
+Preparing to unpack .../18-libsasl2-modules_2.1.28+dfsg1-5ubuntu3.1_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Setting up libkeyutils1:amd64 (1.6.3-3build1) ...
+Setting up libbrotli1:amd64 (1.1.0-2build2) ...
+Setting up libsasl2-modules:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Setting up libpsl5t64:amd64 (0.21.2-1.1build1) ...
+Setting up libnghttp2-14:amd64 (1.59.0-1ubuntu0.2) ...
+Setting up krb5-locales (1.20.1-6ubuntu2.6) ...
+Setting up libldap-common (2.6.7+dfsg-1~exp1ubuntu8.2) ...
+Setting up libkrb5support0:amd64 (1.20.1-6ubuntu2.6) ...
+Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2build7) ...
+Setting up libk5crypto3:amd64 (1.20.1-6ubuntu2.6) ...
+Setting up libsasl2-2:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Setting up libkrb5-3:amd64 (1.20.1-6ubuntu2.6) ...
+Setting up publicsuffix (20231001.0357-0.1) ...
+Setting up libldap2:amd64 (2.6.7+dfsg-1~exp1ubuntu8.2) ...
+Setting up libgssapi-krb5-2:amd64 (1.20.1-6ubuntu2.6) ...
+Setting up libssh-4:amd64 (0.10.6-2ubuntu0.1) ...
+Setting up libcurl4t64:amd64 (8.5.0-2ubuntu10.6) ...
+Setting up curl (8.5.0-2ubuntu10.6) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+--> ccacbb7cedbc
+[2/2] STEP 4/9: COPY --from=build /app/publish .
+--> 39b8c44daaa7
+[2/2] STEP 5/9: RUN mkdir -p /app/logs && chmod 777 /app/logs
+--> 89cb17dbc805
+[2/2] STEP 6/9: USER app
+--> 921d2bb37a55
+[2/2] STEP 7/9: EXPOSE 8080
+--> c904b479d829
+[2/2] STEP 8/9: EXPOSE 8081
+--> e06d16c5fe49
+[2/2] STEP 9/9: ENTRYPOINT ["dotnet", "MyOpenTelemetryApi.Api.dll"]
+[2/2] COMMIT myopentelemetryapi_api
+--> b598ff7cf1fc
+Successfully tagged localhost/myopentelemetryapi_api:latest
+b598ff7cf1fc688ca546dc72cb1f2f8d007145f0cca4c0bf8964c49393d7b979
+6b9b5d3a556b349b7683558a0107c3a1c226143d46630cc645ef69348f560021
+5a67e9ce01cdce780cc2bfda92230a2b6242df0316cd36bf8e81d425c9ac34da
+myotel-postgres
+b3d68f9bb4f3e9b59d39238565fbbd2e8abf1039afc2d0724a596783d205a3e7
+myotel-api
 
-#6 [build 1/9] FROM mcr.microsoft.com/dotnet/sdk:10.0@sha256:eee11b0bf11715710bbe8339b9641f0ef8b5d8a8e07f2d6ff3cd4361c1a4e5a7
-#6 resolve mcr.microsoft.com/dotnet/sdk:10.0@sha256:eee11b0bf11715710bbe8339b9641f0ef8b5d8a8e07f2d6ff3cd4361c1a4e5a7 done
-#6 sha256:eee11b0bf11715710bbe8339b9641f0ef8b5d8a8e07f2d6ff3cd4361c1a4e5a7 1.08kB / 1.08kB done
-#6 sha256:c803b0c46ee7743acff1cca33d076f443b3788a3e614040ebdfc90dd90cbcec4 6.11kB / 6.11kB done
-#6 sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 0B / 36.73MB 0.1s
-#6 sha256:ba6682e85914bb0c86a6332ea0c34ca0bae972f8c75e9ccb8814fb156bc6302a 2.42kB / 2.42kB done
-#6 sha256:4b3ffd8ccb5201a0fc03585952effb4ed2d1ea5e704d2e7330212fb8b16c86a3 16.78MB / 29.72MB 0.1s
-#6 sha256:2402f184b298c60e76a706603c07fcd68eaa1b9f1f63e6657267841b6b40b76b 6.29MB / 16.82MB 0.1s
-#6 sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 8.39MB / 36.73MB 0.2s
-#6 sha256:4b3ffd8ccb5201a0fc03585952effb4ed2d1ea5e704d2e7330212fb8b16c86a3 29.72MB / 29.72MB 0.2s done
-#6 sha256:2402f184b298c60e76a706603c07fcd68eaa1b9f1f63e6657267841b6b40b76b 16.82MB / 16.82MB 0.2s done
-#6 sha256:62ab85e35613bd530ae32cb2d20907c8da3bf366694c6d923f7067df782fa3a5 151B / 151B 0.2s done
-#6 sha256:cea598e37e28daf964888c5313b148ab4e42105b3a8c18f9d299e37035971654 0B / 12.74MB 0.2s
-#6 sha256:943163fb04d913bf4aa38b4a157c1d28ca5f4421c46a52be4c1171c8651b9b84 0B / 23.60MB 0.2s
-#6 extracting sha256:4b3ffd8ccb5201a0fc03585952effb4ed2d1ea5e704d2e7330212fb8b16c86a3
-#6 sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 34.60MB / 36.73MB 0.3s
-#6 sha256:cea598e37e28daf964888c5313b148ab4e42105b3a8c18f9d299e37035971654 12.74MB / 12.74MB 0.3s done
-#6 sha256:943163fb04d913bf4aa38b4a157c1d28ca5f4421c46a52be4c1171c8651b9b84 16.78MB / 23.60MB 0.3s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 0B / 197.10MB 0.3s
-#6 sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 36.73MB / 36.73MB 0.3s done
-#6 sha256:943163fb04d913bf4aa38b4a157c1d28ca5f4421c46a52be4c1171c8651b9b84 23.60MB / 23.60MB 0.3s done
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 25.17MB / 197.10MB 0.4s
-#6 sha256:689960b1aeb22febcb70cd5d301173d14763b92bb8655a9594971cef13913f32 487B / 487B 0.3s done
-#6 sha256:a1a2110ed8d7c4c3237969d0e324fd9c3060124798f6773b79e56c6d0a7ecf02 6.29MB / 17.60MB 0.4s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 48.23MB / 197.10MB 0.5s
-#6 sha256:a1a2110ed8d7c4c3237969d0e324fd9c3060124798f6773b79e56c6d0a7ecf02 17.60MB / 17.60MB 0.4s done
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 72.35MB / 197.10MB 0.6s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 99.61MB / 197.10MB 0.7s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 150.99MB / 197.10MB 0.9s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 178.26MB / 197.10MB 1.0s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 197.10MB / 197.10MB 1.2s
-#6 extracting sha256:4b3ffd8ccb5201a0fc03585952effb4ed2d1ea5e704d2e7330212fb8b16c86a3 1.0s done
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 197.10MB / 197.10MB 1.2s done
-#6 extracting sha256:2402f184b298c60e76a706603c07fcd68eaa1b9f1f63e6657267841b6b40b76b 0.1s
-#6 extracting sha256:2402f184b298c60e76a706603c07fcd68eaa1b9f1f63e6657267841b6b40b76b 0.5s done
-#6 extracting sha256:3582fc513aa66c56e8f49c569fc09bb18dd52af5ac1986eb1fff1f043662a992 done
-#6 extracting sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 0.1s
-#6 extracting sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 0.4s done
-#6 extracting sha256:62ab85e35613bd530ae32cb2d20907c8da3bf366694c6d923f7067df782fa3a5 done
-#6 extracting sha256:cea598e37e28daf964888c5313b148ab4e42105b3a8c18f9d299e37035971654
-#6 ...
+real    1m6.525s
+user    1m10.982s
+sys     0m15.256s
+kushal@virginia:~/src/dotnet/MyOpenTelemetryApi$
+kushal@virginia:~/src/dotnet/MyOpenTelemetryApi$ podman ps -a
+CONTAINER ID  IMAGE                                    COMMAND     CREATED        STATUS                   PORTS                             NAMES
+5a67e9ce01cd  docker.io/library/postgres:16-alpine     postgres    7 seconds ago  Up 7 seconds (healthy)   0.0.0.0:5432->5432/tcp            myotel-postgres
+b3d68f9bb4f3  localhost/myopentelemetryapi_api:latest              6 seconds ago  Up 6 seconds (starting)  0.0.0.0:5174->8080/tcp, 8081/tcp  myotel-api
+kushal@virginia:~/src/dotnet/MyOpenTelemetryApi$
+kushal@virginia:~/src/dotnet/MyOpenTelemetryApi$ podman ps -a
+CONTAINER ID  IMAGE                                    COMMAND     CREATED             STATUS                       PORTS                             NAMES
+5a67e9ce01cd  docker.io/library/postgres:16-alpine     postgres    About a minute ago  Up About a minute (healthy)  0.0.0.0:5432->5432/tcp            myotel-postgres
+b3d68f9bb4f3  localhost/myopentelemetryapi_api:latest              About a minute ago  Up About a minute (healthy)  0.0.0.0:5174->8080/tcp, 8081/tcp  myotel-api
+kushal@virginia:~/src/dotnet/MyOpenTelemetryApi$
 
-#7 [runtime 1/4] FROM mcr.microsoft.com/dotnet/aspnet:10.0@sha256:d9a0d4006dbbc14d877b00c5e7113b432bac6bca6d12816a6e8fd999bac72797
-#7 resolve mcr.microsoft.com/dotnet/aspnet:10.0@sha256:d9a0d4006dbbc14d877b00c5e7113b432bac6bca6d12816a6e8fd999bac72797 done
-#7 sha256:d9a0d4006dbbc14d877b00c5e7113b432bac6bca6d12816a6e8fd999bac72797 1.08kB / 1.08kB done
-#7 sha256:8ef1da55850a6d8abdeb041cc79ba975b8d1fb39b2edecc189eb56c67e3b5816 1.58kB / 1.58kB done
-#7 sha256:9f5c454872f3cd4db3cd1a6b35b3ca0021865078fe7e25ef2df10bfc8a1932e4 3.36kB / 3.36kB done
-#7 sha256:3582fc513aa66c56e8f49c569fc09bb18dd52af5ac1986eb1fff1f043662a992 3.53kB / 3.53kB 0.1s done
-#7 sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 36.73MB / 36.73MB 0.3s done
-#7 sha256:62ab85e35613bd530ae32cb2d20907c8da3bf366694c6d923f7067df782fa3a5 151B / 151B 0.2s done
-#7 sha256:cea598e37e28daf964888c5313b148ab4e42105b3a8c18f9d299e37035971654 12.74MB / 12.74MB 0.3s done
-#7 sha256:4b3ffd8ccb5201a0fc03585952effb4ed2d1ea5e704d2e7330212fb8b16c86a3 29.72MB / 29.72MB 0.2s done
-#7 sha256:2402f184b298c60e76a706603c07fcd68eaa1b9f1f63e6657267841b6b40b76b 16.82MB / 16.82MB 0.2s done
-#7 DONE 2.6s
 
-#8 [runtime 2/4] WORKDIR /app
-#8 DONE 0.0s
 
-#6 [build 1/9] FROM mcr.microsoft.com/dotnet/sdk:10.0@sha256:eee11b0bf11715710bbe8339b9641f0ef8b5d8a8e07f2d6ff3cd4361c1a4e5a7
-#6 extracting sha256:cea598e37e28daf964888c5313b148ab4e42105b3a8c18f9d299e37035971654 0.1s done
-#6 extracting sha256:943163fb04d913bf4aa38b4a157c1d28ca5f4421c46a52be4c1171c8651b9b84 0.1s
-#6 extracting sha256:943163fb04d913bf4aa38b4a157c1d28ca5f4421c46a52be4c1171c8651b9b84 0.8s done
-#6 extracting sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32
-#6 extracting sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 3.4s done
-#6 extracting sha256:689960b1aeb22febcb70cd5d301173d14763b92bb8655a9594971cef13913f32
-#6 extracting sha256:689960b1aeb22febcb70cd5d301173d14763b92bb8655a9594971cef13913f32 done
-#6 extracting sha256:a1a2110ed8d7c4c3237969d0e324fd9c3060124798f6773b79e56c6d0a7ecf02 0.1s
-#6 extracting sha256:a1a2110ed8d7c4c3237969d0e324fd9c3060124798f6773b79e56c6d0a7ecf02 0.3s done
-#6 DONE 8.4s
 
-#9 [build 2/9] WORKDIR /src
-#9 DONE 0.0s
 
-#10 [build 3/9] COPY [src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj, MyOpenTelemetryApi.Api/]
-#10 DONE 0.0s
 
-#11 [build 4/9] COPY [src/MyOpenTelemetryApi.Application/MyOpenTelemetryApi.Application.csproj, MyOpenTelemetryApi.Application/]
-#11 DONE 0.0s
 
-#12 [build 5/9] COPY [src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj, MyOpenTelemetryApi.Domain/]
-#12 DONE 0.0s
 
-#13 [build 6/9] COPY [src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj, MyOpenTelemetryApi.Infrastructure/]
-#13 DONE 0.0s
+Great! Your Virginia Debian server successfully pulled 95 commits and rebuilt/redeployed both containers. Let me break down what happened:
 
-#14 [build 7/9] RUN dotnet restore "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj"
-#14 0.725   Determining projects to restore...
-#14 1.268 /usr/share/dotnet/sdk/10.0.100-rc.1.25451.107/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.TargetFrameworkInference.targets(96,5): error NETSDK1013: The TargetFramework value '' was not recognized. It may be misspelled. If not, then the TargetFrameworkIdentifier and/or TargetFrameworkVersion properties must be specified explicitly. [/src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj]
-#14 ERROR: process "/bin/sh -c dotnet restore \"MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj\"" did not complete successfully: exit code: 1
-------
- > [build 7/9] RUN dotnet restore "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj":
-0.725   Determining projects to restore...
-1.268 /usr/share/dotnet/sdk/10.0.100-rc.1.25451.107/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.TargetFrameworkInference.targets(96,5): error NETSDK1013: The TargetFramework value '' was not recognized. It may be misspelled. If not, then the TargetFrameworkIdentifier and/or TargetFrameworkVersion properties must be specified explicitly. [/src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj]
-------
-Dockerfile:11
---------------------
-   9 |     COPY ["src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj", "MyOpenTelemetryApi.Infrastructure/"]
-  10 |     
-  11 | >>> RUN dotnet restore "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj"
-  12 |     
-  13 |     # Copy source code
---------------------
-ERROR: failed to build: failed to solve: process "/bin/sh -c dotnet restore \"MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj\"" did not complete successfully: exit code: 1
-Error: Process completed with exit code 1.
+## Deployment Summary
 
+**Git Update:**
+- Was 95 commits behind (`4f11177..bd0ead8`)
+- Fast-forwarded successfully
+- Pulled 376 objects (903.71 KiB)
+
+**Major Changes Pulled:**
+- New centralized package management (`Directory.Build.props`, `Directory.Packages.props`, `Directory.Build.targets`)
+- Updated CI/CD workflows
+- Enhanced Dockerfile with health checks and proper user permissions
+- Massive documentation additions (38K+ lines in `my_project_export.txt`)
+- Various project file updates across all layers
+
+**Container Status:**
+Both containers are now **healthy** and running:
+- `myotel-postgres` (5a67e9ce01cd) - PostgreSQL 16 on port 5432
+- `myotel-api` (b3d68f9bb4f3) - Your API on port 5174
+
+**Build Time:**
+- Total deployment: ~1 minute 7 seconds
+- Clean shutdown: ~1.8 seconds
+- Build and startup: remainder
+
+## What's Different Now
+
+The deployment includes your recent work on:
+1. Centralized package version management
+2. Updated health check configurations
+3. Improved logging directory permissions (`/app/logs` with 777 permissions)
+4. Running as non-root `app` user for security
+
+Everything looks clean - no errors, both containers healthy. Ready to test the API at `http://192.168.0.76:5174`! ðŸš€
+
+Want me to help you verify the deployment or test any specific endpoints?
+
+
+
+Good idea. 
+kushal@texas:~$ cat ~/mybashscripts/insert-contacts.sh; time for ((i=1; i<=10; i++)); do time bash ~/mybashscripts/insert-contacts.sh; date; sleep 1; done
+#!/bin/bash
+
+# API Configuration
+API_BASE="http://192.168.0.76:5174/api"
+
+# Color codes for output
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Function to generate timestamp
+get_timestamp() {
+    date +"%Y-%m-%d-%H-%M-%S"
+}
+
+# Function to make API calls with error handling
+api_post() {
+    local endpoint=$1
+    local data=$2
+    local response=$(curl -s -w "\n%{http_code}" -X POST \
+        -H "Content-Type: application/json" \
+        -d "$data" \
+        "${API_BASE}${endpoint}")
+
+    local body=$(echo "$response" | head -n -1)
+    local status=$(echo "$response" | tail -n 1)
+
+    if [ "$status" -ge 200 ] && [ "$status" -lt 300 ]; then
+        echo "$body"
+        return 0
+    else
+        echo "Error: HTTP $status - $body" >&2
+        return 1
+    fi
+}
+
+# Function to extract ID from JSON response
+extract_id() {
+    local json=$1
+    echo "$json" | grep -o '"id":"[^"]*"' | head -1 | sed 's/"id":"\([^"]*\)"/\1/'
+}
+
+# Function to create a tag
+create_tag() {
+    local ts=$1
+    local name=$2
+    local color=$3
+
+    echo -e "${YELLOW}Creating tag: $name-$ts${NC}" >&2
+
+    local data=$(cat <<EOF
+{
+  "name": "$name-$ts",
+  "colorHex": "$color"
+}
+EOF
+)
+
+    local result=$(api_post "/Tags" "$data")
+    if [ $? -eq 0 ]; then
+        local tag_id=$(extract_id "$result")
+        echo -e "${GREEN}âœ“ Tag created: $tag_id${NC}" >&2
+        echo "$tag_id"
+    else
+        echo -e "${RED}âœ— Failed to create tag${NC}" >&2
+        echo ""
+        return 1
+    fi
+}
+
+# Function to create a group
+create_group() {
+    local ts=$1
+    local name=$2
+    local desc=$3
+
+    echo -e "${YELLOW}Creating group: $name-$ts${NC}" >&2
+
+    local data=$(cat <<EOF
+{
+  "name": "$name-$ts",
+  "description": "$desc-$ts"
+}
+EOF
+)
+
+    local result=$(api_post "/Groups" "$data")
+    if [ $? -eq 0 ]; then
+        local group_id=$(extract_id "$result")
+        echo -e "${GREEN}âœ“ Group created: $group_id${NC}" >&2
+        echo "$group_id"
+    else
+        echo -e "${RED}âœ— Failed to create group${NC}" >&2
+        echo ""
+        return 1
+    fi
+}
+
+# Function to create a contact
+create_contact() {
+    local ts=$1
+    local firstname=$2
+    local lastname=$3
+    local company=$4
+    local group_ids=$5
+    local tag_ids=$6
+
+    echo -e "${YELLOW}Creating contact: $firstname-$ts $lastname-$ts${NC}" >&2
+
+    local data=$(cat <<EOF
+{
+  "firstName": "$firstname-$ts",
+  "lastName": "$lastname-$ts",
+  "middleName": "Middle-$ts",
+  "nickname": "Nick-$ts",
+  "company": "$company-$ts",
+  "jobTitle": "Developer-$ts",
+  "dateOfBirth": "1990-01-15T00:00:00Z",
+  "notes": "Test contact created at $ts",
+  "emailAddresses": [
+    {
+      "email": "${firstname,,}.${lastname,,}-$ts@gmail.com",
+      "type": "Personal",
+      "isPrimary": true
+    },
+    {
+      "email": "${firstname,,}.${lastname,,}-$ts@work.com",
+      "type": "Work",
+      "isPrimary": false
+    }
+  ],
+  "phoneNumbers": [
+    {
+      "number": "+1-555-0100-$ts",
+      "type": "Mobile",
+      "isPrimary": true
+    },
+    {
+      "number": "+1-555-0200-$ts",
+      "type": "Work",
+      "isPrimary": false
+    }
+  ],
+  "addresses": [
+    {
+      "streetLine1": "123 Main St-$ts",
+      "streetLine2": "Apt 4B",
+      "city": "Newport News",
+      "stateProvince": "VA",
+      "postalCode": "23601",
+      "country": "USA",
+      "type": "Home",
+      "isPrimary": true
+    },
+    {
+      "streetLine1": "456 Business Blvd-$ts",
+      "streetLine2": "Suite 100",
+      "city": "Norfolk",
+      "stateProvince": "VA",
+      "postalCode": "23510",
+      "country": "USA",
+      "type": "Work",
+      "isPrimary": false
+    }
+  ],
+  "groupIds": [$group_ids],
+  "tagIds": [$tag_ids]
+}
+EOF
+)
+
+    local result=$(api_post "/Contacts" "$data")
+    if [ $? -eq 0 ]; then
+        local contact_id=$(extract_id "$result")
+        echo -e "${GREEN}âœ“ Contact created: $contact_id${NC}" >&2
+        echo "$contact_id"
+    else
+        echo -e "${RED}âœ— Failed to create contact${NC}" >&2
+        echo ""
+        return 1
+    fi
+}
+
+# Main execution
+echo -e "${GREEN}=== Starting API Data Generation ===${NC}"
+echo ""
+
+# Generate single timestamp for this run
+TIMESTAMP=$(get_timestamp)
+echo -e "Using timestamp: ${YELLOW}$TIMESTAMP${NC}"
+echo ""
+
+# Create Tags
+echo -e "${GREEN}--- Creating Tags ---${NC}"
+TAG1=$(create_tag "$TIMESTAMP" "Important" "#FF0000")
+TAG2=$(create_tag "$TIMESTAMP" "VIP" "#FFD700")
+TAG3=$(create_tag "$TIMESTAMP" "Follow-Up" "#00FF00")
+echo ""
+
+# Check if tags were created
+if [ -z "$TAG1" ] || [ -z "$TAG2" ] || [ -z "$TAG3" ]; then
+    echo -e "${RED}Failed to create tags. Exiting.${NC}"
+    exit 1
+fi
+
+# Create Groups
+echo -e "${GREEN}--- Creating Groups ---${NC}"
+GROUP1=$(create_group "$TIMESTAMP" "Family" "Family members")
+GROUP2=$(create_group "$TIMESTAMP" "Colleagues" "Work colleagues")
+GROUP3=$(create_group "$TIMESTAMP" "Friends" "Close friends")
+echo ""
+
+# Check if groups were created
+if [ -z "$GROUP1" ] || [ -z "$GROUP2" ] || [ -z "$GROUP3" ]; then
+    echo -e "${RED}Failed to create groups. Exiting.${NC}"
+    exit 1
+fi
+
+# Prepare IDs for contacts
+TAG_IDS="\"$TAG1\",\"$TAG2\""
+GROUP_IDS="\"$GROUP1\",\"$GROUP2\""
+
+# Create Contacts
+echo -e "${GREEN}--- Creating Contacts ---${NC}"
+CONTACT1=$(create_contact "$TIMESTAMP" "Adam" "West" "Wayne Enterprises" "$GROUP_IDS" "$TAG_IDS")
+echo ""
+
+CONTACT2=$(create_contact "$TIMESTAMP" "Bruce" "Banner" "Stark Industries" "\"$GROUP2\"" "\"$TAG1\",\"$TAG3\"")
+echo ""
+
+CONTACT3=$(create_contact "$TIMESTAMP" "Diana" "Prince" "Themyscira Inc" "\"$GROUP1\",\"$GROUP3\"" "\"$TAG2\"")
+echo ""
+
+CONTACT4=$(create_contact "$TIMESTAMP" "Peter" "Parker" "Daily Bugle" "\"$GROUP3\"" "\"$TAG3\"")
+echo ""
+
+CONTACT5=$(create_contact "$TIMESTAMP" "Clark" "Kent" "Daily Planet" "$GROUP_IDS" "\"$TAG1\",\"$TAG2\",\"$TAG3\"")
+echo ""
+
+echo -e "${GREEN}=== Data Generation Complete ===${NC}"
+echo ""
+echo -e "${YELLOW}Summary:${NC}"
+echo "Timestamp used: $TIMESTAMP"
+echo "Tags created: 3"
+echo "Groups created: 3"
+echo "Contacts created: 5"
+echo ""
+echo -e "${GREEN}All data has been inserted successfully!${NC}"
+
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-29
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-29
+âœ“ Tag created: 935c4224-793f-45ec-a1d4-242193383fcb
+Creating tag: VIP-2025-10-06-16-31-29
+âœ“ Tag created: c188c6ed-9224-47b9-9fc9-eb1134776006
+Creating tag: Follow-Up-2025-10-06-16-31-29
+âœ“ Tag created: ad8f15dd-78fe-446a-900a-48532e2a1ac6
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-29
+âœ“ Group created: 9d00e5a2-9db9-4668-9a7f-21aba2b6507a
+Creating group: Colleagues-2025-10-06-16-31-29
+âœ“ Group created: 15354523-ebe4-4dc9-b04d-0c77396aa245
+Creating group: Friends-2025-10-06-16-31-29
+âœ“ Group created: 81146300-976f-4a4e-a68c-db3ec732680f
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-29 West-2025-10-06-16-31-29
+âœ“ Contact created: 6089f707-37ea-4d28-a700-d34918da4660
+
+Creating contact: Bruce-2025-10-06-16-31-29 Banner-2025-10-06-16-31-29
+âœ“ Contact created: 3412fff6-7baa-46a6-83fa-fb5bddc781f7
+
+Creating contact: Diana-2025-10-06-16-31-29 Prince-2025-10-06-16-31-29
+âœ“ Contact created: 082ded46-9c91-4486-84f3-f8a1a3aab420
+
+Creating contact: Peter-2025-10-06-16-31-29 Parker-2025-10-06-16-31-29
+âœ“ Contact created: 3b6ba5e3-ecf6-4aac-8de3-cb691ffacf53
+
+Creating contact: Clark-2025-10-06-16-31-29 Kent-2025-10-06-16-31-29
+âœ“ Contact created: 9d171076-0e59-4d94-9847-0919bd1cf70b
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-29
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.801s
+user    0m0.231s
+sys     0m0.111s
+Mon Oct  6 04:31:29 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-30
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-30
+âœ“ Tag created: f310e07b-3cee-467c-b671-0760c81a335c
+Creating tag: VIP-2025-10-06-16-31-30
+âœ“ Tag created: 2a886c31-6f3c-4375-a3aa-1fc9266a7fa5
+Creating tag: Follow-Up-2025-10-06-16-31-30
+âœ“ Tag created: 3e5484fc-bae7-465c-8b4e-62b0d4d01708
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-30
+âœ“ Group created: 0ceda88b-f426-46e2-8756-ffced4204402
+Creating group: Colleagues-2025-10-06-16-31-30
+âœ“ Group created: 624de489-4d0d-4308-b2c3-449d535dcf7f
+Creating group: Friends-2025-10-06-16-31-30
+âœ“ Group created: ade31416-3522-4bee-877a-fad1f27b4419
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-30 West-2025-10-06-16-31-30
+âœ“ Contact created: 4e9c6411-4218-4afc-a778-d75d2f43f19d
+
+Creating contact: Bruce-2025-10-06-16-31-30 Banner-2025-10-06-16-31-30
+âœ“ Contact created: 5df1cfeb-7ecb-4b1d-90ed-1a51341239f0
+
+Creating contact: Diana-2025-10-06-16-31-30 Prince-2025-10-06-16-31-30
+âœ“ Contact created: 71cafa08-af60-4989-b63a-1949668606a6
+
+Creating contact: Peter-2025-10-06-16-31-30 Parker-2025-10-06-16-31-30
+âœ“ Contact created: 1eda4c94-d061-435c-93a9-adb29a7130b4
+
+Creating contact: Clark-2025-10-06-16-31-30 Kent-2025-10-06-16-31-30
+âœ“ Contact created: eb8dfec9-9dd0-4bdd-b39f-bef43d67e1de
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-30
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.760s
+user    0m0.240s
+sys     0m0.094s
+Mon Oct  6 04:31:31 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-32
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-32
+âœ“ Tag created: 40c8ae99-660d-4ede-b4f9-c593259fe918
+Creating tag: VIP-2025-10-06-16-31-32
+âœ“ Tag created: d2b184b1-9bee-432e-992b-feca1e6ca4f0
+Creating tag: Follow-Up-2025-10-06-16-31-32
+âœ“ Tag created: 0b72ea55-eb0b-4f84-a024-27fb7e96162f
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-32
+âœ“ Group created: f53dfc23-4e6b-4b76-a2b5-d8f327c67cdb
+Creating group: Colleagues-2025-10-06-16-31-32
+âœ“ Group created: b17ee173-92c6-4bf9-8b5f-be6f288785d5
+Creating group: Friends-2025-10-06-16-31-32
+âœ“ Group created: 5612ef3e-7c36-48bd-b4e6-6c3a19c8b674
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-32 West-2025-10-06-16-31-32
+âœ“ Contact created: a9f43e35-cd36-4435-9dfa-19cecd9fb149
+
+Creating contact: Bruce-2025-10-06-16-31-32 Banner-2025-10-06-16-31-32
+âœ“ Contact created: 4ae76363-ad3a-46ea-8ffe-57db5e66c789
+
+Creating contact: Diana-2025-10-06-16-31-32 Prince-2025-10-06-16-31-32
+âœ“ Contact created: 4c6c38e5-65af-4f0c-93e3-f2d7dc0581cb
+
+Creating contact: Peter-2025-10-06-16-31-32 Parker-2025-10-06-16-31-32
+âœ“ Contact created: 4c37a494-9df8-40d6-a13e-6693074816d2
+
+Creating contact: Clark-2025-10-06-16-31-32 Kent-2025-10-06-16-31-32
+âœ“ Contact created: 5505fc1a-d9f5-4cc7-8b4d-fdebc10c50f1
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-32
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.760s
+user    0m0.235s
+sys     0m0.106s
+Mon Oct  6 04:31:33 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-34
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-34
+âœ“ Tag created: 32531ee6-8d12-4926-b2db-ce75cdd3f934
+Creating tag: VIP-2025-10-06-16-31-34
+âœ“ Tag created: 8b38f0b5-1fa8-470e-97d4-f18071b9197c
+Creating tag: Follow-Up-2025-10-06-16-31-34
+âœ“ Tag created: 05a3ea2f-65a1-48c1-b4fc-b0d1bc3a863a
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-34
+âœ“ Group created: 14c5598e-2e4c-413e-8d70-ae7d6cd4a51e
+Creating group: Colleagues-2025-10-06-16-31-34
+âœ“ Group created: 66ebc2fb-440c-4c34-b37f-419e1f8a0207
+Creating group: Friends-2025-10-06-16-31-34
+âœ“ Group created: bb5ab330-8147-4c15-8324-09edacf39403
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-34 West-2025-10-06-16-31-34
+âœ“ Contact created: 9a88f24d-4b03-49b7-928d-db247b84a271
+
+Creating contact: Bruce-2025-10-06-16-31-34 Banner-2025-10-06-16-31-34
+âœ“ Contact created: c6e83ed0-11b6-4c66-b975-c817c16016d4
+
+Creating contact: Diana-2025-10-06-16-31-34 Prince-2025-10-06-16-31-34
+âœ“ Contact created: 3e8b6766-98f6-4ac7-bb51-625e77684dd7
+
+Creating contact: Peter-2025-10-06-16-31-34 Parker-2025-10-06-16-31-34
+âœ“ Contact created: 1a6dc3e4-dbf6-4fcf-8d5c-57b31e58d202
+
+Creating contact: Clark-2025-10-06-16-31-34 Kent-2025-10-06-16-31-34
+âœ“ Contact created: b1f135c1-6de9-4844-8fe1-bd27558d5418
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-34
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.762s
+user    0m0.242s
+sys     0m0.100s
+Mon Oct  6 04:31:35 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-36
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-36
+âœ“ Tag created: ffe5bfaf-e3e7-4fdf-b2e4-7c88a989ef9e
+Creating tag: VIP-2025-10-06-16-31-36
+âœ“ Tag created: 33f1e69a-4866-4c1f-b37c-50e488497fca
+Creating tag: Follow-Up-2025-10-06-16-31-36
+âœ“ Tag created: b8aa2930-c45f-40f5-9735-d0633c9fdd7a
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-36
+âœ“ Group created: a7da3e72-7993-4b67-b53c-d09fa7ba90a1
+Creating group: Colleagues-2025-10-06-16-31-36
+âœ“ Group created: 8b87eb37-7afe-42de-859c-9efc76fae559
+Creating group: Friends-2025-10-06-16-31-36
+âœ“ Group created: 7aed1609-6da7-41b4-b93e-c9c0dbc4d0bd
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-36 West-2025-10-06-16-31-36
+âœ“ Contact created: 8288b144-4ced-4c2c-9a18-7cf2a7d2a8b8
+
+Creating contact: Bruce-2025-10-06-16-31-36 Banner-2025-10-06-16-31-36
+âœ“ Contact created: b03b31d8-e25a-436d-8dcc-97603c431cbd
+
+Creating contact: Diana-2025-10-06-16-31-36 Prince-2025-10-06-16-31-36
+âœ“ Contact created: 8c0ca299-c100-494e-b15f-e16794496f9d
+
+Creating contact: Peter-2025-10-06-16-31-36 Parker-2025-10-06-16-31-36
+âœ“ Contact created: 53b6cf80-c537-4ee5-b20a-47b697ca10b5
+
+Creating contact: Clark-2025-10-06-16-31-36 Kent-2025-10-06-16-31-36
+âœ“ Contact created: 9bbc20a5-b96f-4d35-b9d5-8831c34f017b
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-36
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.765s
+user    0m0.218s
+sys     0m0.121s
+Mon Oct  6 04:31:36 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-37
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-37
+âœ“ Tag created: 36a4d4fa-2c2a-4ccd-9573-79ea4e0f8fc0
+Creating tag: VIP-2025-10-06-16-31-37
+âœ“ Tag created: 5d34645d-865e-4b13-82e0-29d171e3ec05
+Creating tag: Follow-Up-2025-10-06-16-31-37
+âœ“ Tag created: 652af711-0bfd-47da-a1f5-83463d80d446
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-37
+âœ“ Group created: 05b229f4-298f-4a6c-88a8-a1565717872e
+Creating group: Colleagues-2025-10-06-16-31-37
+âœ“ Group created: 07b86123-62e3-47f3-92ea-889203f37222
+Creating group: Friends-2025-10-06-16-31-37
+âœ“ Group created: 8401749b-e1f7-4766-8972-36f39b864907
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-37 West-2025-10-06-16-31-37
+âœ“ Contact created: 84bce9f9-540e-434f-881f-fa1fe251a1c3
+
+Creating contact: Bruce-2025-10-06-16-31-37 Banner-2025-10-06-16-31-37
+âœ“ Contact created: cb27b5f0-12af-4620-a7c5-c112d68943ec
+
+Creating contact: Diana-2025-10-06-16-31-37 Prince-2025-10-06-16-31-37
+âœ“ Contact created: 7e4dcead-139f-4d0c-ac76-ee255b279f21
+
+Creating contact: Peter-2025-10-06-16-31-37 Parker-2025-10-06-16-31-37
+âœ“ Contact created: c9dd57cf-2a7a-4fbe-b4f6-78e2b33b51e9
+
+Creating contact: Clark-2025-10-06-16-31-37 Kent-2025-10-06-16-31-37
+âœ“ Contact created: 999f4118-56aa-479a-b66f-992215103a1c
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-37
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.763s
+user    0m0.231s
+sys     0m0.105s
+Mon Oct  6 04:31:38 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-39
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-39
+âœ“ Tag created: 6c36f51c-5032-4857-a50d-1875c2535966
+Creating tag: VIP-2025-10-06-16-31-39
+âœ“ Tag created: 21d96683-2bbd-486f-b541-af9a62870f34
+Creating tag: Follow-Up-2025-10-06-16-31-39
+âœ“ Tag created: b46a7b32-34c7-453e-8ff2-c56373e3d3e6
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-39
+âœ“ Group created: 778b3461-598c-4228-9b28-c57d1be3b598
+Creating group: Colleagues-2025-10-06-16-31-39
+âœ“ Group created: 9a86c8bd-892b-443a-869b-9e0f835ec802
+Creating group: Friends-2025-10-06-16-31-39
+âœ“ Group created: 8637739c-cce1-44a6-ac3f-93dbaaf38432
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-39 West-2025-10-06-16-31-39
+âœ“ Contact created: 7450c130-2594-43ff-9b80-fa340bd0d9bf
+
+Creating contact: Bruce-2025-10-06-16-31-39 Banner-2025-10-06-16-31-39
+âœ“ Contact created: b52b2c44-bdf7-454c-a833-47fe96802eea
+
+Creating contact: Diana-2025-10-06-16-31-39 Prince-2025-10-06-16-31-39
+âœ“ Contact created: 3325f579-7fd2-46d1-85ee-e4a5b182dcba
+
+Creating contact: Peter-2025-10-06-16-31-39 Parker-2025-10-06-16-31-39
+âœ“ Contact created: 6d22d03d-eb45-4763-b001-7965286866c7
+
+Creating contact: Clark-2025-10-06-16-31-39 Kent-2025-10-06-16-31-39
+âœ“ Contact created: 6a7f02a5-c29c-4a5b-a99b-9a4d9b88fd81
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-39
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.755s
+user    0m0.246s
+sys     0m0.080s
+Mon Oct  6 04:31:40 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-41
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-41
+âœ“ Tag created: 2e00303e-ace8-402a-8c88-4dcb3bbae855
+Creating tag: VIP-2025-10-06-16-31-41
+âœ“ Tag created: 1699e5f7-19ba-4370-8979-1b389bfe5e0f
+Creating tag: Follow-Up-2025-10-06-16-31-41
+âœ“ Tag created: ab73a68c-25ae-4d3d-9cf8-32d83d25089c
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-41
+âœ“ Group created: 5b89ebba-2f06-4543-8612-9eb314c92032
+Creating group: Colleagues-2025-10-06-16-31-41
+âœ“ Group created: 3016a7fd-b8e4-47c2-a640-91f31bbc07db
+Creating group: Friends-2025-10-06-16-31-41
+âœ“ Group created: 916486f6-f93c-4028-bb06-337b40929c59
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-41 West-2025-10-06-16-31-41
+âœ“ Contact created: 5be7a7bf-e264-42c6-982b-99a2c15cd21f
+
+Creating contact: Bruce-2025-10-06-16-31-41 Banner-2025-10-06-16-31-41
+âœ“ Contact created: 9b945aaf-f58d-4725-8304-ec2583a69bb5
+
+Creating contact: Diana-2025-10-06-16-31-41 Prince-2025-10-06-16-31-41
+âœ“ Contact created: abaf8cc9-14b4-4214-99a1-e6c3ee088df6
+
+Creating contact: Peter-2025-10-06-16-31-41 Parker-2025-10-06-16-31-41
+âœ“ Contact created: 7da8c234-4973-44f9-9b25-328290c004c8
+
+Creating contact: Clark-2025-10-06-16-31-41 Kent-2025-10-06-16-31-41
+âœ“ Contact created: 91b4ac48-c5fa-4cab-a317-23a6cb7dd124
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-41
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.763s
+user    0m0.220s
+sys     0m0.124s
+Mon Oct  6 04:31:42 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-43
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-43
+âœ“ Tag created: 89a54706-900b-4938-a674-69bddc4d387b
+Creating tag: VIP-2025-10-06-16-31-43
+âœ“ Tag created: b53c6ba2-d40a-4f88-ad11-6021c1284977
+Creating tag: Follow-Up-2025-10-06-16-31-43
+âœ“ Tag created: bfdbb14d-028d-454c-981e-4e5438f795ba
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-43
+âœ“ Group created: 49428f9b-78ae-4d84-96f3-d3d93cb5d350
+Creating group: Colleagues-2025-10-06-16-31-43
+âœ“ Group created: 09cffec8-be05-49fe-8eec-e1b764b178ff
+Creating group: Friends-2025-10-06-16-31-43
+âœ“ Group created: 62dcd58f-3f4f-458c-b0c9-cb75bb6947ff
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-43 West-2025-10-06-16-31-43
+âœ“ Contact created: c1f7b27a-964c-4d0d-a64c-f28a7a9a2d09
+
+Creating contact: Bruce-2025-10-06-16-31-43 Banner-2025-10-06-16-31-43
+âœ“ Contact created: 0b105855-d4f0-48b2-b216-0af45f862e4a
+
+Creating contact: Diana-2025-10-06-16-31-43 Prince-2025-10-06-16-31-43
+âœ“ Contact created: d21bc4d1-389d-4b72-b13e-8cb77336e03f
+
+Creating contact: Peter-2025-10-06-16-31-43 Parker-2025-10-06-16-31-43
+âœ“ Contact created: a826017b-c9a6-4394-b544-4da0966eedb3
+
+Creating contact: Clark-2025-10-06-16-31-43 Kent-2025-10-06-16-31-43
+âœ“ Contact created: 1c259d65-1d22-4f73-a098-060ff6c0d630
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-43
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.779s
+user    0m0.250s
+sys     0m0.089s
+Mon Oct  6 04:31:44 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-45
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-45
+âœ“ Tag created: 9b56a9d9-4917-4811-8e93-12857ec0b594
+Creating tag: VIP-2025-10-06-16-31-45
+âœ“ Tag created: cd909093-0c38-4be2-92b2-39f2c49ae247
+Creating tag: Follow-Up-2025-10-06-16-31-45
+âœ“ Tag created: d1fea501-8e3a-4a99-8e0d-24ec679a624f
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-45
+âœ“ Group created: efe87f92-0965-46af-a38c-2c90a2c04371
+Creating group: Colleagues-2025-10-06-16-31-45
+âœ“ Group created: 759e686f-17d0-4f6a-bd0d-e0224831d68f
+Creating group: Friends-2025-10-06-16-31-45
+âœ“ Group created: 45efbd55-17c5-4e5c-bdd3-420240e47781
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-45 West-2025-10-06-16-31-45
+âœ“ Contact created: 6494fd36-7690-48fa-909c-2713802e9ca3
+
+Creating contact: Bruce-2025-10-06-16-31-45 Banner-2025-10-06-16-31-45
+âœ“ Contact created: dc62d273-b76e-4e88-bbea-caa2afa084d3
+
+Creating contact: Diana-2025-10-06-16-31-45 Prince-2025-10-06-16-31-45
+âœ“ Contact created: 1399d9c7-ddee-4206-b1dd-fd2ffa12189e
+
+Creating contact: Peter-2025-10-06-16-31-45 Parker-2025-10-06-16-31-45
+âœ“ Contact created: 2c9624dd-61b5-43e4-a3e3-21703388a0b8
+
+Creating contact: Clark-2025-10-06-16-31-45 Kent-2025-10-06-16-31-45
+âœ“ Contact created: ce3a69b3-7dc1-48c8-a60b-dfe167609a8d
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-45
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.786s
+user    0m0.216s
+sys     0m0.114s
+Mon Oct  6 04:31:45 PM EDT 2025
+
+real    0m17.723s
+user    0m2.351s
+sys     0m1.055s
+kushal@texas:~$
 
 
 ================================================================================
 FILE: docs\log-sample.txt
 SIZE: 452.43 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:18:13
 ================================================================================
 
 LogRecord.Attributes (Key:Value):
@@ -14959,7 +15940,7 @@ Press any key to close this window . . .
 ================================================================================
 FILE: docs\scratch.md
 SIZE: 459.92 KB
-MODIFIED: 10/06/2025 12:44:27
+MODIFIED: 10/06/2025 12:34:59
 ================================================================================
 
 ? IMeterFactory is working!
@@ -24330,7 +25311,7 @@ Value: 1
 ================================================================================
 FILE: docs\Windows PowerShell.txt
 SIZE: 21.05 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:43:47
 ================================================================================
 
 Windows PowerShell
@@ -24627,7 +25608,7 @@ PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> Set-Location "C:\Users\kusha
 ================================================================================
 FILE: LICENSE.txt
 SIZE: 34.36 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
                     GNU AFFERO GENERAL PUBLIC LICENSE
@@ -25296,23 +26277,23 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 1163.25 KB
-MODIFIED: 10/06/2025 16:30:05
+SIZE: 1199.16 KB
+MODIFIED: 10/06/2025 16:32:51
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 16:30:04
-Project Path: D:\DEV\MyOpenTelemetryApi
+Generated: 10/06/2025 16:32:51
+Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
 DIRECTORY STRUCTURE:
 ===================
 
-Folder PATH listing for volume DATA
-Volume serial number is 128B-05C1
-D:\DEV\MYOPENTELEMETRYAPI
+Folder PATH listing
+Volume serial number is 9892-5BAD
+C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   .dockerignore
 |   .editorconfig
 |   .gitattributes
@@ -25473,7 +26454,7 @@ FILE CONTENTS:
 ================================================================================
 FILE: .github\dependabot.yml
 SIZE: 0.63 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 # .github/dependabot.yml
@@ -25511,8 +26492,8 @@ updates:
 
 ================================================================================
 FILE: .github\workflows\ci.yml
-SIZE: 5.06 KB
-MODIFIED: 10/06/2025 16:30:03
+SIZE: 4.9 KB
+MODIFIED: 10/06/2025 16:22:38
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -25685,7 +26666,7 @@ jobs:
 ================================================================================
 FILE: .github\workflows\codeql.yml
 SIZE: 0.92 KB
-MODIFIED: 09/17/2025 13:05:07
+MODIFIED: 09/17/2025 12:54:22
 ================================================================================
 
 # .github/workflows/codeql.yml
@@ -25740,7 +26721,7 @@ jobs:
 ================================================================================
 FILE: appsettings.Container.json
 SIZE: 1.12 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 {
@@ -25788,7 +26769,7 @@ MODIFIED: 09/17/2025 11:07:20
 ================================================================================
 FILE: CONTAINER_SETUP.md
 SIZE: 7.42 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 # ðŸ³ MyOpenTelemetryApi - Podman Setup
@@ -26132,7 +27113,7 @@ podman inspect myotel-api | jq '.[0].HostConfig'
 ================================================================================
 FILE: docker-compose.yml
 SIZE: 1.33 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:47:46
 ================================================================================
 
 version: '3.8'
@@ -26185,7 +27166,7 @@ volumes:
 ================================================================================
 FILE: docs\contact-manager-specification-sheet.md
 SIZE: 47 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 I'll review and enhance this Angular Contact Manager Application specification to make it more comprehensive, modern, and aligned with Angular 20+ best practices.I've significantly enhanced the Angular Contact Manager Application specifications with the following improvements:
@@ -27829,7 +28810,7 @@ src/
 ================================================================================
 FILE: docs\contact-manager-specification-sheet-backend.md
 SIZE: 112.4 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 I've completed the comprehensive .NET 9 backend implementation guide that fully supports the enhanced Angular Contact Manager application. Here are the key highlights:
@@ -31192,142 +32173,1123 @@ For your use case (single person), **API Key** is probably the best choice - sim
 
 ================================================================================
 FILE: docs\llm.md
-SIZE: 8.99 KB
-MODIFIED: 10/06/2025 16:30:03
+SIZE: 44.57 KB
+MODIFIED: 10/06/2025 16:32:51
 ================================================================================
 
-Run docker build -t myopentelemetryapi:4bb1b051f8425991592fab1712cd770ed94c790d .
-#0 building with "default" instance using docker driver
+that's right the windows machine doesn't have docker but virginia the debian machine has docker err I mean podman same difference 
+let us review this
 
-#1 [internal] load build definition from Dockerfile
-#1 transferring dockerfile: 1.59kB done
-#1 DONE 0.0s
+kushal@virginia:~$
+kushal@virginia:~$ podman ps -a
+CONTAINER ID  IMAGE                                    COMMAND     CREATED     STATUS               PORTS                             NAMES
+57c23e1715b2  docker.io/library/postgres:16-alpine     postgres    2 days ago  Up 2 days (healthy)  0.0.0.0:5432->5432/tcp            myotel-postgres
+4c80486da197  localhost/myopentelemetryapi_api:latest              2 days ago  Up 2 days (healthy)  0.0.0.0:5174->8080/tcp, 8081/tcp  myotel-api
+kushal@virginia:~$ cd ~/src/dotnet/MyOpenTelemetryApi/; time podman-compose down; git status; git remote show origin; git fetch; git status; git pull; git status; time podman-compose -f podman-compose.yml up --build -d
+myotel-api
+myotel-postgres
+myotel-api
+myotel-postgres
+99aaed22f3e4cd58036f33263f4e3d48b261a168127bbb5b307aa11ca4582c3c
+myopentelemetryapi_myotel-network
 
-#2 [internal] load metadata for mcr.microsoft.com/dotnet/sdk:10.0
-#2 DONE 0.2s
+real    0m1.789s
+user    0m0.833s
+sys     0m0.413s
+On branch main
+Your branch is up to date with 'origin/main'.
 
-#3 [internal] load metadata for mcr.microsoft.com/dotnet/aspnet:10.0
-#3 DONE 0.2s
+nothing to commit, working tree clean
+* remote origin
+  Fetch URL: https://github.com/collabskus/MyOpenTelemetryApi
+  Push  URL: https://github.com/collabskus/MyOpenTelemetryApi
+  HEAD branch: main
+  Remote branches:
+    main                                                                                           tracked
+    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.16 stale (use 'git remote prune' to remove)
+  Local branch configured for 'git pull':
+    main merges with remote main
+  Local ref configured for 'git push':
+    main pushes to main (local out of date)
+remote: Enumerating objects: 376, done.
+remote: Counting objects: 100% (14/14), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 376 (delta 7), reused 10 (delta 6), pack-reused 362 (from 2)
+Receiving objects: 100% (376/376), 903.71 KiB | 4.11 MiB/s, done.
+Resolving deltas: 100% (231/231), completed with 3 local objects.
+From https://github.com/collabskus/MyOpenTelemetryApi
+   4f11177..bd0ead8  main       -> origin/main
+On branch main
+Your branch is behind 'origin/main' by 95 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
 
-#4 [internal] load .dockerignore
-#4 transferring context: 757B done
-#4 DONE 0.0s
+nothing to commit, working tree clean
+Updating 4f11177..bd0ead8
+Fast-forward
+ .github/workflows/ci.yml                                                                     |    64 +-
+ Directory.Build.props                                                                        |    16 +
+ Directory.Build.targets                                                                      |    58 +
+ Directory.Packages.props                                                                     |    59 +
+ Dockerfile                                                                                   |    42 +-
+ Dockerfile.migrations                                                                        |    14 +-
+ docker-compose.yml                                                                           |    76 +-
+ docs/Windows PowerShell.txt                                                                  |   288 +
+ docs/firewall.png                                                                            |   Bin 0 -> 29348 bytes
+ docs/llm.md                                                                                  |   125 +
+ docs/log-sample.txt                                                                          |  8925 +++++++++++++++++++++++++
+ docs/scratch.md                                                                              |  9362 ++++++++++++++++++++++++++
+ my_project_export.txt                                                                        | 38181 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj                                     |    55 +-
+ src/MyOpenTelemetryApi.Api/Program.cs                                                        |     9 +-
+ src/MyOpenTelemetryApi.Api/Properties/launchSettings.json                                    |    40 +-
+ src/MyOpenTelemetryApi.Application/MyOpenTelemetryApi.Application.csproj                     |    18 +-
+ src/MyOpenTelemetryApi.Application/Services/ContactService.cs                                |   138 +-
+ src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj                               |     6 +-
+ src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj               |    14 +-
+ tests/MyOpenTelemetryApi.Api.Tests/MyOpenTelemetryApi.Api.Tests.csproj                       |    19 +-
+ tests/MyOpenTelemetryApi.Application.Tests/MyOpenTelemetryApi.Application.Tests.csproj       |    24 +-
+ tests/MyOpenTelemetryApi.Infrastructure.Tests/MyOpenTelemetryApi.Infrastructure.Tests.csproj |    21 +-
+ 23 files changed, 56875 insertions(+), 679 deletions(-)
+ create mode 100644 Directory.Build.props
+ create mode 100644 Directory.Build.targets
+ create mode 100644 Directory.Packages.props
+ create mode 100644 docs/Windows PowerShell.txt
+ create mode 100644 docs/firewall.png
+ create mode 100644 docs/llm.md
+ create mode 100644 docs/log-sample.txt
+ create mode 100644 docs/scratch.md
+On branch main
+Your branch is up to date with 'origin/main'.
 
-#5 [internal] load build context
-#5 transferring context: 158.85kB 0.0s done
-#5 DONE 0.0s
+nothing to commit, working tree clean
+[1/2] STEP 1/11: FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+[1/2] STEP 2/11: WORKDIR /src
+--> Using cache c734d7b1e551535267151f5976d85d6bc25ec891c718d754863db1fcc85c2ab2
+--> c734d7b1e551
+[1/2] STEP 3/11: COPY ["Directory.Build.props", "./"]
+--> 806e7c5a736f
+[1/2] STEP 4/11: COPY ["Directory.Packages.props", "./"]
+--> 4419c188d9f6
+[1/2] STEP 5/11: COPY ["src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj", "MyOpenTelemetryApi.Api/"]
+--> 84b6c5c88fbc
+[1/2] STEP 6/11: COPY ["src/MyOpenTelemetryApi.Application/MyOpenTelemetryApi.Application.csproj", "MyOpenTelemetryApi.Application/"]
+--> 018a97599a17
+[1/2] STEP 7/11: COPY ["src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj", "MyOpenTelemetryApi.Domain/"]
+--> 3104bf6746ef
+[1/2] STEP 8/11: COPY ["src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj", "MyOpenTelemetryApi.Infrastructure/"]
+--> 938de8affc26
+[1/2] STEP 9/11: RUN dotnet restore "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj"
+  Determining projects to restore...
+  Restored /src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj (in 310 ms).
+  Restored /src/MyOpenTelemetryApi.Application/MyOpenTelemetryApi.Application.csproj (in 3.46 sec).
+  Restored /src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj (in 5.49 sec).
+  Restored /src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj (in 5.49 sec).
+--> 4549e50d527f
+[1/2] STEP 10/11: COPY src/ .
+--> ab70374905a5
+[1/2] STEP 11/11: RUN dotnet publish "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj" -c Release -o /app/publish
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+/usr/share/dotnet/sdk/10.0.100-rc.1.25451.107/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.RuntimeIdentifierInference.targets(345,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [/src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj]
+/usr/share/dotnet/sdk/10.0.100-rc.1.25451.107/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.RuntimeIdentifierInference.targets(345,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [/src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj]
+/usr/share/dotnet/sdk/10.0.100-rc.1.25451.107/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.RuntimeIdentifierInference.targets(345,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [/src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj]
+  MyOpenTelemetryApi.Domain -> /src/MyOpenTelemetryApi.Domain/bin/Release/net10.0/MyOpenTelemetryApi.Domain.dll
+  MyOpenTelemetryApi.Application -> /src/MyOpenTelemetryApi.Application/bin/Release/net10.0/MyOpenTelemetryApi.Application.dll
+  MyOpenTelemetryApi.Infrastructure -> /src/MyOpenTelemetryApi.Infrastructure/bin/Release/net10.0/MyOpenTelemetryApi.Infrastructure.dll
+  MyOpenTelemetryApi.Api -> /src/MyOpenTelemetryApi.Api/bin/Release/net10.0/MyOpenTelemetryApi.Api.dll
+  MyOpenTelemetryApi.Api -> /app/publish/
+--> 516bffb0cd22
+[2/2] STEP 1/9: FROM mcr.microsoft.com/dotnet/aspnet:10.0
+[2/2] STEP 2/9: WORKDIR /app
+--> Using cache 601ef07a6b33606b1ec38699803b23bcb77b1ff822df320047fb42112e09bf27
+--> 601ef07a6b33
+[2/2] STEP 3/9: RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+Get:1 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1519 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1138 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2478 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [34.6 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2612 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1924 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [38.9 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1882 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [33.9 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [49.4 kB]
+Fetched 33.9 MB in 4s (7979 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  krb5-locales libbrotli1 libcurl4t64 libgssapi-krb5-2 libk5crypto3
+  libkeyutils1 libkrb5-3 libkrb5support0 libldap-common libldap2 libnghttp2-14
+  libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libssh-4
+  publicsuffix
+Suggested packages:
+  krb5-doc krb5-user libsasl2-modules-gssapi-mit
+  | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp
+  libsasl2-modules-sql
+The following NEW packages will be installed:
+  curl krb5-locales libbrotli1 libcurl4t64 libgssapi-krb5-2 libk5crypto3
+  libkeyutils1 libkrb5-3 libkrb5support0 libldap-common libldap2 libnghttp2-14
+  libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libssh-4
+  publicsuffix
+0 upgraded, 19 newly installed, 0 to remove and 3 not upgraded.
+Need to get 2405 kB of archives.
+After this operation, 6886 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 krb5-locales all 1.20.1-6ubuntu2.6 [14.8 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libkrb5support0 amd64 1.20.1-6ubuntu2.6 [34.4 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libk5crypto3 amd64 1.20.1-6ubuntu2.6 [82.0 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/main amd64 libkeyutils1 amd64 1.6.3-3build1 [9490 B]
+Get:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libkrb5-3 amd64 1.20.1-6ubuntu2.6 [348 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgssapi-krb5-2 amd64 1.20.1-6ubuntu2.6 [143 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libnghttp2-14 amd64 1.59.0-1ubuntu0.2 [74.3 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble/main amd64 libpsl5t64 amd64 0.21.2-1.1build1 [57.1 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/main amd64 publicsuffix all 20231001.0357-0.1 [129 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 libbrotli1 amd64 1.1.0-2build2 [331 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg1-5ubuntu3.1 [20.4 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsasl2-2 amd64 2.1.28+dfsg1-5ubuntu3.1 [53.2 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libldap2 amd64 2.6.7+dfsg-1~exp1ubuntu8.2 [196 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2build7 [56.3 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssh-4 amd64 0.10.6-2ubuntu0.1 [188 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl4t64 amd64 8.5.0-2ubuntu10.6 [341 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 curl amd64 8.5.0-2ubuntu10.6 [226 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libldap-common all 2.6.7+dfsg-1~exp1ubuntu8.2 [31.7 kB]
+Get:19 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsasl2-modules amd64 2.1.28+dfsg1-5ubuntu3.1 [69.9 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 2405 kB in 2s (1347 kB/s)
+Selecting previously unselected package krb5-locales.
+(Reading database ... 6136 files and directories currently installed.)
+Preparing to unpack .../00-krb5-locales_1.20.1-6ubuntu2.6_all.deb ...
+Unpacking krb5-locales (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../01-libkrb5support0_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../02-libk5crypto3_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../03-libkeyutils1_1.6.3-3build1_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.6.3-3build1) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../04-libkrb5-3_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../05-libgssapi-krb5-2_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../06-libnghttp2-14_1.59.0-1ubuntu0.2_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.59.0-1ubuntu0.2) ...
+Selecting previously unselected package libpsl5t64:amd64.
+Preparing to unpack .../07-libpsl5t64_0.21.2-1.1build1_amd64.deb ...
+Unpacking libpsl5t64:amd64 (0.21.2-1.1build1) ...
+Selecting previously unselected package publicsuffix.
+Preparing to unpack .../08-publicsuffix_20231001.0357-0.1_all.deb ...
+Unpacking publicsuffix (20231001.0357-0.1) ...
+Selecting previously unselected package libbrotli1:amd64.
+Preparing to unpack .../09-libbrotli1_1.1.0-2build2_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.1.0-2build2) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../10-libsasl2-modules-db_2.1.28+dfsg1-5ubuntu3.1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../11-libsasl2-2_2.1.28+dfsg1-5ubuntu3.1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Selecting previously unselected package libldap2:amd64.
+Preparing to unpack .../12-libldap2_2.6.7+dfsg-1~exp1ubuntu8.2_amd64.deb ...
+Unpacking libldap2:amd64 (2.6.7+dfsg-1~exp1ubuntu8.2) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../13-librtmp1_2.4+20151223.gitfa8646d.1-2build7_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2build7) ...
+Selecting previously unselected package libssh-4:amd64.
+Preparing to unpack .../14-libssh-4_0.10.6-2ubuntu0.1_amd64.deb ...
+Unpacking libssh-4:amd64 (0.10.6-2ubuntu0.1) ...
+Selecting previously unselected package libcurl4t64:amd64.
+Preparing to unpack .../15-libcurl4t64_8.5.0-2ubuntu10.6_amd64.deb ...
+Unpacking libcurl4t64:amd64 (8.5.0-2ubuntu10.6) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../16-curl_8.5.0-2ubuntu10.6_amd64.deb ...
+Unpacking curl (8.5.0-2ubuntu10.6) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../17-libldap-common_2.6.7+dfsg-1~exp1ubuntu8.2_all.deb ...
+Unpacking libldap-common (2.6.7+dfsg-1~exp1ubuntu8.2) ...
+Selecting previously unselected package libsasl2-modules:amd64.
+Preparing to unpack .../18-libsasl2-modules_2.1.28+dfsg1-5ubuntu3.1_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Setting up libkeyutils1:amd64 (1.6.3-3build1) ...
+Setting up libbrotli1:amd64 (1.1.0-2build2) ...
+Setting up libsasl2-modules:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Setting up libpsl5t64:amd64 (0.21.2-1.1build1) ...
+Setting up libnghttp2-14:amd64 (1.59.0-1ubuntu0.2) ...
+Setting up krb5-locales (1.20.1-6ubuntu2.6) ...
+Setting up libldap-common (2.6.7+dfsg-1~exp1ubuntu8.2) ...
+Setting up libkrb5support0:amd64 (1.20.1-6ubuntu2.6) ...
+Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2build7) ...
+Setting up libk5crypto3:amd64 (1.20.1-6ubuntu2.6) ...
+Setting up libsasl2-2:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Setting up libkrb5-3:amd64 (1.20.1-6ubuntu2.6) ...
+Setting up publicsuffix (20231001.0357-0.1) ...
+Setting up libldap2:amd64 (2.6.7+dfsg-1~exp1ubuntu8.2) ...
+Setting up libgssapi-krb5-2:amd64 (1.20.1-6ubuntu2.6) ...
+Setting up libssh-4:amd64 (0.10.6-2ubuntu0.1) ...
+Setting up libcurl4t64:amd64 (8.5.0-2ubuntu10.6) ...
+Setting up curl (8.5.0-2ubuntu10.6) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+--> ccacbb7cedbc
+[2/2] STEP 4/9: COPY --from=build /app/publish .
+--> 39b8c44daaa7
+[2/2] STEP 5/9: RUN mkdir -p /app/logs && chmod 777 /app/logs
+--> 89cb17dbc805
+[2/2] STEP 6/9: USER app
+--> 921d2bb37a55
+[2/2] STEP 7/9: EXPOSE 8080
+--> c904b479d829
+[2/2] STEP 8/9: EXPOSE 8081
+--> e06d16c5fe49
+[2/2] STEP 9/9: ENTRYPOINT ["dotnet", "MyOpenTelemetryApi.Api.dll"]
+[2/2] COMMIT myopentelemetryapi_api
+--> b598ff7cf1fc
+Successfully tagged localhost/myopentelemetryapi_api:latest
+b598ff7cf1fc688ca546dc72cb1f2f8d007145f0cca4c0bf8964c49393d7b979
+6b9b5d3a556b349b7683558a0107c3a1c226143d46630cc645ef69348f560021
+5a67e9ce01cdce780cc2bfda92230a2b6242df0316cd36bf8e81d425c9ac34da
+myotel-postgres
+b3d68f9bb4f3e9b59d39238565fbbd2e8abf1039afc2d0724a596783d205a3e7
+myotel-api
 
-#6 [build 1/9] FROM mcr.microsoft.com/dotnet/sdk:10.0@sha256:eee11b0bf11715710bbe8339b9641f0ef8b5d8a8e07f2d6ff3cd4361c1a4e5a7
-#6 resolve mcr.microsoft.com/dotnet/sdk:10.0@sha256:eee11b0bf11715710bbe8339b9641f0ef8b5d8a8e07f2d6ff3cd4361c1a4e5a7 done
-#6 sha256:eee11b0bf11715710bbe8339b9641f0ef8b5d8a8e07f2d6ff3cd4361c1a4e5a7 1.08kB / 1.08kB done
-#6 sha256:c803b0c46ee7743acff1cca33d076f443b3788a3e614040ebdfc90dd90cbcec4 6.11kB / 6.11kB done
-#6 sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 0B / 36.73MB 0.1s
-#6 sha256:ba6682e85914bb0c86a6332ea0c34ca0bae972f8c75e9ccb8814fb156bc6302a 2.42kB / 2.42kB done
-#6 sha256:4b3ffd8ccb5201a0fc03585952effb4ed2d1ea5e704d2e7330212fb8b16c86a3 16.78MB / 29.72MB 0.1s
-#6 sha256:2402f184b298c60e76a706603c07fcd68eaa1b9f1f63e6657267841b6b40b76b 6.29MB / 16.82MB 0.1s
-#6 sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 8.39MB / 36.73MB 0.2s
-#6 sha256:4b3ffd8ccb5201a0fc03585952effb4ed2d1ea5e704d2e7330212fb8b16c86a3 29.72MB / 29.72MB 0.2s done
-#6 sha256:2402f184b298c60e76a706603c07fcd68eaa1b9f1f63e6657267841b6b40b76b 16.82MB / 16.82MB 0.2s done
-#6 sha256:62ab85e35613bd530ae32cb2d20907c8da3bf366694c6d923f7067df782fa3a5 151B / 151B 0.2s done
-#6 sha256:cea598e37e28daf964888c5313b148ab4e42105b3a8c18f9d299e37035971654 0B / 12.74MB 0.2s
-#6 sha256:943163fb04d913bf4aa38b4a157c1d28ca5f4421c46a52be4c1171c8651b9b84 0B / 23.60MB 0.2s
-#6 extracting sha256:4b3ffd8ccb5201a0fc03585952effb4ed2d1ea5e704d2e7330212fb8b16c86a3
-#6 sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 34.60MB / 36.73MB 0.3s
-#6 sha256:cea598e37e28daf964888c5313b148ab4e42105b3a8c18f9d299e37035971654 12.74MB / 12.74MB 0.3s done
-#6 sha256:943163fb04d913bf4aa38b4a157c1d28ca5f4421c46a52be4c1171c8651b9b84 16.78MB / 23.60MB 0.3s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 0B / 197.10MB 0.3s
-#6 sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 36.73MB / 36.73MB 0.3s done
-#6 sha256:943163fb04d913bf4aa38b4a157c1d28ca5f4421c46a52be4c1171c8651b9b84 23.60MB / 23.60MB 0.3s done
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 25.17MB / 197.10MB 0.4s
-#6 sha256:689960b1aeb22febcb70cd5d301173d14763b92bb8655a9594971cef13913f32 487B / 487B 0.3s done
-#6 sha256:a1a2110ed8d7c4c3237969d0e324fd9c3060124798f6773b79e56c6d0a7ecf02 6.29MB / 17.60MB 0.4s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 48.23MB / 197.10MB 0.5s
-#6 sha256:a1a2110ed8d7c4c3237969d0e324fd9c3060124798f6773b79e56c6d0a7ecf02 17.60MB / 17.60MB 0.4s done
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 72.35MB / 197.10MB 0.6s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 99.61MB / 197.10MB 0.7s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 150.99MB / 197.10MB 0.9s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 178.26MB / 197.10MB 1.0s
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 197.10MB / 197.10MB 1.2s
-#6 extracting sha256:4b3ffd8ccb5201a0fc03585952effb4ed2d1ea5e704d2e7330212fb8b16c86a3 1.0s done
-#6 sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 197.10MB / 197.10MB 1.2s done
-#6 extracting sha256:2402f184b298c60e76a706603c07fcd68eaa1b9f1f63e6657267841b6b40b76b 0.1s
-#6 extracting sha256:2402f184b298c60e76a706603c07fcd68eaa1b9f1f63e6657267841b6b40b76b 0.5s done
-#6 extracting sha256:3582fc513aa66c56e8f49c569fc09bb18dd52af5ac1986eb1fff1f043662a992 done
-#6 extracting sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 0.1s
-#6 extracting sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 0.4s done
-#6 extracting sha256:62ab85e35613bd530ae32cb2d20907c8da3bf366694c6d923f7067df782fa3a5 done
-#6 extracting sha256:cea598e37e28daf964888c5313b148ab4e42105b3a8c18f9d299e37035971654
-#6 ...
+real    1m6.525s
+user    1m10.982s
+sys     0m15.256s
+kushal@virginia:~/src/dotnet/MyOpenTelemetryApi$
+kushal@virginia:~/src/dotnet/MyOpenTelemetryApi$ podman ps -a
+CONTAINER ID  IMAGE                                    COMMAND     CREATED        STATUS                   PORTS                             NAMES
+5a67e9ce01cd  docker.io/library/postgres:16-alpine     postgres    7 seconds ago  Up 7 seconds (healthy)   0.0.0.0:5432->5432/tcp            myotel-postgres
+b3d68f9bb4f3  localhost/myopentelemetryapi_api:latest              6 seconds ago  Up 6 seconds (starting)  0.0.0.0:5174->8080/tcp, 8081/tcp  myotel-api
+kushal@virginia:~/src/dotnet/MyOpenTelemetryApi$
+kushal@virginia:~/src/dotnet/MyOpenTelemetryApi$ podman ps -a
+CONTAINER ID  IMAGE                                    COMMAND     CREATED             STATUS                       PORTS                             NAMES
+5a67e9ce01cd  docker.io/library/postgres:16-alpine     postgres    About a minute ago  Up About a minute (healthy)  0.0.0.0:5432->5432/tcp            myotel-postgres
+b3d68f9bb4f3  localhost/myopentelemetryapi_api:latest              About a minute ago  Up About a minute (healthy)  0.0.0.0:5174->8080/tcp, 8081/tcp  myotel-api
+kushal@virginia:~/src/dotnet/MyOpenTelemetryApi$
 
-#7 [runtime 1/4] FROM mcr.microsoft.com/dotnet/aspnet:10.0@sha256:d9a0d4006dbbc14d877b00c5e7113b432bac6bca6d12816a6e8fd999bac72797
-#7 resolve mcr.microsoft.com/dotnet/aspnet:10.0@sha256:d9a0d4006dbbc14d877b00c5e7113b432bac6bca6d12816a6e8fd999bac72797 done
-#7 sha256:d9a0d4006dbbc14d877b00c5e7113b432bac6bca6d12816a6e8fd999bac72797 1.08kB / 1.08kB done
-#7 sha256:8ef1da55850a6d8abdeb041cc79ba975b8d1fb39b2edecc189eb56c67e3b5816 1.58kB / 1.58kB done
-#7 sha256:9f5c454872f3cd4db3cd1a6b35b3ca0021865078fe7e25ef2df10bfc8a1932e4 3.36kB / 3.36kB done
-#7 sha256:3582fc513aa66c56e8f49c569fc09bb18dd52af5ac1986eb1fff1f043662a992 3.53kB / 3.53kB 0.1s done
-#7 sha256:2a78cc5ebff71b8f71af12824e3c990dec862bfd442272608895b553c69fee13 36.73MB / 36.73MB 0.3s done
-#7 sha256:62ab85e35613bd530ae32cb2d20907c8da3bf366694c6d923f7067df782fa3a5 151B / 151B 0.2s done
-#7 sha256:cea598e37e28daf964888c5313b148ab4e42105b3a8c18f9d299e37035971654 12.74MB / 12.74MB 0.3s done
-#7 sha256:4b3ffd8ccb5201a0fc03585952effb4ed2d1ea5e704d2e7330212fb8b16c86a3 29.72MB / 29.72MB 0.2s done
-#7 sha256:2402f184b298c60e76a706603c07fcd68eaa1b9f1f63e6657267841b6b40b76b 16.82MB / 16.82MB 0.2s done
-#7 DONE 2.6s
 
-#8 [runtime 2/4] WORKDIR /app
-#8 DONE 0.0s
 
-#6 [build 1/9] FROM mcr.microsoft.com/dotnet/sdk:10.0@sha256:eee11b0bf11715710bbe8339b9641f0ef8b5d8a8e07f2d6ff3cd4361c1a4e5a7
-#6 extracting sha256:cea598e37e28daf964888c5313b148ab4e42105b3a8c18f9d299e37035971654 0.1s done
-#6 extracting sha256:943163fb04d913bf4aa38b4a157c1d28ca5f4421c46a52be4c1171c8651b9b84 0.1s
-#6 extracting sha256:943163fb04d913bf4aa38b4a157c1d28ca5f4421c46a52be4c1171c8651b9b84 0.8s done
-#6 extracting sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32
-#6 extracting sha256:4e66d9571ea0263690ebcad4fc8cac5e149b9432f8a181fdd412b6aa641f0a32 3.4s done
-#6 extracting sha256:689960b1aeb22febcb70cd5d301173d14763b92bb8655a9594971cef13913f32
-#6 extracting sha256:689960b1aeb22febcb70cd5d301173d14763b92bb8655a9594971cef13913f32 done
-#6 extracting sha256:a1a2110ed8d7c4c3237969d0e324fd9c3060124798f6773b79e56c6d0a7ecf02 0.1s
-#6 extracting sha256:a1a2110ed8d7c4c3237969d0e324fd9c3060124798f6773b79e56c6d0a7ecf02 0.3s done
-#6 DONE 8.4s
 
-#9 [build 2/9] WORKDIR /src
-#9 DONE 0.0s
 
-#10 [build 3/9] COPY [src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj, MyOpenTelemetryApi.Api/]
-#10 DONE 0.0s
 
-#11 [build 4/9] COPY [src/MyOpenTelemetryApi.Application/MyOpenTelemetryApi.Application.csproj, MyOpenTelemetryApi.Application/]
-#11 DONE 0.0s
 
-#12 [build 5/9] COPY [src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj, MyOpenTelemetryApi.Domain/]
-#12 DONE 0.0s
 
-#13 [build 6/9] COPY [src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj, MyOpenTelemetryApi.Infrastructure/]
-#13 DONE 0.0s
+Great! Your Virginia Debian server successfully pulled 95 commits and rebuilt/redeployed both containers. Let me break down what happened:
 
-#14 [build 7/9] RUN dotnet restore "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj"
-#14 0.725   Determining projects to restore...
-#14 1.268 /usr/share/dotnet/sdk/10.0.100-rc.1.25451.107/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.TargetFrameworkInference.targets(96,5): error NETSDK1013: The TargetFramework value '' was not recognized. It may be misspelled. If not, then the TargetFrameworkIdentifier and/or TargetFrameworkVersion properties must be specified explicitly. [/src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj]
-#14 ERROR: process "/bin/sh -c dotnet restore \"MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj\"" did not complete successfully: exit code: 1
-------
- > [build 7/9] RUN dotnet restore "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj":
-0.725   Determining projects to restore...
-1.268 /usr/share/dotnet/sdk/10.0.100-rc.1.25451.107/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.TargetFrameworkInference.targets(96,5): error NETSDK1013: The TargetFramework value '' was not recognized. It may be misspelled. If not, then the TargetFrameworkIdentifier and/or TargetFrameworkVersion properties must be specified explicitly. [/src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj]
-------
-Dockerfile:11
---------------------
-   9 |     COPY ["src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj", "MyOpenTelemetryApi.Infrastructure/"]
-  10 |     
-  11 | >>> RUN dotnet restore "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj"
-  12 |     
-  13 |     # Copy source code
---------------------
-ERROR: failed to build: failed to solve: process "/bin/sh -c dotnet restore \"MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj\"" did not complete successfully: exit code: 1
-Error: Process completed with exit code 1.
+## Deployment Summary
 
+**Git Update:**
+- Was 95 commits behind (`4f11177..bd0ead8`)
+- Fast-forwarded successfully
+- Pulled 376 objects (903.71 KiB)
+
+**Major Changes Pulled:**
+- New centralized package management (`Directory.Build.props`, `Directory.Packages.props`, `Directory.Build.targets`)
+- Updated CI/CD workflows
+- Enhanced Dockerfile with health checks and proper user permissions
+- Massive documentation additions (38K+ lines in `my_project_export.txt`)
+- Various project file updates across all layers
+
+**Container Status:**
+Both containers are now **healthy** and running:
+- `myotel-postgres` (5a67e9ce01cd) - PostgreSQL 16 on port 5432
+- `myotel-api` (b3d68f9bb4f3) - Your API on port 5174
+
+**Build Time:**
+- Total deployment: ~1 minute 7 seconds
+- Clean shutdown: ~1.8 seconds
+- Build and startup: remainder
+
+## What's Different Now
+
+The deployment includes your recent work on:
+1. Centralized package version management
+2. Updated health check configurations
+3. Improved logging directory permissions (`/app/logs` with 777 permissions)
+4. Running as non-root `app` user for security
+
+Everything looks clean - no errors, both containers healthy. Ready to test the API at `http://192.168.0.76:5174`! ðŸš€
+
+Want me to help you verify the deployment or test any specific endpoints?
+
+
+
+Good idea. 
+kushal@texas:~$ cat ~/mybashscripts/insert-contacts.sh; time for ((i=1; i<=10; i++)); do time bash ~/mybashscripts/insert-contacts.sh; date; sleep 1; done
+#!/bin/bash
+
+# API Configuration
+API_BASE="http://192.168.0.76:5174/api"
+
+# Color codes for output
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Function to generate timestamp
+get_timestamp() {
+    date +"%Y-%m-%d-%H-%M-%S"
+}
+
+# Function to make API calls with error handling
+api_post() {
+    local endpoint=$1
+    local data=$2
+    local response=$(curl -s -w "\n%{http_code}" -X POST \
+        -H "Content-Type: application/json" \
+        -d "$data" \
+        "${API_BASE}${endpoint}")
+
+    local body=$(echo "$response" | head -n -1)
+    local status=$(echo "$response" | tail -n 1)
+
+    if [ "$status" -ge 200 ] && [ "$status" -lt 300 ]; then
+        echo "$body"
+        return 0
+    else
+        echo "Error: HTTP $status - $body" >&2
+        return 1
+    fi
+}
+
+# Function to extract ID from JSON response
+extract_id() {
+    local json=$1
+    echo "$json" | grep -o '"id":"[^"]*"' | head -1 | sed 's/"id":"\([^"]*\)"/\1/'
+}
+
+# Function to create a tag
+create_tag() {
+    local ts=$1
+    local name=$2
+    local color=$3
+
+    echo -e "${YELLOW}Creating tag: $name-$ts${NC}" >&2
+
+    local data=$(cat <<EOF
+{
+  "name": "$name-$ts",
+  "colorHex": "$color"
+}
+EOF
+)
+
+    local result=$(api_post "/Tags" "$data")
+    if [ $? -eq 0 ]; then
+        local tag_id=$(extract_id "$result")
+        echo -e "${GREEN}âœ“ Tag created: $tag_id${NC}" >&2
+        echo "$tag_id"
+    else
+        echo -e "${RED}âœ— Failed to create tag${NC}" >&2
+        echo ""
+        return 1
+    fi
+}
+
+# Function to create a group
+create_group() {
+    local ts=$1
+    local name=$2
+    local desc=$3
+
+    echo -e "${YELLOW}Creating group: $name-$ts${NC}" >&2
+
+    local data=$(cat <<EOF
+{
+  "name": "$name-$ts",
+  "description": "$desc-$ts"
+}
+EOF
+)
+
+    local result=$(api_post "/Groups" "$data")
+    if [ $? -eq 0 ]; then
+        local group_id=$(extract_id "$result")
+        echo -e "${GREEN}âœ“ Group created: $group_id${NC}" >&2
+        echo "$group_id"
+    else
+        echo -e "${RED}âœ— Failed to create group${NC}" >&2
+        echo ""
+        return 1
+    fi
+}
+
+# Function to create a contact
+create_contact() {
+    local ts=$1
+    local firstname=$2
+    local lastname=$3
+    local company=$4
+    local group_ids=$5
+    local tag_ids=$6
+
+    echo -e "${YELLOW}Creating contact: $firstname-$ts $lastname-$ts${NC}" >&2
+
+    local data=$(cat <<EOF
+{
+  "firstName": "$firstname-$ts",
+  "lastName": "$lastname-$ts",
+  "middleName": "Middle-$ts",
+  "nickname": "Nick-$ts",
+  "company": "$company-$ts",
+  "jobTitle": "Developer-$ts",
+  "dateOfBirth": "1990-01-15T00:00:00Z",
+  "notes": "Test contact created at $ts",
+  "emailAddresses": [
+    {
+      "email": "${firstname,,}.${lastname,,}-$ts@gmail.com",
+      "type": "Personal",
+      "isPrimary": true
+    },
+    {
+      "email": "${firstname,,}.${lastname,,}-$ts@work.com",
+      "type": "Work",
+      "isPrimary": false
+    }
+  ],
+  "phoneNumbers": [
+    {
+      "number": "+1-555-0100-$ts",
+      "type": "Mobile",
+      "isPrimary": true
+    },
+    {
+      "number": "+1-555-0200-$ts",
+      "type": "Work",
+      "isPrimary": false
+    }
+  ],
+  "addresses": [
+    {
+      "streetLine1": "123 Main St-$ts",
+      "streetLine2": "Apt 4B",
+      "city": "Newport News",
+      "stateProvince": "VA",
+      "postalCode": "23601",
+      "country": "USA",
+      "type": "Home",
+      "isPrimary": true
+    },
+    {
+      "streetLine1": "456 Business Blvd-$ts",
+      "streetLine2": "Suite 100",
+      "city": "Norfolk",
+      "stateProvince": "VA",
+      "postalCode": "23510",
+      "country": "USA",
+      "type": "Work",
+      "isPrimary": false
+    }
+  ],
+  "groupIds": [$group_ids],
+  "tagIds": [$tag_ids]
+}
+EOF
+)
+
+    local result=$(api_post "/Contacts" "$data")
+    if [ $? -eq 0 ]; then
+        local contact_id=$(extract_id "$result")
+        echo -e "${GREEN}âœ“ Contact created: $contact_id${NC}" >&2
+        echo "$contact_id"
+    else
+        echo -e "${RED}âœ— Failed to create contact${NC}" >&2
+        echo ""
+        return 1
+    fi
+}
+
+# Main execution
+echo -e "${GREEN}=== Starting API Data Generation ===${NC}"
+echo ""
+
+# Generate single timestamp for this run
+TIMESTAMP=$(get_timestamp)
+echo -e "Using timestamp: ${YELLOW}$TIMESTAMP${NC}"
+echo ""
+
+# Create Tags
+echo -e "${GREEN}--- Creating Tags ---${NC}"
+TAG1=$(create_tag "$TIMESTAMP" "Important" "#FF0000")
+TAG2=$(create_tag "$TIMESTAMP" "VIP" "#FFD700")
+TAG3=$(create_tag "$TIMESTAMP" "Follow-Up" "#00FF00")
+echo ""
+
+# Check if tags were created
+if [ -z "$TAG1" ] || [ -z "$TAG2" ] || [ -z "$TAG3" ]; then
+    echo -e "${RED}Failed to create tags. Exiting.${NC}"
+    exit 1
+fi
+
+# Create Groups
+echo -e "${GREEN}--- Creating Groups ---${NC}"
+GROUP1=$(create_group "$TIMESTAMP" "Family" "Family members")
+GROUP2=$(create_group "$TIMESTAMP" "Colleagues" "Work colleagues")
+GROUP3=$(create_group "$TIMESTAMP" "Friends" "Close friends")
+echo ""
+
+# Check if groups were created
+if [ -z "$GROUP1" ] || [ -z "$GROUP2" ] || [ -z "$GROUP3" ]; then
+    echo -e "${RED}Failed to create groups. Exiting.${NC}"
+    exit 1
+fi
+
+# Prepare IDs for contacts
+TAG_IDS="\"$TAG1\",\"$TAG2\""
+GROUP_IDS="\"$GROUP1\",\"$GROUP2\""
+
+# Create Contacts
+echo -e "${GREEN}--- Creating Contacts ---${NC}"
+CONTACT1=$(create_contact "$TIMESTAMP" "Adam" "West" "Wayne Enterprises" "$GROUP_IDS" "$TAG_IDS")
+echo ""
+
+CONTACT2=$(create_contact "$TIMESTAMP" "Bruce" "Banner" "Stark Industries" "\"$GROUP2\"" "\"$TAG1\",\"$TAG3\"")
+echo ""
+
+CONTACT3=$(create_contact "$TIMESTAMP" "Diana" "Prince" "Themyscira Inc" "\"$GROUP1\",\"$GROUP3\"" "\"$TAG2\"")
+echo ""
+
+CONTACT4=$(create_contact "$TIMESTAMP" "Peter" "Parker" "Daily Bugle" "\"$GROUP3\"" "\"$TAG3\"")
+echo ""
+
+CONTACT5=$(create_contact "$TIMESTAMP" "Clark" "Kent" "Daily Planet" "$GROUP_IDS" "\"$TAG1\",\"$TAG2\",\"$TAG3\"")
+echo ""
+
+echo -e "${GREEN}=== Data Generation Complete ===${NC}"
+echo ""
+echo -e "${YELLOW}Summary:${NC}"
+echo "Timestamp used: $TIMESTAMP"
+echo "Tags created: 3"
+echo "Groups created: 3"
+echo "Contacts created: 5"
+echo ""
+echo -e "${GREEN}All data has been inserted successfully!${NC}"
+
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-29
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-29
+âœ“ Tag created: 935c4224-793f-45ec-a1d4-242193383fcb
+Creating tag: VIP-2025-10-06-16-31-29
+âœ“ Tag created: c188c6ed-9224-47b9-9fc9-eb1134776006
+Creating tag: Follow-Up-2025-10-06-16-31-29
+âœ“ Tag created: ad8f15dd-78fe-446a-900a-48532e2a1ac6
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-29
+âœ“ Group created: 9d00e5a2-9db9-4668-9a7f-21aba2b6507a
+Creating group: Colleagues-2025-10-06-16-31-29
+âœ“ Group created: 15354523-ebe4-4dc9-b04d-0c77396aa245
+Creating group: Friends-2025-10-06-16-31-29
+âœ“ Group created: 81146300-976f-4a4e-a68c-db3ec732680f
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-29 West-2025-10-06-16-31-29
+âœ“ Contact created: 6089f707-37ea-4d28-a700-d34918da4660
+
+Creating contact: Bruce-2025-10-06-16-31-29 Banner-2025-10-06-16-31-29
+âœ“ Contact created: 3412fff6-7baa-46a6-83fa-fb5bddc781f7
+
+Creating contact: Diana-2025-10-06-16-31-29 Prince-2025-10-06-16-31-29
+âœ“ Contact created: 082ded46-9c91-4486-84f3-f8a1a3aab420
+
+Creating contact: Peter-2025-10-06-16-31-29 Parker-2025-10-06-16-31-29
+âœ“ Contact created: 3b6ba5e3-ecf6-4aac-8de3-cb691ffacf53
+
+Creating contact: Clark-2025-10-06-16-31-29 Kent-2025-10-06-16-31-29
+âœ“ Contact created: 9d171076-0e59-4d94-9847-0919bd1cf70b
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-29
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.801s
+user    0m0.231s
+sys     0m0.111s
+Mon Oct  6 04:31:29 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-30
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-30
+âœ“ Tag created: f310e07b-3cee-467c-b671-0760c81a335c
+Creating tag: VIP-2025-10-06-16-31-30
+âœ“ Tag created: 2a886c31-6f3c-4375-a3aa-1fc9266a7fa5
+Creating tag: Follow-Up-2025-10-06-16-31-30
+âœ“ Tag created: 3e5484fc-bae7-465c-8b4e-62b0d4d01708
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-30
+âœ“ Group created: 0ceda88b-f426-46e2-8756-ffced4204402
+Creating group: Colleagues-2025-10-06-16-31-30
+âœ“ Group created: 624de489-4d0d-4308-b2c3-449d535dcf7f
+Creating group: Friends-2025-10-06-16-31-30
+âœ“ Group created: ade31416-3522-4bee-877a-fad1f27b4419
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-30 West-2025-10-06-16-31-30
+âœ“ Contact created: 4e9c6411-4218-4afc-a778-d75d2f43f19d
+
+Creating contact: Bruce-2025-10-06-16-31-30 Banner-2025-10-06-16-31-30
+âœ“ Contact created: 5df1cfeb-7ecb-4b1d-90ed-1a51341239f0
+
+Creating contact: Diana-2025-10-06-16-31-30 Prince-2025-10-06-16-31-30
+âœ“ Contact created: 71cafa08-af60-4989-b63a-1949668606a6
+
+Creating contact: Peter-2025-10-06-16-31-30 Parker-2025-10-06-16-31-30
+âœ“ Contact created: 1eda4c94-d061-435c-93a9-adb29a7130b4
+
+Creating contact: Clark-2025-10-06-16-31-30 Kent-2025-10-06-16-31-30
+âœ“ Contact created: eb8dfec9-9dd0-4bdd-b39f-bef43d67e1de
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-30
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.760s
+user    0m0.240s
+sys     0m0.094s
+Mon Oct  6 04:31:31 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-32
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-32
+âœ“ Tag created: 40c8ae99-660d-4ede-b4f9-c593259fe918
+Creating tag: VIP-2025-10-06-16-31-32
+âœ“ Tag created: d2b184b1-9bee-432e-992b-feca1e6ca4f0
+Creating tag: Follow-Up-2025-10-06-16-31-32
+âœ“ Tag created: 0b72ea55-eb0b-4f84-a024-27fb7e96162f
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-32
+âœ“ Group created: f53dfc23-4e6b-4b76-a2b5-d8f327c67cdb
+Creating group: Colleagues-2025-10-06-16-31-32
+âœ“ Group created: b17ee173-92c6-4bf9-8b5f-be6f288785d5
+Creating group: Friends-2025-10-06-16-31-32
+âœ“ Group created: 5612ef3e-7c36-48bd-b4e6-6c3a19c8b674
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-32 West-2025-10-06-16-31-32
+âœ“ Contact created: a9f43e35-cd36-4435-9dfa-19cecd9fb149
+
+Creating contact: Bruce-2025-10-06-16-31-32 Banner-2025-10-06-16-31-32
+âœ“ Contact created: 4ae76363-ad3a-46ea-8ffe-57db5e66c789
+
+Creating contact: Diana-2025-10-06-16-31-32 Prince-2025-10-06-16-31-32
+âœ“ Contact created: 4c6c38e5-65af-4f0c-93e3-f2d7dc0581cb
+
+Creating contact: Peter-2025-10-06-16-31-32 Parker-2025-10-06-16-31-32
+âœ“ Contact created: 4c37a494-9df8-40d6-a13e-6693074816d2
+
+Creating contact: Clark-2025-10-06-16-31-32 Kent-2025-10-06-16-31-32
+âœ“ Contact created: 5505fc1a-d9f5-4cc7-8b4d-fdebc10c50f1
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-32
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.760s
+user    0m0.235s
+sys     0m0.106s
+Mon Oct  6 04:31:33 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-34
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-34
+âœ“ Tag created: 32531ee6-8d12-4926-b2db-ce75cdd3f934
+Creating tag: VIP-2025-10-06-16-31-34
+âœ“ Tag created: 8b38f0b5-1fa8-470e-97d4-f18071b9197c
+Creating tag: Follow-Up-2025-10-06-16-31-34
+âœ“ Tag created: 05a3ea2f-65a1-48c1-b4fc-b0d1bc3a863a
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-34
+âœ“ Group created: 14c5598e-2e4c-413e-8d70-ae7d6cd4a51e
+Creating group: Colleagues-2025-10-06-16-31-34
+âœ“ Group created: 66ebc2fb-440c-4c34-b37f-419e1f8a0207
+Creating group: Friends-2025-10-06-16-31-34
+âœ“ Group created: bb5ab330-8147-4c15-8324-09edacf39403
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-34 West-2025-10-06-16-31-34
+âœ“ Contact created: 9a88f24d-4b03-49b7-928d-db247b84a271
+
+Creating contact: Bruce-2025-10-06-16-31-34 Banner-2025-10-06-16-31-34
+âœ“ Contact created: c6e83ed0-11b6-4c66-b975-c817c16016d4
+
+Creating contact: Diana-2025-10-06-16-31-34 Prince-2025-10-06-16-31-34
+âœ“ Contact created: 3e8b6766-98f6-4ac7-bb51-625e77684dd7
+
+Creating contact: Peter-2025-10-06-16-31-34 Parker-2025-10-06-16-31-34
+âœ“ Contact created: 1a6dc3e4-dbf6-4fcf-8d5c-57b31e58d202
+
+Creating contact: Clark-2025-10-06-16-31-34 Kent-2025-10-06-16-31-34
+âœ“ Contact created: b1f135c1-6de9-4844-8fe1-bd27558d5418
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-34
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.762s
+user    0m0.242s
+sys     0m0.100s
+Mon Oct  6 04:31:35 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-36
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-36
+âœ“ Tag created: ffe5bfaf-e3e7-4fdf-b2e4-7c88a989ef9e
+Creating tag: VIP-2025-10-06-16-31-36
+âœ“ Tag created: 33f1e69a-4866-4c1f-b37c-50e488497fca
+Creating tag: Follow-Up-2025-10-06-16-31-36
+âœ“ Tag created: b8aa2930-c45f-40f5-9735-d0633c9fdd7a
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-36
+âœ“ Group created: a7da3e72-7993-4b67-b53c-d09fa7ba90a1
+Creating group: Colleagues-2025-10-06-16-31-36
+âœ“ Group created: 8b87eb37-7afe-42de-859c-9efc76fae559
+Creating group: Friends-2025-10-06-16-31-36
+âœ“ Group created: 7aed1609-6da7-41b4-b93e-c9c0dbc4d0bd
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-36 West-2025-10-06-16-31-36
+âœ“ Contact created: 8288b144-4ced-4c2c-9a18-7cf2a7d2a8b8
+
+Creating contact: Bruce-2025-10-06-16-31-36 Banner-2025-10-06-16-31-36
+âœ“ Contact created: b03b31d8-e25a-436d-8dcc-97603c431cbd
+
+Creating contact: Diana-2025-10-06-16-31-36 Prince-2025-10-06-16-31-36
+âœ“ Contact created: 8c0ca299-c100-494e-b15f-e16794496f9d
+
+Creating contact: Peter-2025-10-06-16-31-36 Parker-2025-10-06-16-31-36
+âœ“ Contact created: 53b6cf80-c537-4ee5-b20a-47b697ca10b5
+
+Creating contact: Clark-2025-10-06-16-31-36 Kent-2025-10-06-16-31-36
+âœ“ Contact created: 9bbc20a5-b96f-4d35-b9d5-8831c34f017b
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-36
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.765s
+user    0m0.218s
+sys     0m0.121s
+Mon Oct  6 04:31:36 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-37
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-37
+âœ“ Tag created: 36a4d4fa-2c2a-4ccd-9573-79ea4e0f8fc0
+Creating tag: VIP-2025-10-06-16-31-37
+âœ“ Tag created: 5d34645d-865e-4b13-82e0-29d171e3ec05
+Creating tag: Follow-Up-2025-10-06-16-31-37
+âœ“ Tag created: 652af711-0bfd-47da-a1f5-83463d80d446
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-37
+âœ“ Group created: 05b229f4-298f-4a6c-88a8-a1565717872e
+Creating group: Colleagues-2025-10-06-16-31-37
+âœ“ Group created: 07b86123-62e3-47f3-92ea-889203f37222
+Creating group: Friends-2025-10-06-16-31-37
+âœ“ Group created: 8401749b-e1f7-4766-8972-36f39b864907
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-37 West-2025-10-06-16-31-37
+âœ“ Contact created: 84bce9f9-540e-434f-881f-fa1fe251a1c3
+
+Creating contact: Bruce-2025-10-06-16-31-37 Banner-2025-10-06-16-31-37
+âœ“ Contact created: cb27b5f0-12af-4620-a7c5-c112d68943ec
+
+Creating contact: Diana-2025-10-06-16-31-37 Prince-2025-10-06-16-31-37
+âœ“ Contact created: 7e4dcead-139f-4d0c-ac76-ee255b279f21
+
+Creating contact: Peter-2025-10-06-16-31-37 Parker-2025-10-06-16-31-37
+âœ“ Contact created: c9dd57cf-2a7a-4fbe-b4f6-78e2b33b51e9
+
+Creating contact: Clark-2025-10-06-16-31-37 Kent-2025-10-06-16-31-37
+âœ“ Contact created: 999f4118-56aa-479a-b66f-992215103a1c
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-37
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.763s
+user    0m0.231s
+sys     0m0.105s
+Mon Oct  6 04:31:38 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-39
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-39
+âœ“ Tag created: 6c36f51c-5032-4857-a50d-1875c2535966
+Creating tag: VIP-2025-10-06-16-31-39
+âœ“ Tag created: 21d96683-2bbd-486f-b541-af9a62870f34
+Creating tag: Follow-Up-2025-10-06-16-31-39
+âœ“ Tag created: b46a7b32-34c7-453e-8ff2-c56373e3d3e6
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-39
+âœ“ Group created: 778b3461-598c-4228-9b28-c57d1be3b598
+Creating group: Colleagues-2025-10-06-16-31-39
+âœ“ Group created: 9a86c8bd-892b-443a-869b-9e0f835ec802
+Creating group: Friends-2025-10-06-16-31-39
+âœ“ Group created: 8637739c-cce1-44a6-ac3f-93dbaaf38432
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-39 West-2025-10-06-16-31-39
+âœ“ Contact created: 7450c130-2594-43ff-9b80-fa340bd0d9bf
+
+Creating contact: Bruce-2025-10-06-16-31-39 Banner-2025-10-06-16-31-39
+âœ“ Contact created: b52b2c44-bdf7-454c-a833-47fe96802eea
+
+Creating contact: Diana-2025-10-06-16-31-39 Prince-2025-10-06-16-31-39
+âœ“ Contact created: 3325f579-7fd2-46d1-85ee-e4a5b182dcba
+
+Creating contact: Peter-2025-10-06-16-31-39 Parker-2025-10-06-16-31-39
+âœ“ Contact created: 6d22d03d-eb45-4763-b001-7965286866c7
+
+Creating contact: Clark-2025-10-06-16-31-39 Kent-2025-10-06-16-31-39
+âœ“ Contact created: 6a7f02a5-c29c-4a5b-a99b-9a4d9b88fd81
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-39
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.755s
+user    0m0.246s
+sys     0m0.080s
+Mon Oct  6 04:31:40 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-41
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-41
+âœ“ Tag created: 2e00303e-ace8-402a-8c88-4dcb3bbae855
+Creating tag: VIP-2025-10-06-16-31-41
+âœ“ Tag created: 1699e5f7-19ba-4370-8979-1b389bfe5e0f
+Creating tag: Follow-Up-2025-10-06-16-31-41
+âœ“ Tag created: ab73a68c-25ae-4d3d-9cf8-32d83d25089c
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-41
+âœ“ Group created: 5b89ebba-2f06-4543-8612-9eb314c92032
+Creating group: Colleagues-2025-10-06-16-31-41
+âœ“ Group created: 3016a7fd-b8e4-47c2-a640-91f31bbc07db
+Creating group: Friends-2025-10-06-16-31-41
+âœ“ Group created: 916486f6-f93c-4028-bb06-337b40929c59
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-41 West-2025-10-06-16-31-41
+âœ“ Contact created: 5be7a7bf-e264-42c6-982b-99a2c15cd21f
+
+Creating contact: Bruce-2025-10-06-16-31-41 Banner-2025-10-06-16-31-41
+âœ“ Contact created: 9b945aaf-f58d-4725-8304-ec2583a69bb5
+
+Creating contact: Diana-2025-10-06-16-31-41 Prince-2025-10-06-16-31-41
+âœ“ Contact created: abaf8cc9-14b4-4214-99a1-e6c3ee088df6
+
+Creating contact: Peter-2025-10-06-16-31-41 Parker-2025-10-06-16-31-41
+âœ“ Contact created: 7da8c234-4973-44f9-9b25-328290c004c8
+
+Creating contact: Clark-2025-10-06-16-31-41 Kent-2025-10-06-16-31-41
+âœ“ Contact created: 91b4ac48-c5fa-4cab-a317-23a6cb7dd124
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-41
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.763s
+user    0m0.220s
+sys     0m0.124s
+Mon Oct  6 04:31:42 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-43
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-43
+âœ“ Tag created: 89a54706-900b-4938-a674-69bddc4d387b
+Creating tag: VIP-2025-10-06-16-31-43
+âœ“ Tag created: b53c6ba2-d40a-4f88-ad11-6021c1284977
+Creating tag: Follow-Up-2025-10-06-16-31-43
+âœ“ Tag created: bfdbb14d-028d-454c-981e-4e5438f795ba
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-43
+âœ“ Group created: 49428f9b-78ae-4d84-96f3-d3d93cb5d350
+Creating group: Colleagues-2025-10-06-16-31-43
+âœ“ Group created: 09cffec8-be05-49fe-8eec-e1b764b178ff
+Creating group: Friends-2025-10-06-16-31-43
+âœ“ Group created: 62dcd58f-3f4f-458c-b0c9-cb75bb6947ff
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-43 West-2025-10-06-16-31-43
+âœ“ Contact created: c1f7b27a-964c-4d0d-a64c-f28a7a9a2d09
+
+Creating contact: Bruce-2025-10-06-16-31-43 Banner-2025-10-06-16-31-43
+âœ“ Contact created: 0b105855-d4f0-48b2-b216-0af45f862e4a
+
+Creating contact: Diana-2025-10-06-16-31-43 Prince-2025-10-06-16-31-43
+âœ“ Contact created: d21bc4d1-389d-4b72-b13e-8cb77336e03f
+
+Creating contact: Peter-2025-10-06-16-31-43 Parker-2025-10-06-16-31-43
+âœ“ Contact created: a826017b-c9a6-4394-b544-4da0966eedb3
+
+Creating contact: Clark-2025-10-06-16-31-43 Kent-2025-10-06-16-31-43
+âœ“ Contact created: 1c259d65-1d22-4f73-a098-060ff6c0d630
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-43
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.779s
+user    0m0.250s
+sys     0m0.089s
+Mon Oct  6 04:31:44 PM EDT 2025
+=== Starting API Data Generation ===
+
+Using timestamp: 2025-10-06-16-31-45
+
+--- Creating Tags ---
+Creating tag: Important-2025-10-06-16-31-45
+âœ“ Tag created: 9b56a9d9-4917-4811-8e93-12857ec0b594
+Creating tag: VIP-2025-10-06-16-31-45
+âœ“ Tag created: cd909093-0c38-4be2-92b2-39f2c49ae247
+Creating tag: Follow-Up-2025-10-06-16-31-45
+âœ“ Tag created: d1fea501-8e3a-4a99-8e0d-24ec679a624f
+
+--- Creating Groups ---
+Creating group: Family-2025-10-06-16-31-45
+âœ“ Group created: efe87f92-0965-46af-a38c-2c90a2c04371
+Creating group: Colleagues-2025-10-06-16-31-45
+âœ“ Group created: 759e686f-17d0-4f6a-bd0d-e0224831d68f
+Creating group: Friends-2025-10-06-16-31-45
+âœ“ Group created: 45efbd55-17c5-4e5c-bdd3-420240e47781
+
+--- Creating Contacts ---
+Creating contact: Adam-2025-10-06-16-31-45 West-2025-10-06-16-31-45
+âœ“ Contact created: 6494fd36-7690-48fa-909c-2713802e9ca3
+
+Creating contact: Bruce-2025-10-06-16-31-45 Banner-2025-10-06-16-31-45
+âœ“ Contact created: dc62d273-b76e-4e88-bbea-caa2afa084d3
+
+Creating contact: Diana-2025-10-06-16-31-45 Prince-2025-10-06-16-31-45
+âœ“ Contact created: 1399d9c7-ddee-4206-b1dd-fd2ffa12189e
+
+Creating contact: Peter-2025-10-06-16-31-45 Parker-2025-10-06-16-31-45
+âœ“ Contact created: 2c9624dd-61b5-43e4-a3e3-21703388a0b8
+
+Creating contact: Clark-2025-10-06-16-31-45 Kent-2025-10-06-16-31-45
+âœ“ Contact created: ce3a69b3-7dc1-48c8-a60b-dfe167609a8d
+
+=== Data Generation Complete ===
+
+Summary:
+Timestamp used: 2025-10-06-16-31-45
+Tags created: 3
+Groups created: 3
+Contacts created: 5
+
+All data has been inserted successfully!
+
+real    0m0.786s
+user    0m0.216s
+sys     0m0.114s
+Mon Oct  6 04:31:45 PM EDT 2025
+
+real    0m17.723s
+user    0m2.351s
+sys     0m1.055s
+kushal@texas:~$
 
 
 ================================================================================
 FILE: docs\log-sample.txt
 SIZE: 452.43 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:18:13
 ================================================================================
 
 LogRecord.Attributes (Key:Value):
@@ -40261,7 +42223,7 @@ Press any key to close this window . . .
 ================================================================================
 FILE: docs\scratch.md
 SIZE: 459.92 KB
-MODIFIED: 10/06/2025 12:44:27
+MODIFIED: 10/06/2025 12:34:59
 ================================================================================
 
 ? IMeterFactory is working!
@@ -49632,7 +51594,7 @@ Value: 1
 ================================================================================
 FILE: docs\Windows PowerShell.txt
 SIZE: 21.05 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:43:47
 ================================================================================
 
 Windows PowerShell
@@ -49929,7 +51891,7 @@ PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> Set-Location "C:\Users\kusha
 ================================================================================
 FILE: LICENSE.txt
 SIZE: 34.36 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
                     GNU AFFERO GENERAL PUBLIC LICENSE
@@ -50598,8 +52560,8 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 1163.25 KB
-MODIFIED: 10/06/2025 16:30:05
+SIZE: 1199.16 KB
+MODIFIED: 10/06/2025 16:32:51
 ================================================================================
 
 
@@ -50608,7 +52570,7 @@ MODIFIED: 10/06/2025 16:30:05
 ================================================================================
 FILE: MyOpenTelemetryApi.sln
 SIZE: 9.79 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 
@@ -50753,7 +52715,7 @@ EndGlobal
 ================================================================================
 FILE: podman-compose.yml
 SIZE: 3.52 KB
-MODIFIED: 10/01/2025 21:33:56
+MODIFIED: 10/06/2025 15:49:57
 ================================================================================
 
 # podman-compose.yml - Alternative compose file optimized for Podman
@@ -50874,8 +52836,8 @@ networks:
 
 ================================================================================
 FILE: README.md
-SIZE: 7.04 KB
-MODIFIED: 09/17/2025 11:07:20
+SIZE: 6.82 KB
+MODIFIED: 09/15/2025 08:59:43
 ================================================================================
 
 # MyOpenTelemetryApi
@@ -51103,7 +53065,7 @@ This project is open source and available under the AGPL license.
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\appsettings.Development.json
 SIZE: 0.5 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/appsettings.Development.json - Updated
@@ -51135,7 +53097,7 @@ MODIFIED: 09/17/2025 11:07:20
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\appsettings.json
 SIZE: 1.22 KB
-MODIFIED: 09/17/2025 14:33:44
+MODIFIED: 09/17/2025 14:20:56
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/appsettings.json - Updated with OpenTelemetry settings
@@ -51184,7 +53146,7 @@ MODIFIED: 09/17/2025 14:33:44
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\appsettings.Production.json
 SIZE: 0.55 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/appsettings.Production.json - New file
@@ -51220,7 +53182,7 @@ MODIFIED: 09/17/2025 11:07:20
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Authentication\ApiKeyAuthenticationHandler.cs
 SIZE: 1.87 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // Api/Authentication/ApiKeyAuthenticationHandler.cs
@@ -51283,7 +53245,7 @@ public class ApiKeyAuthenticationOptions : AuthenticationSchemeOptions { }
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\ContactsController.cs
 SIZE: 3.29 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/ContactsController.cs
@@ -51392,7 +53354,7 @@ public class ContactsController : ControllerBase
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\GroupsController.cs
 SIZE: 2.15 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/GroupsController.cs
@@ -51475,7 +53437,7 @@ public class GroupsController(IGroupService groupService, ILogger<GroupsControll
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\HealthController.cs
 SIZE: 2.27 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/HealthController.cs
@@ -51561,7 +53523,7 @@ public class HealthController(AppDbContext dbContext, ILogger<HealthController> 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\TagsController.cs
 SIZE: 2.28 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/TagsController.cs
@@ -51652,7 +53614,7 @@ public class TagsController(ITagService tagService, ILogger<TagsController> logg
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\dependencies.json
 SIZE: 5.83 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 {
@@ -51847,7 +53809,7 @@ MODIFIED: 09/17/2025 11:07:20
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj
 SIZE: 2.48 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:35:27
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -51907,7 +53869,7 @@ MODIFIED: 10/06/2025 16:30:03
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Program.cs
 SIZE: 17.04 KB
-MODIFIED: 10/06/2025 12:44:28
+MODIFIED: 10/06/2025 12:39:14
 ================================================================================
 
 
@@ -52423,7 +54385,7 @@ app.Run();
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Properties\launchSettings.json
 SIZE: 0.73 KB
-MODIFIED: 10/06/2025 12:44:28
+MODIFIED: 10/06/2025 11:32:06
 ================================================================================
 
 {
@@ -52455,7 +54417,7 @@ MODIFIED: 10/06/2025 12:44:28
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs
 SIZE: 3.06 KB
-MODIFIED: 09/17/2025 12:34:45
+MODIFIED: 09/17/2025 11:56:32
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Telemetry/FileExporter.cs
@@ -52563,7 +54525,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Telemetry\TelemetryConstants.cs
 SIZE: 1.2 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/15/2025 08:15:28
 ================================================================================
 
 namespace MyOpenTelemetryApi.Api.Telemetry;
@@ -52607,7 +54569,7 @@ public static class TelemetryConstants
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Telemetry\TelemetryExtensions.cs
 SIZE: 1.09 KB
-MODIFIED: 09/17/2025 12:34:45
+MODIFIED: 09/17/2025 11:56:32
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Telemetry/TelemetryExtensions.cs
@@ -52648,7 +54610,7 @@ public static class TelemetryExtensions
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\AddressDto.cs
 SIZE: 0.92 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/AddressDto.cs
@@ -52684,7 +54646,7 @@ public class CreateAddressDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\ContactDto.cs
 SIZE: 0.92 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/ContactDto.cs
@@ -52716,7 +54678,7 @@ public class ContactDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\ContactSummaryDto.cs
 SIZE: 0.43 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/ContactSummaryDto.cs
@@ -52737,7 +54699,7 @@ public class ContactSummaryDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\CreateContactDto.cs
 SIZE: 0.83 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/CreateContactDto.cs
@@ -52766,7 +54728,7 @@ public class CreateContactDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\EmailAddressDto.cs
 SIZE: 0.52 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/EmailAddressDto.cs
@@ -52792,7 +54754,7 @@ public class CreateEmailAddressDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\GroupDto.cs
 SIZE: 0.62 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/GroupDto.cs
@@ -52824,7 +54786,7 @@ public class UpdateGroupDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\PaginatedResultDto.cs
 SIZE: 0.53 KB
-MODIFIED: 09/17/2025 16:15:00
+MODIFIED: 09/17/2025 16:09:08
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/PaginatedResultDto.cs
@@ -52847,7 +54809,7 @@ public class PaginatedResultDto<T>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\PhoneNumberDto.cs
 SIZE: 0.52 KB
-MODIFIED: 09/17/2025 15:30:19
+MODIFIED: 09/17/2025 15:28:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/PhoneNumberDto.cs
@@ -52873,7 +54835,7 @@ public class CreatePhoneNumberDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\TagDto.cs
 SIZE: 0.42 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/TagDto.cs
@@ -52897,7 +54859,7 @@ public class CreateTagDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\UpdateContactDto.cs
 SIZE: 0.52 KB
-MODIFIED: 09/17/2025 15:30:19
+MODIFIED: 09/17/2025 15:28:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/UpdateContactDto.cs
@@ -52920,7 +54882,7 @@ public class UpdateContactDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj
 SIZE: 0.29 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:35:46
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -52939,8 +54901,8 @@ MODIFIED: 10/06/2025 16:30:03
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ContactService.cs
-SIZE: 14.7 KB
-MODIFIED: 10/06/2025 12:44:28
+SIZE: 14.33 KB
+MODIFIED: 10/06/2025 12:05:14
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ContactService.cs
@@ -53329,7 +55291,7 @@ public class ContactService(
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\GroupService.cs
 SIZE: 2.22 KB
-MODIFIED: 10/03/2025 19:49:51
+MODIFIED: 10/03/2025 19:00:46
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/GroupService.cs
@@ -53418,7 +55380,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\IContactService.cs
 SIZE: 1.16 KB
-MODIFIED: 09/17/2025 15:30:19
+MODIFIED: 09/17/2025 15:28:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/IContactService.cs
@@ -53444,7 +55406,7 @@ public interface IContactService
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\IGroupService.cs
 SIZE: 0.43 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/IGroupService.cs
@@ -53466,7 +55428,7 @@ public interface IGroupService
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ITagService.cs
 SIZE: 0.42 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ITagService.cs
@@ -53487,8 +55449,8 @@ public interface ITagService
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\TagService.cs
-SIZE: 2.49 KB
-MODIFIED: 10/03/2025 19:49:51
+SIZE: 2.41 KB
+MODIFIED: 10/03/2025 19:10:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/TagService.cs
@@ -53581,7 +55543,7 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\Address.cs
 SIZE: 0.62 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/Address.cs
@@ -53609,7 +55571,7 @@ public class Address
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\AddressType.cs
 SIZE: 0.17 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Enums/AddressType.cs
@@ -53627,7 +55589,7 @@ public enum AddressType
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\Contact.cs
 SIZE: 0.95 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/Contact.cs
@@ -53660,7 +55622,7 @@ public class Contact
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\ContactGroup.cs
 SIZE: 0.4 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/ContactGroup.cs (Join table)
@@ -53682,7 +55644,7 @@ public class ContactGroup
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\ContactTag.cs
 SIZE: 0.35 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/ContactTag.cs (Join table)
@@ -53703,7 +55665,7 @@ public class ContactTag
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\EmailAddress.cs
 SIZE: 0.43 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/EmailAddress.cs
@@ -53726,7 +55688,7 @@ public class EmailAddress
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\EmailType.cs
 SIZE: 0.17 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Enums/EmailType.cs
@@ -53744,7 +55706,7 @@ public enum EmailType
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\Group.cs
 SIZE: 0.39 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/Group.cs
@@ -53766,7 +55728,7 @@ public class Group
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\PhoneNumber.cs
 SIZE: 0.43 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/PhoneNumber.cs
@@ -53789,7 +55751,7 @@ public class PhoneNumber
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\PhoneType.cs
 SIZE: 0.19 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Enums/PhoneType.cs
@@ -53809,7 +55771,7 @@ public enum PhoneType
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\Tag.cs
 SIZE: 0.34 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/Tag.cs
@@ -53830,7 +55792,7 @@ public class Tag
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IContactRepository.cs
 SIZE: 0.49 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IContactRepository.cs
@@ -53851,7 +55813,7 @@ public interface IContactRepository : IRepository<Contact>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IGroupRepository.cs
 SIZE: 0.27 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IGroupRepository.cs
@@ -53869,7 +55831,7 @@ public interface IGroupRepository : IRepository<Group>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IRepository.cs
 SIZE: 0.39 KB
-MODIFIED: 10/03/2025 19:49:51
+MODIFIED: 10/03/2025 18:47:12
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IRepository.cs
@@ -53890,7 +55852,7 @@ public interface IRepository<T> where T : class
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\ITagRepository.cs
 SIZE: 0.26 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/ITagRepository.cs
@@ -53908,7 +55870,7 @@ public interface ITagRepository : IRepository<Tag>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IUnitOfWork.cs
 SIZE: 0.38 KB
-MODIFIED: 09/17/2025 15:30:19
+MODIFIED: 09/17/2025 15:28:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IUnitOfWork.cs
@@ -53929,7 +55891,7 @@ public interface IUnitOfWork
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj
 SIZE: 0.14 KB
-MODIFIED: 10/06/2025 14:29:28
+MODIFIED: 10/06/2025 14:12:33
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -53943,7 +55905,7 @@ MODIFIED: 10/06/2025 14:29:28
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\AppDbContext.cs
 SIZE: 1.03 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/AppDbContext.cs
@@ -53977,7 +55939,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\AddressConfiguration.cs
 SIZE: 0.96 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/AddressConfiguration.cs
@@ -54011,7 +55973,7 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactConfiguration.cs
 SIZE: 1.59 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/ContactConfiguration.cs
@@ -54072,7 +56034,7 @@ public class ContactConfiguration : IEntityTypeConfiguration<Contact>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactGroupConfiguration.cs
 SIZE: 0.79 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/ContactGroupConfiguration.cs
@@ -54103,7 +56065,7 @@ public class ContactGroupConfiguration : IEntityTypeConfiguration<ContactGroup>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactTagConfiguration.cs
 SIZE: 0.76 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/ContactTagConfiguration.cs
@@ -54134,7 +56096,7 @@ public class ContactTagConfiguration : IEntityTypeConfiguration<ContactTag>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\EmailAddressConfiguration.cs
 SIZE: 0.73 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/EmailAddressConfiguration.cs
@@ -54165,7 +56127,7 @@ public class EmailAddressConfiguration : IEntityTypeConfiguration<EmailAddress>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\GroupConfiguration.cs
 SIZE: 0.64 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/GroupConfiguration.cs
@@ -54195,7 +56157,7 @@ public class GroupConfiguration : IEntityTypeConfiguration<Group>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\PhoneNumberConfiguration.cs
 SIZE: 0.7 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/PhoneNumberConfiguration.cs
@@ -54226,7 +56188,7 @@ public class PhoneNumberConfiguration : IEntityTypeConfiguration<PhoneNumber>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\TagConfiguration.cs
 SIZE: 0.7 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/TagConfiguration.cs
@@ -54258,7 +56220,7 @@ public class TagConfiguration : IEntityTypeConfiguration<Tag>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.cs
 SIZE: 11.04 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/15/2025 08:12:04
 ================================================================================
 
 using Microsoft.EntityFrameworkCore.Migrations;
@@ -54505,7 +56467,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.Designer.cs
 SIZE: 12.92 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // <auto-generated />
@@ -54873,7 +56835,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.cs
 SIZE: 1.96 KB
-MODIFIED: 10/03/2025 19:49:51
+MODIFIED: 10/03/2025 18:31:06
 ================================================================================
 
 // This is what to paste into the generated migration file
@@ -54935,7 +56897,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.Designer.cs
 SIZE: 12.96 KB
-MODIFIED: 10/03/2025 19:49:51
+MODIFIED: 10/03/2025 18:28:20
 ================================================================================
 
 // <auto-generated />
@@ -55303,7 +57265,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\AppDbContextModelSnapshot.cs
 SIZE: 12.83 KB
-MODIFIED: 10/03/2025 19:49:51
+MODIFIED: 10/03/2025 18:28:20
 ================================================================================
 
 // <auto-generated />
@@ -55668,7 +57630,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj
 SIZE: 0.58 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:37:26
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -55693,7 +57655,7 @@ MODIFIED: 10/06/2025 16:30:03
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\ContactRepository.cs
 SIZE: 2.21 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/ContactRepository.cs
@@ -55758,7 +57720,7 @@ public class ContactRepository(AppDbContext context) : Repository<Contact>(conte
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\GroupRepository.cs
 SIZE: 0.66 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/GroupRepository.cs
@@ -55785,7 +57747,7 @@ public class GroupRepository(AppDbContext context) : Repository<Group>(context),
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\Repository.cs
 SIZE: 1.07 KB
-MODIFIED: 10/03/2025 19:49:51
+MODIFIED: 10/03/2025 18:46:52
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/Repository.cs
@@ -55836,7 +57798,7 @@ public class Repository<T>(AppDbContext context) : IRepository<T> where T : clas
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\TagRepository.cs
 SIZE: 0.58 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/TagRepository.cs
@@ -55860,8 +57822,8 @@ public class TagRepository(AppDbContext context) : Repository<Tag>(context), ITa
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\UnitOfWork.cs
-SIZE: 1.31 KB
-MODIFIED: 09/17/2025 14:51:00
+SIZE: 1.26 KB
+MODIFIED: 09/17/2025 15:02:04
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/UnitOfWork.cs
@@ -55916,7 +57878,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj
 SIZE: 1.03 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:37:26
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -55953,7 +57915,7 @@ MODIFIED: 10/06/2025 16:30:03
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Api.Tests\UnitTest1.cs
 SIZE: 1.99 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/15/2025 08:12:07
 ================================================================================
 
 // tests/MyOpenTelemetryApi.Api.Tests/ApiTests.cs
@@ -56037,7 +57999,7 @@ public class ApiTests
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj
 SIZE: 1.03 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:37:26
 ================================================================================
 
 
@@ -56075,7 +58037,7 @@ MODIFIED: 10/06/2025 16:30:03
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Application.Tests\UnitTest1.cs
 SIZE: 3.43 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // tests/MyOpenTelemetryApi.Application.Tests/ApplicationTests.cs
@@ -56212,7 +58174,7 @@ public class ApplicationTests
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj
 SIZE: 1.03 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:37:13
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -56249,7 +58211,7 @@ MODIFIED: 10/06/2025 16:30:03
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Infrastructure.Tests\UnitTest1.cs
 SIZE: 5.61 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // tests/MyOpenTelemetryApi.Infrastructure.Tests/InfrastructureTests.cs
@@ -56450,7 +58412,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/06/2025 16:30:06
+EXPORT COMPLETED: 10/06/2025 16:32:52
 Total Files Exported: 92
-Output File: D:\DEV\MyOpenTelemetryApi\my_project_export.txt
+Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
