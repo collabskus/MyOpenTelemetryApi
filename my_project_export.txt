@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 13:49:54
+Generated: 10/06/2025 13:51:49
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -17325,13 +17325,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 774.22 KB
-MODIFIED: 10/06/2025 13:49:55
+MODIFIED: 10/06/2025 13:51:50
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 13:49:54
+Generated: 10/06/2025 13:51:49
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -34655,7 +34655,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 774.22 KB
-MODIFIED: 10/06/2025 13:49:55
+MODIFIED: 10/06/2025 13:51:50
 ================================================================================
 
 
@@ -39729,8 +39729,8 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj
-SIZE: 2.25 KB
-MODIFIED: 10/06/2025 13:49:16
+SIZE: 0.83 KB
+MODIFIED: 10/06/2025 13:51:14
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -39743,32 +39743,15 @@ MODIFIED: 10/06/2025 13:49:16
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <DisableMSBuildAssemblyCopyCheck>true</DisableMSBuildAssemblyCopyCheck>
   </PropertyGroup>
+  
   <ItemGroup>
-    <PackageReference Include="Humanizer.Core" Version="3.0.0-beta.96" />
-    <PackageReference Include="Microsoft.Build.Framework" Version="17.15.0-preview-25277-114" />
-    <PackageReference Include="Microsoft.Build.Locator" Version="1.10.2" />
-    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.15.0-preview-25277-114" />
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.15.0-preview-25277-114" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageReference Include="Npgsql" Version="10.0.0-rc.1" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0-rc.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0-rc.1.25451.107">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.CodeDom" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Configuration.ConfigurationManager"
-      Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Diagnostics.EventLog" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Formats.Nrbf" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Resources.Extensions" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Security.Cryptography.ProtectedData"
-      Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.0-rc.1.25451.107" />
   </ItemGroup>
 </Project>
 
@@ -40553,7 +40536,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/06/2025 13:49:55
+EXPORT COMPLETED: 10/06/2025 13:51:50
 Total Files Exported: 90
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
