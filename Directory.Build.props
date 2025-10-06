@@ -35,7 +35,7 @@
     
     <!-- Other -->
     <HumanizerCoreVersion>3.0.0-beta.96</HumanizerCoreVersion>
-    <MicrosoftOpenApiVersion>2.3.3</MicrosoftOpenApiVersion>
+    <MicrosoftOpenApiVersion>2.3.4</MicrosoftOpenApiVersion>
     <NewtonsoftJsonVersion>13.0.4</NewtonsoftJsonVersion>
     <MicrosoftBuildLocatorVersion>1.10.2</MicrosoftBuildLocatorVersion>
     <MicrosoftExtensionsLoggingAbstractionsVersion>10.0.0-rc.1.25451.107</MicrosoftExtensionsLoggingAbstractionsVersion>
