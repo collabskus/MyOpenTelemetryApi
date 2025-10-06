@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 14:03:17
+Generated: 10/06/2025 14:14:00
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -153,9 +153,19 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
     |       UnitTest1.cs
     |       
     +---MyOpenTelemetryApi.Application.Tests
-    |       MyOpenTelemetryApi.Application.Tests.csproj
-    |       UnitTest1.cs
-    |       
+    |   |   MyOpenTelemetryApi.Application.Tests.csproj
+    |   |   UnitTest1.cs
+    |   |   
+    |   +---bin
+    |   |   \---Debug
+    |   |       \---net10.0
+    |   \---obj
+    |       \---Debug
+    |           \---net10.0
+    |               |   MyOpenTelemetryApi.Application.Tests.GlobalUsings.g.cs
+    |               |   
+    |               +---ref
+    |               \---refint
     \---MyOpenTelemetryApi.Infrastructure.Tests
             MyOpenTelemetryApi.Infrastructure.Tests.csproj
             UnitTest1.cs
@@ -16400,14 +16410,14 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 739.42 KB
-MODIFIED: 10/06/2025 14:03:17
+SIZE: 739.71 KB
+MODIFIED: 10/06/2025 14:14:00
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/06/2025 14:03:17
+Generated: 10/06/2025 14:14:00
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -16559,9 +16569,19 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
     |       UnitTest1.cs
     |       
     +---MyOpenTelemetryApi.Application.Tests
-    |       MyOpenTelemetryApi.Application.Tests.csproj
-    |       UnitTest1.cs
-    |       
+    |   |   MyOpenTelemetryApi.Application.Tests.csproj
+    |   |   UnitTest1.cs
+    |   |   
+    |   +---bin
+    |   |   \---Debug
+    |   |       \---net10.0
+    |   \---obj
+    |       \---Debug
+    |           \---net10.0
+    |               |   MyOpenTelemetryApi.Application.Tests.GlobalUsings.g.cs
+    |               |   
+    |               +---ref
+    |               \---refint
     \---MyOpenTelemetryApi.Infrastructure.Tests
             MyOpenTelemetryApi.Infrastructure.Tests.csproj
             UnitTest1.cs
@@ -32806,8 +32826,8 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 ================================================================================
 FILE: my_project_export.txt
-SIZE: 739.42 KB
-MODIFIED: 10/06/2025 14:03:17
+SIZE: 739.71 KB
+MODIFIED: 10/06/2025 14:14:00
 ================================================================================
 
 
@@ -34054,49 +34074,52 @@ MODIFIED: 09/14/2025 21:12:26
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj
-SIZE: 3.04 KB
-MODIFIED: 10/06/2025 13:31:04
+SIZE: 3.47 KB
+MODIFIED: 10/06/2025 14:11:54
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>8932c83d-67db-4264-b312-6e638ad396db</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Humanizer.Core" Version="3.0.0-beta.96" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="Microsoft.Build.Framework" Version="17.15.0-preview-25277-114" />
-    <PackageReference Include="Microsoft.Build.Locator" Version="1.10.2" />
-    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.15.0-preview-25277-114" />
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.15.0-preview-25277-114" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0-rc.1.25451.107">
+    <PackageReference Include="Humanizer.Core" Version="$(HumanizerCoreVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(AspNetCoreOpenApiVersion)" />
+    <PackageReference Include="Microsoft.Build.Framework" Version="$(MicrosoftBuildVersion)">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Build.Locator" Version="$(MicrosoftBuildLocatorVersion)" />
+    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="$(MicrosoftBuildVersion)">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="$(MicrosoftBuildVersion)">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="$(EntityFrameworkCoreVersion)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.OpenApi" Version="2.3.3" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageReference Include="Npgsql" Version="10.0.0-rc.1" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0-rc.1" />
-    <PackageReference Include="OpenTelemetry" Version="1.13.0" />
-    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.13.0" />
-    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.13.0" />
-    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.13.0" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.12.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="$(MicrosoftOpenApiVersion)" />
+    <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" />
+    <PackageReference Include="Npgsql" Version="$(NpgsqlVersion)" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(NpgsqlVersion)" />
+    <PackageReference Include="OpenTelemetry" Version="$(OpenTelemetryVersion)" />
+    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="$(OpenTelemetryVersion)" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="$(OpenTelemetryVersion)" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="$(OpenTelemetryVersion)" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="$(OpenTelemetryInstrumentationVersion)" />
     <PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.12.0-beta.2" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.12.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="$(OpenTelemetryInstrumentationVersion)" />
     <PackageReference Include="OpenTelemetry.Instrumentation.Process" Version="1.12.0-beta.1" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.12.0" />
-    <PackageReference Include="System.CodeDom" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Formats.Nrbf" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Resources.Extensions" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="10.0.0-rc.1.25451.107" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="$(OpenTelemetryInstrumentationVersion)" />
+    <PackageReference Include="System.CodeDom" Version="$(SystemCodeDomVersion)" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="$(SystemConfigurationConfigurationManagerVersion)" />
+    <PackageReference Include="System.Formats.Nrbf" Version="$(SystemFormatsNrbfVersion)" />
+    <PackageReference Include="System.Resources.Extensions" Version="$(SystemResourcesExtensionsVersion)" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="$(SystemSecurityCryptographyPkcsVersion)" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="$(SystemSecurityCryptographyProtectedDataVersion)" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35123,25 +35146,19 @@ public class UpdateContactDto
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj
-SIZE: 0.47 KB
-MODIFIED: 09/17/2025 14:48:52
+SIZE: 0.34 KB
+MODIFIED: 10/06/2025 14:12:17
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0-rc.1.25451.107" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="$(MicrosoftExtensionsLoggingAbstractionsVersion)" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj" />
-	</ItemGroup>
-
-	<PropertyGroup>
-		<TargetFramework>net10.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-	</PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj" />
+  </ItemGroup>
 
 </Project>
 
@@ -36138,17 +36155,13 @@ public interface IUnitOfWork
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj
-SIZE: 0.21 KB
-MODIFIED: 09/14/2025 21:14:51
+SIZE: 0.14 KB
+MODIFIED: 10/06/2025 14:12:33
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+  <!-- No additional packages or properties needed - inherits from Directory.Build.props -->
 
 </Project>
 
@@ -37881,8 +37894,8 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj
-SIZE: 0.83 KB
-MODIFIED: 10/06/2025 13:53:08
+SIZE: 0.69 KB
+MODIFIED: 10/06/2025 14:12:47
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -37890,22 +37903,18 @@ MODIFIED: 10/06/2025 13:53:08
   <ItemGroup>
     <ProjectReference Include="..\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj" />
   </ItemGroup>
-
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0-rc.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0-rc.1.25451.107">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(NpgsqlVersion)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="$(EntityFrameworkCoreVersion)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+
 </Project>
+
 
 
 ================================================================================
@@ -38133,31 +38142,24 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj
-SIZE: 1.31 KB
-MODIFIED: 10/06/2025 13:29:52
+SIZE: 1.21 KB
+MODIFIED: 10/06/2025 14:13:19
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="coverlet.collector" Version="6.0.4">
+    <PackageReference Include="coverlet.collector" Version="$(CoverletCollectorVersion)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
-    <PackageReference Include="xunit" Version="2.9.3" />
-    <PackageReference Include="xunit.analyzers" Version="1.24.0">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNetTestSdkVersion)" />
+    <PackageReference Include="xunit" Version="$(XunitVersion)" />
+    <PackageReference Include="xunit.analyzers" Version="$(XunitAnalyzersVersion)">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+    <PackageReference Include="xunit.runner.visualstudio" Version="$(XunitRunnerVisualStudioVersion)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -38261,31 +38263,25 @@ public class ApiTests
 
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj
-SIZE: 1.32 KB
-MODIFIED: 10/06/2025 13:29:53
+SIZE: 1.21 KB
+MODIFIED: 10/06/2025 14:13:25
 ================================================================================
+
 
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="coverlet.collector" Version="6.0.4">
+    <PackageReference Include="coverlet.collector" Version="$(CoverletCollectorVersion)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
-    <PackageReference Include="xunit" Version="2.9.3" />
-    <PackageReference Include="xunit.analyzers" Version="1.24.0">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNetTestSdkVersion)" />
+    <PackageReference Include="xunit" Version="$(XunitVersion)" />
+    <PackageReference Include="xunit.analyzers" Version="$(XunitAnalyzersVersion)">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+    <PackageReference Include="xunit.runner.visualstudio" Version="$(XunitRunnerVisualStudioVersion)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -38296,7 +38292,7 @@ MODIFIED: 10/06/2025 13:29:53
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj" />
+    <ProjectReference Include="..\..\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj" />
   </ItemGroup>
 
 </Project>
@@ -38442,31 +38438,24 @@ public class ApplicationTests
 
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj
-SIZE: 1.33 KB
-MODIFIED: 10/06/2025 13:29:55
+SIZE: 1.21 KB
+MODIFIED: 10/06/2025 14:13:31
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="coverlet.collector" Version="6.0.4">
+    <PackageReference Include="coverlet.collector" Version="$(CoverletCollectorVersion)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
-    <PackageReference Include="xunit" Version="2.9.3" />
-    <PackageReference Include="xunit.analyzers" Version="1.24.0">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNetTestSdkVersion)" />
+    <PackageReference Include="xunit" Version="$(XunitVersion)" />
+    <PackageReference Include="xunit.analyzers" Version="$(XunitAnalyzersVersion)">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+    <PackageReference Include="xunit.runner.visualstudio" Version="$(XunitRunnerVisualStudioVersion)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -38477,7 +38466,7 @@ MODIFIED: 10/06/2025 13:29:55
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj" />
   </ItemGroup>
 
 </Project>
@@ -38688,7 +38677,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/06/2025 14:03:17
+EXPORT COMPLETED: 10/06/2025 14:14:01
 Total Files Exported: 90
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
