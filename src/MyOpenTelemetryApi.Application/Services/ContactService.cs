@@ -1,5 +1,6 @@
 ﻿// src/MyOpenTelemetryApi.Application/Services/ContactService.cs
 using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using Microsoft.Extensions.Logging;
 using MyOpenTelemetryApi.Application.DTOs;
 using MyOpenTelemetryApi.Domain.Entities;
@@ -10,11 +11,23 @@ namespace MyOpenTelemetryApi.Application.Services;
 public class ContactService(
     IUnitOfWork unitOfWork,
     ILogger<ContactService> logger,
-    ActivitySource activitySource) : IContactService
+    ActivitySource activitySource,
+    IMeterFactory meterFactory) : IContactService
 {
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
     private readonly ILogger<ContactService> _logger = logger;
     private readonly ActivitySource _activitySource = activitySource;
+
+    // OpenTelemetry Metrics
+    private readonly Meter _meter = meterFactory.Create("MyOpenTelemetryApi.Contacts");
+    private readonly Counter<long> _contactsCreated = meterFactory.Create("MyOpenTelemetryApi.Contacts")
+        .CreateCounter<long>("contacts.created", "contacts", "Number of contacts created");
+    private readonly Counter<long> _contactsDeleted = meterFactory.Create("MyOpenTelemetryApi.Contacts")
+        .CreateCounter<long>("contacts.deleted", "contacts", "Number of contacts deleted");
+    private readonly Counter<long> _contactSearches = meterFactory.Create("MyOpenTelemetryApi.Contacts")
+        .CreateCounter<long>("contacts.searches", "searches", "Number of contact searches performed");
+    private readonly Histogram<double> _searchDuration = meterFactory.Create("MyOpenTelemetryApi.Contacts")
+        .CreateHistogram<double>("contacts.search.duration", "seconds", "Duration of contact search operations");
 
     public async Task<List<ContactDto>> GetAllAsync(CancellationToken cancellationToken = default)
     {
@@ -99,7 +112,18 @@ public class ContactService(
 
         _logger.LogInformation("Searching contacts with term: {SearchTerm}", searchTerm);
 
+        // Record search metric and measure duration
+        _contactSearches.Add(1, new KeyValuePair<string, object?>("search.term.length", searchTerm.Length));
+
+        var stopwatch = Stopwatch.StartNew();
         var contacts = await _unitOfWork.Contacts.SearchContactsAsync(searchTerm);
+        stopwatch.Stop();
+
+        _searchDuration.Record(stopwatch.Elapsed.TotalSeconds,
+            new KeyValuePair<string, object?>("result.count", contacts.Count()));
+
+        activity?.SetTag("result.count", contacts.Count());
+
         return contacts.Select(MapToSummaryDto).ToList();
     }
 
@@ -143,63 +167,101 @@ public class ContactService(
             DateOfBirth = dto.DateOfBirth,
             Notes = dto.Notes,
             CreatedAt = DateTime.UtcNow,
-            UpdatedAt = DateTime.UtcNow,
-            EmailAddresses = [],
-            PhoneNumbers = [],
-            Addresses = []
+            UpdatedAt = DateTime.UtcNow
         };
 
+        // Map email addresses
         if (dto.EmailAddresses != null)
         {
-            foreach (var emailDto in dto.EmailAddresses)
+            contact.EmailAddresses = dto.EmailAddresses.Select(e => new EmailAddress
             {
-                contact.EmailAddresses.Add(new EmailAddress
-                {
-                    Id = Guid.NewGuid(),
-                    Email = emailDto.Email,
-                    Type = Enum.Parse<EmailType>(emailDto.Type),
-                    IsPrimary = emailDto.IsPrimary
-                });
-            }
+                Id = Guid.NewGuid(),
+                ContactId = contact.Id,
+                Email = e.Email,
+                Type = Enum.Parse<EmailType>(e.Type, ignoreCase: true),
+                IsPrimary = e.IsPrimary
+            }).ToList();
         }
 
+        // Map phone numbers
         if (dto.PhoneNumbers != null)
         {
-            foreach (var phoneDto in dto.PhoneNumbers)
+            contact.PhoneNumbers = dto.PhoneNumbers.Select(p => new PhoneNumber
             {
-                contact.PhoneNumbers.Add(new PhoneNumber
-                {
-                    Id = Guid.NewGuid(),
-                    Number = phoneDto.Number,
-                    Type = Enum.Parse<PhoneType>(phoneDto.Type),
-                    IsPrimary = phoneDto.IsPrimary
-                });
-            }
+                Id = Guid.NewGuid(),
+                ContactId = contact.Id,
+                Number = p.Number,
+                Type = Enum.Parse<PhoneType>(p.Type, ignoreCase: true),
+                IsPrimary = p.IsPrimary
+            }).ToList();
         }
 
+        // Map addresses
         if (dto.Addresses != null)
         {
-            foreach (var addressDto in dto.Addresses)
+            contact.Addresses = dto.Addresses.Select(a => new Address
             {
-                contact.Addresses.Add(new Address
-                {
-                    Id = Guid.NewGuid(),
-                    StreetLine1 = addressDto.StreetLine1,
-                    StreetLine2 = addressDto.StreetLine2,
-                    City = addressDto.City,
-                    StateProvince = addressDto.StateProvince,
-                    PostalCode = addressDto.PostalCode,
-                    Country = addressDto.Country,
-                    Type = Enum.Parse<AddressType>(addressDto.Type),
-                    IsPrimary = addressDto.IsPrimary
-                });
-            }
+                Id = Guid.NewGuid(),
+                ContactId = contact.Id,
+                StreetLine1 = a.StreetLine1,
+                StreetLine2 = a.StreetLine2,
+                City = a.City,
+                StateProvince = a.StateProvince,
+                PostalCode = a.PostalCode,
+                Country = a.Country,
+                Type = Enum.Parse<AddressType>(a.Type, ignoreCase: true),
+                IsPrimary = a.IsPrimary
+            }).ToList();
         }
 
         await _unitOfWork.Contacts.AddAsync(contact);
+
+        // Handle groups
+        if (dto.GroupIds != null && dto.GroupIds.Count != 0)
+        {
+            foreach (Guid groupId in dto.GroupIds)
+            {
+                Group? group = await _unitOfWork.Groups.GetByIdAsync(groupId);
+                if (group != null)
+                {
+                    contact.ContactGroups ??= [];
+                    contact.ContactGroups.Add(new ContactGroup
+                    {
+                        ContactId = contact.Id,
+                        GroupId = groupId
+                    });
+                }
+            }
+        }
+
+        // Handle tags
+        if (dto.TagIds != null && dto.TagIds.Count != 0)
+        {
+            foreach (Guid tagId in dto.TagIds)
+            {
+                Tag? tag = await _unitOfWork.Tags.GetByIdAsync(tagId);
+                if (tag != null)
+                {
+                    contact.Tags ??= [];
+                    contact.Tags.Add(new ContactTag
+                    {
+                        ContactId = contact.Id,
+                        TagId = tagId
+                    });
+                }
+            }
+        }
+
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        _logger.LogInformation("Contact created successfully with ID: {ContactId}", contact.Id);
+        // Record metric after successful creation
+        _contactsCreated.Add(1,
+            new KeyValuePair<string, object?>("company", dto.Company ?? "none"),
+            new KeyValuePair<string, object?>("has.email", dto.EmailAddresses?.Count > 0),
+            new KeyValuePair<string, object?>("has.phone", dto.PhoneNumbers?.Count > 0));
+
+        activity?.SetTag("contact.id", contact.Id);
+        _logger.LogInformation("Contact created successfully: {ContactId}", contact.Id);
 
         return MapToDto(contact);
     }
@@ -252,6 +314,10 @@ public class ContactService(
 
         _unitOfWork.Contacts.Delete(contact);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+        // Record deletion metric
+        _contactsDeleted.Add(1,
+            new KeyValuePair<string, object?>("company", contact.Company ?? "none"));
 
         _logger.LogInformation("Contact deleted successfully: {ContactId}", id);
 
