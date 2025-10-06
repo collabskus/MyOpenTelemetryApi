@@ -1,7 +1,10 @@
 # Dockerfile.migrations - Dedicated container for running EF migrations
-FROM mcr.microsoft.com/dotnet/sdk:9.0
-
+FROM mcr.microsoft.com/dotnet/sdk:10.0
 WORKDIR /src
+
+# CRITICAL: Copy MSBuild property files FIRST (before .csproj files)
+COPY ["Directory.Build.props", "./"]
+COPY ["Directory.Packages.props", "./"]
 
 # Copy project files for restore
 COPY ["src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj", "src/MyOpenTelemetryApi.Api/"]
@@ -17,8 +20,9 @@ COPY . .
 
 WORKDIR "/src/src/MyOpenTelemetryApi.Api"
 
-# Install EF Core tools
-RUN dotnet tool install --global dotnet-ef --version 9.0.8
+# Install EF Core tools (using .NET 10 RC version)
+RUN dotnet tool install --global dotnet-ef --version 10.0.0-rc.1.25451.107
+
 ENV PATH="$PATH:/root/.dotnet/tools"
 
 # Default command runs migrations
