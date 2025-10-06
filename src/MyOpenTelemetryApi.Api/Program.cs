@@ -1,6 +1,7 @@
 ﻿
 // src/MyOpenTelemetryApi.Api/Program.cs - Updated version with configuration-based setup
 using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.Reflection;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
@@ -152,6 +153,13 @@ builder.Services.AddOpenTelemetry()
         }
     });
 
+// Register IMeterFactory for dependency injection
+var meterFactory = builder.Services.BuildServiceProvider().GetRequiredService<IMeterFactory>();
+var testMeter = meterFactory.Create("MyOpenTelemetryApi.Test");
+var testCounter = testMeter.CreateCounter<long>("test.counter");
+testCounter.Add(1);
+Console.WriteLine("✅ IMeterFactory is working!");
+
 // Add services to the container.
 builder.Services.AddControllers();
 
@@ -233,13 +241,13 @@ using (IServiceScope scope = app.Services.CreateScope())
     {
         logger.LogInformation("Checking for pending database migrations...");
         var pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync();
-        
+
         if (pendingMigrations.Any())
         {
-            logger.LogInformation("Found {Count} pending migrations: {Migrations}", 
-                pendingMigrations.Count(), 
+            logger.LogInformation("Found {Count} pending migrations: {Migrations}",
+                pendingMigrations.Count(),
                 string.Join(", ", pendingMigrations));
-            
+
             logger.LogInformation("Applying database migrations...");
             await dbContext.Database.MigrateAsync();
             logger.LogInformation("Database migrations applied successfully.");
