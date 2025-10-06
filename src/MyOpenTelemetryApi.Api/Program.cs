@@ -153,13 +153,6 @@ builder.Services.AddOpenTelemetry()
         }
     });
 
-// Register IMeterFactory for dependency injection
-var meterFactory = builder.Services.BuildServiceProvider().GetRequiredService<IMeterFactory>();
-var testMeter = meterFactory.Create("MyOpenTelemetryApi.Test");
-var testCounter = testMeter.CreateCounter<long>("test.counter");
-testCounter.Add(1);
-Console.WriteLine("✅ IMeterFactory is working!");
-
 // Add services to the container.
 builder.Services.AddControllers();
 
