@@ -8,6 +8,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <DisableMSBuildAssemblyCopyCheck>true</DisableMSBuildAssemblyCopyCheck>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Humanizer.Core" Version="3.0.0-beta.96" />
@@ -34,7 +35,4 @@
       Version="10.0.0-rc.1.25451.107" />
     <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.0-rc.1.25451.107" />
   </ItemGroup>
-  <PropertyGroup>
-    <DisableMSBuildAssemblyCopyCheck>true</DisableMSBuildAssemblyCopyCheck>
-  </PropertyGroup>
 </Project>
