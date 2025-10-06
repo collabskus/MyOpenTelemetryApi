@@ -1,4 +1,4 @@
-# Stage 1: Build
+# Stage 1: Build - Updated 2025-10-06 16:05
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
