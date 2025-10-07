@@ -1,7 +1,6 @@
 ﻿
 // src/MyOpenTelemetryApi.Api/Program.cs - Updated version with configuration-based setup
 using System.Diagnostics;
-using System.Diagnostics.Metrics;
 using System.Reflection;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;

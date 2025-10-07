@@ -1,6 +1,4 @@
 ﻿// src/MyOpenTelemetryApi.Domain/Interfaces/IUnitOfWork.cs
-using MyOpenTelemetryApi.Domain.Interfaces;
-
 namespace MyOpenTelemetryApi.Domain.Interfaces;
 
 public interface IUnitOfWork
