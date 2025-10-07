@@ -1,5 +1,4 @@
-﻿
-// src/MyOpenTelemetryApi.Api/Program.cs - Updated version with configuration-based setup
+﻿// src/MyOpenTelemetryApi.Api/Program.cs - Updated version with configuration-based setup
 using System.Diagnostics;
 using System.Reflection;
 using Microsoft.AspNetCore.Diagnostics;
@@ -231,22 +230,37 @@ using (IServiceScope scope = app.Services.CreateScope())
     using Activity? activity = Activity.Current?.Source.StartActivity("DatabaseMigration");
     try
     {
-        logger.LogInformation("Checking for pending database migrations...");
+        if (logger.IsEnabled(LogLevel.Information))
+        {
+            logger.LogInformation("Checking for pending database migrations...");
+        }
         var pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync();
 
         if (pendingMigrations.Any())
         {
-            logger.LogInformation("Found {Count} pending migrations: {Migrations}",
-                pendingMigrations.Count(),
-                string.Join(", ", pendingMigrations));
+            if (logger.IsEnabled(LogLevel.Information))
+            {
+                logger.LogInformation("Found {Count} pending migrations: {Migrations}",
+                    pendingMigrations.Count(),
+                    string.Join(", ", pendingMigrations));
+            }
 
-            logger.LogInformation("Applying database migrations...");
+            if (logger.IsEnabled(LogLevel.Information))
+            {
+                logger.LogInformation("Applying database migrations...");
+            }
             await dbContext.Database.MigrateAsync();
-            logger.LogInformation("Database migrations applied successfully.");
+            if (logger.IsEnabled(LogLevel.Information))
+            {
+                logger.LogInformation("Database migrations applied successfully.");
+            }
         }
         else
         {
-            logger.LogInformation("Database is up to date - no migrations needed.");
+            if (logger.IsEnabled(LogLevel.Information))
+            {
+                logger.LogInformation("Database is up to date - no migrations needed.");
+            }
         }
     }
     catch (Exception ex)
@@ -256,8 +270,10 @@ using (IServiceScope scope = app.Services.CreateScope())
         throw; // Fail startup if migrations fail
     }
 }
-
-app.Logger.LogInformation("Starting {ServiceName} version {ServiceVersion}", serviceName, serviceVersion);
+if (app.Logger.IsEnabled(LogLevel.Information))
+{
+    app.Logger.LogInformation("Starting {ServiceName} version {ServiceVersion}", serviceName, serviceVersion);
+}
 
 // Add a friendly landing page at the root
 app.MapGet("/", () => Results.Content("""
