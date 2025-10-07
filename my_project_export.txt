@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/07/2025 10:03:32
+Generated: 10/07/2025 10:29:52
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -26293,13 +26293,13 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 1198.66 KB
-MODIFIED: 10/07/2025 10:03:32
+MODIFIED: 10/07/2025 10:29:52
 ================================================================================
 
 
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/07/2025 10:03:32
+Generated: 10/07/2025 10:29:52
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -52591,7 +52591,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 ================================================================================
 FILE: my_project_export.txt
 SIZE: 1198.66 KB
-MODIFIED: 10/07/2025 10:03:32
+MODIFIED: 10/07/2025 10:29:52
 ================================================================================
 
 
@@ -53898,14 +53898,13 @@ MODIFIED: 10/06/2025 15:35:27
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Program.cs
-SIZE: 17.04 KB
-MODIFIED: 10/06/2025 12:39:14
+SIZE: 17.01 KB
+MODIFIED: 10/07/2025 10:18:25
 ================================================================================
 
 
 // src/MyOpenTelemetryApi.Api/Program.cs - Updated version with configuration-based setup
 using System.Diagnostics;
-using System.Diagnostics.Metrics;
 using System.Reflection;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
@@ -55899,13 +55898,11 @@ public interface ITagRepository : IRepository<Tag>
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IUnitOfWork.cs
-SIZE: 0.38 KB
-MODIFIED: 09/17/2025 15:28:26
+SIZE: 0.34 KB
+MODIFIED: 10/07/2025 10:18:23
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IUnitOfWork.cs
-using MyOpenTelemetryApi.Domain.Interfaces;
-
 namespace MyOpenTelemetryApi.Domain.Interfaces;
 
 public interface IUnitOfWork
@@ -58442,7 +58439,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/07/2025 10:03:33
+EXPORT COMPLETED: 10/07/2025 10:29:53
 Total Files Exported: 92
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
