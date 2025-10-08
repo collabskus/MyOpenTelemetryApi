@@ -1,1015 +1,3 @@
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:03.9822548Z
-LogRecord.TraceId:                 af58b3d6fa46e563dfd6fca609fce71e
-LogRecord.SpanId:                  026e79fb89b72358
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            MyOpenTelemetryApi.Api.Authentication.ApiKeyAuthenticationHandler
-LogRecord.Severity:                Debug
-LogRecord.SeverityText:            Debug
-LogRecord.FormattedMessage:        AuthenticationScheme: ApiKey was not authenticated.
-LogRecord.Body:                    AuthenticationScheme: {AuthenticationScheme} was not authenticated.
-LogRecord.Attributes (Key:Value):
-    AuthenticationScheme: ApiKey
-    OriginalFormat (a.k.a Body): AuthenticationScheme: {AuthenticationScheme} was not authenticated.
-LogRecord.EventId:                 9
-LogRecord.EventName:               AuthenticationSchemeNotAuthenticated
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 026e79fb89b72358
-[Scope.0]:TraceId: af58b3d6fa46e563dfd6fca609fce71e
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHE
-[Scope.2]:RequestId: 0HNG6ERQ38RHE:00000001
-[Scope.2]:RequestPath: /api/Groups
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:03.9834981Z
-LogRecord.TraceId:                 af58b3d6fa46e563dfd6fca609fce71e
-LogRecord.SpanId:                  026e79fb89b72358
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Routing.EndpointMiddleware
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executing endpoint 'MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)'
-LogRecord.Body:                    Executing endpoint '{EndpointName}'
-LogRecord.Attributes (Key:Value):
-    EndpointName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-    OriginalFormat (a.k.a Body): Executing endpoint '{EndpointName}'
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 026e79fb89b72358
-[Scope.0]:TraceId: af58b3d6fa46e563dfd6fca609fce71e
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHE
-[Scope.2]:RequestId: 0HNG6ERQ38RHE:00000001
-[Scope.2]:RequestPath: /api/Groups
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-Error exporting logs to file: Serialization and deserialization of 'System.RuntimeType' instances is not supported. The unsupported member type is located on type 'System.Object'. Path: $.Attributes.Metadata.TypeId.
-LogRecord.Timestamp:               2025-10-08T14:29:03.9958893Z
-LogRecord.TraceId:                 af58b3d6fa46e563dfd6fca609fce71e
-LogRecord.SpanId:                  026e79fb89b72358
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Route matched with {action = "CreateGroup", controller = "Groups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[MyOpenTelemetryApi.Application.DTOs.GroupDto]] CreateGroup(MyOpenTelemetryApi.Application.DTOs.CreateGroupDto) on controller MyOpenTelemetryApi.Api.Controllers.GroupsController (MyOpenTelemetryApi.Api).
-LogRecord.Body:                    Route matched with {RouteData}. Executing controller action with signature {MethodInfo} on controller {Controller} ({AssemblyName}).
-LogRecord.Attributes (Key:Value):
-    RouteData: {action = "CreateGroup", controller = "Groups"}
-    MethodInfo: System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[MyOpenTelemetryApi.Application.DTOs.GroupDto]] CreateGroup(MyOpenTelemetryApi.Application.DTOs.CreateGroupDto)
-    Controller: MyOpenTelemetryApi.Api.Controllers.GroupsController
-    AssemblyName: MyOpenTelemetryApi.Api
-    OriginalFormat (a.k.a Body): Route matched with {RouteData}. Executing controller action with signature {MethodInfo} on controller {Controller} ({AssemblyName}).
-LogRecord.EventId:                 102
-LogRecord.EventName:               ControllerActionExecuting
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 026e79fb89b72358
-[Scope.0]:TraceId: af58b3d6fa46e563dfd6fca609fce71e
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHE
-[Scope.2]:RequestId: 0HNG6ERQ38RHE:00000001
-[Scope.2]:RequestPath: /api/Groups
-[Scope.3]:ActionId: ffa0a950-4586-424c-82a2-1a110c0c42af
-[Scope.3]:ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-Error exporting logs to file: Serialization and deserialization of 'System.Reflection.RuntimeMethodInfo' instances is not supported. The unsupported member type is located on type 'System.Object'. Path: $.Attributes.
-LogRecord.Timestamp:               2025-10-08T14:29:04.0073470Z
-LogRecord.TraceId:                 af58b3d6fa46e563dfd6fca609fce71e
-LogRecord.SpanId:                  026e79fb89b72358
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executing action method MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api) - Validation state: Valid
-LogRecord.Body:                    Executing action method {ActionName} - Validation state: {ValidationState}
-LogRecord.Attributes (Key:Value):
-    ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-    ValidationState: Valid
-    OriginalFormat (a.k.a Body): Executing action method {ActionName} - Validation state: {ValidationState}
-LogRecord.EventId:                 101
-LogRecord.EventName:               ActionMethodExecuting
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 026e79fb89b72358
-[Scope.0]:TraceId: af58b3d6fa46e563dfd6fca609fce71e
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHE
-[Scope.2]:RequestId: 0HNG6ERQ38RHE:00000001
-[Scope.2]:RequestPath: /api/Groups
-[Scope.3]:ActionId: ffa0a950-4586-424c-82a2-1a110c0c42af
-[Scope.3]:ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.0501923Z
-LogRecord.TraceId:                 af58b3d6fa46e563dfd6fca609fce71e
-LogRecord.SpanId:                  b61da448ef59cc1e
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.EntityFrameworkCore.Database.Command
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executed DbCommand (41ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?'], CommandType='Text', CommandTimeout='30']
-INSERT INTO "Groups" ("Id", "CreatedAt", "Description", "Name")
-VALUES (@p0, @p1, @p2, @p3);
-LogRecord.Body:                    Executed DbCommand ({elapsed}ms) [Parameters=[{parameters}], CommandType='{commandType}', CommandTimeout='{commandTimeout}']{newLine}{commandText}
-LogRecord.Attributes (Key:Value):
-    elapsed: 41
-    parameters: @p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?'
-    commandType: Text
-    commandTimeout: 30
-    newLine:
-
-    commandText: INSERT INTO "Groups" ("Id", "CreatedAt", "Description", "Name")
-VALUES (@p0, @p1, @p2, @p3);
-    OriginalFormat (a.k.a Body): Executed DbCommand ({elapsed}ms) [Parameters=[{parameters}], CommandType='{commandType}', CommandTimeout='{commandTimeout}']{newLine}{commandText}
-LogRecord.EventId:                 20101
-LogRecord.EventName:               Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: b61da448ef59cc1e
-[Scope.0]:TraceId: af58b3d6fa46e563dfd6fca609fce71e
-[Scope.0]:ParentId: 026e79fb89b72358
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHE
-[Scope.2]:RequestId: 0HNG6ERQ38RHE:00000001
-[Scope.2]:RequestPath: /api/Groups
-[Scope.3]:ActionId: ffa0a950-4586-424c-82a2-1a110c0c42af
-[Scope.3]:ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-Activity.TraceId:            af58b3d6fa46e563dfd6fca609fce71e
-Activity.SpanId:             b61da448ef59cc1e
-Activity.TraceFlags:         Recorded
-Activity.ParentSpanId:       026e79fb89b72358
-Activity.DisplayName:        neondb
-Activity.Kind:               Client
-Activity.StartTime:          2025-10-08T14:29:04.0092491Z
-Activity.Duration:           00:00:00.0429600
-Activity.Tags:
-    db.system: postgresql
-    server.address: tcp://ep-late-dawn-aerv42ii-pooler.c-2.us-east-2.aws.neon.tech:5432
-    db.name: neondb
-    db.statement: INSERT INTO "Groups" ("Id", "CreatedAt", "Description", "Name")
-VALUES (@p0, @p1, @p2, @p3);
-
-Instrumentation scope (ActivitySource):
-    Name: OpenTelemetry.Instrumentation.EntityFrameworkCore
-    Version: 1.12.0-beta.2
-Resource associated with Activity:
-    service.name: MyOpenTelemetryApi
-    service.version: 1.0.0
-    service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-    telemetry.sdk.name: opentelemetry
-    telemetry.sdk.language: dotnet
-    telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.0530745Z
-LogRecord.TraceId:                 af58b3d6fa46e563dfd6fca609fce71e
-LogRecord.SpanId:                  026e79fb89b72358
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executed action method MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 44.1077ms.
-LogRecord.Body:                    Executed action method {ActionName}, returned result {ActionResult} in {ElapsedMilliseconds}ms.
-LogRecord.Attributes (Key:Value):
-    ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-    ActionResult: Microsoft.AspNetCore.Mvc.CreatedAtActionResult
-    ElapsedMilliseconds: 44.1077
-    OriginalFormat (a.k.a Body): Executed action method {ActionName}, returned result {ActionResult} in {ElapsedMilliseconds}ms.
-LogRecord.EventId:                 103
-LogRecord.EventName:               ActionMethodExecuted
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 026e79fb89b72358
-[Scope.0]:TraceId: af58b3d6fa46e563dfd6fca609fce71e
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHE
-[Scope.2]:RequestId: 0HNG6ERQ38RHE:00000001
-[Scope.2]:RequestPath: /api/Groups
-[Scope.3]:ActionId: ffa0a950-4586-424c-82a2-1a110c0c42af
-[Scope.3]:ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.0543604Z
-LogRecord.TraceId:                 af58b3d6fa46e563dfd6fca609fce71e
-LogRecord.SpanId:                  026e79fb89b72358
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executing CreatedAtActionResult, writing value of type 'MyOpenTelemetryApi.Application.DTOs.GroupDto'.
-LogRecord.Body:                    Executing {ObjectResultType}, writing value of type '{Type}'.
-LogRecord.Attributes (Key:Value):
-    ObjectResultType: CreatedAtActionResult
-    Type: MyOpenTelemetryApi.Application.DTOs.GroupDto
-    OriginalFormat (a.k.a Body): Executing {ObjectResultType}, writing value of type '{Type}'.
-LogRecord.EventId:                 1
-LogRecord.EventName:               ObjectResultExecuting
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 026e79fb89b72358
-[Scope.0]:TraceId: af58b3d6fa46e563dfd6fca609fce71e
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHE
-[Scope.2]:RequestId: 0HNG6ERQ38RHE:00000001
-[Scope.2]:RequestPath: /api/Groups
-[Scope.3]:ActionId: ffa0a950-4586-424c-82a2-1a110c0c42af
-[Scope.3]:ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.0556319Z
-LogRecord.TraceId:                 af58b3d6fa46e563dfd6fca609fce71e
-LogRecord.SpanId:                  026e79fb89b72358
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executed action MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api) in 48.4193ms
-LogRecord.Body:                    Executed action {ActionName} in {ElapsedMilliseconds}ms
-LogRecord.Attributes (Key:Value):
-    ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-    ElapsedMilliseconds: 48.4193
-    OriginalFormat (a.k.a Body): Executed action {ActionName} in {ElapsedMilliseconds}ms
-LogRecord.EventId:                 105
-LogRecord.EventName:               ActionExecuted
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 026e79fb89b72358
-[Scope.0]:TraceId: af58b3d6fa46e563dfd6fca609fce71e
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHE
-[Scope.2]:RequestId: 0HNG6ERQ38RHE:00000001
-[Scope.2]:RequestPath: /api/Groups
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.0569118Z
-LogRecord.TraceId:                 af58b3d6fa46e563dfd6fca609fce71e
-LogRecord.SpanId:                  026e79fb89b72358
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Routing.EndpointMiddleware
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executed endpoint 'MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)'
-LogRecord.Body:                    Executed endpoint '{EndpointName}'
-LogRecord.Attributes (Key:Value):
-    EndpointName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-    OriginalFormat (a.k.a Body): Executed endpoint '{EndpointName}'
-LogRecord.EventId:                 1
-LogRecord.EventName:               ExecutedEndpoint
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 026e79fb89b72358
-[Scope.0]:TraceId: af58b3d6fa46e563dfd6fca609fce71e
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHE
-[Scope.2]:RequestId: 0HNG6ERQ38RHE:00000001
-[Scope.2]:RequestPath: /api/Groups
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-Error exporting logs to file: Serialization and deserialization of 'System.RuntimeType' instances is not supported. The unsupported member type is located on type 'System.Object'. Path: $.Attributes.Metadata.TypeId.
-Activity.TraceId:            af58b3d6fa46e563dfd6fca609fce71e
-Activity.SpanId:             026e79fb89b72358
-Activity.TraceFlags:         Recorded
-Activity.DisplayName:        POST
-Activity.Kind:               Server
-Activity.StartTime:          2025-10-08T14:29:03.9801576Z
-Activity.Duration:           00:00:00.0967480
-Activity.Tags:
-    server.address: 192.168.0.80
-    server.port: 7034
-    http.request.method: POST
-    url.scheme: https
-    url.path: /api/Groups
-    network.protocol.version: 2
-    user_agent.original: curl/8.14.1
-    http.request.body.size: 102
-    user.agent: curl/8.14.1
-    client.ip: 192.168.0.120
-    http.response.body.size: 0
-Instrumentation scope (ActivitySource):
-    Name: Microsoft.AspNetCore
-Resource associated with Activity:
-    service.name: MyOpenTelemetryApi
-    service.version: 1.0.0
-    service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-    telemetry.sdk.name: opentelemetry
-    telemetry.sdk.language: dotnet
-    telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.0780301Z
-LogRecord.TraceId:                 af58b3d6fa46e563dfd6fca609fce71e
-LogRecord.SpanId:                  026e79fb89b72358
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Hosting.Diagnostics
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Request finished HTTP/2 POST https://192.168.0.80:7034/api/Groups - 201 - application/json;+charset=utf-8 97.8827ms
-LogRecord.Body:                    Request finished {Protocol} {Method} {Scheme}://{Host}{PathBase}{Path}{QueryString} - {StatusCode} {ContentLength} {ContentType} {ElapsedMilliseconds}ms
-LogRecord.Attributes (Key:Value):
-    ElapsedMilliseconds: 97.8827
-    StatusCode: 201
-    ContentType: application/json; charset=utf-8
-    ContentLength:
-    Protocol: HTTP/2
-    Method: POST
-    Scheme: https
-    Host: 192.168.0.80:7034
-    PathBase:
-    Path: /api/Groups
-    QueryString:
-    OriginalFormat (a.k.a Body): Request finished {Protocol} {Method} {Scheme}://{Host}{PathBase}{Path}{QueryString} - {StatusCode} {ContentLength} {ContentType} {ElapsedMilliseconds}ms
-LogRecord.EventId:                 2
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 026e79fb89b72358
-[Scope.0]:TraceId: af58b3d6fa46e563dfd6fca609fce71e
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHE
-[Scope.2]:RequestId: 0HNG6ERQ38RHE:00000001
-[Scope.2]:RequestPath: /api/Groups
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.1176067Z
-LogRecord.TraceId:                 391873c1c379627a3af8851893734dfa
-LogRecord.SpanId:                  79e01fb3acbe3485
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Hosting.Diagnostics
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Request starting HTTP/2 POST https://192.168.0.80:7034/api/Groups - application/json 97
-LogRecord.Body:                    Request starting {Protocol} {Method} {Scheme}://{Host}{PathBase}{Path}{QueryString} - {ContentType} {ContentLength}
-LogRecord.Attributes (Key:Value):
-    Protocol: HTTP/2
-    Method: POST
-    ContentType: application/json
-    ContentLength: 97
-    Scheme: https
-    Host: 192.168.0.80:7034
-    PathBase:
-    Path: /api/Groups
-    QueryString:
-    OriginalFormat (a.k.a Body): Request starting {Protocol} {Method} {Scheme}://{Host}{PathBase}{Path}{QueryString} - {ContentType} {ContentLength}
-LogRecord.EventId:                 1
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 79e01fb3acbe3485
-[Scope.0]:TraceId: 391873c1c379627a3af8851893734dfa
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHF
-[Scope.2]:RequestId: 0HNG6ERQ38RHF:00000001
-[Scope.2]:RequestPath: /api/Groups
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.1194217Z
-LogRecord.TraceId:                 391873c1c379627a3af8851893734dfa
-LogRecord.SpanId:                  79e01fb3acbe3485
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            MyOpenTelemetryApi.Api.Authentication.ApiKeyAuthenticationHandler
-LogRecord.Severity:                Debug
-LogRecord.SeverityText:            Debug
-LogRecord.FormattedMessage:        AuthenticationScheme: ApiKey was not authenticated.
-LogRecord.Body:                    AuthenticationScheme: {AuthenticationScheme} was not authenticated.
-LogRecord.Attributes (Key:Value):
-    AuthenticationScheme: ApiKey
-    OriginalFormat (a.k.a Body): AuthenticationScheme: {AuthenticationScheme} was not authenticated.
-LogRecord.EventId:                 9
-LogRecord.EventName:               AuthenticationSchemeNotAuthenticated
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 79e01fb3acbe3485
-[Scope.0]:TraceId: 391873c1c379627a3af8851893734dfa
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHF
-[Scope.2]:RequestId: 0HNG6ERQ38RHF:00000001
-[Scope.2]:RequestPath: /api/Groups
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.1209764Z
-LogRecord.TraceId:                 391873c1c379627a3af8851893734dfa
-LogRecord.SpanId:                  79e01fb3acbe3485
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Routing.EndpointMiddleware
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executing endpoint 'MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)'
-LogRecord.Body:                    Executing endpoint '{EndpointName}'
-LogRecord.Attributes (Key:Value):
-    EndpointName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-    OriginalFormat (a.k.a Body): Executing endpoint '{EndpointName}'
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 79e01fb3acbe3485
-[Scope.0]:TraceId: 391873c1c379627a3af8851893734dfa
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHF
-[Scope.2]:RequestId: 0HNG6ERQ38RHF:00000001
-[Scope.2]:RequestPath: /api/Groups
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-Error exporting logs to file: Serialization and deserialization of 'System.RuntimeType' instances is not supported. The unsupported member type is located on type 'System.Object'. Path: $.Attributes.Metadata.TypeId.
-LogRecord.Timestamp:               2025-10-08T14:29:04.1328062Z
-LogRecord.TraceId:                 391873c1c379627a3af8851893734dfa
-LogRecord.SpanId:                  79e01fb3acbe3485
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Route matched with {action = "CreateGroup", controller = "Groups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[MyOpenTelemetryApi.Application.DTOs.GroupDto]] CreateGroup(MyOpenTelemetryApi.Application.DTOs.CreateGroupDto) on controller MyOpenTelemetryApi.Api.Controllers.GroupsController (MyOpenTelemetryApi.Api).
-LogRecord.Body:                    Route matched with {RouteData}. Executing controller action with signature {MethodInfo} on controller {Controller} ({AssemblyName}).
-LogRecord.Attributes (Key:Value):
-    RouteData: {action = "CreateGroup", controller = "Groups"}
-    MethodInfo: System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[MyOpenTelemetryApi.Application.DTOs.GroupDto]] CreateGroup(MyOpenTelemetryApi.Application.DTOs.CreateGroupDto)
-    Controller: MyOpenTelemetryApi.Api.Controllers.GroupsController
-    AssemblyName: MyOpenTelemetryApi.Api
-    OriginalFormat (a.k.a Body): Route matched with {RouteData}. Executing controller action with signature {MethodInfo} on controller {Controller} ({AssemblyName}).
-LogRecord.EventId:                 102
-LogRecord.EventName:               ControllerActionExecuting
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 79e01fb3acbe3485
-[Scope.0]:TraceId: 391873c1c379627a3af8851893734dfa
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHF
-[Scope.2]:RequestId: 0HNG6ERQ38RHF:00000001
-[Scope.2]:RequestPath: /api/Groups
-[Scope.3]:ActionId: ffa0a950-4586-424c-82a2-1a110c0c42af
-[Scope.3]:ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-Error exporting logs to file: Serialization and deserialization of 'System.Reflection.RuntimeMethodInfo' instances is not supported. The unsupported member type is located on type 'System.Object'. Path: $.Attributes.
-LogRecord.Timestamp:               2025-10-08T14:29:04.1457314Z
-LogRecord.TraceId:                 391873c1c379627a3af8851893734dfa
-LogRecord.SpanId:                  79e01fb3acbe3485
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executing action method MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api) - Validation state: Valid
-LogRecord.Body:                    Executing action method {ActionName} - Validation state: {ValidationState}
-LogRecord.Attributes (Key:Value):
-    ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-    ValidationState: Valid
-    OriginalFormat (a.k.a Body): Executing action method {ActionName} - Validation state: {ValidationState}
-LogRecord.EventId:                 101
-LogRecord.EventName:               ActionMethodExecuting
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 79e01fb3acbe3485
-[Scope.0]:TraceId: 391873c1c379627a3af8851893734dfa
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHF
-[Scope.2]:RequestId: 0HNG6ERQ38RHF:00000001
-[Scope.2]:RequestPath: /api/Groups
-[Scope.3]:ActionId: ffa0a950-4586-424c-82a2-1a110c0c42af
-[Scope.3]:ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.1869915Z
-LogRecord.TraceId:                 391873c1c379627a3af8851893734dfa
-LogRecord.SpanId:                  7c5cfbff4b3b9700
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.EntityFrameworkCore.Database.Command
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executed DbCommand (39ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?'], CommandType='Text', CommandTimeout='30']
-INSERT INTO "Groups" ("Id", "CreatedAt", "Description", "Name")
-VALUES (@p0, @p1, @p2, @p3);
-LogRecord.Body:                    Executed DbCommand ({elapsed}ms) [Parameters=[{parameters}], CommandType='{commandType}', CommandTimeout='{commandTimeout}']{newLine}{commandText}
-LogRecord.Attributes (Key:Value):
-    elapsed: 39
-    parameters: @p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?'
-    commandType: Text
-    commandTimeout: 30
-    newLine:
-
-    commandText: INSERT INTO "Groups" ("Id", "CreatedAt", "Description", "Name")
-VALUES (@p0, @p1, @p2, @p3);
-    OriginalFormat (a.k.a Body): Executed DbCommand ({elapsed}ms) [Parameters=[{parameters}], CommandType='{commandType}', CommandTimeout='{commandTimeout}']{newLine}{commandText}
-LogRecord.EventId:                 20101
-LogRecord.EventName:               Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 7c5cfbff4b3b9700
-[Scope.0]:TraceId: 391873c1c379627a3af8851893734dfa
-[Scope.0]:ParentId: 79e01fb3acbe3485
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHF
-[Scope.2]:RequestId: 0HNG6ERQ38RHF:00000001
-[Scope.2]:RequestPath: /api/Groups
-[Scope.3]:ActionId: ffa0a950-4586-424c-82a2-1a110c0c42af
-[Scope.3]:ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-Activity.TraceId:            391873c1c379627a3af8851893734dfa
-Activity.SpanId:             7c5cfbff4b3b9700
-Activity.TraceFlags:         Recorded
-Activity.ParentSpanId:       79e01fb3acbe3485
-Activity.DisplayName:        neondb
-Activity.Kind:               Client
-Activity.StartTime:          2025-10-08T14:29:04.1478249Z
-Activity.Duration:           00:00:00.0409767
-Activity.Tags:
-    db.system: postgresql
-    server.address: tcp://ep-late-dawn-aerv42ii-pooler.c-2.us-east-2.aws.neon.tech:5432
-    db.name: neondb
-    db.statement: INSERT INTO "Groups" ("Id", "CreatedAt", "Description", "Name")
-VALUES (@p0, @p1, @p2, @p3);
-
-Instrumentation scope (ActivitySource):
-    Name: OpenTelemetry.Instrumentation.EntityFrameworkCore
-    Version: 1.12.0-beta.2
-Resource associated with Activity:
-    service.name: MyOpenTelemetryApi
-    service.version: 1.0.0
-    service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-    telemetry.sdk.name: opentelemetry
-    telemetry.sdk.language: dotnet
-    telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.1896367Z
-LogRecord.TraceId:                 391873c1c379627a3af8851893734dfa
-LogRecord.SpanId:                  79e01fb3acbe3485
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executed action method MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 42.17ms.
-LogRecord.Body:                    Executed action method {ActionName}, returned result {ActionResult} in {ElapsedMilliseconds}ms.
-LogRecord.Attributes (Key:Value):
-    ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-    ActionResult: Microsoft.AspNetCore.Mvc.CreatedAtActionResult
-    ElapsedMilliseconds: 42.17
-    OriginalFormat (a.k.a Body): Executed action method {ActionName}, returned result {ActionResult} in {ElapsedMilliseconds}ms.
-LogRecord.EventId:                 103
-LogRecord.EventName:               ActionMethodExecuted
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 79e01fb3acbe3485
-[Scope.0]:TraceId: 391873c1c379627a3af8851893734dfa
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHF
-[Scope.2]:RequestId: 0HNG6ERQ38RHF:00000001
-[Scope.2]:RequestPath: /api/Groups
-[Scope.3]:ActionId: ffa0a950-4586-424c-82a2-1a110c0c42af
-[Scope.3]:ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.1910028Z
-LogRecord.TraceId:                 391873c1c379627a3af8851893734dfa
-LogRecord.SpanId:                  79e01fb3acbe3485
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executing CreatedAtActionResult, writing value of type 'MyOpenTelemetryApi.Application.DTOs.GroupDto'.
-LogRecord.Body:                    Executing {ObjectResultType}, writing value of type '{Type}'.
-LogRecord.Attributes (Key:Value):
-    ObjectResultType: CreatedAtActionResult
-    Type: MyOpenTelemetryApi.Application.DTOs.GroupDto
-    OriginalFormat (a.k.a Body): Executing {ObjectResultType}, writing value of type '{Type}'.
-LogRecord.EventId:                 1
-LogRecord.EventName:               ObjectResultExecuting
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 79e01fb3acbe3485
-[Scope.0]:TraceId: 391873c1c379627a3af8851893734dfa
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHF
-[Scope.2]:RequestId: 0HNG6ERQ38RHF:00000001
-[Scope.2]:RequestPath: /api/Groups
-[Scope.3]:ActionId: ffa0a950-4586-424c-82a2-1a110c0c42af
-[Scope.3]:ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.1922353Z
-LogRecord.TraceId:                 391873c1c379627a3af8851893734dfa
-LogRecord.SpanId:                  79e01fb3acbe3485
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executed action MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api) in 46.6586ms
-LogRecord.Body:                    Executed action {ActionName} in {ElapsedMilliseconds}ms
-LogRecord.Attributes (Key:Value):
-    ActionName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-    ElapsedMilliseconds: 46.6586
-    OriginalFormat (a.k.a Body): Executed action {ActionName} in {ElapsedMilliseconds}ms
-LogRecord.EventId:                 105
-LogRecord.EventName:               ActionExecuted
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 79e01fb3acbe3485
-[Scope.0]:TraceId: 391873c1c379627a3af8851893734dfa
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHF
-[Scope.2]:RequestId: 0HNG6ERQ38RHF:00000001
-[Scope.2]:RequestPath: /api/Groups
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.1935186Z
-LogRecord.TraceId:                 391873c1c379627a3af8851893734dfa
-LogRecord.SpanId:                  79e01fb3acbe3485
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Routing.EndpointMiddleware
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executed endpoint 'MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)'
-LogRecord.Body:                    Executed endpoint '{EndpointName}'
-LogRecord.Attributes (Key:Value):
-    EndpointName: MyOpenTelemetryApi.Api.Controllers.GroupsController.CreateGroup (MyOpenTelemetryApi.Api)
-    OriginalFormat (a.k.a Body): Executed endpoint '{EndpointName}'
-LogRecord.EventId:                 1
-LogRecord.EventName:               ExecutedEndpoint
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 79e01fb3acbe3485
-[Scope.0]:TraceId: 391873c1c379627a3af8851893734dfa
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHF
-[Scope.2]:RequestId: 0HNG6ERQ38RHF:00000001
-[Scope.2]:RequestPath: /api/Groups
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-Error exporting logs to file: Serialization and deserialization of 'System.RuntimeType' instances is not supported. The unsupported member type is located on type 'System.Object'. Path: $.Attributes.Metadata.TypeId.
-Activity.TraceId:            391873c1c379627a3af8851893734dfa
-Activity.SpanId:             79e01fb3acbe3485
-Activity.TraceFlags:         Recorded
-Activity.DisplayName:        POST
-Activity.Kind:               Server
-Activity.StartTime:          2025-10-08T14:29:04.1175878Z
-Activity.Duration:           00:00:00.0966383
-Activity.Tags:
-    server.address: 192.168.0.80
-    server.port: 7034
-    http.request.method: POST
-    url.scheme: https
-    url.path: /api/Groups
-    network.protocol.version: 2
-    user_agent.original: curl/8.14.1
-    http.request.body.size: 97
-    user.agent: curl/8.14.1
-    client.ip: 192.168.0.120
-    http.response.body.size: 0
-Instrumentation scope (ActivitySource):
-    Name: Microsoft.AspNetCore
-Resource associated with Activity:
-    service.name: MyOpenTelemetryApi
-    service.version: 1.0.0
-    service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-    telemetry.sdk.name: opentelemetry
-    telemetry.sdk.language: dotnet
-    telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.2152610Z
-LogRecord.TraceId:                 391873c1c379627a3af8851893734dfa
-LogRecord.SpanId:                  79e01fb3acbe3485
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Hosting.Diagnostics
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Request finished HTTP/2 POST https://192.168.0.80:7034/api/Groups - 201 - application/json;+charset=utf-8 97.6833ms
-LogRecord.Body:                    Request finished {Protocol} {Method} {Scheme}://{Host}{PathBase}{Path}{QueryString} - {StatusCode} {ContentLength} {ContentType} {ElapsedMilliseconds}ms
-LogRecord.Attributes (Key:Value):
-    ElapsedMilliseconds: 97.6833
-    StatusCode: 201
-    ContentType: application/json; charset=utf-8
-    ContentLength:
-    Protocol: HTTP/2
-    Method: POST
-    Scheme: https
-    Host: 192.168.0.80:7034
-    PathBase:
-    Path: /api/Groups
-    QueryString:
-    OriginalFormat (a.k.a Body): Request finished {Protocol} {Method} {Scheme}://{Host}{PathBase}{Path}{QueryString} - {StatusCode} {ContentLength} {ContentType} {ElapsedMilliseconds}ms
-LogRecord.EventId:                 2
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 79e01fb3acbe3485
-[Scope.0]:TraceId: 391873c1c379627a3af8851893734dfa
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHF
-[Scope.2]:RequestId: 0HNG6ERQ38RHF:00000001
-[Scope.2]:RequestPath: /api/Groups
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.2529363Z
-LogRecord.TraceId:                 af267e8412f1307ff2302913c06ed583
-LogRecord.SpanId:                  628334fe263c818b
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Hosting.Diagnostics
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Request starting HTTP/2 POST https://192.168.0.80:7034/api/Contacts - application/json 1616
-LogRecord.Body:                    Request starting {Protocol} {Method} {Scheme}://{Host}{PathBase}{Path}{QueryString} - {ContentType} {ContentLength}
-LogRecord.Attributes (Key:Value):
-    Protocol: HTTP/2
-    Method: POST
-    ContentType: application/json
-    ContentLength: 1616
-    Scheme: https
-    Host: 192.168.0.80:7034
-    PathBase:
-    Path: /api/Contacts
-    QueryString:
-    OriginalFormat (a.k.a Body): Request starting {Protocol} {Method} {Scheme}://{Host}{PathBase}{Path}{QueryString} - {ContentType} {ContentLength}
-LogRecord.EventId:                 1
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 628334fe263c818b
-[Scope.0]:TraceId: af267e8412f1307ff2302913c06ed583
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHG
-[Scope.2]:RequestId: 0HNG6ERQ38RHG:00000001
-[Scope.2]:RequestPath: /api/Contacts
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.2546070Z
-LogRecord.TraceId:                 af267e8412f1307ff2302913c06ed583
-LogRecord.SpanId:                  628334fe263c818b
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            MyOpenTelemetryApi.Api.Authentication.ApiKeyAuthenticationHandler
-LogRecord.Severity:                Debug
-LogRecord.SeverityText:            Debug
-LogRecord.FormattedMessage:        AuthenticationScheme: ApiKey was not authenticated.
-LogRecord.Body:                    AuthenticationScheme: {AuthenticationScheme} was not authenticated.
-LogRecord.Attributes (Key:Value):
-    AuthenticationScheme: ApiKey
-    OriginalFormat (a.k.a Body): AuthenticationScheme: {AuthenticationScheme} was not authenticated.
-LogRecord.EventId:                 9
-LogRecord.EventName:               AuthenticationSchemeNotAuthenticated
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 628334fe263c818b
-[Scope.0]:TraceId: af267e8412f1307ff2302913c06ed583
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHG
-[Scope.2]:RequestId: 0HNG6ERQ38RHG:00000001
-[Scope.2]:RequestPath: /api/Contacts
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-LogRecord.Timestamp:               2025-10-08T14:29:04.2561783Z
-LogRecord.TraceId:                 af267e8412f1307ff2302913c06ed583
-LogRecord.SpanId:                  628334fe263c818b
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Routing.EndpointMiddleware
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Executing endpoint 'MyOpenTelemetryApi.Api.Controllers.ContactsController.CreateContact (MyOpenTelemetryApi.Api)'
-LogRecord.Body:                    Executing endpoint '{EndpointName}'
-LogRecord.Attributes (Key:Value):
-    EndpointName: MyOpenTelemetryApi.Api.Controllers.ContactsController.CreateContact (MyOpenTelemetryApi.Api)
-    OriginalFormat (a.k.a Body): Executing endpoint '{EndpointName}'
-LogRecord.ScopeValues (Key:Value):
-[Scope.0]:SpanId: 628334fe263c818b
-[Scope.0]:TraceId: af267e8412f1307ff2302913c06ed583
-[Scope.0]:ParentId: 0000000000000000
-[Scope.1]:ConnectionId: 0HNG6ERQ38RHG
-[Scope.2]:RequestId: 0HNG6ERQ38RHG:00000001
-[Scope.2]:RequestPath: /api/Contacts
-
-Resource associated with LogRecord:
-service.name: MyOpenTelemetryApi
-service.version: 1.0.0
-service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
-environment: Development
-deployment.environment: Development
-host.name: DESKTOP-3J5HTD8
-telemetry.sdk.name: opentelemetry
-telemetry.sdk.language: dotnet
-telemetry.sdk.version: 1.13.0
-
-Error exporting logs to file: Serialization and deserialization of 'System.RuntimeType' instances is not supported. The unsupported member type is located on type 'System.Object'. Path: $.Attributes.Metadata.TypeId.
-LogRecord.Timestamp:               2025-10-08T14:29:04.2696032Z
-LogRecord.TraceId:                 af267e8412f1307ff2302913c06ed583
-LogRecord.SpanId:                  628334fe263c818b
-LogRecord.TraceFlags:              Recorded
-LogRecord.CategoryName:            Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
-LogRecord.Severity:                Info
-LogRecord.SeverityText:            Information
-LogRecord.FormattedMessage:        Route matched with {action = "CreateContact", controller = "Contacts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[MyOpenTelemetryApi.Application.DTOs.ContactDto]] CreateContact(MyOpenTelemetryApi.Application.DTOs.CreateContactDto, System.Threading.CancellationToken) on controller MyOpenTelemetryApi.Api.Controllers.ContactsController (MyOpenTelemetryApi.Api).
-LogRecord.Body:                    Route matched with {RouteData}. Executing controller action with signature {MethodInfo} on controller {Controller} ({AssemblyName}).
-LogRecord.Attributes (Key:Value):
-    RouteData: {action = "CreateContact", controller = "Contacts"}
-    MethodInfo: System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[MyOpenTelemetryApi.Application.DTOs.ContactDto]] CreateContact(MyOpenTelemetryApi.Application.DTOs.CreateContactDto, System.Threading.CancellationToken)
-    Controller: MyOpenTelemetryApi.Api.Controllers.ContactsController
-    AssemblyName: MyOpenTelemetryApi.Api
-    OriginalFormat (a.k.a Body): Route matched with {RouteData}. Executing controller action with signature {MethodInfo} on controller {Controller} ({AssemblyName}).
-LogRecord.EventId:                 102
-LogRecord.EventName:               ControllerActionExecuting
 LogRecord.ScopeValues (Key:Value):
 [Scope.0]:SpanId: 628334fe263c818b
 [Scope.0]:TraceId: af267e8412f1307ff2302913c06ed583
@@ -7877,4 +6865,900 @@ Value: 1
 (2025-10-08T14:28:32.3491283Z, 2025-10-08T14:29:55.8719038Z] company: Daily Bugle-2025-10-08-10-29-05has.email: true has.phone: true
 Value: 1
 (2025-10-08T14:28:32.3491283Z, 2025-10-08T14:29:55.8719038Z] company: Daily Planet-2025-10-08-10-29-05 has.email: true has.phone: true
+Value: 1
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.0
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-08T14:23:55.8733479Z, 2025-10-08T14:30:05.8634724Z]
+Value: 226910208
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-08T14:23:55.8745353Z, 2025-10-08T14:30:05.8634732Z]
+Value: 2481115807744
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit:s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-08T14:23:55.8748154Z, 2025-10-08T14:30:05.8634733Z] process.cpu.state: user
+Value: 9.640625
+(2025-10-08T14:23:55.8748154Z, 2025-10-08T14:30:05.8634733Z] process.cpu.state: system
+Value: 2.6875
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-08T14:23:55.8748362Z, 2025-10-08T14:30:05.8634736Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-08T14:23:55.8748470Z, 2025-10-08T14:30:05.8634737Z]
+Value: 38
+
+Metric Name: kestrel.active_connections, Description: Number of connections that are currently activeon the server., Unit: {connection}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8748567Z, 2025-10-08T14:30:05.8634741Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034
+Value: 0
+
+Metric Name: kestrel.connection.duration, Description: The duration of connections on the server., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8755025Z, 2025-10-08T14:30:05.8634747Z] network.protocol.name: http network.protocol.version: 2 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034 tls.protocol.version: 1.3
+Value: Sum: 23.106648700000008 Count: 110 Min: 0.0989388 Max: 0.7897525
+(-Infinity,0.01]:0
+(0.01,0.02]:0
+(0.02,0.05]:0
+(0.05,0.1]:1
+(0.1,0.2]:56
+(0.2,0.5]:51
+(0.5,1]:2
+(1,2]:0
+(2,5]:0
+(5,10]:0
+(10,30]:0
+(30,60]:0
+(60,120]:0
+(120,300]:0
+(300,+Infinity]:0
+
+
+Metric Name: kestrel.queued_connections, Description: Number of connections that are currently queuedand are waiting to start., Unit: {connection}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8755530Z, 2025-10-08T14:30:05.8634753Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034
+Value: 0
+
+Metric Name: kestrel.queued_requests, Description: Number of HTTP requests on multiplexed connections(HTTP/2 and HTTP/3) that are currently queued and are waiting to start., Unit: {request}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8755613Z, 2025-10-08T14:30:05.8634756Z] network.protocol.name: http network.protocol.version: 2 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034
+Value: 0
+
+Metric Name: kestrel.tls_handshake.duration, Description: The duration of TLS handshakes on the server., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8755873Z, 2025-10-08T14:30:05.8634765Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034 tls.protocol.version: 1.3
+Value: Sum: 0.7197292000000005 Count: 110 Min: 0.0054647 Max: 0.0473704
+(-Infinity,0.005]:0
+(0.005,0.01]:109
+(0.01,0.025]:0
+(0.025,0.05]:1
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:0
+(0.25,0.5]:0
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+
+Metric Name: kestrel.active_tls_handshakes, Description: Number of TLS handshakes that are currently in progress on the server., Unit: {handshake}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8764805Z, 2025-10-08T14:30:05.8634768Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034
+Value: 0
+
+Metric Name: dns.lookup.duration, Description: Measures the time taken to perform a DNS lookup., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: System.Net.NameResolution
+(2025-10-08T14:23:55.8764989Z, 2025-10-08T14:30:05.8634774Z] dns.question.name: ep-late-dawn-aerv42ii-pooler.c-2.us-east-2.aws.neon.tech
+Value: Sum: 0.0195167 Count: 1 Min: 0.0195167 Max: 0.0195167
+(-Infinity,0.005]:0
+(0.005,0.01]:0
+(0.01,0.025]:1
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:0
+(0.25,0.5]:0
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+
+Metric Name: http.server.active_requests, Description: Number of active HTTP server requests., Unit: {request}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Hosting
+(2025-10-08T14:23:55.8765066Z, 2025-10-08T14:30:05.8634778Z] http.request.method: POST url.scheme: https
+Value: 0
+
+Metric Name: http.server.request.duration, Description: Duration of HTTP server requests., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Hosting
+(2025-10-08T14:23:55.8765134Z, 2025-10-08T14:30:05.8634789Z] http.request.method: POST http.response.status_code: 201 http.route: api/Tags network.protocol.version: 2 url.scheme: https
+Value: Sum: 5.055050299999999 Count: 30 Min: 0.1294279 Max: 0.7072068
+(-Infinity,0.005]:0
+(0.005,0.01]:0
+(0.01,0.025]:0
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:28
+(0.25,0.5]:1
+(0.5,0.75]:1
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+(2025-10-08T14:23:55.8765134Z, 2025-10-08T14:30:05.8634789Z] http.request.method: POST http.response.status_code: 201 http.route: api/Groups network.protocol.version: 2 url.scheme: https
+Value: Sum: 3.045354399999999 Count: 30 Min: 0.0910502 Max: 0.1454622
+(-Infinity,0.005]:0
+(0.005,0.01]:0
+(0.01,0.025]:0
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:17
+(0.1,0.25]:13
+(0.25,0.5]:0
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+(2025-10-08T14:23:55.8765134Z, 2025-10-08T14:30:05.8634789Z] http.request.method: POST http.response.status_code: 201 http.route: api/Contacts network.protocol.version: 2 url.scheme: https
+Value: Sum: 13.9664878 Count: 50 Min: 0.2101643 Max: 0.5416499
+(-Infinity,0.005]:0
+(0.005,0.01]:0
+(0.01,0.025]:0
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:12
+(0.25,0.5]:37
+(0.5,0.75]:1
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurredsince the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765186Z, 2025-10-08T14:30:05.8634790Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-08T14:23:55.8765186Z, 2025-10-08T14:30:05.8634790Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-08T14:23:55.8765186Z, 2025-10-08T14:30:05.8634790Z] gc.heap.generation: gen0
+Value: 4
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765231Z, 2025-10-08T14:30:05.8634792Z]
+Value: 226910208
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765292Z, 2025-10-08T14:30:05.8634793Z]
+Value: 110495952
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765336Z, 2025-10-08T14:30:05.8634794Z]
+Value: 53981184
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765384Z, 2025-10-08T14:30:05.8634796Z] gc.heap.generation: gen0
+Value: 0
+(2025-10-08T14:23:55.8765384Z, 2025-10-08T14:30:05.8634796Z] gc.heap.generation: gen1
+Value: 7561112
+(2025-10-08T14:23:55.8765384Z, 2025-10-08T14:30:05.8634796Z] gc.heap.generation: gen2
+Value: 3798368
+(2025-10-08T14:23:55.8765384Z, 2025-10-08T14:30:05.8634796Z] gc.heap.generation: loh
+Value: 6010584
+(2025-10-08T14:23:55.8765384Z, 2025-10-08T14:30:05.8634796Z] gc.heap.generation: poh
+Value: 370744
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765436Z, 2025-10-08T14:30:05.8634796Z] gc.heap.generation: gen0
+Value: 0
+(2025-10-08T14:23:55.8765436Z, 2025-10-08T14:30:05.8634796Z] gc.heap.generation: gen1
+Value: 251664
+(2025-10-08T14:23:55.8765436Z, 2025-10-08T14:30:05.8634796Z] gc.heap.generation: gen2
+Value: 149712
+(2025-10-08T14:23:55.8765436Z, 2025-10-08T14:30:05.8634796Z] gc.heap.generation: loh
+Value: 1344
+(2025-10-08T14:23:55.8765436Z, 2025-10-08T14:30:05.8634796Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799120Z, 2025-10-08T14:30:05.8634798Z]
+Value: 0.024814
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799299Z, 2025-10-08T14:30:05.8634799Z]
+Value: 2812024
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799372Z, 2025-10-08T14:30:05.8634800Z]
+Value: 35592
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799552Z, 2025-10-08T14:30:05.8634801Z]
+Value: 9.8693925
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799628Z, 2025-10-08T14:30:05.8634803Z]
+Value: 2
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799691Z, 2025-10-08T14:30:05.8634804Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799775Z, 2025-10-08T14:30:05.8634808Z]
+Value: 6367
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799850Z, 2025-10-08T14:30:05.8634809Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799923Z, 2025-10-08T14:30:05.8634810Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799985Z, 2025-10-08T14:30:05.8634811Z]
+Value: 171
+
+Metric Name: dotnet.exceptions, Description: The number of exceptions that have been thrown in managed code., Unit: {exception}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8800047Z, 2025-10-08T14:30:05.8634813Z] error.type: NotSupportedException
+Value: 660
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8800120Z, 2025-10-08T14:30:05.8634815Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8800195Z, 2025-10-08T14:30:05.8634815Z] cpu.mode: user
+Value: 9.640625
+(2025-10-08T14:23:55.8800195Z, 2025-10-08T14:30:05.8634815Z] cpu.mode: system
+Value: 2.6875
+
+Metric Name: aspnetcore.routing.match_attempts, Description: Number of requests that were attempted to be matched to an endpoint., Unit: {match_attempt}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Routing
+(2025-10-08T14:23:55.9347643Z, 2025-10-08T14:30:05.8634818Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Tags
+Value: 30
+(2025-10-08T14:23:55.9347643Z, 2025-10-08T14:30:05.8634818Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Groups
+Value: 30
+(2025-10-08T14:23:55.9347643Z, 2025-10-08T14:30:05.8634818Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Contacts
+Value: 50
+
+Metric Name: contacts.created, Description: Number of contacts created, Unit: contacts, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: MyOpenTelemetryApi.Contacts
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Wayne Enterprises-2025-10-08-10-28-32 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Stark Industries-2025-10-08-10-28-32 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Themyscira Inc-2025-10-08-10-28-32 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Bugle-2025-10-08-10-28-32has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Planet-2025-10-08-10-28-32 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Wayne Enterprises-2025-10-08-10-28-36 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Stark Industries-2025-10-08-10-28-36 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Themyscira Inc-2025-10-08-10-28-36 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Bugle-2025-10-08-10-28-36has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Planet-2025-10-08-10-28-36 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Wayne Enterprises-2025-10-08-10-28-40 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Stark Industries-2025-10-08-10-28-40 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Themyscira Inc-2025-10-08-10-28-40 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Bugle-2025-10-08-10-28-40has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Planet-2025-10-08-10-28-40 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Wayne Enterprises-2025-10-08-10-28-43 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Stark Industries-2025-10-08-10-28-43 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Themyscira Inc-2025-10-08-10-28-43 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Bugle-2025-10-08-10-28-43has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Planet-2025-10-08-10-28-43 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Wayne Enterprises-2025-10-08-10-28-47 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Stark Industries-2025-10-08-10-28-47 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Themyscira Inc-2025-10-08-10-28-47 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Bugle-2025-10-08-10-28-47has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Planet-2025-10-08-10-28-47 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Wayne Enterprises-2025-10-08-10-28-50 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Stark Industries-2025-10-08-10-28-50 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Themyscira Inc-2025-10-08-10-28-50 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Bugle-2025-10-08-10-28-50has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Planet-2025-10-08-10-28-50 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Wayne Enterprises-2025-10-08-10-28-54 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Stark Industries-2025-10-08-10-28-54 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Themyscira Inc-2025-10-08-10-28-54 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Bugle-2025-10-08-10-28-54has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Planet-2025-10-08-10-28-54 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Wayne Enterprises-2025-10-08-10-28-57 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Stark Industries-2025-10-08-10-28-57 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Themyscira Inc-2025-10-08-10-28-57 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Bugle-2025-10-08-10-28-57has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Planet-2025-10-08-10-28-57 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Wayne Enterprises-2025-10-08-10-29-01 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Stark Industries-2025-10-08-10-29-01 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Themyscira Inc-2025-10-08-10-29-01 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Bugle-2025-10-08-10-29-01has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Planet-2025-10-08-10-29-01 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Wayne Enterprises-2025-10-08-10-29-05 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Stark Industries-2025-10-08-10-29-05 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Themyscira Inc-2025-10-08-10-29-05 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Bugle-2025-10-08-10-29-05has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:05.8634826Z] company: Daily Planet-2025-10-08-10-29-05 has.email: true has.phone: true
+Value: 1
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: de80ac77-ebb3-4e8e-bf05-6593a11f3f53
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.0
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-08T14:23:55.8733479Z, 2025-10-08T14:30:15.8623939Z]
+Value: 226910208
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-08T14:23:55.8745353Z, 2025-10-08T14:30:15.8623944Z]
+Value: 2481115807744
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit:s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-08T14:23:55.8748154Z, 2025-10-08T14:30:15.8623945Z] process.cpu.state: user
+Value: 9.640625
+(2025-10-08T14:23:55.8748154Z, 2025-10-08T14:30:15.8623945Z] process.cpu.state: system
+Value: 2.71875
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-08T14:23:55.8748362Z, 2025-10-08T14:30:15.8623948Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-08T14:23:55.8748470Z, 2025-10-08T14:30:15.8623950Z]
+Value: 38
+
+Metric Name: kestrel.active_connections, Description: Number of connections that are currently activeon the server., Unit: {connection}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8748567Z, 2025-10-08T14:30:15.8623953Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034
+Value: 0
+
+Metric Name: kestrel.connection.duration, Description: The duration of connections on the server., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8755025Z, 2025-10-08T14:30:15.8623960Z] network.protocol.name: http network.protocol.version: 2 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034 tls.protocol.version: 1.3
+Value: Sum: 23.106648700000008 Count: 110 Min: 0.0989388 Max: 0.7897525
+(-Infinity,0.01]:0
+(0.01,0.02]:0
+(0.02,0.05]:0
+(0.05,0.1]:1
+(0.1,0.2]:56
+(0.2,0.5]:51
+(0.5,1]:2
+(1,2]:0
+(2,5]:0
+(5,10]:0
+(10,30]:0
+(30,60]:0
+(60,120]:0
+(120,300]:0
+(300,+Infinity]:0
+
+
+Metric Name: kestrel.queued_connections, Description: Number of connections that are currently queuedand are waiting to start., Unit: {connection}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8755530Z, 2025-10-08T14:30:15.8623967Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034
+Value: 0
+
+Metric Name: kestrel.queued_requests, Description: Number of HTTP requests on multiplexed connections(HTTP/2 and HTTP/3) that are currently queued and are waiting to start., Unit: {request}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8755613Z, 2025-10-08T14:30:15.8623970Z] network.protocol.name: http network.protocol.version: 2 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034
+Value: 0
+
+Metric Name: kestrel.tls_handshake.duration, Description: The duration of TLS handshakes on the server., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8755873Z, 2025-10-08T14:30:15.8624036Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034 tls.protocol.version: 1.3
+Value: Sum: 0.7197292000000005 Count: 110 Min: 0.0054647 Max: 0.0473704
+(-Infinity,0.005]:0
+(0.005,0.01]:109
+(0.01,0.025]:0
+(0.025,0.05]:1
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:0
+(0.25,0.5]:0
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+
+Metric Name: kestrel.active_tls_handshakes, Description: Number of TLS handshakes that are currently in progress on the server., Unit: {handshake}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-08T14:23:55.8764805Z, 2025-10-08T14:30:15.8624039Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 7034
+Value: 0
+
+Metric Name: dns.lookup.duration, Description: Measures the time taken to perform a DNS lookup., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: System.Net.NameResolution
+(2025-10-08T14:23:55.8764989Z, 2025-10-08T14:30:15.8624046Z] dns.question.name: ep-late-dawn-aerv42ii-pooler.c-2.us-east-2.aws.neon.tech
+Value: Sum: 0.0195167 Count: 1 Min: 0.0195167 Max: 0.0195167
+(-Infinity,0.005]:0
+(0.005,0.01]:0
+(0.01,0.025]:1
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:0
+(0.25,0.5]:0
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+
+Metric Name: http.server.active_requests, Description: Number of active HTTP server requests., Unit: {request}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Hosting
+(2025-10-08T14:23:55.8765066Z, 2025-10-08T14:30:15.8624049Z] http.request.method: POST url.scheme: https
+Value: 0
+
+Metric Name: http.server.request.duration, Description: Duration of HTTP server requests., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Hosting
+(2025-10-08T14:23:55.8765134Z, 2025-10-08T14:30:15.8624060Z] http.request.method: POST http.response.status_code: 201 http.route: api/Tags network.protocol.version: 2 url.scheme: https
+Value: Sum: 5.055050299999999 Count: 30 Min: 0.1294279 Max: 0.7072068
+(-Infinity,0.005]:0
+(0.005,0.01]:0
+(0.01,0.025]:0
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:28
+(0.25,0.5]:1
+(0.5,0.75]:1
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+(2025-10-08T14:23:55.8765134Z, 2025-10-08T14:30:15.8624060Z] http.request.method: POST http.response.status_code: 201 http.route: api/Groups network.protocol.version: 2 url.scheme: https
+Value: Sum: 3.045354399999999 Count: 30 Min: 0.0910502 Max: 0.1454622
+(-Infinity,0.005]:0
+(0.005,0.01]:0
+(0.01,0.025]:0
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:17
+(0.1,0.25]:13
+(0.25,0.5]:0
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+(2025-10-08T14:23:55.8765134Z, 2025-10-08T14:30:15.8624060Z] http.request.method: POST http.response.status_code: 201 http.route: api/Contacts network.protocol.version: 2 url.scheme: https
+Value: Sum: 13.9664878 Count: 50 Min: 0.2101643 Max: 0.5416499
+(-Infinity,0.005]:0
+(0.005,0.01]:0
+(0.01,0.025]:0
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:12
+(0.25,0.5]:37
+(0.5,0.75]:1
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurredsince the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765186Z, 2025-10-08T14:30:15.8624062Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-08T14:23:55.8765186Z, 2025-10-08T14:30:15.8624062Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-08T14:23:55.8765186Z, 2025-10-08T14:30:15.8624062Z] gc.heap.generation: gen0
+Value: 4
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765231Z, 2025-10-08T14:30:15.8624063Z]
+Value: 226910208
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765292Z, 2025-10-08T14:30:15.8624065Z]
+Value: 110921088
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765336Z, 2025-10-08T14:30:15.8624067Z]
+Value: 53981184
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765384Z, 2025-10-08T14:30:15.8624068Z] gc.heap.generation: gen0
+Value: 0
+(2025-10-08T14:23:55.8765384Z, 2025-10-08T14:30:15.8624068Z] gc.heap.generation: gen1
+Value: 7561112
+(2025-10-08T14:23:55.8765384Z, 2025-10-08T14:30:15.8624068Z] gc.heap.generation: gen2
+Value: 3798368
+(2025-10-08T14:23:55.8765384Z, 2025-10-08T14:30:15.8624068Z] gc.heap.generation: loh
+Value: 6010584
+(2025-10-08T14:23:55.8765384Z, 2025-10-08T14:30:15.8624068Z] gc.heap.generation: poh
+Value: 370744
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8765436Z, 2025-10-08T14:30:15.8624069Z] gc.heap.generation: gen0
+Value: 0
+(2025-10-08T14:23:55.8765436Z, 2025-10-08T14:30:15.8624069Z] gc.heap.generation: gen1
+Value: 251664
+(2025-10-08T14:23:55.8765436Z, 2025-10-08T14:30:15.8624069Z] gc.heap.generation: gen2
+Value: 149712
+(2025-10-08T14:23:55.8765436Z, 2025-10-08T14:30:15.8624069Z] gc.heap.generation: loh
+Value: 1344
+(2025-10-08T14:23:55.8765436Z, 2025-10-08T14:30:15.8624069Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799120Z, 2025-10-08T14:30:15.8624070Z]
+Value: 0.024814
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799299Z, 2025-10-08T14:30:15.8624072Z]
+Value: 2812105
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799372Z, 2025-10-08T14:30:15.8624073Z]
+Value: 35593
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799552Z, 2025-10-08T14:30:15.8624074Z]
+Value: 9.8698755
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799628Z, 2025-10-08T14:30:15.8624075Z]
+Value: 2
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799691Z, 2025-10-08T14:30:15.8624077Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799775Z, 2025-10-08T14:30:15.8624078Z]
+Value: 6393
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799850Z, 2025-10-08T14:30:15.8624079Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799923Z, 2025-10-08T14:30:15.8624080Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8799985Z, 2025-10-08T14:30:15.8624082Z]
+Value: 171
+
+Metric Name: dotnet.exceptions, Description: The number of exceptions that have been thrown in managed code., Unit: {exception}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8800047Z, 2025-10-08T14:30:15.8624084Z] error.type: NotSupportedException
+Value: 660
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8800120Z, 2025-10-08T14:30:15.8624085Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-08T14:23:55.8800195Z, 2025-10-08T14:30:15.8624086Z] cpu.mode: user
+Value: 9.640625
+(2025-10-08T14:23:55.8800195Z, 2025-10-08T14:30:15.8624086Z] cpu.mode: system
+Value: 2.71875
+
+Metric Name: aspnetcore.routing.match_attempts, Description: Number of requests that were attempted to be matched to an endpoint., Unit: {match_attempt}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Routing
+(2025-10-08T14:23:55.9347643Z, 2025-10-08T14:30:15.8624089Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Tags
+Value: 30
+(2025-10-08T14:23:55.9347643Z, 2025-10-08T14:30:15.8624089Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Groups
+Value: 30
+(2025-10-08T14:23:55.9347643Z, 2025-10-08T14:30:15.8624089Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Contacts
+Value: 50
+
+Metric Name: contacts.created, Description: Number of contacts created, Unit: contacts, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: MyOpenTelemetryApi.Contacts
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Wayne Enterprises-2025-10-08-10-28-32 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Stark Industries-2025-10-08-10-28-32 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Themyscira Inc-2025-10-08-10-28-32 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Bugle-2025-10-08-10-28-32has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Planet-2025-10-08-10-28-32 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Wayne Enterprises-2025-10-08-10-28-36 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Stark Industries-2025-10-08-10-28-36 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Themyscira Inc-2025-10-08-10-28-36 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Bugle-2025-10-08-10-28-36has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Planet-2025-10-08-10-28-36 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Wayne Enterprises-2025-10-08-10-28-40 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Stark Industries-2025-10-08-10-28-40 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Themyscira Inc-2025-10-08-10-28-40 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Bugle-2025-10-08-10-28-40has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Planet-2025-10-08-10-28-40 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Wayne Enterprises-2025-10-08-10-28-43 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Stark Industries-2025-10-08-10-28-43 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Themyscira Inc-2025-10-08-10-28-43 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Bugle-2025-10-08-10-28-43has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Planet-2025-10-08-10-28-43 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Wayne Enterprises-2025-10-08-10-28-47 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Stark Industries-2025-10-08-10-28-47 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Themyscira Inc-2025-10-08-10-28-47 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Bugle-2025-10-08-10-28-47has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Planet-2025-10-08-10-28-47 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Wayne Enterprises-2025-10-08-10-28-50 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Stark Industries-2025-10-08-10-28-50 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Themyscira Inc-2025-10-08-10-28-50 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Bugle-2025-10-08-10-28-50has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Planet-2025-10-08-10-28-50 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Wayne Enterprises-2025-10-08-10-28-54 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Stark Industries-2025-10-08-10-28-54 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Themyscira Inc-2025-10-08-10-28-54 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Bugle-2025-10-08-10-28-54has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Planet-2025-10-08-10-28-54 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Wayne Enterprises-2025-10-08-10-28-57 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Stark Industries-2025-10-08-10-28-57 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Themyscira Inc-2025-10-08-10-28-57 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Bugle-2025-10-08-10-28-57has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Planet-2025-10-08-10-28-57 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Wayne Enterprises-2025-10-08-10-29-01 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Stark Industries-2025-10-08-10-29-01 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Themyscira Inc-2025-10-08-10-29-01 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Bugle-2025-10-08-10-29-01has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Planet-2025-10-08-10-29-01 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Wayne Enterprises-2025-10-08-10-29-05 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Stark Industries-2025-10-08-10-29-05 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Themyscira Inc-2025-10-08-10-29-05 has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Bugle-2025-10-08-10-29-05has.email: true has.phone: true
+Value: 1
+(2025-10-08T14:28:32.3491283Z, 2025-10-08T14:30:15.8624097Z] company: Daily Planet-2025-10-08-10-29-05 has.email: true has.phone: true
 Value: 1
