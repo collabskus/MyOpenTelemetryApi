@@ -3,260 +3,313 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
 
-PS C:\Users\kushal>
-PS C:\Users\kushal> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated --pre-release Always --upgrade; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+PS C:\Users\kushal> git --version
+git version 2.51.0.windows.1
+PS C:\Users\kushal> winget
+Windows Package Manager v1.11.510
+Copyright (c) Microsoft Corporation. All rights reserved.
 
-Build succeeded in 0.8s
-2025-10-08-09-38-41
-Restore complete (1.1s)
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-  MyOpenTelemetryApi.Domain succeeded (2.0s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-  MyOpenTelemetryApi.Application succeeded (0.6s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-  MyOpenTelemetryApi.Infrastructure succeeded (0.7s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
-  MyOpenTelemetryApi.Api succeeded (1.5s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-  MyOpenTelemetryApi.Application.Tests succeeded (0.9s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
-  MyOpenTelemetryApi.Api.Tests succeeded (0.8s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
-  MyOpenTelemetryApi.Infrastructure.Tests succeeded (0.8s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
+The winget command line utility enables installing applications and other packages from the command line.
 
-Build succeeded in 6.2s
-2025-10-08-09-38-47
-Restore complete (0.5s)
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-  MyOpenTelemetryApi.Domain succeeded (0.1s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-  MyOpenTelemetryApi.Application succeeded (0.1s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-  MyOpenTelemetryApi.Infrastructure succeeded (0.1s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
-  MyOpenTelemetryApi.Api succeeded (0.3s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-  MyOpenTelemetryApi.Api.Tests succeeded (0.1s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
-  MyOpenTelemetryApi.Application.Tests succeeded (0.1s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
-  MyOpenTelemetryApi.Infrastructure.Tests succeeded (0.1s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.1.25451.107)
-[xUnit.net 00:00:00.27]   Discovering: MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:00.28]   Discovering: MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:00.34]   Discovered:  MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:00.33]   Discovered:  MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:00.36]   Starting:    MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:00.29]   Discovering: MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:00.35]   Starting:    MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:00.34]   Discovered:  MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:00.36]   Starting:    MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:00.55]   Finished:    MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:00.55]   Finished:    MyOpenTelemetryApi.Api.Tests
-  MyOpenTelemetryApi.Application.Tests test succeeded (1.6s)
-[xUnit.net 00:00:00.54]   Finished:    MyOpenTelemetryApi.Infrastructure.Tests
-  MyOpenTelemetryApi.Api.Tests test succeeded (1.6s)
-  MyOpenTelemetryApi.Infrastructure.Tests test succeeded (1.7s)
+usage: winget  [<command>] [<options>]
 
-Test summary: total: 44, failed: 0, succeeded: 44, skipped: 0, duration: 1.7s
-Build succeeded in 3.0s
-2025-10-08-09-38-51
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+The following commands are available:
+  install    Installs the given package
+  show       Shows information about a package
+  source     Manage sources of packages
+  search     Find and show basic info of packages
+  list       Display installed packages
+  upgrade    Shows and performs available upgrades
+  uninstall  Uninstalls the given package
+  hash       Helper to hash installer files
+  validate   Validates a manifest file
+  settings   Open settings or set administrator settings
+  features   Shows the status of experimental features
+  export     Exports a list of the installed packages
+  import     Installs all the packages in a file
+  pin        Manage package pins
+  configure  Configures the system into a desired state
+  download   Downloads the installer from a given package
+  repair     Repairs the selected package
+  dscv3      DSC v3 resource commands
 
-Build succeeded in 0.6s
-2025-10-08-09-38-51
-warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
-2025-10-08-09-38-51
-On branch main
-Your branch is up to date with 'origin/main'.
+For more details on a specific command, pass it the help argument. [-?]
 
-nothing to commit, working tree clean
-2025-10-08-09-38-51
-* remote origin
-  Fetch URL: https://github.com/collabskus/MyOpenTelemetryApi.git
-  Push  URL: https://github.com/collabskus/MyOpenTelemetryApi.git
-  HEAD branch: main
-  Remote branches:
-    main                                                                                             tracked
-    refs/remotes/origin/dependabot/github_actions/actions/checkout-5                                 stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/actions/setup-dotnet-5                             stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.12   stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.13   stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.14   stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.16   stale (use 'git remote prune' to remove)
-    refs/remotes/origin/dependabot/nuget/tests/MyOpenTelemetryApi.Api.Tests/test-packages-d1750de658 stale (use 'git remote prune' to remove)
-    refs/remotes/origin/feat/dotnet-10                                                               stale (use 'git remote prune' to remove)
-  Local branch configured for 'git pull':
-    main merges with remote main
-  Local ref configured for 'git push':
-    main pushes to main (local out of date)
-2025-10-08-09-38-52
-remote: Enumerating objects: 11, done.
-remote: Counting objects: 100% (11/11), done.
-remote: Compressing objects: 100% (5/5), done.
-remote: Total 9 (delta 6), reused 7 (delta 4), pack-reused 0 (from 0)
-Unpacking objects: 100% (9/9), 3.39 KiB | 19.00 KiB/s, done.
-From https://github.com/collabskus/MyOpenTelemetryApi
-   d5c4e41..4317a64  main       -> origin/main
-2025-10-08-09-38-52
-Updating d5c4e41..4317a64
-Fast-forward
- my_project_export.txt | 252 +++++++++++++++++++++++++-------------------------
- 1 file changed, 126 insertions(+), 126 deletions(-)
-2025-10-08-09-38-53
-On branch main
-Your branch is up to date with 'origin/main'.
+The following options are available:
+  -v,--version                Display the version of the tool
+  --info                      Display general info of the tool
+  -?,--help                   Shows help about the selected command
+  --wait                      Prompts the user to press any key before exiting
+  --logs,--open-logs          Open the default logs location
+  --verbose,--verbose-logs    Enables verbose logging for winget
+  --nowarn,--ignore-warnings  Suppresses warning outputs
+  --disable-interactivity     Disable interactive prompts
+  --proxy                     Set a proxy to use for this execution
+  --no-proxy                  Disable the use of proxy for this execution
 
-nothing to commit, working tree clean
-2025-10-08-09-38-53
-Removing src/MyOpenTelemetryApi.Api/bin/
-Removing src/MyOpenTelemetryApi.Api/obj/
-Removing src/MyOpenTelemetryApi.Application/bin/
-Removing src/MyOpenTelemetryApi.Application/obj/
-Removing src/MyOpenTelemetryApi.Domain/bin/
-Removing src/MyOpenTelemetryApi.Domain/obj/
-Removing src/MyOpenTelemetryApi.Infrastructure/bin/
-Removing src/MyOpenTelemetryApi.Infrastructure/obj/
-Removing tests/MyOpenTelemetryApi.Api.Tests/bin/
-Removing tests/MyOpenTelemetryApi.Api.Tests/obj/
-Removing tests/MyOpenTelemetryApi.Application.Tests/bin/
-Removing tests/MyOpenTelemetryApi.Application.Tests/obj/
-Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/bin/
-Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/obj/
-2025-10-08-09-38-53
-Starting project export...
-Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
-Output File: my_project_export.txt
-Generating directory structure...
-Collecting files...
-Found 92 files to export
-Processing (1/92): .github\dependabot.yml
-Processing (2/92): .github\workflows\ci.yml
-Processing (3/92): .github\workflows\codeql.yml
-Processing (4/92): appsettings.Container.json
-Processing (5/92): CONTAINER_SETUP.md
-Processing (6/92): docker-compose.yml
-Processing (7/92): docs\contact-manager-specification-sheet.md
-Processing (8/92): docs\contact-manager-specification-sheet-backend.md
-Processing (9/92): docs\llm.md
-Processing (10/92): docs\log-sample.txt
-Processing (11/92): docs\scratch.md
-Processing (12/92): docs\Windows PowerShell.txt
-Processing (13/92): LICENSE.txt
-Processing (14/92): my_project_export.txt
-Processing (15/92): MyOpenTelemetryApi.sln
-Processing (16/92): podman-compose.yml
-Processing (17/92): README.md
-Processing (18/92): src\MyOpenTelemetryApi.Api\appsettings.Development.json
-Processing (19/92): src\MyOpenTelemetryApi.Api\appsettings.json
-Processing (20/92): src\MyOpenTelemetryApi.Api\appsettings.Production.json
-Processing (21/92): src\MyOpenTelemetryApi.Api\Authentication\ApiKeyAuthenticationHandler.cs
-Processing (22/92): src\MyOpenTelemetryApi.Api\Controllers\ContactsController.cs
-Processing (23/92): src\MyOpenTelemetryApi.Api\Controllers\GroupsController.cs
-Processing (24/92): src\MyOpenTelemetryApi.Api\Controllers\HealthController.cs
-Processing (25/92): src\MyOpenTelemetryApi.Api\Controllers\TagsController.cs
-Processing (26/92): src\MyOpenTelemetryApi.Api\dependencies.json
-Processing (27/92): src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj
-Processing (28/92): src\MyOpenTelemetryApi.Api\Program.cs
-Processing (29/92): src\MyOpenTelemetryApi.Api\Properties\launchSettings.json
-Processing (30/92): src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs
-Processing (31/92): src\MyOpenTelemetryApi.Api\Telemetry\TelemetryConstants.cs
-Processing (32/92): src\MyOpenTelemetryApi.Api\Telemetry\TelemetryExtensions.cs
-Processing (33/92): src\MyOpenTelemetryApi.Application\DTOs\AddressDto.cs
-Processing (34/92): src\MyOpenTelemetryApi.Application\DTOs\ContactDto.cs
-Processing (35/92): src\MyOpenTelemetryApi.Application\DTOs\ContactSummaryDto.cs
-Processing (36/92): src\MyOpenTelemetryApi.Application\DTOs\CreateContactDto.cs
-Processing (37/92): src\MyOpenTelemetryApi.Application\DTOs\EmailAddressDto.cs
-Processing (38/92): src\MyOpenTelemetryApi.Application\DTOs\GroupDto.cs
-Processing (39/92): src\MyOpenTelemetryApi.Application\DTOs\PaginatedResultDto.cs
-Processing (40/92): src\MyOpenTelemetryApi.Application\DTOs\PhoneNumberDto.cs
-Processing (41/92): src\MyOpenTelemetryApi.Application\DTOs\TagDto.cs
-Processing (42/92): src\MyOpenTelemetryApi.Application\DTOs\UpdateContactDto.cs
-Processing (43/92): src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj
-Processing (44/92): src\MyOpenTelemetryApi.Application\Services\ContactService.cs
-Processing (45/92): src\MyOpenTelemetryApi.Application\Services\GroupService.cs
-Processing (46/92): src\MyOpenTelemetryApi.Application\Services\IContactService.cs
-Processing (47/92): src\MyOpenTelemetryApi.Application\Services\IGroupService.cs
-Processing (48/92): src\MyOpenTelemetryApi.Application\Services\ITagService.cs
-Processing (49/92): src\MyOpenTelemetryApi.Application\Services\TagService.cs
-Processing (50/92): src\MyOpenTelemetryApi.Domain\Entities\Address.cs
-Processing (51/92): src\MyOpenTelemetryApi.Domain\Entities\AddressType.cs
-Processing (52/92): src\MyOpenTelemetryApi.Domain\Entities\Contact.cs
-Processing (53/92): src\MyOpenTelemetryApi.Domain\Entities\ContactGroup.cs
-Processing (54/92): src\MyOpenTelemetryApi.Domain\Entities\ContactTag.cs
-Processing (55/92): src\MyOpenTelemetryApi.Domain\Entities\EmailAddress.cs
-Processing (56/92): src\MyOpenTelemetryApi.Domain\Entities\EmailType.cs
-Processing (57/92): src\MyOpenTelemetryApi.Domain\Entities\Group.cs
-Processing (58/92): src\MyOpenTelemetryApi.Domain\Entities\PhoneNumber.cs
-Processing (59/92): src\MyOpenTelemetryApi.Domain\Entities\PhoneType.cs
-Processing (60/92): src\MyOpenTelemetryApi.Domain\Entities\Tag.cs
-Processing (61/92): src\MyOpenTelemetryApi.Domain\Interfaces\IContactRepository.cs
-Processing (62/92): src\MyOpenTelemetryApi.Domain\Interfaces\IGroupRepository.cs
-Processing (63/92): src\MyOpenTelemetryApi.Domain\Interfaces\IRepository.cs
-Processing (64/92): src\MyOpenTelemetryApi.Domain\Interfaces\ITagRepository.cs
-Processing (65/92): src\MyOpenTelemetryApi.Domain\Interfaces\IUnitOfWork.cs
-Processing (66/92): src\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj
-Processing (67/92): src\MyOpenTelemetryApi.Infrastructure\Data\AppDbContext.cs
-Processing (68/92): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\AddressConfiguration.cs
-Processing (69/92): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactConfiguration.cs
-Processing (70/92): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactGroupConfiguration.cs
-Processing (71/92): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactTagConfiguration.cs
-Processing (72/92): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\EmailAddressConfiguration.cs
-Processing (73/92): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\GroupConfiguration.cs
-Processing (74/92): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\PhoneNumberConfiguration.cs
-Processing (75/92): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\TagConfiguration.cs
-Processing (76/92): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.cs
-Processing (77/92): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.Designer.cs
-Processing (78/92): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.cs
-Processing (79/92): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.Designer.cs
-Processing (80/92): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\AppDbContextModelSnapshot.cs
-Processing (81/92): src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj
-Processing (82/92): src\MyOpenTelemetryApi.Infrastructure\Repositories\ContactRepository.cs
-Processing (83/92): src\MyOpenTelemetryApi.Infrastructure\Repositories\GroupRepository.cs
-Processing (84/92): src\MyOpenTelemetryApi.Infrastructure\Repositories\Repository.cs
-Processing (85/92): src\MyOpenTelemetryApi.Infrastructure\Repositories\TagRepository.cs
-Processing (86/92): src\MyOpenTelemetryApi.Infrastructure\Repositories\UnitOfWork.cs
-Processing (87/92): tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj
-Processing (88/92): tests\MyOpenTelemetryApi.Api.Tests\UnitTest1.cs
-Processing (89/92): tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj
-Processing (90/92): tests\MyOpenTelemetryApi.Application.Tests\UnitTest1.cs
-Processing (91/92): tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj
-Processing (92/92): tests\MyOpenTelemetryApi.Infrastructure.Tests\UnitTest1.cs
+More help can be found at: https://aka.ms/winget-command-help
+PS C:\Users\kushal> winget search git
+The `msstore` source requires that you view the following agreements before using.
+Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
+The source requires the current machine's 2-letter geographic region to be sent to the backend service to function properly (ex. "US").
 
-Export completed successfully!
-Output file: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
-Total files exported: 92
-Output file size: 2.54 MB
-2025-10-08-09-38-54
-On branch main
-Your branch is up to date with 'origin/main'.
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   my_project_export.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-2025-10-08-09-38-54
-warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
-2025-10-08-09-38-54
-[main 7be2c25] add all files
- 1 file changed, 126 insertions(+), 126 deletions(-)
-2025-10-08-09-38-55
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Delta compression using up to 12 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 1.54 KiB | 1.54 MiB/s, done.
-Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To https://github.com/collabskus/MyOpenTelemetryApi.git
-   4317a64..7be2c25  main -> main
-2025-10-08-09-38-56
-Discovering projects...
-Analyzing project(s)...
-Analyzing dependencies...
-No outdated dependencies were detected
-Elapsed: 00:00:02.6367928
-2025-10-08-09-38-59
-Discovering projects...
-Analyzing project(s)...
-Analyzing dependencies...
-No outdated dependencies were detected
-Elapsed: 00:00:02.2068532
-2025-10-08-09-39-01
-PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> dotnet --info
+Do you agree to all the source agreements terms?
+[Y] Yes  [N] No: y
+Name                                  Id                              Version      Match    Source
+---------------------------------------------------------------------------------------------------
+My Git                                9NLVK2SL2SSP                    Unknown               msstore
+GitFiend                              9NMNKLTSZNKC                    Unknown               msstore
+GitLooker                             9PK6TGX9T87P                    Unknown               msstore
+Git                                   Git.Git                         2.51.0.2              winget
+Git                                   Microsoft.Git                   2.51.0.0.3            winget
+RepoZ                                 AndreasWascher.RepoZ            5.5          Tag: git winget
+Araxis Merge                          Araxis.Merge                    2025.1       Tag: git winget
+Sourcetree                            Atlassian.Sourcetree            3.4.26       Tag: git winget
+GitKraken                             Axosoft.GitKraken               11.4.0       Tag: git winget
+Commitly                              Commitly.Commitly               1.1.2        Tag: git winget
+中文Git                               DuckStudio.ChineseGit           3.3          Tag: git winget
+Fork - a fast and friendly git client Fork.Fork                       2.12.2       Tag: git winget
+GLab                                  GLab.GLab                       1.73.0       Tag: git winget
+MinGit                                Git.MinGit                      2.51.0.2     Tag: git winget
+BusyBox-based MinGit                  Git.MinGit.BusyBox              2.50.1       Tag: git winget
+GitButler                             GitButler.GitButler             0.16.8       Tag: git winget
+Git Extensions                        GitExtensionsTeam.GitExtensions 5.2.1.18061  Tag: git winget
+GitHub Desktop                        GitHub.GitHubDesktop            3.5.3        Tag: git winget
+GitHub Desktop Beta                   GitHub.GitHubDesktop.Beta       3.4.17-beta3 Tag: git winget
+Git LFS                               GitHub.GitLFS                   3.7.0        Tag: git winget
+GitHub CLI                            GitHub.cli                      2.81.0       Tag: git winget
+git-sizer                             GitHub.git-sizer                1.5.0        Tag: git winget
+smimesign                             GitHub.smimesign                0.2.0-rc1    Tag: git winget
+GitTools GitVersion                   GitTools.GitVersion             6.4.0        Tag: git winget
+Gitleaks                              Gitleaks.Gitleaks               8.28.0       Tag: git winget
+jreleaser                             JReleaser.jreleaser             1.20.0       Tag: git winget
+Oh My Posh                            JanDeDobbeleer.OhMyPosh         27.1.2       Tag: git winget
+lazygit                               JesseDuffield.lazygit           0.55.1       Tag: git winget
+JetBrains Space                       JetBrains.Space                 2023.1.7     Tag: git winget
+Gittyup                               Murmele.Gittyup                 1.4.0        Tag: git winget
+GitBlade                              Pirinel.GitBlade                00.00.8.9    Tag: git winget
+RelaGit                               Rela.RelaGit                    0.16.9       Tag: git winget
+Tower                                 SaaSGroup.Tower                 9.3.532      Tag: git winget
+PullWatch                             ShipDigital.PullWatch           1.7.13       Tag: git winget
+gitui                                 StephanDilly.gitui              0.27.0       Tag: git winget
+Sublime Merge                         SublimeHQ.SublimeMerge          2112         Tag: git winget
+Sublime Merge (Dev)                   SublimeHQ.SublimeMerge.Dev      2057         Tag: git winget
+Talisman                              Thoughtworks.Talisman           1.37.0       Tag: git winget
+GitFiend                              TobySuggate.GitFiend            0.45.3       Tag: git winget
+TortoiseGit                           TortoiseGit.TortoiseGit         2.17.0.2     Tag: git winget
+TortoiseSVN                           TortoiseSVN.TortoiseSVN         1.14.9.29743 Tag: git winget
+Agent Git                             Xidicone.AgentGit               1.88         Tag: git winget
+Gource                                acaudwell.Gource                0.53         Tag: git winget
+GitQL                                 amrdeveloper.gitql              0.37.0       Tag: git winget
+soft-serve                            charmbracelet.soft-serve        0.10.0       Tag: git winget
+delta                                 dandavison.delta                0.18.2       Tag: git winget
+dev-sidecar                           docmirror.dev-sidecar           2.0.0        Tag: git winget
+Lefthook                              evilmartians.lefthook           1.13.6       Tag: git winget
+git-cola                              git-cola.git-cola               4.15.0       Tag: git winget
+gittuf                                gittuf.gittuf                   0.12.0       Tag: git winget
+git-credential-azure                  hickford.git-credential-azure   0.3.1        Tag: git winget
+git-credential-oauth                  hickford.git-credential-oauth   0.16.0       Tag: git winget
+jj                                    jj-vcs.jj                       0.34.0       Tag: git winget
+BlastMerge                            ktsu.BlastMerge                 1.0.19       Tag: git winget
+jj                                    martinvonz.jj                   0.30.0       Tag: git winget
+onefetch                              o2sh.onefetch                   2.25.0       Tag: git winget
+git-cliff                             orhun.git-cliff                 2.10.1       Tag: git winget
+git-age                               prskr.git-age                   0.2.4        Tag: git winget
+git-absorb                            tummychow.git-absorb            0.8.0        Tag: git winget
+ghq                                   x-motemen.ghq                   1.8.0        Tag: git winget
+GitNote                               zhaopengme.gitnote              3.1.0        Tag: git winget
+Fundels                               CartamundiDigital.Fundels       3.2.8                 winget
+FastGithub                            CoolPlayLin.FastGithub          2.1.4                 winget
+MaxTo                                 DigitalCreations.MaxTo          2.2.1                 winget
+DD-TV                                 DigitalDevices.DD-TV            1.15.0.0              winget
+Soulframe                             DigitalExtremes.Soulframe       1.0.0                 winget
+Warframe                              DigitalExtremes.Warframe        1.0.0                 winget
+doctl                                 DigitalOcean.Doctl              1.145.0               winget
+Tropy                                 DigitalScholar.Tropy            1.16.2                winget
+Zotero                                DigitalScholar.Zotero           7.0.24                winget
+Papers                                DigitalScience.Papers           4.37.2395             winget
+Duplicate Cleaner Free 4              DigitalVolcanoSoftware.Duplica… 4.1.2                 winget
+Duplicate Cleaner Pro 4               DigitalVolcanoSoftware.Duplica… 4.1.4                 winget
+Duplicate Cleaner Pro 5               DigitalVolcanoSoftware.Duplica… 5.25.0.0              winget
+Hash Tool                             DigitalVolcanoSoftware.HashTool 1.2.1                 winget
+TaskCanvas                            DigitalVolcanoSoftware.TaskCan… 1.4                   winget
+TextCrawler Free                      DigitalVolcanoSoftware.TextCra… 3.1.2                 winget
+TextCrawler Pro                       DigitalVolcanoSoftware.TextCra… 3.1.3                 winget
+DQViewer                              DigiteqAutomotive.DQViewer      4.3                   winget
+GitHub 标签管理器                     DuckStudio.GitHubLabelsManager  1.13                  winget
+GitHubView                            DuckStudio.GitHubView           1.0.5                 winget
+GitHubView (Nightly)                  DuckStudio.GitHubView.Nightly   2025.09.08.…          winget
+Git Credential Manager (User)         Git.GCM                         2.6.1                 winget
+Git for Windows SDK                   Git.SDK                         1.0.8                 winget
+GitAhead                              GitAhead.GitAhead               2.7.1                 winget
+Atom                                  GitHub.Atom                     1.60.0                winget
+Atom Beta                             GitHub.Atom.Beta                1.61.0-beta0          winget
+classroom-assistant                   GitHub.ClassroomAssistant       2.0.4                 winget
+hub                                   GitHub.hub                      2.14.2                winget
+GitKraken CLI                         GitKraken.cli                   3.1.40                winget
+tea                                   Gitea.tea                       0.9.2                 winget
+Gitify                                Gitify.Gitify                   6.9.1                 winget
+GitLab Runner                         Gitlab.Runner                   18.4.0                winget
+AnimeBack                             LeGitHubDeTai.AnimeBack         8.0.9                 winget
+Lingdys 4                             LingitAS.Lingdys4               4.5.149.0             winget
+Logitech Camera Settings              Logitech.CameraSettings         2.12.20.0             winget
+Logitech Gamepad F710 Connection Uti… Logitech.F710ConnectUtility     2.15.264              winget
+Logitech G HUB                        Logitech.GHUB                   2025.7.7683…          winget
+Logitech Gaming Software              Logitech.LGS                    9.04.49               winget
+Logi Bolt                             Logitech.LogiBolt               1.2.6024.0            winget
+Logi Tune                             Logitech.LogiTune               3.11.89.0             winget
+MyHarmony                             Logitech.MyHarmony              1.0.308               winget
+Logitech Onboard Memory Manager       Logitech.OnboardMemoryManager   2.5.358               winget
+Logitech Options                      Logitech.Options                10.26.12              winget
+Logi Options+                         Logitech.OptionsPlus            1.96.781095           winget
+Logitech Presentation                 Logitech.Presentation           2.10.34               winget
+Logitech SetPoint                     Logitech.SetPoint               6.90.66               winget
+Logitech Solar App                    Logitech.Solar                  1.20.28               winget
+Logitech Sync                         Logitech.Sync                   3.8.254.0             winget
+Logitech Unifying Software            Logitech.UnifyingSoftware       2.52.33               winget
+GitHub extension for Command Palette  Microsoft.CmdPalGitHubExtension 0.103.178.0           winget
+GVFS                                  Microsoft.VFSforGit             1.0.25169.1           winget
+Reduce Audio Latency                  MiniantGit.REAL                 0.2.0                 winget
+ISY Linker                            NorconsultDigital.ISYLinker     11.6.0.0              winget
+Igitt                                 Nstr.Igitt                      v0.1.13               winget
+GitHubReleaseNotes                    StefHeyenrath.GitHubReleaseNot… 1.0.10.1              winget
+SmartGit                              Syntevo.SmartGit                24.1.3                winget
+Snagit 2020                           TechSmith.Snagit.2020           20.1.8.16558          winget
+Snagit 2021                           TechSmith.Snagit.2021           21.4.7                winget
+Snagit 2022                           TechSmith.Snagit.2022           22.1.7                winget
+Snagit 2023                           TechSmith.Snagit.2023           23.2.6                winget
+Snagit 2024                           TechSmith.Snagit.2024           24.3.4                winget
+Snagit 2025                           TechSmith.Snagit.2025           25.3.1                winget
+Fusion Digital Power Designer         TexasInstruments.FusionDigital… 7.10.1                winget
+Kitfox                                WesternDigital.Kitfox           1.1.1.1               winget
+WD Security                           WesternDigital.Security         2.1.4.358             winget
+WimyGit                               Wimysoft.WimyGit                1.2.0                 winget
+gitsqlite                             danielsiegl.gitsqlite           0.8.0                 winget
+poke-cli                              digitalghost-dev.poke-cli       1.5.2                 winget
+Thermal                               gitthermal.thermal              0.0.4                 winget
+gitg                                  gnome.gitg                      41                    winget
+Upgit                                 pluveto.Upgit                   0.2.18                winget
+Dragit                                sireliah.dragit                 0.7.1                 winget
+SourceGit                             sourcegit-scm.SourceGit         2025.35               winget
+git-grab                              wezm.git-grab                   3.0.0                 winget
+regit                                 woaitsAryan.regit               0.4.2                 winget
+WSJT-X: Digital Modes for Weak Signa… JoeTaylor.WSJT-X                2.7.0                 winget
+IPVTest                               Vipre.IPVTest                   1.0.0.0      Command… winget
+Adobe DNG Converter                   Adobe.DNGConverter              17.5.1       Tag: di… winget
+百度语音输入                          Baidu.BaiduSpeechInput          2.0.0.33     Tag: lo… winget
+CloudShow Launcher                    BinaryFortress.CloudShow        6.5.0.0      Tag: di… winget
+Dragonframe 2025                      DZEDSystems.Dragonframe         2025.05.4    Tag: di… winget
+NVC VHDL Simulator                    NickGasson.NVC                  1.18.0       Tag: di… winget
+Logisim-evolution                     logisim-evolution.logisim-evol… 3.9.0        Tag: di… winget
+Bit4id - Firma4ng-InfoCamere          Bit4id.Firma4ng.InfoCamere      1.6.14       Tag: di… winget
+DigiDoc4 Client                       RIA.DigiDoc4                    4.8.2        Tag: di… winget
+eID software                          RIA.eIDsoftware                 25.8.18.8398 Tag: di… winget
+WSL Manager                           Bostrot.WSLManager              1.8.17       Tag: gi… winget
+DRA                                   CosimoMatteini.DRA              0.9.0        Tag: gi… winget
+Lepton                                CosmoX.Lepton                   1.10.0       Tag: gi… winget
+AppInstaller File Builder(Preview)    Microsoft.AppInstallerFileBuil… 1.2020.221.0 Tag: gi… winget
+Cacher                                PenguinLabs.Cacher              2.43.2       Tag: gi… winget
+Eget                                  ZacharyYedidia.Eget             1.3.4        Tag: gi… winget
+MarkRight                             dvcrn.markright                 0.1.11       Tag: gi… winget
+grp                                   feraxhp.grp                     0.7.4        Tag: gi… winget
+act                                   nektos.act                      0.2.81       Tag: gi… winget
+REAPER                                Cockos.REAPER                   7.48         Tag: di… winget
+LMMS                                  LMMS.LMMS                       1.2.2        Tag: di… winget
+Renoise                               Renoise.Renoise                 3.4.4        Tag: di… winget
+YY调音台                              YY.YYAudio                      1.23.4.0     Tag: di… winget
+DAWG                                  dawg.dawg                       0.2.3        Tag: di… winget
+Corsair iCUE5 Software                Corsair.iCUE.5                  5.34.66      Tag: co… winget
+Dolt                                  DoltHub.Dolt                    1.59.18      Tag: gi… winget
+Gridea                                EryouHao.Gridea                 0.9.3        Tag: gi… winget
+Flux                                  FluxCD.Flux                     2.7.0        Tag: gi… winget
+Cobalt SSG                            cobalt-org.cobalt               0.20.0       Tag: gi… winget
+Ferium                                GorillaDevs.Ferium              4.7.1        Tag: gi… winget
+VEC DigiLib                           LAVANJV.vecdigilib              1.0.0        Tag: di… winget
+HeadsetControl-GUI                    LeoKlaus.HeadsetControl-GUI     0.19.5       Tag: Lo… winget
+OpenHantek6022                        OpenHantek.OpenHantek6022       3.4.0        Tag: di… winget
+ChanSort                              PredatH0r.ChanSort              2025-03-08   Tag: di… winget
+RescueTime                            RescueTime.DesktopApp           3.2.11.5     Tag: di… winget
+SatDump                               SatDump.SatDump                 1.2.2        Tag: di… winget
+ArtHub                                Tencent.ArtHub                  1.18.0       Tag: di… winget
+WK Radar                              WK.WKRadar                      7.16.0       Tag: Ba… winget
+FileQL                                amrdeveloper.fileql             0.10.0       Tag: gi… winget
+direnv                                direnv.direnv                   2.37.1       Tag: gi… winget
+score                                 ossia.score                     3.7.1        Tag: di… winget
+actionlint                            rhysd.actionlint                1.7.7        Tag: gi… winget
+PS3 Media Server                      shagrath.PS3MediaServer         1.90.1       Tag: di… winget
+SoX_ng                                sox_ng.sox_ng                   14.6.0.4     Tag: di… winget
+xploview                              xploview.xploview               3.3.31       Tag: di… winget
+PS C:\Users\kushal> winget list Git.Git
+Name Id      Version Available Source
+-------------------------------------
+Git  Git.Git 2.51.0  2.51.0.2  winget
+PS C:\Users\kushal> winget show Git.Git
+Found Git [Git.Git]
+Version: 2.51.0.2
+Publisher: The Git Development Community
+Publisher Url: https://gitforwindows.org/
+Publisher Support Url: https://github.com/git-for-windows/git/issues
+Moniker: git
+Description:
+  Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+  Git for Windows focuses on offering a lightweight, native set of tools that bring the full feature set of the Git SCM to Windows while providing appropriate user interfaces for experienced Git users and novices alike.
+Homepage: https://gitforwindows.org/
+License: GPL-2.0
+License Url: https://github.com/git-for-windows/build-extra/blob/HEAD/LICENSE.txt
+Copyright: Copyright (C) 1989, 1991 Free Software Foundation, Inc.
+Release Notes:
+  Changes since Git for Windows v2.51.0 (August 19th 2025)
+  New Features
+  - Comes with PCRE2 v10.46.
+  - Comes with cURL v8.16.0. This addresses a bug where fetches/pushes could fail with failed to read data from server: SEC_E_CONTEXT_EXPIRED (0x80090317) under certain circumstances. Also included: a back-port of a fix for a bug where connection failures were mistakenly reported as time-outs.
+  - Comes with Tig v2.6.0.
+  - Comes with MinTTY v3.8.1.
+  - Comes with OpenSSL v3.5.3.
+  Bug Fixes
+  - The auto-updater now shows Git for Windows icon in the notification also on Windows/ARM64.
+  - git clone/git fetch now deals more gracefully with directory / file conflicts when the files backend is used for ref storage, by failing only the ones that are involved in the conflict while allowing others. This is a regression in Git v2.51.0 that was reported in Git for Windows and independently also to the Git mailing list. This was fixed by merging Git's topic branch kn/refs-files-case-insensitive.
+  - Support for pathspecs in diff --no-index was somewhat buggy, which has been fixed.
+  - git sparse-checkout subcommand learned a new clean action to prune otherwise unused working-tree files that are outside the areas of interest. An earlier version of this had been integrated into MicrosoftGit already. This was fixed by merging Git's topic branch ds/sparse-checkout-clean.
+  - git rebase -i failed to clean-up the commit log message when the command commits the final one in a chain of "fixup" commands, which has been corrected. Backported from Git's topic branch pw/rebase-i-cleanup-fix.
+  - git subtree did not work correctly when splitting squashed subtrees, which has been improved. Backported from Git's topic branch cs/subtree-squash-split-fix.
+  - Some among git add -p and friends ignored color.diff and/or color.ui configuration variables, which is an old regression, which has been corrected. This was fixed by merging Git's topic branch jk/add-i-color.
+  - A corner-case bug in git log -L... has been corrected. This was fixed by merging Git's topic branch sg/line-log-boundary-fixes.
+  - A broken or malicious git fetch can say that it has the same object for many many times, and the upload-pack serving it can exhaust memory storing them redundantly, which has been corrected. This was fixed by merging Git's topic branch ps/upload-pack-oom-protection.
+  - Fixes multiple crashes around midx write-out codepaths. This was fixed by merging Git's topic branch ds/midx-write-fixes.
+  - git repack --path-walk lost objects in some corner cases, which has been corrected. This was fixed by merging Git's topic branch ds/path-walk-repack-fix.
+  - Under a race against another process that is repacking the repository, especially a partially cloned one, git fetch may mistakenly think some objects we do have are missing, which has been corrected. Thiswas fixed by merging Git's topic branch jk/fetch-check-graph-objects-fix.
+  - Various options to git diff that makes comparison ignore certain aspects of the differences (like "space changes are ignored", "differences in lines that match these regular expressions are ignored") did not work well with --name-only and friends. This was fixed by merging Git's topic branch ly/diff-name-only-with-diff-from-content.
+  - git diff --no-index run inside a subdirectory under control of a Git repository operated at the top of the working tree and stripped the prefix from the output, and oddballs like "-" (stdin) did not work correctly because of it. Correct the set-up by undoing what the set-up sequence did to the current working directory and prefix. This was fixed by merging Git's topic branch jc/diff-no-index-in-subdir.
+  - Various bugs about rename handling in "ort" merge strategy have been fixed. This was fixed by merging Git's topic branch en/ort-rename-fixes.
+  - git push had a code path that led to BUG() but it should have reported a regular failure, as it is a response to a usual but invalid end-user action to attempt pushing an object that does not exist. This was fixed by merging Git's topic branch dl/push-missing-object-error.
+  - git refs migrate to migrate the reflog entries from a refs backend to another had a handful of bugs squashed. This was fixed by merging Git's topic branch ps/reflog-migrate-fixes.
+  - During interactive rebase, using drop on a merge commit lead to an error, which was incorrect. This was fixed by merging Git's topic branch js/rebase-i-allow-drop-on-a-merge.
+Release Notes Url: https://github.com/git-for-windows/git/releases/tag/v2.51.0.windows.2
+Documentation:
+  Wiki: https://github.com/git-for-windows/git/wiki
+Tags:
+  git
+  vcs
+Installer:
+  Installer Type: inno
+  Installer Url: https://github.com/git-for-windows/git/releases/download/v2.51.0.windows.2/Git-2.51.0.2-64-bit.exe
+  Installer SHA256: 5cf583441ccd8d98d3492936235b6ee30c6847d1b3f49365d6a025b3432094ad
+  Release Date: 2025-09-29
+  Offline Distribution Supported: true
+PS C:\Users\kushal> winget install Git.Git
+Found an existing package already installed. Trying to upgrade the installed package...
+Found Git [Git.Git] Version 2.51.0.2
+This application is licensed to you by its owner.
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Downloading https://github.com/git-for-windows/git/releases/download/v2.51.0.windows.2/Git-2.51.0.2-64-bit.exe
+  ██████████████████████████████  62.8 MB / 62.8 MB
+Successfully verified installer hash
+Starting package install...
+The installer will request to run as administrator. Expect a prompt.
+Successfully installed
+PS C:\Users\kushal> git --version
+git version 2.51.0.windows.2
+PS C:\Users\kushal> dotnet --info
 .NET SDK:
  Version:           10.0.100-rc.1.25451.107
  Commit:            2db1f5ee2b
@@ -310,4 +363,5 @@ Learn more:
 
 Download .NET:
   https://aka.ms/dotnet/download
-PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated --pre-release Always --upgrade; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
+PS C:\Users\kushal>
+PS C:\Users\kushal>
