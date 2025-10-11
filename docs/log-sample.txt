@@ -1,954 +1,3 @@
-Value: 12
-
-Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317778Z, 2025-10-11T11:56:46.5835064Z] cpu.mode: user
-Value: 8.203125
-(2025-10-10T18:06:22.9317778Z, 2025-10-11T11:56:46.5835064Z] cpu.mode: system
-Value: 55.875
-
-Metric Name: aspnetcore.routing.match_attempts, Description: Number of requests that were attempted to be matched to an endpoint., Unit: {match_attempt}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Routing
-(2025-10-10T18:06:22.9627612Z, 2025-10-11T11:56:46.5835067Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Contacts
-Value: 1
-Resource associated with Metrics:
-        service.name: MyOpenTelemetryApi
-        service.version: 1.0.0
-        service.instance.id: 1b2ee08d-4dd1-4a00-b3e8-e4d7f816f471
-        telemetry.sdk.name: opentelemetry
-        telemetry.sdk.language: dotnet
-        telemetry.sdk.version: 1.13.1
-
-Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9202231Z, 2025-10-11T11:56:56.5918304Z]
-Value: 139419648
-
-Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9218809Z, 2025-10-11T11:56:56.5918306Z]
-Value: 2481034317824
-
-Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221399Z, 2025-10-11T11:56:56.5918308Z] process.cpu.state: user
-Value: 8.203125
-(2025-10-10T18:06:22.9221399Z, 2025-10-11T11:56:56.5918308Z] process.cpu.state: system
-Value: 55.875
-
-Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221690Z, 2025-10-11T11:56:56.5918309Z]
-Value: 12
-
-Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221879Z, 2025-10-11T11:56:56.5918310Z]
-Value: 25
-
-Metric Name: kestrel.active_connections, Description: Number of connections that are currently active on the server., Unit: {connection}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9222050Z, 2025-10-11T11:56:56.5918313Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: 0
-
-Metric Name: kestrel.connection.duration, Description: The duration of connections on the server., Unit: s, Metric Type: Histogram
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9228586Z, 2025-10-11T11:56:56.5918320Z] error.type: tls_not_supported network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: Sum: 0.0026986 Count: 2 Min: 0.0013144 Max: 0.0013842
-(-Infinity,0.01]:2
-(0.01,0.02]:0
-(0.02,0.05]:0
-(0.05,0.1]:0
-(0.1,0.2]:0
-(0.2,0.5]:0
-(0.5,1]:0
-(1,2]:0
-(2,5]:0
-(5,10]:0
-(10,30]:0
-(30,60]:0
-(60,120]:0
-(120,300]:0
-(300,+Infinity]:0
-
-(2025-10-10T18:06:22.9228586Z, 2025-10-11T11:56:56.5918320Z] network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: Sum: 116.4989871 Count: 1 Min: 116.4989871 Max: 116.4989871
-(-Infinity,0.01]:0
-(0.01,0.02]:0
-(0.02,0.05]:0
-(0.05,0.1]:0
-(0.1,0.2]:0
-(0.2,0.5]:0
-(0.5,1]:0
-(1,2]:0
-(2,5]:0
-(5,10]:0
-(10,30]:0
-(30,60]:0
-(60,120]:1
-(120,300]:0
-(300,+Infinity]:0
-
-
-Metric Name: kestrel.queued_connections, Description: Number of connections that are currently queued and are waiting to start., Unit: {connection}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9228868Z, 2025-10-11T11:56:56.5918327Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: 0
-
-Metric Name: http.server.active_requests, Description: Number of active HTTP server requests., Unit: {request}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Hosting
-(2025-10-10T18:06:22.9238549Z, 2025-10-11T11:56:56.5918343Z] http.request.method: GET url.scheme: http
-Value: 0
-
-Metric Name: http.server.request.duration, Description: Duration of HTTP server requests., Unit: s, Metric Type: Histogram
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Hosting
-(2025-10-10T18:06:22.9238700Z, 2025-10-11T11:56:56.5918348Z] http.request.method: GET http.response.status_code: 200 http.route: api/Contacts network.protocol.version: 1.1 url.scheme: http
-Value: Sum: 0.4902776 Count: 1 Min: 0.4902776 Max: 0.4902776
-(-Infinity,0.005]:0
-(0.005,0.01]:0
-(0.01,0.025]:0
-(0.025,0.05]:0
-(0.05,0.075]:0
-(0.075,0.1]:0
-(0.1,0.25]:0
-(0.25,0.5]:1
-(0.5,0.75]:0
-(0.75,1]:0
-(1,2.5]:0
-(2.5,5]:0
-(5,7.5]:0
-(7.5,10]:0
-(10,+Infinity]:0
-
-
-Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9238801Z, 2025-10-11T11:56:56.5918349Z] gc.heap.generation: gen2
-Value: 1
-(2025-10-10T18:06:22.9238801Z, 2025-10-11T11:56:56.5918349Z] gc.heap.generation: gen1
-Value: 2
-(2025-10-10T18:06:22.9238801Z, 2025-10-11T11:56:56.5918349Z] gc.heap.generation: gen0
-Value: 297
-
-Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9238902Z, 2025-10-11T11:56:56.5918351Z]
-Value: 139419648
-
-Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9238988Z, 2025-10-11T11:56:56.5918352Z]
-Value: 928177616
-
-Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9239067Z, 2025-10-11T11:56:56.5918353Z]
-Value: 21291008
-
-Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:56:56.5918354Z] gc.heap.generation: gen0
-Value: 4032
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:56:56.5918354Z] gc.heap.generation: gen1
-Value: 946680
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:56:56.5918354Z] gc.heap.generation: gen2
-Value: 5689552
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:56:56.5918354Z] gc.heap.generation: loh
-Value: 6010584
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:56:56.5918354Z] gc.heap.generation: poh
-Value: 95376
-
-Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:56:56.5918355Z] gc.heap.generation: gen0
-Value: 72
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:56:56.5918355Z] gc.heap.generation: gen1
-Value: 687912
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:56:56.5918355Z] gc.heap.generation: gen2
-Value: 120
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:56:56.5918355Z] gc.heap.generation: loh
-Value: 1344
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:56:56.5918355Z] gc.heap.generation: poh
-Value: 0
-
-Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316153Z, 2025-10-11T11:56:56.5918356Z]
-Value: 0.149894
-
-Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316672Z, 2025-10-11T11:56:56.5918357Z]
-Value: 1246583
-
-Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316753Z, 2025-10-11T11:56:56.5918359Z]
-Value: 16277
-
-Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316845Z, 2025-10-11T11:56:56.5918360Z]
-Value: 3.3062226
-
-Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316921Z, 2025-10-11T11:56:56.5918361Z]
-Value: 1
-
-Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316986Z, 2025-10-11T11:56:56.5918362Z]
-Value: 3
-
-Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317083Z, 2025-10-11T11:56:56.5918363Z]
-Value: 83005
-
-Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317237Z, 2025-10-11T11:56:56.5918364Z]
-Value: 0
-
-Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317356Z, 2025-10-11T11:56:56.5918365Z]
-Value: 1
-
-Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317473Z, 2025-10-11T11:56:56.5918370Z]
-Value: 160
-
-Metric Name: dotnet.exceptions, Description: The number of exceptions that have been thrown in managed code., Unit: {exception}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317595Z, 2025-10-11T11:56:56.5918372Z] error.type: NotSupportedException
-Value: 6
-(2025-10-10T18:06:22.9317595Z, 2025-10-11T11:56:56.5918372Z] error.type: BadHttpRequestException
-Value: 6
-
-Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317695Z, 2025-10-11T11:56:56.5918373Z]
-Value: 12
-
-Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317778Z, 2025-10-11T11:56:56.5918374Z] cpu.mode: user
-Value: 8.203125
-(2025-10-10T18:06:22.9317778Z, 2025-10-11T11:56:56.5918374Z] cpu.mode: system
-Value: 55.875
-
-Metric Name: aspnetcore.routing.match_attempts, Description: Number of requests that were attempted to be matched to an endpoint., Unit: {match_attempt}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Routing
-(2025-10-10T18:06:22.9627612Z, 2025-10-11T11:56:56.5918376Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Contacts
-Value: 1
-Resource associated with Metrics:
-        service.name: MyOpenTelemetryApi
-        service.version: 1.0.0
-        service.instance.id: 1b2ee08d-4dd1-4a00-b3e8-e4d7f816f471
-        telemetry.sdk.name: opentelemetry
-        telemetry.sdk.language: dotnet
-        telemetry.sdk.version: 1.13.1
-
-Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9202231Z, 2025-10-11T11:57:06.5821846Z]
-Value: 139419648
-
-Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9218809Z, 2025-10-11T11:57:06.5821850Z]
-Value: 2481034317824
-
-Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221399Z, 2025-10-11T11:57:06.5821854Z] process.cpu.state: user
-Value: 8.203125
-(2025-10-10T18:06:22.9221399Z, 2025-10-11T11:57:06.5821854Z] process.cpu.state: system
-Value: 55.875
-
-Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221690Z, 2025-10-11T11:57:06.5821858Z]
-Value: 12
-
-Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221879Z, 2025-10-11T11:57:06.5821859Z]
-Value: 25
-
-Metric Name: kestrel.active_connections, Description: Number of connections that are currently active on the server., Unit: {connection}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9222050Z, 2025-10-11T11:57:06.5821862Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: 0
-
-Metric Name: kestrel.connection.duration, Description: The duration of connections on the server., Unit: s, Metric Type: Histogram
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9228586Z, 2025-10-11T11:57:06.5821871Z] error.type: tls_not_supported network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: Sum: 0.0026986 Count: 2 Min: 0.0013144 Max: 0.0013842
-(-Infinity,0.01]:2
-(0.01,0.02]:0
-(0.02,0.05]:0
-(0.05,0.1]:0
-(0.1,0.2]:0
-(0.2,0.5]:0
-(0.5,1]:0
-(1,2]:0
-(2,5]:0
-(5,10]:0
-(10,30]:0
-(30,60]:0
-(60,120]:0
-(120,300]:0
-(300,+Infinity]:0
-
-(2025-10-10T18:06:22.9228586Z, 2025-10-11T11:57:06.5821871Z] network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: Sum: 116.4989871 Count: 1 Min: 116.4989871 Max: 116.4989871
-(-Infinity,0.01]:0
-(0.01,0.02]:0
-(0.02,0.05]:0
-(0.05,0.1]:0
-(0.1,0.2]:0
-(0.2,0.5]:0
-(0.5,1]:0
-(1,2]:0
-(2,5]:0
-(5,10]:0
-(10,30]:0
-(30,60]:0
-(60,120]:1
-(120,300]:0
-(300,+Infinity]:0
-
-
-Metric Name: kestrel.queued_connections, Description: Number of connections that are currently queued and are waiting to start., Unit: {connection}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9228868Z, 2025-10-11T11:57:06.5821877Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: 0
-
-Metric Name: http.server.active_requests, Description: Number of active HTTP server requests., Unit: {request}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Hosting
-(2025-10-10T18:06:22.9238549Z, 2025-10-11T11:57:06.5821892Z] http.request.method: GET url.scheme: http
-Value: 0
-
-Metric Name: http.server.request.duration, Description: Duration of HTTP server requests., Unit: s, Metric Type: Histogram
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Hosting
-(2025-10-10T18:06:22.9238700Z, 2025-10-11T11:57:06.5821897Z] http.request.method: GET http.response.status_code: 200 http.route: api/Contacts network.protocol.version: 1.1 url.scheme: http
-Value: Sum: 0.4902776 Count: 1 Min: 0.4902776 Max: 0.4902776
-(-Infinity,0.005]:0
-(0.005,0.01]:0
-(0.01,0.025]:0
-(0.025,0.05]:0
-(0.05,0.075]:0
-(0.075,0.1]:0
-(0.1,0.25]:0
-(0.25,0.5]:1
-(0.5,0.75]:0
-(0.75,1]:0
-(1,2.5]:0
-(2.5,5]:0
-(5,7.5]:0
-(7.5,10]:0
-(10,+Infinity]:0
-
-
-Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9238801Z, 2025-10-11T11:57:06.5821898Z] gc.heap.generation: gen2
-Value: 1
-(2025-10-10T18:06:22.9238801Z, 2025-10-11T11:57:06.5821898Z] gc.heap.generation: gen1
-Value: 2
-(2025-10-10T18:06:22.9238801Z, 2025-10-11T11:57:06.5821898Z] gc.heap.generation: gen0
-Value: 297
-
-Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9238902Z, 2025-10-11T11:57:06.5821899Z]
-Value: 139419648
-
-Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9238988Z, 2025-10-11T11:57:06.5821900Z]
-Value: 928325176
-
-Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9239067Z, 2025-10-11T11:57:06.5821901Z]
-Value: 21291008
-
-Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:57:06.5821903Z] gc.heap.generation: gen0
-Value: 4032
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:57:06.5821903Z] gc.heap.generation: gen1
-Value: 946680
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:57:06.5821903Z] gc.heap.generation: gen2
-Value: 5689552
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:57:06.5821903Z] gc.heap.generation: loh
-Value: 6010584
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:57:06.5821903Z] gc.heap.generation: poh
-Value: 95376
-
-Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:57:06.5821905Z] gc.heap.generation: gen0
-Value: 72
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:57:06.5821905Z] gc.heap.generation: gen1
-Value: 687912
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:57:06.5821905Z] gc.heap.generation: gen2
-Value: 120
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:57:06.5821905Z] gc.heap.generation: loh
-Value: 1344
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:57:06.5821905Z] gc.heap.generation: poh
-Value: 0
-
-Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316153Z, 2025-10-11T11:57:06.5821906Z]
-Value: 0.149894
-
-Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316672Z, 2025-10-11T11:57:06.5821907Z]
-Value: 1246583
-
-Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316753Z, 2025-10-11T11:57:06.5821908Z]
-Value: 16277
-
-Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316845Z, 2025-10-11T11:57:06.5821909Z]
-Value: 3.3062226
-
-Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316921Z, 2025-10-11T11:57:06.5821910Z]
-Value: 1
-
-Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316986Z, 2025-10-11T11:57:06.5821911Z]
-Value: 3
-
-Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317083Z, 2025-10-11T11:57:06.5821912Z]
-Value: 83018
-
-Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317237Z, 2025-10-11T11:57:06.5821913Z]
-Value: 0
-
-Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317356Z, 2025-10-11T11:57:06.5821917Z]
-Value: 1
-
-Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317473Z, 2025-10-11T11:57:06.5821918Z]
-Value: 160
-
-Metric Name: dotnet.exceptions, Description: The number of exceptions that have been thrown in managed code., Unit: {exception}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317595Z, 2025-10-11T11:57:06.5821920Z] error.type: NotSupportedException
-Value: 6
-(2025-10-10T18:06:22.9317595Z, 2025-10-11T11:57:06.5821920Z] error.type: BadHttpRequestException
-Value: 6
-
-Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317695Z, 2025-10-11T11:57:06.5821921Z]
-Value: 12
-
-Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317778Z, 2025-10-11T11:57:06.5821922Z] cpu.mode: user
-Value: 8.203125
-(2025-10-10T18:06:22.9317778Z, 2025-10-11T11:57:06.5821922Z] cpu.mode: system
-Value: 55.890625
-
-Metric Name: aspnetcore.routing.match_attempts, Description: Number of requests that were attempted to be matched to an endpoint., Unit: {match_attempt}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Routing
-(2025-10-10T18:06:22.9627612Z, 2025-10-11T11:57:06.5821924Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Contacts
-Value: 1
-Resource associated with Metrics:
-        service.name: MyOpenTelemetryApi
-        service.version: 1.0.0
-        service.instance.id: 1b2ee08d-4dd1-4a00-b3e8-e4d7f816f471
-        telemetry.sdk.name: opentelemetry
-        telemetry.sdk.language: dotnet
-        telemetry.sdk.version: 1.13.1
-
-Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9202231Z, 2025-10-11T11:57:16.5835705Z]
-Value: 139419648
-
-Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9218809Z, 2025-10-11T11:57:16.5835709Z]
-Value: 2481034317824
-
-Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221399Z, 2025-10-11T11:57:16.5835714Z] process.cpu.state: user
-Value: 8.203125
-(2025-10-10T18:06:22.9221399Z, 2025-10-11T11:57:16.5835714Z] process.cpu.state: system
-Value: 55.90625
-
-Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221690Z, 2025-10-11T11:57:16.5835717Z]
-Value: 12
-
-Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221879Z, 2025-10-11T11:57:16.5835718Z]
-Value: 25
-
-Metric Name: kestrel.active_connections, Description: Number of connections that are currently active on the server., Unit: {connection}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9222050Z, 2025-10-11T11:57:16.5835721Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: 0
-
-Metric Name: kestrel.connection.duration, Description: The duration of connections on the server., Unit: s, Metric Type: Histogram
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9228586Z, 2025-10-11T11:57:16.5835731Z] error.type: tls_not_supported network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: Sum: 0.0026986 Count: 2 Min: 0.0013144 Max: 0.0013842
-(-Infinity,0.01]:2
-(0.01,0.02]:0
-(0.02,0.05]:0
-(0.05,0.1]:0
-(0.1,0.2]:0
-(0.2,0.5]:0
-(0.5,1]:0
-(1,2]:0
-(2,5]:0
-(5,10]:0
-(10,30]:0
-(30,60]:0
-(60,120]:0
-(120,300]:0
-(300,+Infinity]:0
-
-(2025-10-10T18:06:22.9228586Z, 2025-10-11T11:57:16.5835731Z] network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: Sum: 116.4989871 Count: 1 Min: 116.4989871 Max: 116.4989871
-(-Infinity,0.01]:0
-(0.01,0.02]:0
-(0.02,0.05]:0
-(0.05,0.1]:0
-(0.1,0.2]:0
-(0.2,0.5]:0
-(0.5,1]:0
-(1,2]:0
-(2,5]:0
-(5,10]:0
-(10,30]:0
-(30,60]:0
-(60,120]:1
-(120,300]:0
-(300,+Infinity]:0
-
-
-Metric Name: kestrel.queued_connections, Description: Number of connections that are currently queued and are waiting to start., Unit: {connection}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9228868Z, 2025-10-11T11:57:16.5835739Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: 0
-
-Metric Name: http.server.active_requests, Description: Number of active HTTP server requests., Unit: {request}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Hosting
-(2025-10-10T18:06:22.9238549Z, 2025-10-11T11:57:16.5835757Z] http.request.method: GET url.scheme: http
-Value: 0
-
-Metric Name: http.server.request.duration, Description: Duration of HTTP server requests., Unit: s, Metric Type: Histogram
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Hosting
-(2025-10-10T18:06:22.9238700Z, 2025-10-11T11:57:16.5835762Z] http.request.method: GET http.response.status_code: 200 http.route: api/Contacts network.protocol.version: 1.1 url.scheme: http
-Value: Sum: 0.4902776 Count: 1 Min: 0.4902776 Max: 0.4902776
-(-Infinity,0.005]:0
-(0.005,0.01]:0
-(0.01,0.025]:0
-(0.025,0.05]:0
-(0.05,0.075]:0
-(0.075,0.1]:0
-(0.1,0.25]:0
-(0.25,0.5]:1
-(0.5,0.75]:0
-(0.75,1]:0
-(1,2.5]:0
-(2.5,5]:0
-(5,7.5]:0
-(7.5,10]:0
-(10,+Infinity]:0
-
-
-Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9238801Z, 2025-10-11T11:57:16.5835764Z] gc.heap.generation: gen2
-Value: 1
-(2025-10-10T18:06:22.9238801Z, 2025-10-11T11:57:16.5835764Z] gc.heap.generation: gen1
-Value: 2
-(2025-10-10T18:06:22.9238801Z, 2025-10-11T11:57:16.5835764Z] gc.heap.generation: gen0
-Value: 297
-
-Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9238902Z, 2025-10-11T11:57:16.5835765Z]
-Value: 139419648
-
-Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9238988Z, 2025-10-11T11:57:16.5835766Z]
-Value: 928456376
-
-Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9239067Z, 2025-10-11T11:57:16.5835768Z]
-Value: 21291008
-
-Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:57:16.5835770Z] gc.heap.generation: gen0
-Value: 4032
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:57:16.5835770Z] gc.heap.generation: gen1
-Value: 946680
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:57:16.5835770Z] gc.heap.generation: gen2
-Value: 5689552
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:57:16.5835770Z] gc.heap.generation: loh
-Value: 6010584
-(2025-10-10T18:06:22.9239171Z, 2025-10-11T11:57:16.5835770Z] gc.heap.generation: poh
-Value: 95376
-
-Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:57:16.5835772Z] gc.heap.generation: gen0
-Value: 72
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:57:16.5835772Z] gc.heap.generation: gen1
-Value: 687912
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:57:16.5835772Z] gc.heap.generation: gen2
-Value: 120
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:57:16.5835772Z] gc.heap.generation: loh
-Value: 1344
-(2025-10-10T18:06:22.9239308Z, 2025-10-11T11:57:16.5835772Z] gc.heap.generation: poh
-Value: 0
-
-Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316153Z, 2025-10-11T11:57:16.5835776Z]
-Value: 0.149894
-
-Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316672Z, 2025-10-11T11:57:16.5835778Z]
-Value: 1246583
-
-Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316753Z, 2025-10-11T11:57:16.5835780Z]
-Value: 16277
-
-Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316845Z, 2025-10-11T11:57:16.5835781Z]
-Value: 3.3062226
-
-Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316921Z, 2025-10-11T11:57:16.5835782Z]
-Value: 1
-
-Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9316986Z, 2025-10-11T11:57:16.5835784Z]
-Value: 3
-
-Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317083Z, 2025-10-11T11:57:16.5835785Z]
-Value: 83031
-
-Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317237Z, 2025-10-11T11:57:16.5835786Z]
-Value: 0
-
-Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317356Z, 2025-10-11T11:57:16.5835787Z]
-Value: 1
-
-Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317473Z, 2025-10-11T11:57:16.5835789Z]
-Value: 160
-
-Metric Name: dotnet.exceptions, Description: The number of exceptions that have been thrown in managed code., Unit: {exception}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317595Z, 2025-10-11T11:57:16.5835791Z] error.type: NotSupportedException
-Value: 6
-(2025-10-10T18:06:22.9317595Z, 2025-10-11T11:57:16.5835791Z] error.type: BadHttpRequestException
-Value: 6
-
-Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317695Z, 2025-10-11T11:57:16.5835792Z]
-Value: 12
-
-Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9317778Z, 2025-10-11T11:57:16.5835793Z] cpu.mode: user
-Value: 8.203125
-(2025-10-10T18:06:22.9317778Z, 2025-10-11T11:57:16.5835793Z] cpu.mode: system
-Value: 55.90625
-
-Metric Name: aspnetcore.routing.match_attempts, Description: Number of requests that were attempted to be matched to an endpoint., Unit: {match_attempt}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Routing
-(2025-10-10T18:06:22.9627612Z, 2025-10-11T11:57:16.5835796Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Contacts
-Value: 1
-Resource associated with Metrics:
-        service.name: MyOpenTelemetryApi
-        service.version: 1.0.0
-        service.instance.id: 1b2ee08d-4dd1-4a00-b3e8-e4d7f816f471
-        telemetry.sdk.name: opentelemetry
-        telemetry.sdk.language: dotnet
-        telemetry.sdk.version: 1.13.1
-
-Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9202231Z, 2025-10-11T11:57:26.5901599Z]
-Value: 139436032
-
-Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9218809Z, 2025-10-11T11:57:26.5901602Z]
-Value: 2481035890688
-
-Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221399Z, 2025-10-11T11:57:26.5901605Z] process.cpu.state: user
-Value: 8.203125
-(2025-10-10T18:06:22.9221399Z, 2025-10-11T11:57:26.5901605Z] process.cpu.state: system
-Value: 55.90625
-
-Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221690Z, 2025-10-11T11:57:26.5901608Z]
-Value: 12
-
-Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: OpenTelemetry.Instrumentation.Process
-        Version: 1.12.0-beta.1
-(2025-10-10T18:06:22.9221879Z, 2025-10-11T11:57:26.5901609Z]
-Value: 26
-
-Metric Name: kestrel.active_connections, Description: Number of connections that are currently active on the server., Unit: {connection}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9222050Z, 2025-10-11T11:57:26.5901612Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: 0
-
-Metric Name: kestrel.connection.duration, Description: The duration of connections on the server., Unit: s, Metric Type: Histogram
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9228586Z, 2025-10-11T11:57:26.5901620Z] error.type: tls_not_supported network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: Sum: 0.0026986 Count: 2 Min: 0.0013144 Max: 0.0013842
-(-Infinity,0.01]:2
-(0.01,0.02]:0
-(0.02,0.05]:0
-(0.05,0.1]:0
-(0.1,0.2]:0
-(0.2,0.5]:0
-(0.5,1]:0
-(1,2]:0
-(2,5]:0
-(5,10]:0
-(10,30]:0
-(30,60]:0
-(60,120]:0
-(120,300]:0
-(300,+Infinity]:0
-
-(2025-10-10T18:06:22.9228586Z, 2025-10-11T11:57:26.5901620Z] network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: Sum: 116.4989871 Count: 1 Min: 116.4989871 Max: 116.4989871
-(-Infinity,0.01]:0
-(0.01,0.02]:0
-(0.02,0.05]:0
-(0.05,0.1]:0
-(0.1,0.2]:0
-(0.2,0.5]:0
-(0.5,1]:0
-(1,2]:0
-(2,5]:0
-(5,10]:0
-(10,30]:0
-(30,60]:0
-(60,120]:1
-(120,300]:0
-(300,+Infinity]:0
-
-
-Metric Name: kestrel.queued_connections, Description: Number of connections that are currently queued and are waiting to start., Unit: {connection}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Server.Kestrel
-(2025-10-10T18:06:22.9228868Z, 2025-10-11T11:57:26.5901627Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
-Value: 0
-
-Metric Name: http.server.active_requests, Description: Number of active HTTP server requests., Unit: {request}, Metric Type: LongSumNonMonotonic
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Hosting
-(2025-10-10T18:06:22.9238549Z, 2025-10-11T11:57:26.5901644Z] http.request.method: GET url.scheme: http
-Value: 0
-
-Metric Name: http.server.request.duration, Description: Duration of HTTP server requests., Unit: s, Metric Type: Histogram
-Instrumentation scope (Meter):
-        Name: Microsoft.AspNetCore.Hosting
-(2025-10-10T18:06:22.9238700Z, 2025-10-11T11:57:26.5901649Z] http.request.method: GET http.response.status_code: 200 http.route: api/Contacts network.protocol.version: 1.1 url.scheme: http
-Value: Sum: 0.4902776 Count: 1 Min: 0.4902776 Max: 0.4902776
-(-Infinity,0.005]:0
-(0.005,0.01]:0
-(0.01,0.025]:0
-(0.025,0.05]:0
-(0.05,0.075]:0
-(0.075,0.1]:0
-(0.1,0.25]:0
-(0.25,0.5]:1
-(0.5,0.75]:0
-(0.75,1]:0
-(1,2.5]:0
-(2.5,5]:0
-(5,7.5]:0
-(7.5,10]:0
-(10,+Infinity]:0
-
-
-Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
-Instrumentation scope (Meter):
-        Name: System.Runtime
-(2025-10-10T18:06:22.9238801Z, 2025-10-11T11:57:26.5901650Z] gc.heap.generation: gen2
-Value: 1
-(2025-10-10T18:06:22.9238801Z, 2025-10-11T11:57:26.5901650Z] gc.heap.generation: gen1
-Value: 2
 (2025-10-10T18:06:22.9238801Z, 2025-10-11T11:57:26.5901650Z] gc.heap.generation: gen0
 Value: 297
 
@@ -8897,3 +7946,956 @@ Instrumentation scope (Meter):
         Name: Microsoft.AspNetCore.Routing
 (2025-10-10T18:06:22.9627612Z, 2025-10-11T12:01:46.5880244Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Contacts
 Value: 2
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: 1b2ee08d-4dd1-4a00-b3e8-e4d7f816f471
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9202231Z, 2025-10-11T12:01:56.5909983Z]
+Value: 141369344
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9218809Z, 2025-10-11T12:01:56.5909989Z]
+Value: 2481036808192
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9221399Z, 2025-10-11T12:01:56.5909991Z] process.cpu.state: user
+Value: 8.53125
+(2025-10-10T18:06:22.9221399Z, 2025-10-11T12:01:56.5909991Z] process.cpu.state: system
+Value: 56.078125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9221690Z, 2025-10-11T12:01:56.5909994Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9221879Z, 2025-10-11T12:01:56.5909995Z]
+Value: 26
+
+Metric Name: kestrel.active_connections, Description: Number of connections that are currently active on the server., Unit: {connection}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-10T18:06:22.9222050Z, 2025-10-11T12:01:56.5909998Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: 1
+
+Metric Name: kestrel.connection.duration, Description: The duration of connections on the server., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-10T18:06:22.9228586Z, 2025-10-11T12:01:56.5910007Z] error.type: tls_not_supported network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: Sum: 0.0052035 Count: 4 Min: 0.0010784 Max: 0.0014265
+(-Infinity,0.01]:4
+(0.01,0.02]:0
+(0.02,0.05]:0
+(0.05,0.1]:0
+(0.1,0.2]:0
+(0.2,0.5]:0
+(0.5,1]:0
+(1,2]:0
+(2,5]:0
+(5,10]:0
+(10,30]:0
+(30,60]:0
+(60,120]:0
+(120,300]:0
+(300,+Infinity]:0
+
+(2025-10-10T18:06:22.9228586Z, 2025-10-11T12:01:56.5910007Z] network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: Sum: 116.4989871 Count: 1 Min: 116.4989871 Max: 116.4989871
+(-Infinity,0.01]:0
+(0.01,0.02]:0
+(0.02,0.05]:0
+(0.05,0.1]:0
+(0.1,0.2]:0
+(0.2,0.5]:0
+(0.5,1]:0
+(1,2]:0
+(2,5]:0
+(5,10]:0
+(10,30]:0
+(30,60]:0
+(60,120]:1
+(120,300]:0
+(300,+Infinity]:0
+
+
+Metric Name: kestrel.queued_connections, Description: Number of connections that are currently queued and are waiting to start., Unit: {connection}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-10T18:06:22.9228868Z, 2025-10-11T12:01:56.5910013Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: 0
+
+Metric Name: dns.lookup.duration, Description: Measures the time taken to perform a DNS lookup., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: System.Net.NameResolution
+(2025-10-10T18:06:22.9238445Z, 2025-10-11T12:01:56.5910028Z] dns.question.name: ep-late-dawn-aerv42ii-pooler.c-2.us-east-2.aws.neon.tech
+Value: Sum: 0.0184208 Count: 2 Min: 0.0003062 Max: 0.0181146
+(-Infinity,0.005]:1
+(0.005,0.01]:0
+(0.01,0.025]:1
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:0
+(0.25,0.5]:0
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+
+Metric Name: http.server.active_requests, Description: Number of active HTTP server requests., Unit: {request}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Hosting
+(2025-10-10T18:06:22.9238549Z, 2025-10-11T12:01:56.5910031Z] http.request.method: GET url.scheme: http
+Value: 0
+
+Metric Name: http.server.request.duration, Description: Duration of HTTP server requests., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Hosting
+(2025-10-10T18:06:22.9238700Z, 2025-10-11T12:01:56.5910036Z] http.request.method: GET http.response.status_code: 200 http.route: api/Contacts network.protocol.version: 1.1 url.scheme: http
+Value: Sum: 16.8831429 Count: 2 Min: 0.4902776 Max: 16.3928653
+(-Infinity,0.005]:0
+(0.005,0.01]:0
+(0.01,0.025]:0
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:0
+(0.25,0.5]:1
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:1
+
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9238801Z, 2025-10-11T12:01:56.5910038Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-10T18:06:22.9238801Z, 2025-10-11T12:01:56.5910038Z] gc.heap.generation: gen1
+Value: 2
+(2025-10-10T18:06:22.9238801Z, 2025-10-11T12:01:56.5910038Z] gc.heap.generation: gen0
+Value: 299
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9238902Z, 2025-10-11T12:01:56.5910039Z]
+Value: 141705216
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9238988Z, 2025-10-11T12:01:56.5910040Z]
+Value: 933449616
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9239067Z, 2025-10-11T12:01:56.5910041Z]
+Value: 21291008
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:01:56.5910042Z] gc.heap.generation: gen0
+Value: 256896
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:01:56.5910042Z] gc.heap.generation: gen1
+Value: 946680
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:01:56.5910042Z] gc.heap.generation: gen2
+Value: 5689552
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:01:56.5910042Z] gc.heap.generation: loh
+Value: 6010584
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:01:56.5910042Z] gc.heap.generation: poh
+Value: 99496
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:01:56.5910044Z] gc.heap.generation: gen0
+Value: 2760
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:01:56.5910044Z] gc.heap.generation: gen1
+Value: 687912
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:01:56.5910044Z] gc.heap.generation: gen2
+Value: 120
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:01:56.5910044Z] gc.heap.generation: loh
+Value: 1344
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:01:56.5910044Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316153Z, 2025-10-11T12:01:56.5910045Z]
+Value: 0.153315
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316672Z, 2025-10-11T12:01:56.5910046Z]
+Value: 1340161
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316753Z, 2025-10-11T12:01:56.5910047Z]
+Value: 17510
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316845Z, 2025-10-11T12:01:56.5910048Z]
+Value: 3.6064007
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316921Z, 2025-10-11T12:01:56.5910049Z]
+Value: 1
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316986Z, 2025-10-11T12:01:56.5910050Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317083Z, 2025-10-11T12:01:56.5910051Z]
+Value: 83443
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317237Z, 2025-10-11T12:01:56.5910052Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317356Z, 2025-10-11T12:01:56.5910053Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317473Z, 2025-10-11T12:01:56.5910054Z]
+Value: 160
+
+Metric Name: dotnet.exceptions, Description: The number of exceptions that have been thrown in managed code., Unit: {exception}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:01:56.5910056Z] error.type: NotSupportedException
+Value: 12
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:01:56.5910056Z] error.type: BadHttpRequestException
+Value: 12
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:01:56.5910056Z] error.type: SocketException
+Value: 3
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:01:56.5910056Z] error.type: IOException
+Value: 4
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:01:56.5910056Z] error.type: NpgsqlException
+Value: 15
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317695Z, 2025-10-11T12:01:56.5910058Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317778Z, 2025-10-11T12:01:56.5910059Z] cpu.mode: user
+Value: 8.53125
+(2025-10-10T18:06:22.9317778Z, 2025-10-11T12:01:56.5910059Z] cpu.mode: system
+Value: 56.078125
+
+Metric Name: aspnetcore.routing.match_attempts, Description: Number of requests that were attempted to be matched to an endpoint., Unit: {match_attempt}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Routing
+(2025-10-10T18:06:22.9627612Z, 2025-10-11T12:01:56.5910061Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Contacts
+Value: 2
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: 1b2ee08d-4dd1-4a00-b3e8-e4d7f816f471
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9202231Z, 2025-10-11T12:02:06.5910370Z]
+Value: 141705216
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9218809Z, 2025-10-11T12:02:06.5910374Z]
+Value: 2481036808192
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9221399Z, 2025-10-11T12:02:06.5910378Z] process.cpu.state: user
+Value: 8.53125
+(2025-10-10T18:06:22.9221399Z, 2025-10-11T12:02:06.5910378Z] process.cpu.state: system
+Value: 56.078125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9221690Z, 2025-10-11T12:02:06.5910382Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9221879Z, 2025-10-11T12:02:06.5910385Z]
+Value: 26
+
+Metric Name: kestrel.active_connections, Description: Number of connections that are currently active on the server., Unit: {connection}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-10T18:06:22.9222050Z, 2025-10-11T12:02:06.5910387Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: 1
+
+Metric Name: kestrel.connection.duration, Description: The duration of connections on the server., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-10T18:06:22.9228586Z, 2025-10-11T12:02:06.5910395Z] error.type: tls_not_supported network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: Sum: 0.0052035 Count: 4 Min: 0.0010784 Max: 0.0014265
+(-Infinity,0.01]:4
+(0.01,0.02]:0
+(0.02,0.05]:0
+(0.05,0.1]:0
+(0.1,0.2]:0
+(0.2,0.5]:0
+(0.5,1]:0
+(1,2]:0
+(2,5]:0
+(5,10]:0
+(10,30]:0
+(30,60]:0
+(60,120]:0
+(120,300]:0
+(300,+Infinity]:0
+
+(2025-10-10T18:06:22.9228586Z, 2025-10-11T12:02:06.5910395Z] network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: Sum: 116.4989871 Count: 1 Min: 116.4989871 Max: 116.4989871
+(-Infinity,0.01]:0
+(0.01,0.02]:0
+(0.02,0.05]:0
+(0.05,0.1]:0
+(0.1,0.2]:0
+(0.2,0.5]:0
+(0.5,1]:0
+(1,2]:0
+(2,5]:0
+(5,10]:0
+(10,30]:0
+(30,60]:0
+(60,120]:1
+(120,300]:0
+(300,+Infinity]:0
+
+
+Metric Name: kestrel.queued_connections, Description: Number of connections that are currently queued and are waiting to start., Unit: {connection}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-10T18:06:22.9228868Z, 2025-10-11T12:02:06.5910402Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: 0
+
+Metric Name: dns.lookup.duration, Description: Measures the time taken to perform a DNS lookup., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: System.Net.NameResolution
+(2025-10-10T18:06:22.9238445Z, 2025-10-11T12:02:06.5910417Z] dns.question.name: ep-late-dawn-aerv42ii-pooler.c-2.us-east-2.aws.neon.tech
+Value: Sum: 0.0184208 Count: 2 Min: 0.0003062 Max: 0.0181146
+(-Infinity,0.005]:1
+(0.005,0.01]:0
+(0.01,0.025]:1
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:0
+(0.25,0.5]:0
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+
+Metric Name: http.server.active_requests, Description: Number of active HTTP server requests., Unit: {request}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Hosting
+(2025-10-10T18:06:22.9238549Z, 2025-10-11T12:02:06.5910420Z] http.request.method: GET url.scheme: http
+Value: 0
+
+Metric Name: http.server.request.duration, Description: Duration of HTTP server requests., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Hosting
+(2025-10-10T18:06:22.9238700Z, 2025-10-11T12:02:06.5910425Z] http.request.method: GET http.response.status_code: 200 http.route: api/Contacts network.protocol.version: 1.1 url.scheme: http
+Value: Sum: 16.8831429 Count: 2 Min: 0.4902776 Max: 16.3928653
+(-Infinity,0.005]:0
+(0.005,0.01]:0
+(0.01,0.025]:0
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:0
+(0.25,0.5]:1
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:1
+
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9238801Z, 2025-10-11T12:02:06.5910426Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-10T18:06:22.9238801Z, 2025-10-11T12:02:06.5910426Z] gc.heap.generation: gen1
+Value: 2
+(2025-10-10T18:06:22.9238801Z, 2025-10-11T12:02:06.5910426Z] gc.heap.generation: gen0
+Value: 299
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9238902Z, 2025-10-11T12:02:06.5910427Z]
+Value: 141705216
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9238988Z, 2025-10-11T12:02:06.5910428Z]
+Value: 933597216
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9239067Z, 2025-10-11T12:02:06.5910430Z]
+Value: 21291008
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:02:06.5910431Z] gc.heap.generation: gen0
+Value: 256896
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:02:06.5910431Z] gc.heap.generation: gen1
+Value: 946680
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:02:06.5910431Z] gc.heap.generation: gen2
+Value: 5689552
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:02:06.5910431Z] gc.heap.generation: loh
+Value: 6010584
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:02:06.5910431Z] gc.heap.generation: poh
+Value: 99496
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:02:06.5910432Z] gc.heap.generation: gen0
+Value: 2760
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:02:06.5910432Z] gc.heap.generation: gen1
+Value: 687912
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:02:06.5910432Z] gc.heap.generation: gen2
+Value: 120
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:02:06.5910432Z] gc.heap.generation: loh
+Value: 1344
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:02:06.5910432Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316153Z, 2025-10-11T12:02:06.5910433Z]
+Value: 0.153315
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316672Z, 2025-10-11T12:02:06.5910434Z]
+Value: 1340161
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316753Z, 2025-10-11T12:02:06.5910436Z]
+Value: 17510
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316845Z, 2025-10-11T12:02:06.5910436Z]
+Value: 3.6064007
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316921Z, 2025-10-11T12:02:06.5910437Z]
+Value: 1
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316986Z, 2025-10-11T12:02:06.5910438Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317083Z, 2025-10-11T12:02:06.5910439Z]
+Value: 83457
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317237Z, 2025-10-11T12:02:06.5910440Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317356Z, 2025-10-11T12:02:06.5910444Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317473Z, 2025-10-11T12:02:06.5910445Z]
+Value: 160
+
+Metric Name: dotnet.exceptions, Description: The number of exceptions that have been thrown in managed code., Unit: {exception}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:02:06.5910447Z] error.type: NotSupportedException
+Value: 12
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:02:06.5910447Z] error.type: BadHttpRequestException
+Value: 12
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:02:06.5910447Z] error.type: SocketException
+Value: 3
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:02:06.5910447Z] error.type: IOException
+Value: 4
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:02:06.5910447Z] error.type: NpgsqlException
+Value: 15
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317695Z, 2025-10-11T12:02:06.5910448Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317778Z, 2025-10-11T12:02:06.5910449Z] cpu.mode: user
+Value: 8.53125
+(2025-10-10T18:06:22.9317778Z, 2025-10-11T12:02:06.5910449Z] cpu.mode: system
+Value: 56.078125
+
+Metric Name: aspnetcore.routing.match_attempts, Description: Number of requests that were attempted to be matched to an endpoint., Unit: {match_attempt}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Routing
+(2025-10-10T18:06:22.9627612Z, 2025-10-11T12:02:06.5910451Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Contacts
+Value: 2
+LogRecord.Timestamp:               2025-10-11T12:02:13.1304016Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Application is shutting down...
+LogRecord.Body:                    Application is shutting down...
+LogRecord.Attributes (Key:Value):
+    OriginalFormat (a.k.a Body): Application is shutting down...
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: 1b2ee08d-4dd1-4a00-b3e8-e4d7f816f471
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-11T12:02:13.1314786Z
+LogRecord.CategoryName:            Microsoft.Extensions.Hosting.Internal.Host
+LogRecord.Severity:                Debug
+LogRecord.SeverityText:            Debug
+LogRecord.FormattedMessage:        Hosting stopping
+LogRecord.Body:                    Hosting stopping
+LogRecord.Attributes (Key:Value):
+    OriginalFormat (a.k.a Body): Hosting stopping
+LogRecord.EventId:                 3
+LogRecord.EventName:               Stopping
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: 1b2ee08d-4dd1-4a00-b3e8-e4d7f816f471
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-11T12:02:13.1372728Z
+LogRecord.CategoryName:            Microsoft.Extensions.Hosting.Internal.Host
+LogRecord.Severity:                Debug
+LogRecord.SeverityText:            Debug
+LogRecord.FormattedMessage:        Hosting stopped
+LogRecord.Body:                    Hosting stopped
+LogRecord.Attributes (Key:Value):
+    OriginalFormat (a.k.a Body): Hosting stopped
+LogRecord.EventId:                 4
+LogRecord.EventName:               Stopped
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: 1b2ee08d-4dd1-4a00-b3e8-e4d7f816f471
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: 1b2ee08d-4dd1-4a00-b3e8-e4d7f816f471
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9202231Z, 2025-10-11T12:02:13.1442356Z]
+Value: 142024704
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9218809Z, 2025-10-11T12:02:13.1442361Z]
+Value: 2481040019456
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9221399Z, 2025-10-11T12:02:13.1442363Z] process.cpu.state: user
+Value: 8.53125
+(2025-10-10T18:06:22.9221399Z, 2025-10-11T12:02:13.1442363Z] process.cpu.state: system
+Value: 56.078125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9221690Z, 2025-10-11T12:02:13.1442364Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-10T18:06:22.9221879Z, 2025-10-11T12:02:13.1442365Z]
+Value: 28
+
+Metric Name: kestrel.active_connections, Description: Number of connections that are currently active on the server., Unit: {connection}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-10T18:06:22.9222050Z, 2025-10-11T12:02:13.1442368Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: 0
+
+Metric Name: kestrel.connection.duration, Description: The duration of connections on the server., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-10T18:06:22.9228586Z, 2025-10-11T12:02:13.1442375Z] error.type: tls_not_supported network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: Sum: 0.0052035 Count: 4 Min: 0.0010784 Max: 0.0014265
+(-Infinity,0.01]:4
+(0.01,0.02]:0
+(0.02,0.05]:0
+(0.05,0.1]:0
+(0.1,0.2]:0
+(0.2,0.5]:0
+(0.5,1]:0
+(1,2]:0
+(2,5]:0
+(5,10]:0
+(10,30]:0
+(30,60]:0
+(60,120]:0
+(120,300]:0
+(300,+Infinity]:0
+
+(2025-10-10T18:06:22.9228586Z, 2025-10-11T12:02:13.1442375Z] network.protocol.name: http network.protocol.version: 1.1 network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: Sum: 222.6714649 Count: 2 Min: 106.1724778 Max: 116.4989871
+(-Infinity,0.01]:0
+(0.01,0.02]:0
+(0.02,0.05]:0
+(0.05,0.1]:0
+(0.1,0.2]:0
+(0.2,0.5]:0
+(0.5,1]:0
+(1,2]:0
+(2,5]:0
+(5,10]:0
+(10,30]:0
+(30,60]:0
+(60,120]:2
+(120,300]:0
+(300,+Infinity]:0
+
+
+Metric Name: kestrel.queued_connections, Description: Number of connections that are currently queued and are waiting to start., Unit: {connection}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Server.Kestrel
+(2025-10-10T18:06:22.9228868Z, 2025-10-11T12:02:13.1442383Z] network.transport: tcp network.type: ipv4 server.address: 192.168.0.80 server.port: 5174
+Value: 0
+
+Metric Name: dns.lookup.duration, Description: Measures the time taken to perform a DNS lookup., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: System.Net.NameResolution
+(2025-10-10T18:06:22.9238445Z, 2025-10-11T12:02:13.1442398Z] dns.question.name: ep-late-dawn-aerv42ii-pooler.c-2.us-east-2.aws.neon.tech
+Value: Sum: 0.0184208 Count: 2 Min: 0.0003062 Max: 0.0181146
+(-Infinity,0.005]:1
+(0.005,0.01]:0
+(0.01,0.025]:1
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:0
+(0.25,0.5]:0
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:0
+
+
+Metric Name: http.server.active_requests, Description: Number of active HTTP server requests., Unit: {request}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Hosting
+(2025-10-10T18:06:22.9238549Z, 2025-10-11T12:02:13.1442402Z] http.request.method: GET url.scheme: http
+Value: 0
+
+Metric Name: http.server.request.duration, Description: Duration of HTTP server requests., Unit: s, Metric Type: Histogram
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Hosting
+(2025-10-10T18:06:22.9238700Z, 2025-10-11T12:02:13.1442406Z] http.request.method: GET http.response.status_code: 200 http.route: api/Contacts network.protocol.version: 1.1 url.scheme: http
+Value: Sum: 16.8831429 Count: 2 Min: 0.4902776 Max: 16.3928653
+(-Infinity,0.005]:0
+(0.005,0.01]:0
+(0.01,0.025]:0
+(0.025,0.05]:0
+(0.05,0.075]:0
+(0.075,0.1]:0
+(0.1,0.25]:0
+(0.25,0.5]:1
+(0.5,0.75]:0
+(0.75,1]:0
+(1,2.5]:0
+(2.5,5]:0
+(5,7.5]:0
+(7.5,10]:0
+(10,+Infinity]:1
+
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9238801Z, 2025-10-11T12:02:13.1442407Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-10T18:06:22.9238801Z, 2025-10-11T12:02:13.1442407Z] gc.heap.generation: gen1
+Value: 2
+(2025-10-10T18:06:22.9238801Z, 2025-10-11T12:02:13.1442407Z] gc.heap.generation: gen0
+Value: 299
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9238902Z, 2025-10-11T12:02:13.1442409Z]
+Value: 142024704
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9238988Z, 2025-10-11T12:02:13.1442410Z]
+Value: 933879640
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9239067Z, 2025-10-11T12:02:13.1442411Z]
+Value: 21291008
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:02:13.1442412Z] gc.heap.generation: gen0
+Value: 256896
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:02:13.1442412Z] gc.heap.generation: gen1
+Value: 946680
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:02:13.1442412Z] gc.heap.generation: gen2
+Value: 5689552
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:02:13.1442412Z] gc.heap.generation: loh
+Value: 6010584
+(2025-10-10T18:06:22.9239171Z, 2025-10-11T12:02:13.1442412Z] gc.heap.generation: poh
+Value: 99496
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:02:13.1442413Z] gc.heap.generation: gen0
+Value: 2760
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:02:13.1442413Z] gc.heap.generation: gen1
+Value: 687912
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:02:13.1442413Z] gc.heap.generation: gen2
+Value: 120
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:02:13.1442413Z] gc.heap.generation: loh
+Value: 1344
+(2025-10-10T18:06:22.9239308Z, 2025-10-11T12:02:13.1442413Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316153Z, 2025-10-11T12:02:13.1442414Z]
+Value: 0.153315
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316672Z, 2025-10-11T12:02:13.1442415Z]
+Value: 1347552
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316753Z, 2025-10-11T12:02:13.1442417Z]
+Value: 17654
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316845Z, 2025-10-11T12:02:13.1442418Z]
+Value: 3.6147056
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316921Z, 2025-10-11T12:02:13.1442419Z]
+Value: 2
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9316986Z, 2025-10-11T12:02:13.1442420Z]
+Value: 5
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317083Z, 2025-10-11T12:02:13.1442422Z]
+Value: 83485
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317237Z, 2025-10-11T12:02:13.1442423Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317356Z, 2025-10-11T12:02:13.1442424Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317473Z, 2025-10-11T12:02:13.1442425Z]
+Value: 160
+
+Metric Name: dotnet.exceptions, Description: The number of exceptions that have been thrown in managed code., Unit: {exception}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:02:13.1442427Z] error.type: NotSupportedException
+Value: 12
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:02:13.1442427Z] error.type: BadHttpRequestException
+Value: 12
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:02:13.1442427Z] error.type: SocketException
+Value: 4
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:02:13.1442427Z] error.type: IOException
+Value: 4
+(2025-10-10T18:06:22.9317595Z, 2025-10-11T12:02:13.1442427Z] error.type: NpgsqlException
+Value: 15
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317695Z, 2025-10-11T12:02:13.1442428Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-10T18:06:22.9317778Z, 2025-10-11T12:02:13.1442429Z] cpu.mode: user
+Value: 8.53125
+(2025-10-10T18:06:22.9317778Z, 2025-10-11T12:02:13.1442429Z] cpu.mode: system
+Value: 56.09375
+
+Metric Name: aspnetcore.routing.match_attempts, Description: Number of requests that were attempted to be matched to an endpoint., Unit: {match_attempt}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: Microsoft.AspNetCore.Routing
+(2025-10-10T18:06:22.9627612Z, 2025-10-11T12:02:13.1442431Z] aspnetcore.routing.is_fallback: false aspnetcore.routing.match_status: success http.route: api/Contacts
+Value: 2
+PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api>
