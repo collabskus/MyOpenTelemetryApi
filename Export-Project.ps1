@@ -30,13 +30,14 @@ $IncludeExtensions = @(
 # Directories to exclude
 $ExcludeDirectories = @(
     "bin",
-    "obj", 
+    "obj",
     ".vs",
     ".git",
     "node_modules",
     "packages",
     ".vscode",
-    ".idea"
+    ".idea",
+    "docs"            # Documentation folder
 )
 
 # Files to exclude
@@ -86,28 +87,28 @@ try {
 } catch {
     # Fallback to PowerShell-based tree
     Write-Host "Tree command not available, using PowerShell alternative..." -ForegroundColor Yellow
-    
+
     function Get-DirectoryTree {
         param([string]$Path, [string]$Prefix = "")
-        
-        $items = Get-ChildItem -Path $Path -Force | Where-Object { 
-            $_.Name -notin $ExcludeDirectories 
+
+        $items = Get-ChildItem -Path $Path -Force | Where-Object {
+            $_.Name -notin $ExcludeDirectories
         } | Sort-Object @{Expression={$_.PSIsContainer}; Descending=$true}, Name
-        
+
         for ($i = 0; $i -lt $items.Count; $i++) {
             $item = $items[$i]
             $isLast = ($i -eq $items.Count - 1)
             $connector = if ($isLast) { "+-- " } else { "+-- " }
-            
+
             "$Prefix$connector$($item.Name)" | Out-File -FilePath $OutputPath -Append -Encoding UTF8
-            
+
             if ($item.PSIsContainer) {
                 $newPrefix = if ($isLast) { "$Prefix    " } else { "$Prefix|   " }
                 Get-DirectoryTree -Path $item.FullName -Prefix $newPrefix
             }
         }
     }
-    
+
     (Split-Path $ProjectPath -Leaf) | Out-File -FilePath $OutputPath -Append -Encoding UTF8
     Get-DirectoryTree -Path $ProjectPath
 }
@@ -147,9 +148,9 @@ $fileCount = 0
 foreach ($file in $AllFiles) {
     $fileCount++
     $relativePath = $file.FullName.Substring($ProjectPath.Length).TrimStart('\')
-    
+
     Write-Host "Processing ($fileCount/$($AllFiles.Count)): $relativePath" -ForegroundColor White
-    
+
     $separator = "=" * 80
     $fileHeader = @"
 $separator
@@ -159,9 +160,9 @@ MODIFIED: $($file.LastWriteTime)
 $separator
 
 "@
-    
+
     $fileHeader | Out-File -FilePath $OutputPath -Append -Encoding UTF8
-    
+
     try {
         # Read file content with error handling
         $content = Get-Content -Path $file.FullName -Raw -ErrorAction Stop
@@ -173,7 +174,7 @@ $separator
     } catch {
         "[ERROR READING FILE: $($_.Exception.Message)]" | Out-File -FilePath $OutputPath -Append -Encoding UTF8
     }
-    
+
     "" | Out-File -FilePath $OutputPath -Append -Encoding UTF8
     "" | Out-File -FilePath $OutputPath -Append -Encoding UTF8
 }
