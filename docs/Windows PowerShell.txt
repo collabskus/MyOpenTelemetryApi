@@ -368,3 +368,368 @@ Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/bin/
 Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/obj/
 PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi>
 PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated --pre-release Always --upgrade; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
+    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+
+Build succeeded in 0.5s
+2025-10-16-10-46-45
+Restore succeeded with 10 warning(s) in 0.9s
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+  MyOpenTelemetryApi.Domain net10.0 succeeded (2.1s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
+  MyOpenTelemetryApi.Application net10.0 succeeded (0.6s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
+  MyOpenTelemetryApi.Infrastructure net10.0 succeeded with 2 warning(s) (0.6s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+  MyOpenTelemetryApi.Api net10.0 succeeded with 2 warning(s) (1.9s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+  MyOpenTelemetryApi.Application.Tests net10.0 succeeded with 2 warning(s) (1.0s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+  MyOpenTelemetryApi.Infrastructure.Tests net10.0 succeeded with 2 warning(s) (1.0s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+  MyOpenTelemetryApi.Api.Tests net10.0 succeeded with 2 warning(s) (1.0s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+
+Build succeeded with 20 warning(s) in 6.5s
+2025-10-16-10-46-51
+Restore succeeded with 10 warning(s) in 0.7s
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+  MyOpenTelemetryApi.Domain net10.0 succeeded (0.2s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
+  MyOpenTelemetryApi.Application net10.0 succeeded (0.1s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
+  MyOpenTelemetryApi.Infrastructure net10.0 succeeded with 2 warning(s) (0.2s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+  MyOpenTelemetryApi.Api net10.0 succeeded with 2 warning(s) (0.4s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+  MyOpenTelemetryApi.Api.Tests net10.0 succeeded with 2 warning(s) (0.2s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+  MyOpenTelemetryApi.Application.Tests net10.0 succeeded with 2 warning(s) (0.2s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+  MyOpenTelemetryApi.Infrastructure.Tests net10.0 succeeded with 2 warning(s) (0.2s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.2.25502.107)
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.2.25502.107)
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.2.25502.107)
+[xUnit.net 00:00:00.29]   Discovering: MyOpenTelemetryApi.Application.Tests
+[xUnit.net 00:00:00.30]   Discovering: MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:00.30]   Discovering: MyOpenTelemetryApi.Infrastructure.Tests
+[xUnit.net 00:00:00.34]   Discovered:  MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:00.34]   Discovered:  MyOpenTelemetryApi.Infrastructure.Tests
+[xUnit.net 00:00:00.36]   Starting:    MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:00.36]   Discovered:  MyOpenTelemetryApi.Application.Tests
+[xUnit.net 00:00:00.37]   Starting:    MyOpenTelemetryApi.Infrastructure.Tests
+[xUnit.net 00:00:00.39]   Starting:    MyOpenTelemetryApi.Application.Tests
+[xUnit.net 00:00:00.59]   Finished:    MyOpenTelemetryApi.Infrastructure.Tests
+[xUnit.net 00:00:00.60]   Finished:    MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:00.62]   Finished:    MyOpenTelemetryApi.Application.Tests
+  MyOpenTelemetryApi.Infrastructure.Tests test net10.0 succeeded (1.6s)
+  MyOpenTelemetryApi.Api.Tests test net10.0 succeeded (1.6s)
+  MyOpenTelemetryApi.Application.Tests test net10.0 succeeded (1.6s)
+
+Test summary: total: 44, failed: 0, succeeded: 44, skipped: 0, duration: 1.6s
+Build succeeded with 20 warning(s) in 3.5s
+2025-10-16-10-46-55
+    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+
+Build succeeded in 0.7s
+2025-10-16-10-46-56
+2025-10-16-10-46-56
+[main 998169f] add existing files
+ 1 file changed, 199 insertions(+), 577 deletions(-)
+2025-10-16-10-46-56
+* remote origin
+  Fetch URL: https://github.com/collabskus/MyOpenTelemetryApi.git
+  Push  URL: https://github.com/collabskus/MyOpenTelemetryApi.git
+  HEAD branch: main
+  Remote branches:
+    dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.17                       tracked
+    dependabot/github_actions/github/codeql-action-4                                                 tracked
+    main                                                                                             tracked
+    refs/remotes/origin/dependabot/github_actions/actions/checkout-5                                 stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/github_actions/actions/setup-dotnet-5                             stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.12   stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.13   stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.14   stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.16   stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/nuget/tests/MyOpenTelemetryApi.Api.Tests/test-packages-d1750de658 stale (use 'git remote prune' to remove)
+    refs/remotes/origin/feat/dotnet-10                                                               stale (use 'git remote prune' to remove)
+  Local branch configured for 'git pull':
+    main merges with remote main
+  Local ref configured for 'git push':
+    main pushes to main (fast-forwardable)
+2025-10-16-10-46-57
+2025-10-16-10-46-57
+Current branch main is up to date.
+2025-10-16-10-46-57
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+2025-10-16-10-46-57
+Removing src/MyOpenTelemetryApi.Api/bin/
+Removing src/MyOpenTelemetryApi.Api/obj/
+Removing src/MyOpenTelemetryApi.Application/bin/
+Removing src/MyOpenTelemetryApi.Application/obj/
+Removing src/MyOpenTelemetryApi.Domain/bin/
+Removing src/MyOpenTelemetryApi.Domain/obj/
+Removing src/MyOpenTelemetryApi.Infrastructure/bin/
+Removing src/MyOpenTelemetryApi.Infrastructure/obj/
+Removing tests/MyOpenTelemetryApi.Api.Tests/bin/
+Removing tests/MyOpenTelemetryApi.Api.Tests/obj/
+Removing tests/MyOpenTelemetryApi.Application.Tests/bin/
+Removing tests/MyOpenTelemetryApi.Application.Tests/obj/
+Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/bin/
+Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/obj/
+2025-10-16-10-46-57
+Starting project export...
+Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
+Output File: my_project_export.txt
+Generating directory structure...
+Collecting files...
+Found 86 files to export
+Processing (1/86): .github\dependabot.yml
+Processing (2/86): .github\workflows\ci.yml
+Processing (3/86): .github\workflows\codeql.yml
+Processing (4/86): appsettings.Container.json
+Processing (5/86): CONTAINER_SETUP.md
+Processing (6/86): docker-compose.yml
+Processing (7/86): LICENSE.txt
+Processing (8/86): my_project_export.txt
+Processing (9/86): MyOpenTelemetryApi.sln
+Processing (10/86): podman-compose.yml
+Processing (11/86): README.md
+Processing (12/86): src\MyOpenTelemetryApi.Api\appsettings.Development.json
+Processing (13/86): src\MyOpenTelemetryApi.Api\appsettings.json
+Processing (14/86): src\MyOpenTelemetryApi.Api\appsettings.Production.json
+Processing (15/86): src\MyOpenTelemetryApi.Api\Authentication\ApiKeyAuthenticationHandler.cs
+Processing (16/86): src\MyOpenTelemetryApi.Api\Controllers\ContactsController.cs
+Processing (17/86): src\MyOpenTelemetryApi.Api\Controllers\GroupsController.cs
+Processing (18/86): src\MyOpenTelemetryApi.Api\Controllers\HealthController.cs
+Processing (19/86): src\MyOpenTelemetryApi.Api\Controllers\TagsController.cs
+Processing (20/86): src\MyOpenTelemetryApi.Api\dependencies.json
+Processing (21/86): src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj
+Processing (22/86): src\MyOpenTelemetryApi.Api\Program.cs
+Processing (23/86): src\MyOpenTelemetryApi.Api\Properties\launchSettings.json
+Processing (24/86): src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs
+Processing (25/86): src\MyOpenTelemetryApi.Api\Telemetry\TelemetryConstants.cs
+Processing (26/86): src\MyOpenTelemetryApi.Api\Telemetry\TelemetryExtensions.cs
+Processing (27/86): src\MyOpenTelemetryApi.Application\DTOs\AddressDto.cs
+Processing (28/86): src\MyOpenTelemetryApi.Application\DTOs\ContactDto.cs
+Processing (29/86): src\MyOpenTelemetryApi.Application\DTOs\ContactSummaryDto.cs
+Processing (30/86): src\MyOpenTelemetryApi.Application\DTOs\CreateContactDto.cs
+Processing (31/86): src\MyOpenTelemetryApi.Application\DTOs\EmailAddressDto.cs
+Processing (32/86): src\MyOpenTelemetryApi.Application\DTOs\GroupDto.cs
+Processing (33/86): src\MyOpenTelemetryApi.Application\DTOs\PaginatedResultDto.cs
+Processing (34/86): src\MyOpenTelemetryApi.Application\DTOs\PhoneNumberDto.cs
+Processing (35/86): src\MyOpenTelemetryApi.Application\DTOs\TagDto.cs
+Processing (36/86): src\MyOpenTelemetryApi.Application\DTOs\UpdateContactDto.cs
+Processing (37/86): src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj
+Processing (38/86): src\MyOpenTelemetryApi.Application\Services\ContactService.cs
+Processing (39/86): src\MyOpenTelemetryApi.Application\Services\GroupService.cs
+Processing (40/86): src\MyOpenTelemetryApi.Application\Services\IContactService.cs
+Processing (41/86): src\MyOpenTelemetryApi.Application\Services\IGroupService.cs
+Processing (42/86): src\MyOpenTelemetryApi.Application\Services\ITagService.cs
+Processing (43/86): src\MyOpenTelemetryApi.Application\Services\TagService.cs
+Processing (44/86): src\MyOpenTelemetryApi.Domain\Entities\Address.cs
+Processing (45/86): src\MyOpenTelemetryApi.Domain\Entities\AddressType.cs
+Processing (46/86): src\MyOpenTelemetryApi.Domain\Entities\Contact.cs
+Processing (47/86): src\MyOpenTelemetryApi.Domain\Entities\ContactGroup.cs
+Processing (48/86): src\MyOpenTelemetryApi.Domain\Entities\ContactTag.cs
+Processing (49/86): src\MyOpenTelemetryApi.Domain\Entities\EmailAddress.cs
+Processing (50/86): src\MyOpenTelemetryApi.Domain\Entities\EmailType.cs
+Processing (51/86): src\MyOpenTelemetryApi.Domain\Entities\Group.cs
+Processing (52/86): src\MyOpenTelemetryApi.Domain\Entities\PhoneNumber.cs
+Processing (53/86): src\MyOpenTelemetryApi.Domain\Entities\PhoneType.cs
+Processing (54/86): src\MyOpenTelemetryApi.Domain\Entities\Tag.cs
+Processing (55/86): src\MyOpenTelemetryApi.Domain\Interfaces\IContactRepository.cs
+Processing (56/86): src\MyOpenTelemetryApi.Domain\Interfaces\IGroupRepository.cs
+Processing (57/86): src\MyOpenTelemetryApi.Domain\Interfaces\IRepository.cs
+Processing (58/86): src\MyOpenTelemetryApi.Domain\Interfaces\ITagRepository.cs
+Processing (59/86): src\MyOpenTelemetryApi.Domain\Interfaces\IUnitOfWork.cs
+Processing (60/86): src\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj
+Processing (61/86): src\MyOpenTelemetryApi.Infrastructure\Data\AppDbContext.cs
+Processing (62/86): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\AddressConfiguration.cs
+Processing (63/86): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactConfiguration.cs
+Processing (64/86): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactGroupConfiguration.cs
+Processing (65/86): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactTagConfiguration.cs
+Processing (66/86): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\EmailAddressConfiguration.cs
+Processing (67/86): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\GroupConfiguration.cs
+Processing (68/86): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\PhoneNumberConfiguration.cs
+Processing (69/86): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\TagConfiguration.cs
+Processing (70/86): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.cs
+Processing (71/86): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.Designer.cs
+Processing (72/86): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.cs
+Processing (73/86): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.Designer.cs
+Processing (74/86): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\AppDbContextModelSnapshot.cs
+Processing (75/86): src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj
+Processing (76/86): src\MyOpenTelemetryApi.Infrastructure\Repositories\ContactRepository.cs
+Processing (77/86): src\MyOpenTelemetryApi.Infrastructure\Repositories\GroupRepository.cs
+Processing (78/86): src\MyOpenTelemetryApi.Infrastructure\Repositories\Repository.cs
+Processing (79/86): src\MyOpenTelemetryApi.Infrastructure\Repositories\TagRepository.cs
+Processing (80/86): src\MyOpenTelemetryApi.Infrastructure\Repositories\UnitOfWork.cs
+Processing (81/86): tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj
+Processing (82/86): tests\MyOpenTelemetryApi.Api.Tests\UnitTest1.cs
+Processing (83/86): tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj
+Processing (84/86): tests\MyOpenTelemetryApi.Application.Tests\UnitTest1.cs
+Processing (85/86): tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj
+Processing (86/86): tests\MyOpenTelemetryApi.Infrastructure.Tests\UnitTest1.cs
+
+Export completed successfully!
+Output file: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
+Total files exported: 86
+Output file size: 0.31 MB
+2025-10-16-10-46-58
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   my_project_export.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+2025-10-16-10-46-58
+warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
+2025-10-16-10-46-58
+[main 49505d2] add all files
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+2025-10-16-10-46-58
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (10/10), 3.82 KiB | 1.91 MiB/s, done.
+Total 10 (delta 7), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (7/7), completed with 5 local objects.
+To https://github.com/collabskus/MyOpenTelemetryApi.git
+   b0d3b13..49505d2  main -> main
+2025-10-16-10-47-00
+Discovering projects...
+Analyzing project(s)...
+Analyzing dependencies...
+» MyOpenTelemetryApi.Api
+  [net10.0]
+  Microsoft.AspNetCore.OpenApi                10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  Microsoft.EntityFrameworkCore.Design        10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.CodeDom                              10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.Configuration.ConfigurationManager   10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.Formats.Nrbf                         10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.Resources.Extensions                 10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.Security.Cryptography.Pkcs           10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.Security.Cryptography.ProtectedData  10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+
+» MyOpenTelemetryApi.Application
+  [net10.0]
+  Microsoft.Extensions.Logging.Abstractions  10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+
+» MyOpenTelemetryApi.Infrastructure
+  [net10.0]
+  Microsoft.EntityFrameworkCore         10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  Microsoft.EntityFrameworkCore.Design  10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+
+Version color legend:
+<red>   : Major version update or pre-release version. Possible breaking changes.
+<yellow>: Minor version update. Backwards-compatible features added.
+<green> : Patch version update. Backwards-compatible bug fixes.
+
+You can upgrade packages to the latest version by passing the -u or -u:prompt option.
+Elapsed: 00:00:03.3074239
+2025-10-16-10-47-03
+Discovering projects...
+Analyzing project(s)...
+Analyzing dependencies...
+» MyOpenTelemetryApi.Api
+  [net10.0]
+  Microsoft.AspNetCore.OpenApi                10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  Microsoft.EntityFrameworkCore.Design        10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.CodeDom                              10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.Configuration.ConfigurationManager   10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.Formats.Nrbf                         10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.Resources.Extensions                 10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.Security.Cryptography.Pkcs           10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  System.Security.Cryptography.ProtectedData  10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+
+» MyOpenTelemetryApi.Application
+  [net10.0]
+  Microsoft.Extensions.Logging.Abstractions  10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+
+» MyOpenTelemetryApi.Infrastructure
+  [net10.0]
+  Microsoft.EntityFrameworkCore         10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+  Microsoft.EntityFrameworkCore.Design  10.0.0-rc.1.25451.107 -> 10.0.0-rc.2.25502.107
+
+Version color legend:
+<red>   : Major version update or pre-release version. Possible breaking changes.
+<yellow>: Minor version update. Backwards-compatible features added.
+<green> : Patch version update. Backwards-compatible bug fixes.
+
+Upgrading package Microsoft.AspNetCore.OpenApi...
+Project MyOpenTelemetryApi.Api [net10.0] upgraded successfully
+
+Upgrading package Microsoft.EntityFrameworkCore.Design...
+An error occurred while upgrading MyOpenTelemetryApi.Api
+Failed to restore project after upgrading!
+An error occurred while upgrading MyOpenTelemetryApi.Infrastructure
+Failed to restore project after upgrading!
+
+Upgrading package System.CodeDom...
+An error occurred while upgrading MyOpenTelemetryApi.Api
+Failed to restore project after upgrading!
+
+Upgrading package System.Configuration.ConfigurationManager...
+An error occurred while upgrading MyOpenTelemetryApi.Api
+Failed to restore project after upgrading!
+
+Upgrading package System.Formats.Nrbf...
+An error occurred while upgrading MyOpenTelemetryApi.Api
+Failed to restore project after upgrading!
+
+Upgrading package System.Resources.Extensions...
+An error occurred while upgrading MyOpenTelemetryApi.Api
+Failed to restore project after upgrading!
+
+Upgrading package System.Security.Cryptography.Pkcs...
+An error occurred while upgrading MyOpenTelemetryApi.Api
+Failed to restore project after upgrading!
+
+Upgrading package System.Security.Cryptography.ProtectedData...
+An error occurred while upgrading MyOpenTelemetryApi.Api
+Failed to restore project after upgrading!
+
+Upgrading package Microsoft.Extensions.Logging.Abstractions...
+Project MyOpenTelemetryApi.Application [net10.0] upgraded successfully
+
+Upgrading package Microsoft.EntityFrameworkCore...
+An error occurred while upgrading MyOpenTelemetryApi.Infrastructure
+Failed to restore project after upgrading!
+
+2025-10-16-10-47-20
+PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi>
