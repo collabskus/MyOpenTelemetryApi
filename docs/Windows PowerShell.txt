@@ -399,3 +399,350 @@ Failed to restore project after upgrading!
 2025-10-16-10-16-28
 PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi>
 PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated --pre-release Always --upgrade; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
+    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+
+Build succeeded in 0.5s
+2025-10-16-10-17-21
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1608: Detected package version outside of dependency constraint: Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 requires Microsoft.EntityFrameworkCore.Relational (= 10.0.0-rc.1.25451.107) but version Microsoft.EntityFrameworkCore.Relational 10.0.0-rc.2.25502.107 was resolved.
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1608: Detected package version outside of dependency constraint: Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 requires Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107) but version Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 was resolved.
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : error NU1107:
+      Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Application.Tests to resolve this issue.
+       MyOpenTelemetryApi.Application.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)
+       MyOpenTelemetryApi.Application.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107).
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : error NU1107:
+      Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Infrastructure.Tests to resolve this issue.
+       MyOpenTelemetryApi.Infrastructure.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)
+       MyOpenTelemetryApi.Infrastructure.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107).
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : error NU1107:
+      Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Api.Tests to resolve this issue.
+       MyOpenTelemetryApi.Api.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)
+       MyOpenTelemetryApi.Api.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107).
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : error NU1107:
+      Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Api to resolve this issue.
+       MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)
+       MyOpenTelemetryApi.Api -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107).
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : error NU1107:
+      Version conflict detected for Microsoft.EntityFrameworkCore.Relational. Install/reference Microsoft.EntityFrameworkCore.Relational 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Infrastructure to resolve this issue.
+       MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore.Design 10.0.0-rc.2.25502.107 -> Microsoft.EntityFrameworkCore.Relational (>= 10.0.0-rc.2.25502.107)
+       MyOpenTelemetryApi.Infrastructure -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore.Relational (= 10.0.0-rc.1.25451.107).
+
+Restore failed with 5 error(s) and 12 warning(s) in 0.9s
+2025-10-16-10-17-22
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1608: Detected package version outside of dependency constraint: Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 requires Microsoft.EntityFrameworkCore.Relational (= 10.0.0-rc.1.25451.107) but version Microsoft.EntityFrameworkCore.Relational 10.0.0-rc.2.25502.107 was resolved.
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1608: Detected package version outside of dependency constraint: Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 requires Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107) but version Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 was resolved.
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : error NU1107:
+      Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Infrastructure.Tests to resolve this issue.
+       MyOpenTelemetryApi.Infrastructure.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)
+       MyOpenTelemetryApi.Infrastructure.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107).
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : error NU1107:
+      Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Api.Tests to resolve this issue.
+       MyOpenTelemetryApi.Api.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)
+       MyOpenTelemetryApi.Api.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107).
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : error NU1107:
+      Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Application.Tests to resolve this issue.
+       MyOpenTelemetryApi.Application.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)
+       MyOpenTelemetryApi.Application.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107).
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : error NU1107:
+      Version conflict detected for Microsoft.EntityFrameworkCore.Relational. Install/reference Microsoft.EntityFrameworkCore.Relational 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Infrastructure to resolve this issue.
+       MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore.Design 10.0.0-rc.2.25502.107 -> Microsoft.EntityFrameworkCore.Relational (>= 10.0.0-rc.2.25502.107)
+       MyOpenTelemetryApi.Infrastructure -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore.Relational (= 10.0.0-rc.1.25451.107).
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : error NU1107:
+      Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Api to resolve this issue.
+       MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)
+       MyOpenTelemetryApi.Api -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107).
+
+Restore failed with 5 error(s) and 12 warning(s) in 1.0s
+2025-10-16-10-17-23
+    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+
+Build succeeded in 0.5s
+2025-10-16-10-17-24
+warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
+2025-10-16-10-17-24
+[main 0a57bd0] add existing files
+ 2 files changed, 383 insertions(+), 4448 deletions(-)
+2025-10-16-10-17-24
+* remote origin
+  Fetch URL: https://github.com/collabskus/MyOpenTelemetryApi.git
+  Push  URL: https://github.com/collabskus/MyOpenTelemetryApi.git
+  HEAD branch: main
+  Remote branches:
+    dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.17                       tracked
+    dependabot/github_actions/github/codeql-action-4                                                 tracked
+    main                                                                                             tracked
+    refs/remotes/origin/dependabot/github_actions/actions/checkout-5                                 stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/github_actions/actions/setup-dotnet-5                             stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.12   stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.13   stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.14   stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/github_actions/danielpalme/ReportGenerator-GitHub-Action-5.4.16   stale (use 'git remote prune' to remove)
+    refs/remotes/origin/dependabot/nuget/tests/MyOpenTelemetryApi.Api.Tests/test-packages-d1750de658 stale (use 'git remote prune' to remove)
+    refs/remotes/origin/feat/dotnet-10                                                               stale (use 'git remote prune' to remove)
+  Local branch configured for 'git pull':
+    main merges with remote main
+  Local ref configured for 'git push':
+    main pushes to main (fast-forwardable)
+2025-10-16-10-17-24
+2025-10-16-10-17-24
+Current branch main is up to date.
+2025-10-16-10-17-25
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+2025-10-16-10-17-25
+Removing src/MyOpenTelemetryApi.Api/bin/
+Removing src/MyOpenTelemetryApi.Api/obj/
+Removing src/MyOpenTelemetryApi.Application/bin/
+Removing src/MyOpenTelemetryApi.Application/obj/
+Removing src/MyOpenTelemetryApi.Domain/bin/
+Removing src/MyOpenTelemetryApi.Domain/obj/
+Removing src/MyOpenTelemetryApi.Infrastructure/bin/
+Removing src/MyOpenTelemetryApi.Infrastructure/obj/
+Removing tests/MyOpenTelemetryApi.Api.Tests/bin/
+Removing tests/MyOpenTelemetryApi.Api.Tests/obj/
+Removing tests/MyOpenTelemetryApi.Application.Tests/bin/
+Removing tests/MyOpenTelemetryApi.Application.Tests/obj/
+Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/bin/
+Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/obj/
+2025-10-16-10-17-25
+Starting project export...
+Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
+Output File: my_project_export.txt
+Generating directory structure...
+Collecting files...
+Found 93 files to export
+Processing (1/93): .github\dependabot.yml
+Processing (2/93): .github\workflows\ci.yml
+Processing (3/93): .github\workflows\codeql.yml
+Processing (4/93): appsettings.Container.json
+Processing (5/93): CONTAINER_SETUP.md
+Processing (6/93): docker-compose.yml
+Processing (7/93): docs\contact-manager-specification-sheet.md
+Processing (8/93): docs\contact-manager-specification-sheet-backend.md
+Processing (9/93): docs\llm.md
+Processing (10/93): docs\log-sample.txt
+Processing (11/93): docs\otel-logs-json.md
+Processing (12/93): docs\scratch.md
+Processing (13/93): docs\Windows PowerShell.txt
+Processing (14/93): LICENSE.txt
+Processing (15/93): my_project_export.txt
+Processing (16/93): MyOpenTelemetryApi.sln
+Processing (17/93): podman-compose.yml
+Processing (18/93): README.md
+Processing (19/93): src\MyOpenTelemetryApi.Api\appsettings.Development.json
+Processing (20/93): src\MyOpenTelemetryApi.Api\appsettings.json
+Processing (21/93): src\MyOpenTelemetryApi.Api\appsettings.Production.json
+Processing (22/93): src\MyOpenTelemetryApi.Api\Authentication\ApiKeyAuthenticationHandler.cs
+Processing (23/93): src\MyOpenTelemetryApi.Api\Controllers\ContactsController.cs
+Processing (24/93): src\MyOpenTelemetryApi.Api\Controllers\GroupsController.cs
+Processing (25/93): src\MyOpenTelemetryApi.Api\Controllers\HealthController.cs
+Processing (26/93): src\MyOpenTelemetryApi.Api\Controllers\TagsController.cs
+Processing (27/93): src\MyOpenTelemetryApi.Api\dependencies.json
+Processing (28/93): src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj
+Processing (29/93): src\MyOpenTelemetryApi.Api\Program.cs
+Processing (30/93): src\MyOpenTelemetryApi.Api\Properties\launchSettings.json
+Processing (31/93): src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs
+Processing (32/93): src\MyOpenTelemetryApi.Api\Telemetry\TelemetryConstants.cs
+Processing (33/93): src\MyOpenTelemetryApi.Api\Telemetry\TelemetryExtensions.cs
+Processing (34/93): src\MyOpenTelemetryApi.Application\DTOs\AddressDto.cs
+Processing (35/93): src\MyOpenTelemetryApi.Application\DTOs\ContactDto.cs
+Processing (36/93): src\MyOpenTelemetryApi.Application\DTOs\ContactSummaryDto.cs
+Processing (37/93): src\MyOpenTelemetryApi.Application\DTOs\CreateContactDto.cs
+Processing (38/93): src\MyOpenTelemetryApi.Application\DTOs\EmailAddressDto.cs
+Processing (39/93): src\MyOpenTelemetryApi.Application\DTOs\GroupDto.cs
+Processing (40/93): src\MyOpenTelemetryApi.Application\DTOs\PaginatedResultDto.cs
+Processing (41/93): src\MyOpenTelemetryApi.Application\DTOs\PhoneNumberDto.cs
+Processing (42/93): src\MyOpenTelemetryApi.Application\DTOs\TagDto.cs
+Processing (43/93): src\MyOpenTelemetryApi.Application\DTOs\UpdateContactDto.cs
+Processing (44/93): src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj
+Processing (45/93): src\MyOpenTelemetryApi.Application\Services\ContactService.cs
+Processing (46/93): src\MyOpenTelemetryApi.Application\Services\GroupService.cs
+Processing (47/93): src\MyOpenTelemetryApi.Application\Services\IContactService.cs
+Processing (48/93): src\MyOpenTelemetryApi.Application\Services\IGroupService.cs
+Processing (49/93): src\MyOpenTelemetryApi.Application\Services\ITagService.cs
+Processing (50/93): src\MyOpenTelemetryApi.Application\Services\TagService.cs
+Processing (51/93): src\MyOpenTelemetryApi.Domain\Entities\Address.cs
+Processing (52/93): src\MyOpenTelemetryApi.Domain\Entities\AddressType.cs
+Processing (53/93): src\MyOpenTelemetryApi.Domain\Entities\Contact.cs
+Processing (54/93): src\MyOpenTelemetryApi.Domain\Entities\ContactGroup.cs
+Processing (55/93): src\MyOpenTelemetryApi.Domain\Entities\ContactTag.cs
+Processing (56/93): src\MyOpenTelemetryApi.Domain\Entities\EmailAddress.cs
+Processing (57/93): src\MyOpenTelemetryApi.Domain\Entities\EmailType.cs
+Processing (58/93): src\MyOpenTelemetryApi.Domain\Entities\Group.cs
+Processing (59/93): src\MyOpenTelemetryApi.Domain\Entities\PhoneNumber.cs
+Processing (60/93): src\MyOpenTelemetryApi.Domain\Entities\PhoneType.cs
+Processing (61/93): src\MyOpenTelemetryApi.Domain\Entities\Tag.cs
+Processing (62/93): src\MyOpenTelemetryApi.Domain\Interfaces\IContactRepository.cs
+Processing (63/93): src\MyOpenTelemetryApi.Domain\Interfaces\IGroupRepository.cs
+Processing (64/93): src\MyOpenTelemetryApi.Domain\Interfaces\IRepository.cs
+Processing (65/93): src\MyOpenTelemetryApi.Domain\Interfaces\ITagRepository.cs
+Processing (66/93): src\MyOpenTelemetryApi.Domain\Interfaces\IUnitOfWork.cs
+Processing (67/93): src\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj
+Processing (68/93): src\MyOpenTelemetryApi.Infrastructure\Data\AppDbContext.cs
+Processing (69/93): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\AddressConfiguration.cs
+Processing (70/93): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactConfiguration.cs
+Processing (71/93): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactGroupConfiguration.cs
+Processing (72/93): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactTagConfiguration.cs
+Processing (73/93): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\EmailAddressConfiguration.cs
+Processing (74/93): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\GroupConfiguration.cs
+Processing (75/93): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\PhoneNumberConfiguration.cs
+Processing (76/93): src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\TagConfiguration.cs
+Processing (77/93): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.cs
+Processing (78/93): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.Designer.cs
+Processing (79/93): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.cs
+Processing (80/93): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.Designer.cs
+Processing (81/93): src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\AppDbContextModelSnapshot.cs
+Processing (82/93): src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj
+Processing (83/93): src\MyOpenTelemetryApi.Infrastructure\Repositories\ContactRepository.cs
+Processing (84/93): src\MyOpenTelemetryApi.Infrastructure\Repositories\GroupRepository.cs
+Processing (85/93): src\MyOpenTelemetryApi.Infrastructure\Repositories\Repository.cs
+Processing (86/93): src\MyOpenTelemetryApi.Infrastructure\Repositories\TagRepository.cs
+Processing (87/93): src\MyOpenTelemetryApi.Infrastructure\Repositories\UnitOfWork.cs
+Processing (88/93): tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj
+Processing (89/93): tests\MyOpenTelemetryApi.Api.Tests\UnitTest1.cs
+Processing (90/93): tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj
+Processing (91/93): tests\MyOpenTelemetryApi.Application.Tests\UnitTest1.cs
+Processing (92/93): tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj
+Processing (93/93): tests\MyOpenTelemetryApi.Infrastructure.Tests\UnitTest1.cs
+
+Export completed successfully!
+Output file: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
+Total files exported: 93
+Output file size: 5.7 MB
+2025-10-16-10-17-26
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   my_project_export.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+2025-10-16-10-17-26
+warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
+2025-10-16-10-17-26
+[main 955f4f0] add all files
+ 1 file changed, 19482 insertions(+), 27612 deletions(-)
+2025-10-16-10-17-26
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 9.55 KiB | 160.00 KiB/s, done.
+Total 8 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (5/5), completed with 4 local objects.
+To https://github.com/collabskus/MyOpenTelemetryApi.git
+   e9ca170..955f4f0  main -> main
+2025-10-16-10-17-28
+Discovering projects...
+Analyzing project(s)...
+Unable to process the project `C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln. Are you sure this is a valid .NET Core or .NET Standard project type?
+
+Here is the full error message returned from the Microsoft Build Engine:
+
+MSBuild version 18.0.0-preview-25502-107+89c8f6a11 for .NET
+  Determining projects to restore...
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1608: Detected package version outside of dependency constraint: Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 requires Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107) but version Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 was resolved. [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1608: Detected package version outside of dependency constraint: Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 requires Microsoft.EntityFrameworkCore.Relational (= 10.0.0-rc.1.25451.107) but version Microsoft.EntityFrameworkCore.Relational 10.0.0-rc.2.25502.107 was resolved. [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+  Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj (in 80 ms).
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+  Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj (in 164 ms).
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : error NU1107: Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Infrastructure.Tests to resolve this issue.  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Infrastructure.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Infrastructure.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107). [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : error NU1107: Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Api.Tests to resolve this issue.  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Api.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Api.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107). [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : error NU1107: Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Application.Tests to resolve this issue.  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Application.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Application.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107). [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : error NU1107: Version conflict detected for Microsoft.EntityFrameworkCore.Relational. Install/reference Microsoft.EntityFrameworkCore.Relational 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Infrastructure to resolve this issue.  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : error NU1107:  MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore.Design 10.0.0-rc.2.25502.107 -> Microsoft.EntityFrameworkCore.Relational (>= 10.0.0-rc.2.25502.107)  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : error NU1107:  MyOpenTelemetryApi.Infrastructure -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore.Relational (= 10.0.0-rc.1.25451.107). [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : error NU1107: Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Api to resolve this issue.  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : error NU1107:  MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : error NU1107:  MyOpenTelemetryApi.Api -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107). [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+  Failed to restore C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj (in 233 ms).
+  Failed to restore C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj (in 233 ms).
+  Failed to restore C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj (in 219 ms).
+  Failed to restore C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj (in 219 ms).
+  Failed to restore C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj (in 219 ms).
+ -  - exit code: 1
+2025-10-16-10-17-29
+Discovering projects...
+Analyzing project(s)...
+Unable to process the project `C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln. Are you sure this is a valid .NET Core or .NET Standard project type?
+
+Here is the full error message returned from the Microsoft Build Engine:
+
+MSBuild version 18.0.0-preview-25502-107+89c8f6a11 for .NET
+  Determining projects to restore...
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1608: Detected package version outside of dependency constraint: Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 requires Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107) but version Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 was resolved. [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1608: Detected package version outside of dependency constraint: Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 requires Microsoft.EntityFrameworkCore.Relational (= 10.0.0-rc.1.25451.107) but version Microsoft.EntityFrameworkCore.Relational 10.0.0-rc.2.25502.107 was resolved. [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : error NU1107: Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Api.Tests to resolve this issue.  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Api.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Api.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107). [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : error NU1107: Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Application.Tests to resolve this issue.  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Application.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Application.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107). [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : error NU1107: Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Infrastructure.Tests to resolve this issue.  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Infrastructure.Tests -> MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj : error NU1107:  MyOpenTelemetryApi.Infrastructure.Tests -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107). [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : error NU1107: Version conflict detected for Microsoft.EntityFrameworkCore. Install/reference Microsoft.EntityFrameworkCore 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Api to resolve this issue.  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : error NU1107:  MyOpenTelemetryApi.Api -> MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore (>= 10.0.0-rc.2.25502.107)  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj : error NU1107:  MyOpenTelemetryApi.Api -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore (= 10.0.0-rc.1.25451.107). [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : error NU1107: Version conflict detected for Microsoft.EntityFrameworkCore.Relational. Install/reference Microsoft.EntityFrameworkCore.Relational 10.0.0-rc.2.25502.107 directly to project MyOpenTelemetryApi.Infrastructure to resolve this issue.  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : error NU1107:  MyOpenTelemetryApi.Infrastructure -> Microsoft.EntityFrameworkCore.Design 10.0.0-rc.2.25502.107 -> Microsoft.EntityFrameworkCore.Relational (>= 10.0.0-rc.2.25502.107)  [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : error NU1107:  MyOpenTelemetryApi.Infrastructure -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0-rc.1 -> Microsoft.EntityFrameworkCore.Relational (= 10.0.0-rc.1.25451.107). [C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\MyOpenTelemetryApi.sln]
+  Failed to restore C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj (in 313 ms).
+  Failed to restore C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj (in 313 ms).
+  Failed to restore C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj (in 313 ms).
+  Failed to restore C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj (in 313 ms).
+  Failed to restore C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj (in 313 ms).
+  2 of 7 projects are up-to-date for restore.
+ -  - exit code: 1
+2025-10-16-10-17-30
+PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi>
