@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/20/2025 14:07:25
+Generated: 10/20/2025 14:24:20
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -1097,8 +1097,8 @@ public class ContactsController : ControllerBase
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\GroupsController.cs
-SIZE: 2.15 KB
-MODIFIED: 09/17/2025 16:29:43
+SIZE: 2.39 KB
+MODIFIED: 10/20/2025 14:14:33
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/GroupsController.cs
@@ -1113,16 +1113,16 @@ namespace MyOpenTelemetryApi.Api.Controllers;
 public class GroupsController(IGroupService groupService, ILogger<GroupsController> logger) : ControllerBase
 {
     [HttpGet]
-    public async Task<ActionResult<List<GroupDto>>> GetGroups()
+    public async Task<ActionResult<List<GroupDto>>> GetGroups(CancellationToken cancellationToken = default)
     {
-        List<GroupDto> groups = await groupService.GetAllAsync();
+        List<GroupDto> groups = await groupService.GetAllAsync(cancellationToken);
         return Ok(groups);
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<GroupDto>> GetGroup(Guid id)
+    public async Task<ActionResult<GroupDto>> GetGroup(Guid id, CancellationToken cancellationToken = default)
     {
-        GroupDto? group = await groupService.GetByIdAsync(id);
+        GroupDto? group = await groupService.GetByIdAsync(id, cancellationToken);
         if (group == null)
         {
             return NotFound();
@@ -1131,11 +1131,11 @@ public class GroupsController(IGroupService groupService, ILogger<GroupsControll
     }
 
     [HttpPost]
-    public async Task<ActionResult<GroupDto>> CreateGroup(CreateGroupDto dto)
+    public async Task<ActionResult<GroupDto>> CreateGroup(CreateGroupDto dto, CancellationToken cancellationToken = default)
     {
         try
         {
-            GroupDto group = await groupService.CreateAsync(dto);
+            GroupDto group = await groupService.CreateAsync(dto, cancellationToken);
             return CreatedAtAction(nameof(GetGroup), new { id = group.Id }, group);
         }
         catch (Exception ex)
@@ -1146,11 +1146,11 @@ public class GroupsController(IGroupService groupService, ILogger<GroupsControll
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<GroupDto>> UpdateGroup(Guid id, UpdateGroupDto dto)
+    public async Task<ActionResult<GroupDto>> UpdateGroup(Guid id, UpdateGroupDto dto, CancellationToken cancellationToken = default)
     {
         try
         {
-            GroupDto? group = await groupService.UpdateAsync(id, dto);
+            GroupDto? group = await groupService.UpdateAsync(id, dto, cancellationToken);
             if (group == null)
             {
                 return NotFound();
@@ -1165,9 +1165,9 @@ public class GroupsController(IGroupService groupService, ILogger<GroupsControll
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteGroup(Guid id)
+    public async Task<IActionResult> DeleteGroup(Guid id, CancellationToken cancellationToken = default)
     {
-        bool deleted = await groupService.DeleteAsync(id);
+        bool deleted = await groupService.DeleteAsync(id, cancellationToken);
         if (!deleted)
         {
             return NotFound();
@@ -1180,8 +1180,8 @@ public class GroupsController(IGroupService groupService, ILogger<GroupsControll
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\HealthController.cs
-SIZE: 2.27 KB
-MODIFIED: 09/17/2025 16:29:43
+SIZE: 2.33 KB
+MODIFIED: 10/20/2025 14:14:08
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/HealthController.cs
@@ -1196,7 +1196,7 @@ namespace MyOpenTelemetryApi.Api.Controllers;
 public class HealthController(AppDbContext dbContext, ILogger<HealthController> logger) : ControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> GetHealth()
+    public async Task<IActionResult> GetHealth(CancellationToken cancellationToken = default)
     {
         var health = new
         {
@@ -1208,7 +1208,7 @@ public class HealthController(AppDbContext dbContext, ILogger<HealthController> 
         try
         {
             // Test database connectivity
-            await dbContext.Database.CanConnectAsync();
+            await dbContext.Database.CanConnectAsync(cancellationToken);
             return Ok(health);
         }
         catch (Exception ex)
@@ -1225,13 +1225,13 @@ public class HealthController(AppDbContext dbContext, ILogger<HealthController> 
     }
 
     [HttpGet("ready")]
-    public async Task<IActionResult> GetReadiness()
+    public async Task<IActionResult> GetReadiness(CancellationToken cancellationToken = default)
     {
         try
         {
             // Check if database is accessible and migrations are applied
-            await dbContext.Database.CanConnectAsync();
-            IEnumerable<string> pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync();
+            await dbContext.Database.CanConnectAsync(cancellationToken);
+            IEnumerable<string> pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync(cancellationToken);
 
             if (pendingMigrations.Any())
             {
@@ -1266,8 +1266,8 @@ public class HealthController(AppDbContext dbContext, ILogger<HealthController> 
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\TagsController.cs
-SIZE: 2.28 KB
-MODIFIED: 09/14/2025 21:12:26
+SIZE: 2.52 KB
+MODIFIED: 10/20/2025 14:14:21
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/TagsController.cs
@@ -1282,16 +1282,16 @@ namespace MyOpenTelemetryApi.Api.Controllers;
 public class TagsController(ITagService tagService, ILogger<TagsController> logger) : ControllerBase
 {
     [HttpGet]
-    public async Task<ActionResult<List<TagDto>>> GetTags()
+    public async Task<ActionResult<List<TagDto>>> GetTags(CancellationToken cancellationToken = default)
     {
-        List<TagDto> tags = await tagService.GetAllAsync();
+        List<TagDto> tags = await tagService.GetAllAsync(cancellationToken);
         return Ok(tags);
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<TagDto>> GetTag(Guid id)
+    public async Task<ActionResult<TagDto>> GetTag(Guid id, CancellationToken cancellationToken = default)
     {
-        TagDto? tag = await tagService.GetByIdAsync(id);
+        TagDto? tag = await tagService.GetByIdAsync(id, cancellationToken);
         if (tag == null)
         {
             return NotFound();
@@ -1300,16 +1300,16 @@ public class TagsController(ITagService tagService, ILogger<TagsController> logg
     }
 
     [HttpPost]
-    public async Task<ActionResult<TagDto>> CreateTag(CreateTagDto dto)
+    public async Task<ActionResult<TagDto>> CreateTag(CreateTagDto dto, CancellationToken cancellationToken = default)
     {
         try
         {
-            TagDto tag = await tagService.CreateAsync(dto);
+            TagDto tag = await tagService.CreateAsync(dto, cancellationToken);
             return CreatedAtAction(nameof(GetTag), new { id = tag.Id }, tag);
         }
         catch (InvalidOperationException ex)
         {
-            return Conflict(ex.Message);
+            return BadRequest(ex.Message);
         }
         catch (Exception ex)
         {
@@ -1319,11 +1319,11 @@ public class TagsController(ITagService tagService, ILogger<TagsController> logg
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<TagDto>> UpdateTag(Guid id, CreateTagDto dto)
+    public async Task<ActionResult<TagDto>> UpdateTag(Guid id, CreateTagDto dto, CancellationToken cancellationToken = default)
     {
         try
         {
-            TagDto? tag = await tagService.UpdateAsync(id, dto);
+            TagDto? tag = await tagService.UpdateAsync(id, dto, cancellationToken);
             if (tag == null)
             {
                 return NotFound();
@@ -1332,7 +1332,7 @@ public class TagsController(ITagService tagService, ILogger<TagsController> logg
         }
         catch (InvalidOperationException ex)
         {
-            return Conflict(ex.Message);
+            return BadRequest(ex.Message);
         }
         catch (Exception ex)
         {
@@ -1342,9 +1342,9 @@ public class TagsController(ITagService tagService, ILogger<TagsController> logg
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteTag(Guid id)
+    public async Task<IActionResult> DeleteTag(Guid id, CancellationToken cancellationToken = default)
     {
-        bool deleted = await tagService.DeleteAsync(id);
+        bool deleted = await tagService.DeleteAsync(id, cancellationToken);
         if (!deleted)
         {
             return NotFound();
@@ -2638,8 +2638,8 @@ MODIFIED: 10/06/2025 15:35:46
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ContactService.cs
-SIZE: 14.33 KB
-MODIFIED: 10/06/2025 12:05:14
+SIZE: 14.11 KB
+MODIFIED: 10/20/2025 14:15:00
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ContactService.cs
@@ -2673,22 +2673,6 @@ public class ContactService(
     private readonly Histogram<double> _searchDuration = meterFactory.Create("MyOpenTelemetryApi.Contacts")
         .CreateHistogram<double>("contacts.search.duration", "seconds", "Duration of contact search operations");
 
-    public async Task<List<ContactDto>> GetAllAsync(CancellationToken cancellationToken = default)
-    {
-        using Activity? activity = _activitySource.StartActivity("GetAllContacts", ActivityKind.Internal);
-
-        _logger.LogInformation("Getting all contacts");
-
-        IEnumerable<Contact> contacts = await _unitOfWork.Contacts.GetAllAsync();
-        List<ContactDto> contactDtos = [];
-        foreach (Contact contact in contacts)
-        {
-            contactDtos.Add(MapToDto(contact));
-        }
-
-        return contactDtos;
-    }
-
     public async Task<ContactDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
         using Activity? activity = _activitySource.StartActivity("GetContactById", ActivityKind.Internal);
@@ -2696,7 +2680,7 @@ public class ContactService(
 
         _logger.LogInformation("Getting contact by ID: {ContactId}", id);
 
-        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id);
+        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id, cancellationToken);
         if (contact == null)
         {
             _logger.LogWarning("Contact not found: {ContactId}", id);
@@ -2713,7 +2697,7 @@ public class ContactService(
 
         _logger.LogInformation("Getting contact with details: {ContactId}", id);
 
-        Contact? contact = await _unitOfWork.Contacts.GetContactWithDetailsAsync(id);
+        Contact? contact = await _unitOfWork.Contacts.GetContactWithDetailsAsync(id, cancellationToken);
         if (contact == null)
         {
             _logger.LogWarning("Contact not found: {ContactId}", id);
@@ -2756,11 +2740,10 @@ public class ContactService(
 
         _logger.LogInformation("Searching contacts with term: {SearchTerm}", searchTerm);
 
-        // Record search metric and measure duration
         _contactSearches.Add(1, new KeyValuePair<string, object?>("search.term.length", searchTerm.Length));
 
         var stopwatch = Stopwatch.StartNew();
-        var contacts = await _unitOfWork.Contacts.SearchContactsAsync(searchTerm);
+        var contacts = await _unitOfWork.Contacts.SearchContactsAsync(searchTerm, cancellationToken);
         stopwatch.Stop();
 
         _searchDuration.Record(stopwatch.Elapsed.TotalSeconds,
@@ -2778,7 +2761,7 @@ public class ContactService(
 
         _logger.LogInformation("Getting contacts by group: {GroupId}", groupId);
 
-        var contacts = await _unitOfWork.Contacts.GetContactsByGroupAsync(groupId);
+        var contacts = await _unitOfWork.Contacts.GetContactsByGroupAsync(groupId, cancellationToken);
         return contacts.Select(MapToSummaryDto).ToList();
     }
 
@@ -2789,7 +2772,7 @@ public class ContactService(
 
         _logger.LogInformation("Getting contacts by tag: {TagId}", tagId);
 
-        var contacts = await _unitOfWork.Contacts.GetContactsByTagAsync(tagId);
+        var contacts = await _unitOfWork.Contacts.GetContactsByTagAsync(tagId, cancellationToken);
         return contacts.Select(MapToSummaryDto).ToList();
     }
 
@@ -2858,14 +2841,14 @@ public class ContactService(
             }).ToList();
         }
 
-        await _unitOfWork.Contacts.AddAsync(contact);
+        await _unitOfWork.Contacts.AddAsync(contact, cancellationToken);
 
         // Handle groups
         if (dto.GroupIds != null && dto.GroupIds.Count != 0)
         {
             foreach (Guid groupId in dto.GroupIds)
             {
-                Group? group = await _unitOfWork.Groups.GetByIdAsync(groupId);
+                Group? group = await _unitOfWork.Groups.GetByIdAsync(groupId, cancellationToken);
                 if (group != null)
                 {
                     contact.ContactGroups ??= [];
@@ -2883,7 +2866,7 @@ public class ContactService(
         {
             foreach (Guid tagId in dto.TagIds)
             {
-                Tag? tag = await _unitOfWork.Tags.GetByIdAsync(tagId);
+                Tag? tag = await _unitOfWork.Tags.GetByIdAsync(tagId, cancellationToken);
                 if (tag != null)
                 {
                     contact.Tags ??= [];
@@ -2898,7 +2881,6 @@ public class ContactService(
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        // Record metric after successful creation
         _contactsCreated.Add(1,
             new KeyValuePair<string, object?>("company", dto.Company ?? "none"),
             new KeyValuePair<string, object?>("has.email", dto.EmailAddresses?.Count > 0),
@@ -2917,7 +2899,7 @@ public class ContactService(
 
         _logger.LogInformation("Updating contact: {ContactId}", id);
 
-        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id);
+        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id, cancellationToken);
         if (contact == null)
         {
             _logger.LogWarning("Contact not found for update: {ContactId}", id);
@@ -2949,7 +2931,7 @@ public class ContactService(
 
         _logger.LogInformation("Deleting contact: {ContactId}", id);
 
-        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id);
+        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id, cancellationToken);
         if (contact == null)
         {
             _logger.LogWarning("Contact not found for deletion: {ContactId}", id);
@@ -2959,9 +2941,7 @@ public class ContactService(
         _unitOfWork.Contacts.Delete(contact);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        // Record deletion metric
-        _contactsDeleted.Add(1,
-            new KeyValuePair<string, object?>("company", contact.Company ?? "none"));
+        _contactsDeleted.Add(1);
 
         _logger.LogInformation("Contact deleted successfully: {ContactId}", id);
 
@@ -3027,8 +3007,8 @@ public class ContactService(
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\GroupService.cs
-SIZE: 2.22 KB
-MODIFIED: 10/03/2025 19:00:46
+SIZE: 2.59 KB
+MODIFIED: 10/20/2025 14:15:35
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/GroupService.cs
@@ -3040,15 +3020,15 @@ namespace MyOpenTelemetryApi.Application.Services;
 
 public class GroupService(IUnitOfWork unitOfWork) : IGroupService
 {
-    public async Task<GroupDto?> GetByIdAsync(Guid id)
+    public async Task<GroupDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        Group? group = await unitOfWork.Groups.GetByIdAsync(id);
+        Group? group = await unitOfWork.Groups.GetByIdAsync(id, cancellationToken);
         return group == null ? null : MapToDto(group);
     }
 
-    public async Task<List<GroupDto>> GetAllAsync()
+    public async Task<List<GroupDto>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        IEnumerable<Group> groups = await unitOfWork.Groups.GetAllAsync();
+        IEnumerable<Group> groups = await unitOfWork.Groups.GetAllAsync(cancellationToken);
         List<GroupDto> groupDtos = [];
 
         foreach (Group group in groups)
@@ -3059,7 +3039,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
         return groupDtos;
     }
 
-    public async Task<GroupDto> CreateAsync(CreateGroupDto dto)
+    public async Task<GroupDto> CreateAsync(CreateGroupDto dto, CancellationToken cancellationToken = default)
     {
         Group group = new()
         {
@@ -3069,33 +3049,33 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
             CreatedAt = DateTime.UtcNow
         };
 
-        await unitOfWork.Groups.AddAsync(group);
-        await unitOfWork.SaveChangesAsync();
+        await unitOfWork.Groups.AddAsync(group, cancellationToken);
+        await unitOfWork.SaveChangesAsync(cancellationToken);
 
         return MapToDto(group);
     }
 
-    public async Task<GroupDto?> UpdateAsync(Guid id, UpdateGroupDto dto)
+    public async Task<GroupDto?> UpdateAsync(Guid id, UpdateGroupDto dto, CancellationToken cancellationToken = default)
     {
-        Group? group = await unitOfWork.Groups.GetByIdAsync(id);
+        Group? group = await unitOfWork.Groups.GetByIdAsync(id, cancellationToken);
         if (group == null) return null;
 
         group.Name = dto.Name;
         group.Description = dto.Description;
 
         unitOfWork.Groups.Update(group);
-        await unitOfWork.SaveChangesAsync();
+        await unitOfWork.SaveChangesAsync(cancellationToken);
 
         return MapToDto(group);
     }
 
-    public async Task<bool> DeleteAsync(Guid id)
+    public async Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        Group? group = await unitOfWork.Groups.GetByIdAsync(id);
+        Group? group = await unitOfWork.Groups.GetByIdAsync(id, cancellationToken);
         if (group == null) return false;
 
         unitOfWork.Groups.Delete(group);
-        await unitOfWork.SaveChangesAsync();
+        await unitOfWork.SaveChangesAsync(cancellationToken);
         return true;
     }
 
@@ -3142,8 +3122,8 @@ public interface IContactService
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\IGroupService.cs
-SIZE: 0.43 KB
-MODIFIED: 09/17/2025 16:29:43
+SIZE: 0.66 KB
+MODIFIED: 10/20/2025 14:16:03
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/IGroupService.cs
@@ -3153,19 +3133,19 @@ namespace MyOpenTelemetryApi.Application.Services;
 
 public interface IGroupService
 {
-    Task<GroupDto?> GetByIdAsync(Guid id);
-    Task<List<GroupDto>> GetAllAsync();
-    Task<GroupDto> CreateAsync(CreateGroupDto dto);
-    Task<GroupDto?> UpdateAsync(Guid id, UpdateGroupDto dto);
-    Task<bool> DeleteAsync(Guid id);
+    Task<GroupDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<List<GroupDto>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<GroupDto> CreateAsync(CreateGroupDto dto, CancellationToken cancellationToken = default);
+    Task<GroupDto?> UpdateAsync(Guid id, UpdateGroupDto dto, CancellationToken cancellationToken = default);
+    Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default);
 }
 
 
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ITagService.cs
-SIZE: 0.42 KB
-MODIFIED: 09/17/2025 16:29:43
+SIZE: 0.65 KB
+MODIFIED: 10/20/2025 14:15:47
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ITagService.cs
@@ -3175,19 +3155,19 @@ namespace MyOpenTelemetryApi.Application.Services;
 
 public interface ITagService
 {
-    Task<TagDto?> GetByIdAsync(Guid id);
-    Task<List<TagDto>> GetAllAsync();
-    Task<TagDto> CreateAsync(CreateTagDto dto);
-    Task<TagDto?> UpdateAsync(Guid id, CreateTagDto dto);
-    Task<bool> DeleteAsync(Guid id);
+    Task<TagDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<List<TagDto>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<TagDto> CreateAsync(CreateTagDto dto, CancellationToken cancellationToken = default);
+    Task<TagDto?> UpdateAsync(Guid id, CreateTagDto dto, CancellationToken cancellationToken = default);
+    Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default);
 }
 
 
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\TagService.cs
-SIZE: 2.41 KB
-MODIFIED: 10/03/2025 19:10:43
+SIZE: 2.76 KB
+MODIFIED: 10/20/2025 14:15:17
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/TagService.cs
@@ -3199,22 +3179,22 @@ namespace MyOpenTelemetryApi.Application.Services;
 
 public class TagService(IUnitOfWork unitOfWork) : ITagService
 {
-    public async Task<TagDto?> GetByIdAsync(Guid id)
+    public async Task<TagDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        Tag? tag = await unitOfWork.Tags.GetByIdAsync(id);
+        Tag? tag = await unitOfWork.Tags.GetByIdAsync(id, cancellationToken);
         return tag == null ? null : MapToDto(tag);
     }
 
-    public async Task<List<TagDto>> GetAllAsync()
+    public async Task<List<TagDto>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        IEnumerable<Tag> tags = await unitOfWork.Tags.GetAllAsync();
+        IEnumerable<Tag> tags = await unitOfWork.Tags.GetAllAsync(cancellationToken);
         return [.. tags.Select(MapToDto)];
     }
 
-    public async Task<TagDto> CreateAsync(CreateTagDto dto)
+    public async Task<TagDto> CreateAsync(CreateTagDto dto, CancellationToken cancellationToken = default)
     {
         // Check if tag with same name already exists
-        Tag? existingTag = await unitOfWork.Tags.GetByNameAsync(dto.Name);
+        Tag? existingTag = await unitOfWork.Tags.GetByNameAsync(dto.Name, cancellationToken);
         if (existingTag != null)
         {
             throw new InvalidOperationException($"Tag with name '{dto.Name}' already exists.");
@@ -3227,40 +3207,40 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
             ColorHex = dto.ColorHex
         };
 
-        await unitOfWork.Tags.AddAsync(tag);
-        await unitOfWork.SaveChangesAsync();
+        await unitOfWork.Tags.AddAsync(tag, cancellationToken);
+        await unitOfWork.SaveChangesAsync(cancellationToken);
 
         return MapToDto(tag);
     }
 
-    public async Task<TagDto?> UpdateAsync(Guid id, CreateTagDto dto)
+    public async Task<TagDto?> UpdateAsync(Guid id, CreateTagDto dto, CancellationToken cancellationToken = default)
     {
-        Tag? tag = await unitOfWork.Tags.GetByIdAsync(id);
+        Tag? tag = await unitOfWork.Tags.GetByIdAsync(id, cancellationToken);
         if (tag == null) return null;
 
         // Check if another tag with the same name exists
-        Tag? existingTag = await unitOfWork.Tags.GetByNameAsync(dto.Name);
+        Tag? existingTag = await unitOfWork.Tags.GetByNameAsync(dto.Name, cancellationToken);
         if (existingTag != null && existingTag.Id != id)
         {
-            throw new InvalidOperationException($"Tag with name '{dto.Name}' already exists.");
+            throw new InvalidOperationException($"Another tag with name '{dto.Name}' already exists.");
         }
 
         tag.Name = dto.Name;
         tag.ColorHex = dto.ColorHex;
 
         unitOfWork.Tags.Update(tag);
-        await unitOfWork.SaveChangesAsync();
+        await unitOfWork.SaveChangesAsync(cancellationToken);
 
         return MapToDto(tag);
     }
 
-    public async Task<bool> DeleteAsync(Guid id)
+    public async Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        Tag? tag = await unitOfWork.Tags.GetByIdAsync(id);
+        Tag? tag = await unitOfWork.Tags.GetByIdAsync(id, cancellationToken);
         if (tag == null) return false;
 
         unitOfWork.Tags.Delete(tag);
-        await unitOfWork.SaveChangesAsync();
+        await unitOfWork.SaveChangesAsync(cancellationToken);
         return true;
     }
 
@@ -3270,7 +3250,7 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
         {
             Id = tag.Id,
             Name = tag.Name,
-            ColorHex = tag.ColorHex ?? string.Empty // Fixes CS8601: ensures non-null assignment
+            ColorHex = tag.ColorHex
         };
     }
 }
@@ -3528,8 +3508,8 @@ public class Tag
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IContactRepository.cs
-SIZE: 0.49 KB
-MODIFIED: 09/14/2025 21:12:26
+SIZE: 0.67 KB
+MODIFIED: 10/20/2025 14:18:53
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IContactRepository.cs
@@ -3539,18 +3519,18 @@ namespace MyOpenTelemetryApi.Domain.Interfaces;
 
 public interface IContactRepository : IRepository<Contact>
 {
-    Task<IEnumerable<Contact>> GetContactsByGroupAsync(Guid groupId);
-    Task<IEnumerable<Contact>> GetContactsByTagAsync(Guid tagId);
-    Task<Contact?> GetContactWithDetailsAsync(Guid id);
-    Task<IEnumerable<Contact>> SearchContactsAsync(string searchTerm);
+    Task<IEnumerable<Contact>> GetContactsByGroupAsync(Guid groupId, CancellationToken cancellationToken = default);
+    Task<IEnumerable<Contact>> GetContactsByTagAsync(Guid tagId, CancellationToken cancellationToken = default);
+    Task<Contact?> GetContactWithDetailsAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<IEnumerable<Contact>> SearchContactsAsync(string searchTerm, CancellationToken cancellationToken = default);
 }
 
 
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IGroupRepository.cs
-SIZE: 0.27 KB
-MODIFIED: 09/17/2025 16:29:43
+SIZE: 0.32 KB
+MODIFIED: 10/20/2025 14:18:57
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IGroupRepository.cs
@@ -3560,15 +3540,15 @@ namespace MyOpenTelemetryApi.Domain.Interfaces;
 
 public interface IGroupRepository : IRepository<Group>
 {
-    Task<Group?> GetGroupWithContactsAsync(Guid id);
+    Task<Group?> GetGroupWithContactsAsync(Guid id, CancellationToken cancellationToken = default);
 }
 
 
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IRepository.cs
-SIZE: 0.39 KB
-MODIFIED: 10/03/2025 18:47:12
+SIZE: 0.68 KB
+MODIFIED: 10/20/2025 14:18:28
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IRepository.cs
@@ -3576,20 +3556,20 @@ namespace MyOpenTelemetryApi.Domain.Interfaces;
 
 public interface IRepository<T> where T : class
 {
-    Task<T?> GetByIdAsync(Guid id);
-    Task<IEnumerable<T>> GetAllAsync();
-    IQueryable<T> GetQueryable(); // Added for efficient querying
-    Task AddAsync(T entity);
-    void Update(T entity);
-    void Delete(T entity);
+    Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<IEnumerable<T>> GetAllAsync(CancellationToken cancellationToken = default);
+    IQueryable<T> GetQueryable(); // Added for efficient querying - no cancellation token needed for synchronous method
+    Task AddAsync(T entity, CancellationToken cancellationToken = default);
+    void Update(T entity); // Synchronous operation - no cancellation token needed
+    void Delete(T entity); // Synchronous operation - no cancellation token needed
 }
 
 
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\ITagRepository.cs
-SIZE: 0.26 KB
-MODIFIED: 09/17/2025 16:29:43
+SIZE: 0.3 KB
+MODIFIED: 10/20/2025 14:19:02
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/ITagRepository.cs
@@ -3599,7 +3579,7 @@ namespace MyOpenTelemetryApi.Domain.Interfaces;
 
 public interface ITagRepository : IRepository<Tag>
 {
-    Task<Tag?> GetByNameAsync(string name);
+    Task<Tag?> GetByNameAsync(string name, CancellationToken cancellationToken = default);
 }
 
 
@@ -5365,7 +5345,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj
 SIZE: 0.58 KB
-MODIFIED: 10/06/2025 15:37:26
+MODIFIED: 10/20/2025 14:21:31
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -5389,8 +5369,8 @@ MODIFIED: 10/06/2025 15:37:26
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\ContactRepository.cs
-SIZE: 2.21 KB
-MODIFIED: 09/17/2025 16:29:43
+SIZE: 2.46 KB
+MODIFIED: 10/20/2025 14:19:12
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/ContactRepository.cs
@@ -5403,23 +5383,23 @@ namespace MyOpenTelemetryApi.Infrastructure.Repositories;
 
 public class ContactRepository(AppDbContext context) : Repository<Contact>(context), IContactRepository
 {
-    public async Task<IEnumerable<Contact>> GetContactsByGroupAsync(Guid groupId)
+    public async Task<IEnumerable<Contact>> GetContactsByGroupAsync(Guid groupId, CancellationToken cancellationToken = default)
     {
         return await _context.Contacts
             .Include(c => c.ContactGroups)
             .Where(c => c.ContactGroups.Any(cg => cg.GroupId == groupId))
-            .ToListAsync();
+            .ToListAsync(cancellationToken);
     }
 
-    public async Task<IEnumerable<Contact>> GetContactsByTagAsync(Guid tagId)
+    public async Task<IEnumerable<Contact>> GetContactsByTagAsync(Guid tagId, CancellationToken cancellationToken = default)
     {
         return await _context.Contacts
             .Include(c => c.Tags)
             .Where(c => c.Tags.Any(ct => ct.TagId == tagId))
-            .ToListAsync();
+            .ToListAsync(cancellationToken);
     }
 
-    public async Task<Contact?> GetContactWithDetailsAsync(Guid id)
+    public async Task<Contact?> GetContactWithDetailsAsync(Guid id, CancellationToken cancellationToken = default)
     {
         return await _context.Contacts
             .Include(c => c.EmailAddresses)
@@ -5429,10 +5409,10 @@ public class ContactRepository(AppDbContext context) : Repository<Contact>(conte
                 .ThenInclude(cg => cg.Group)
             .Include(c => c.Tags)
                 .ThenInclude(ct => ct.Tag)
-            .FirstOrDefaultAsync(c => c.Id == id);
+            .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
     }
 
-    public async Task<IEnumerable<Contact>> SearchContactsAsync(string searchTerm)
+    public async Task<IEnumerable<Contact>> SearchContactsAsync(string searchTerm, CancellationToken cancellationToken = default)
     {
         string lowerSearchTerm = searchTerm.ToLower();
 
@@ -5446,7 +5426,7 @@ public class ContactRepository(AppDbContext context) : Repository<Contact>(conte
                 (c.Company != null && c.Company.ToLower().Contains(lowerSearchTerm)) ||
                 c.EmailAddresses.Any(e => e.Email.ToLower().Contains(lowerSearchTerm)) ||
                 c.PhoneNumbers.Any(p => p.Number.Contains(searchTerm)))
-            .ToListAsync();
+            .ToListAsync(cancellationToken);
     }
 }
 
@@ -5454,8 +5434,8 @@ public class ContactRepository(AppDbContext context) : Repository<Contact>(conte
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\GroupRepository.cs
-SIZE: 0.66 KB
-MODIFIED: 09/17/2025 16:29:43
+SIZE: 0.73 KB
+MODIFIED: 10/20/2025 14:21:33
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/GroupRepository.cs
@@ -5468,12 +5448,12 @@ namespace MyOpenTelemetryApi.Infrastructure.Repositories;
 
 public class GroupRepository(AppDbContext context) : Repository<Group>(context), IGroupRepository
 {
-    public async Task<Group?> GetGroupWithContactsAsync(Guid id)
+    public async Task<Group?> GetGroupWithContactsAsync(Guid id, CancellationToken cancellationToken = default)
     {
         return await _context.Groups
             .Include(g => g.ContactGroups)
                 .ThenInclude(cg => cg.Contact)
-            .FirstOrDefaultAsync(g => g.Id == id);
+            .FirstOrDefaultAsync(g => g.Id == id, cancellationToken);
     }
 }
 
@@ -5481,8 +5461,8 @@ public class GroupRepository(AppDbContext context) : Repository<Group>(context),
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\Repository.cs
-SIZE: 1.07 KB
-MODIFIED: 10/03/2025 18:46:52
+SIZE: 1.22 KB
+MODIFIED: 10/20/2025 14:19:07
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/Repository.cs
@@ -5497,14 +5477,14 @@ public class Repository<T>(AppDbContext context) : IRepository<T> where T : clas
     protected readonly AppDbContext _context = context;
     protected readonly DbSet<T> _dbSet = context.Set<T>();
 
-    public virtual async Task<T?> GetByIdAsync(Guid id)
+    public virtual async Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        return await _dbSet.FindAsync(id);
+        return await _dbSet.FindAsync([id], cancellationToken);
     }
 
-    public virtual async Task<IEnumerable<T>> GetAllAsync()
+    public virtual async Task<IEnumerable<T>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        return await _dbSet.ToListAsync();
+        return await _dbSet.ToListAsync(cancellationToken);
     }
 
     public virtual IQueryable<T> GetQueryable()
@@ -5512,9 +5492,9 @@ public class Repository<T>(AppDbContext context) : IRepository<T> where T : clas
         return _dbSet.AsQueryable();
     }
 
-    public virtual async Task AddAsync(T entity)
+    public virtual async Task AddAsync(T entity, CancellationToken cancellationToken = default)
     {
-        await _dbSet.AddAsync(entity);
+        await _dbSet.AddAsync(entity, cancellationToken);
     }
 
     public virtual void Update(T entity)
@@ -5532,8 +5512,8 @@ public class Repository<T>(AppDbContext context) : IRepository<T> where T : clas
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\TagRepository.cs
-SIZE: 0.58 KB
-MODIFIED: 09/17/2025 16:29:43
+SIZE: 0.64 KB
+MODIFIED: 10/20/2025 14:21:01
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/TagRepository.cs
@@ -5546,10 +5526,10 @@ namespace MyOpenTelemetryApi.Infrastructure.Repositories;
 
 public class TagRepository(AppDbContext context) : Repository<Tag>(context), ITagRepository
 {
-    public async Task<Tag?> GetByNameAsync(string name)
+    public async Task<Tag?> GetByNameAsync(string name, CancellationToken cancellationToken = default)
     {
         return await _context.Tags
-            .FirstOrDefaultAsync(t => t.Name.ToLower() == name.ToLower());
+            .FirstOrDefaultAsync(t => t.Name.ToLower() == name.ToLower(), cancellationToken);
     }
 }
 
@@ -6147,7 +6127,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/20/2025 14:07:27
+EXPORT COMPLETED: 10/20/2025 14:24:20
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
