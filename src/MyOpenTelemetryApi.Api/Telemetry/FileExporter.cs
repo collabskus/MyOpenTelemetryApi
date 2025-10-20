@@ -51,8 +51,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
                         Body = logRecord.Body,
                         ScopeValues = ExtractScopeValues(logRecord),
                         Exception = logRecord.Exception?.ToString(),
-                        Attributes = ExtractAttributes(logRecord),
-                        Resource = ExtractResourceAttributes(logRecord)
+                        Attributes = ExtractAttributes(logRecord)
                     };
 
                     string json = JsonSerializer.Serialize(logEntry, _jsonOptions);
@@ -75,17 +74,43 @@ public class FileLogExporter : BaseExporter<LogRecord>
 
         logRecord.ForEachScope((scope, state) =>
         {
-            if (scope is IEnumerable<KeyValuePair<string, object?>> scopeItems)
+            // In .NET 10, LogRecordScope needs to be accessed differently
+            var scopeDict = new Dictionary<string, object?>();
+
+            // Try to extract scope values using reflection or ToString()
+            // Since we can't directly cast to IEnumerable anymore
+            if (scope != null)
             {
-                var scopeDict = new Dictionary<string, object?>();
-                foreach (var item in scopeItems)
+                // Get the type and try to iterate if it's enumerable
+                var scopeType = scope.GetType();
+                if (scope is System.Collections.IEnumerable enumerable and not string)
                 {
-                    scopeDict[item.Key] = item.Value;
+                    try
+                    {
+                        foreach (var item in enumerable)
+                        {
+                            if (item is KeyValuePair<string, object?> kvp)
+                            {
+                                scopeDict[kvp.Key] = kvp.Value;
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        // If iteration fails, store as string
+                        scopeDict["Scope"] = scope.ToString();
+                    }
                 }
-                if (scopeDict.Count > 0)
+                else
                 {
-                    scopes.Add(scopeDict);
+                    // Store non-enumerable scope as string
+                    scopeDict["Scope"] = scope.ToString();
                 }
+            }
+
+            if (scopeDict.Count > 0)
+            {
+                scopes.Add(scopeDict);
             }
         }, scopes);
 
@@ -105,22 +130,5 @@ public class FileLogExporter : BaseExporter<LogRecord>
         }
 
         return attributes;
-    }
-
-    private static Dictionary<string, object?> ExtractResourceAttributes(LogRecord logRecord)
-    {
-        Dictionary<string, object?> resourceAttrs = [];
-
-        Resource? resource = logRecord.Logger?.ProviderSdk?.GetResource();
-
-        if (resource != null)
-        {
-            foreach (var attr in resource.Attributes)
-            {
-                resourceAttrs[attr.Key] = attr.Value;
-            }
-        }
-
-        return resourceAttrs;
     }
 }
