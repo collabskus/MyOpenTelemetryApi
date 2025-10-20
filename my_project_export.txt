@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/20/2025 14:05:57
+Generated: 10/20/2025 14:06:27
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -79,9 +79,6 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   +---MyOpenTelemetryApi.Application
 |   |   |   MyOpenTelemetryApi.Application.csproj
 |   |   |   
-|   |   +---bin
-|   |   |   \---Debug
-|   |   |       \---net10.0
 |   |   +---DTOs
 |   |   |       AddressDto.cs
 |   |   |       ContactDto.cs
@@ -94,13 +91,6 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   |   |       TagDto.cs
 |   |   |       UpdateContactDto.cs
 |   |   |       
-|   |   +---obj
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   |           |   MyOpenTelemetryApi.Application.GlobalUsings.g.cs
-|   |   |           |   
-|   |   |           +---ref
-|   |   |           \---refint
 |   |   \---Services
 |   |           ContactService.cs
 |   |           GroupService.cs
@@ -125,26 +115,16 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   |   |       PhoneType.cs
 |   |   |       Tag.cs
 |   |   |       
-|   |   +---Interfaces
-|   |   |       IContactRepository.cs
-|   |   |       IGroupRepository.cs
-|   |   |       IRepository.cs
-|   |   |       ITagRepository.cs
-|   |   |       IUnitOfWork.cs
-|   |   |       
-|   |   \---obj
-|   |       \---Debug
-|   |           \---net10.0
-|   |                   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|   |                   MyOpenTelemetryApi.Domain.AssemblyInfo.cs
-|   |                   MyOpenTelemetryApi.Domain.AssemblyInfoInputs.cache
-|   |                   
+|   |   \---Interfaces
+|   |           IContactRepository.cs
+|   |           IGroupRepository.cs
+|   |           IRepository.cs
+|   |           ITagRepository.cs
+|   |           IUnitOfWork.cs
+|   |           
 |   \---MyOpenTelemetryApi.Infrastructure
 |       |   MyOpenTelemetryApi.Infrastructure.csproj
 |       |   
-|       +---bin
-|       |   \---Debug
-|       |       \---net10.0
 |       +---Data
 |       |   |   AppDbContext.cs
 |       |   |   
@@ -165,17 +145,6 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |       |           20251003222820_AddContactPaginationIndexes.Designer.cs
 |       |           AppDbContextModelSnapshot.cs
 |       |           
-|       +---obj
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|       |           |   MyOpenTelemetryApi.Infrastructure.AssemblyInfo.cs
-|       |           |   MyOpenTelemetryApi.Infrastructure.AssemblyInfoInputs.cache
-|       |           |   MyOpenTelemetryApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-|       |           |   MyOpenTelemetryApi.Infrastructure.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
 |       \---Repositories
 |               ContactRepository.cs
 |               GroupRepository.cs
@@ -185,41 +154,13 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |               
 \---tests
     +---MyOpenTelemetryApi.Api.Tests
-    |   |   MyOpenTelemetryApi.Api.Tests.csproj
-    |   |   UnitTest1.cs
-    |   |   
-    |   +---bin
-    |   |   \---Debug
-    |   |       \---net10.0
-    |   \---obj
-    |       \---Debug
-    |           \---net10.0
-    |               |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-    |               |   MyOpenTelemetryApi.Api.Tests.AssemblyInfo.cs
-    |               |   MyOpenTelemetryApi.Api.Tests.AssemblyInfoInputs.cache
-    |               |   MyOpenTelemetryApi.Api.Tests.GeneratedMSBuildEditorConfig.editorconfig
-    |               |   MyOpenTelemetryApi.Api.Tests.GlobalUsings.g.cs
-    |               |   
-    |               +---ref
-    |               \---refint
+    |       MyOpenTelemetryApi.Api.Tests.csproj
+    |       UnitTest1.cs
+    |       
     +---MyOpenTelemetryApi.Application.Tests
-    |   |   MyOpenTelemetryApi.Application.Tests.csproj
-    |   |   UnitTest1.cs
-    |   |   
-    |   +---bin
-    |   |   \---Debug
-    |   |       \---net10.0
-    |   \---obj
-    |       \---Debug
-    |           \---net10.0
-    |               |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-    |               |   MyOpenTelemetryApi.Application.Tests.AssemblyInfo.cs
-    |               |   MyOpenTelemetryApi.Application.Tests.AssemblyInfoInputs.cache
-    |               |   MyOpenTelemetryApi.Application.Tests.GeneratedMSBuildEditorConfig.editorconfig
-    |               |   MyOpenTelemetryApi.Application.Tests.GlobalUsings.g.cs
-    |               |   
-    |               +---ref
-    |               \---refint
+    |       MyOpenTelemetryApi.Application.Tests.csproj
+    |       UnitTest1.cs
+    |       
     \---MyOpenTelemetryApi.Infrastructure.Tests
             MyOpenTelemetryApi.Infrastructure.Tests.csproj
             UnitTest1.cs
@@ -6206,7 +6147,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/20/2025 14:05:58
+EXPORT COMPLETED: 10/20/2025 14:06:28
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
