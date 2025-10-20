@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/20/2025 10:14:01
+Generated: 10/20/2025 10:20:44
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -162,19 +162,9 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
     |       UnitTest1.cs
     |       
     \---MyOpenTelemetryApi.Infrastructure.Tests
-        |   MyOpenTelemetryApi.Infrastructure.Tests.csproj
-        |   UnitTest1.cs
-        |   
-        +---bin
-        |   \---Debug
-        |       \---net10.0
-        \---obj
-            \---Debug
-                \---net10.0
-                    |   MyOpenTelemetryApi.Infrastructure.Tests.GlobalUsings.g.cs
-                    |   
-                    +---ref
-                    \---refint
+            MyOpenTelemetryApi.Infrastructure.Tests.csproj
+            UnitTest1.cs
+            
 
 
 FILE CONTENTS:
@@ -222,7 +212,7 @@ updates:
 ================================================================================
 FILE: .github\workflows\ci.yml
 SIZE: 4.9 KB
-MODIFIED: 10/06/2025 16:22:38
+MODIFIED: 10/20/2025 10:20:14
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -278,7 +268,7 @@ jobs:
       run: dotnet test --no-build --configuration Release --verbosity normal --logger "console;verbosity=detailed" --collect:"XPlat Code Coverage" --results-directory ./coverage
 
     - name: Generate coverage report
-      uses: danielpalme/ReportGenerator-GitHub-Action@5.4.13
+      uses: danielpalme/ReportGenerator-GitHub-Action@5.4.17
       with:
         reports: coverage/**/coverage.cobertura.xml
         targetdir: coverage-report
@@ -395,7 +385,7 @@ jobs:
 ================================================================================
 FILE: .github\workflows\codeql.yml
 SIZE: 0.92 KB
-MODIFIED: 09/17/2025 12:54:22
+MODIFIED: 10/20/2025 10:18:55
 ================================================================================
 
 # .github/workflows/codeql.yml
@@ -428,7 +418,7 @@ jobs:
       uses: actions/checkout@v5
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@v4
       with:
         languages: ${{ matrix.language }}
 
@@ -444,7 +434,8 @@ jobs:
       run: dotnet build --no-restore
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@v4
+
 
 
 ================================================================================
@@ -6178,7 +6169,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/20/2025 10:14:02
+EXPORT COMPLETED: 10/20/2025 10:20:45
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
