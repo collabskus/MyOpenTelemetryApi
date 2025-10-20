@@ -10,8 +10,6 @@ param(
 $IncludeExtensions = @(
     "*.cs",           # C# files
     "*.json",         # JSON configuration files
-    "*.md",           # Markdown files
-    "*.txt",          # Text files
     "*.xml",          # XML files
     "*.csproj",       # C# project files
     "*.sln",          # Solution files
@@ -46,7 +44,11 @@ $ExcludeFiles = @(
     "*.dll",
     "*.pdb",
     "*.cache",
-    "*.log"
+    "*.log",
+    "*.md",           # Markdown files
+    "*.txt",          # Text files
+    "LICENSE*",       # License files
+    "LICENCE*"        # Alternative spelling
 )
 
 Write-Host "Starting project export..." -ForegroundColor Green
@@ -123,12 +125,25 @@ $AllFiles = @()
 foreach ($extension in $IncludeExtensions) {
     $files = Get-ChildItem -Path $ProjectPath -Recurse -Include $extension -File | Where-Object {
         $exclude = $false
+        
+        # Check excluded directories
         foreach ($excludeDir in $ExcludeDirectories) {
             if ($_.FullName -like "*\$excludeDir\*") {
                 $exclude = $true
                 break
             }
         }
+        
+        # Check excluded files
+        if (-not $exclude) {
+            foreach ($excludeFile in $ExcludeFiles) {
+                if ($_.Name -like $excludeFile) {
+                    $exclude = $true
+                    break
+                }
+            }
+        }
+        
         -not $exclude
     }
     $AllFiles += $files
