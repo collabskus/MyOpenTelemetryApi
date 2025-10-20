@@ -8,15 +8,6 @@
     <!-- ASP.NET Core OpenAPI support -->
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
     
-    <!-- Entity Framework Core Design-time tools (migrations, scaffolding) -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    
-    <!-- PostgreSQL provider for EF Core -->
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"/>
-    
     <!-- OpenTelemetry packages -->
     <PackageReference Include="OpenTelemetry"/>
     <PackageReference Include="OpenTelemetry.Exporter.Console" />
@@ -30,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Project references - these bring in EF Core transitively -->
     <ProjectReference Include="..\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj" />
     <ProjectReference Include="..\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj" />
   </ItemGroup>
