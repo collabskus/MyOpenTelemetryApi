@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/20/2025 14:50:26
+Generated: 10/20/2025 14:55:28
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -2153,8 +2153,8 @@ MODIFIED: 10/06/2025 11:32:06
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs
-SIZE: 4.02 KB
-MODIFIED: 10/20/2025 14:48:10
+SIZE: 3.32 KB
+MODIFIED: 10/20/2025 14:54:28
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Telemetry/FileExporter.cs
@@ -2210,8 +2210,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
                         Body = logRecord.Body,
                         ScopeValues = ExtractScopeValues(logRecord),
                         Exception = logRecord.Exception?.ToString(),
-                        Attributes = ExtractAttributes(logRecord),
-                        Resource = ExtractResourceAttributes(logRecord)
+                        Attributes = ExtractAttributes(logRecord)
                     };
 
                     string json = JsonSerializer.Serialize(logEntry, _jsonOptions);
@@ -2234,17 +2233,17 @@ public class FileLogExporter : BaseExporter<LogRecord>
 
         logRecord.ForEachScope((scope, state) =>
         {
-            if (scope is IEnumerable<KeyValuePair<string, object?>> scopeItems)
+            var scopeDict = new Dictionary<string, object?>();
+
+            // In .NET 10, LogRecordScope is directly iterable
+            foreach (var scopeItem in scope)
             {
-                var scopeDict = new Dictionary<string, object?>();
-                foreach (var item in scopeItems)
-                {
-                    scopeDict[item.Key] = item.Value;
-                }
-                if (scopeDict.Count > 0)
-                {
-                    scopes.Add(scopeDict);
-                }
+                scopeDict[scopeItem.Key] = scopeItem.Value;
+            }
+
+            if (scopeDict.Count > 0)
+            {
+                scopes.Add(scopeDict);
             }
         }, scopes);
 
@@ -2264,23 +2263,6 @@ public class FileLogExporter : BaseExporter<LogRecord>
         }
 
         return attributes;
-    }
-
-    private static Dictionary<string, object?> ExtractResourceAttributes(LogRecord logRecord)
-    {
-        Dictionary<string, object?> resourceAttrs = [];
-
-        Resource? resource = logRecord.Logger?.ProviderSdk?.GetResource();
-
-        if (resource != null)
-        {
-            foreach (var attr in resource.Attributes)
-            {
-                resourceAttrs[attr.Key] = attr.Value;
-            }
-        }
-
-        return resourceAttrs;
     }
 }
 
@@ -6185,7 +6167,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/20/2025 14:50:27
+EXPORT COMPLETED: 10/20/2025 14:55:29
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
