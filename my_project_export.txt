@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/20/2025 10:58:16
+Generated: 10/20/2025 11:11:36
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -62,22 +62,12 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   |   +---Authentication
 |   |   |       ApiKeyAuthenticationHandler.cs
 |   |   |       
-|   |   +---bin
-|   |   |   \---Debug
-|   |   |       \---net10.0
 |   |   +---Controllers
 |   |   |       ContactsController.cs
 |   |   |       GroupsController.cs
 |   |   |       HealthController.cs
 |   |   |       TagsController.cs
 |   |   |       
-|   |   +---obj
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   |           |   MyOpenTelemetryApi.Api.GlobalUsings.g.cs
-|   |   |           |   
-|   |   |           +---ref
-|   |   |           \---refint
 |   |   +---Properties
 |   |   |       launchSettings.json
 |   |   |       
@@ -6157,7 +6147,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/20/2025 10:58:17
+EXPORT COMPLETED: 10/20/2025 11:11:37
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
