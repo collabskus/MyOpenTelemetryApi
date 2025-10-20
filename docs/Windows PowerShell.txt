@@ -7,68 +7,69 @@ PS C:\Users\kushal>
 PS C:\Users\kushal> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
     info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
 
-Build succeeded in 0.4s
-2025-10-20-14-24-07
-Restore succeeded with 2 warning(s) in 0.8s
-    C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
-    C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
-    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-  MyOpenTelemetryApi.Domain net10.0 succeeded (1.9s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-  MyOpenTelemetryApi.Application net10.0 succeeded with 1 warning(s) (0.5s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Application\Services\TagService.cs(81,24): warning CS8601: Possible null reference assignment.
-  MyOpenTelemetryApi.Infrastructure net10.0 succeeded with 2 warning(s) (0.6s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
-    C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
-    C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
-  MyOpenTelemetryApi.Api net10.0 succeeded (1.6s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-  MyOpenTelemetryApi.Api.Tests net10.0 succeeded (1.0s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
-  MyOpenTelemetryApi.Infrastructure.Tests net10.0 succeeded (1.1s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
-  MyOpenTelemetryApi.Application.Tests net10.0 succeeded (1.1s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
-
-Build succeeded with 5 warning(s) in 6.0s
-2025-10-20-14-24-13
+Build succeeded in 0.5s
+2025-10-20-14-24-49
 Restore succeeded with 2 warning(s) in 0.8s
     C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
     C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
     info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
   MyOpenTelemetryApi.Domain net10.0 succeeded (0.2s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-  MyOpenTelemetryApi.Application net10.0 succeeded (0.1s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-  MyOpenTelemetryApi.Infrastructure net10.0 succeeded with 2 warning(s) (0.3s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
+  MyOpenTelemetryApi.Application net10.0 succeeded with 1 warning(s) (0.4s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Application\Services\TagService.cs(81,24): warning CS8601: Possible null reference assignment.
+  MyOpenTelemetryApi.Infrastructure net10.0 succeeded with 2 warning(s) (0.4s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
     C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
     C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+  MyOpenTelemetryApi.Api net10.0 succeeded (1.0s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
+  MyOpenTelemetryApi.Api.Tests net10.0 succeeded (0.6s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
+  MyOpenTelemetryApi.Application.Tests net10.0 succeeded (0.6s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
+  MyOpenTelemetryApi.Infrastructure.Tests net10.0 succeeded (0.6s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
+
+Build succeeded with 5 warning(s) in 3.1s
+2025-10-20-14-24-53
+Restore succeeded with 2 warning(s) in 0.9s
+    C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+  MyOpenTelemetryApi.Domain net10.0 succeeded (0.1s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
+  MyOpenTelemetryApi.Application net10.0 succeeded (0.1s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
+  MyOpenTelemetryApi.Infrastructure net10.0 succeeded with 2 warning(s) (0.3s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
+    C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
   MyOpenTelemetryApi.Api net10.0 succeeded (0.9s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
   MyOpenTelemetryApi.Application.Tests net10.0 succeeded (0.3s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
-  MyOpenTelemetryApi.Infrastructure.Tests net10.0 succeeded (0.4s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
-  MyOpenTelemetryApi.Api.Tests net10.0 succeeded (0.5s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
+  MyOpenTelemetryApi.Infrastructure.Tests net10.0 succeeded (0.3s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
+  MyOpenTelemetryApi.Api.Tests net10.0 succeeded (0.4s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.2.25502.107)
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.2.25502.107)
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0-rc.2.25502.107)
-[xUnit.net 00:00:00.29]   Discovering: MyOpenTelemetryApi.Infrastructure.Tests
 [xUnit.net 00:00:00.30]   Discovering: MyOpenTelemetryApi.Application.Tests
+[xUnit.net 00:00:00.30]   Discovering: MyOpenTelemetryApi.Infrastructure.Tests
 [xUnit.net 00:00:00.34]   Discovered:  MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:00.36]   Starting:    MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:00.38]   Discovered:  MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:00.33]   Discovering: MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:00.37]   Starting:    MyOpenTelemetryApi.Infrastructure.Tests
+[xUnit.net 00:00:00.37]   Discovered:  MyOpenTelemetryApi.Application.Tests
 [xUnit.net 00:00:00.40]   Starting:    MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:00.38]   Discovered:  MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:00.40]   Starting:    MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:00.34]   Discovering: MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:00.39]   Discovered:  MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:00.41]   Starting:    MyOpenTelemetryApi.Api.Tests
 [xUnit.net 00:00:00.58]   Finished:    MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:00.62]   Finished:    MyOpenTelemetryApi.Application.Tests
-  MyOpenTelemetryApi.Infrastructure.Tests test net10.0 succeeded (1.7s)
-[xUnit.net 00:00:00.62]   Finished:    MyOpenTelemetryApi.Api.Tests
-  MyOpenTelemetryApi.Application.Tests test net10.0 succeeded (1.8s)
+[xUnit.net 00:00:00.64]   Finished:    MyOpenTelemetryApi.Application.Tests
+  MyOpenTelemetryApi.Infrastructure.Tests test net10.0 succeeded (1.6s)
+  MyOpenTelemetryApi.Application.Tests test net10.0 succeeded (1.6s)
+[xUnit.net 00:00:00.64]   Finished:    MyOpenTelemetryApi.Api.Tests
   MyOpenTelemetryApi.Api.Tests test net10.0 succeeded (1.6s)
 
 Test summary: total: 44, failed: 0, succeeded: 44, skipped: 0, duration: 1.8s
-Build succeeded with 4 warning(s) in 4.5s
-2025-10-20-14-24-18
+Build succeeded with 4 warning(s) in 4.4s
+2025-10-20-14-24-57
     info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
 
 Build succeeded in 0.6s
-2025-10-20-14-24-18
-2025-10-20-14-24-19
-[main 5e4eca8] add existing files
- 1 file changed, 244 insertions(+)
-2025-10-20-14-24-19
+2025-10-20-14-24-58
+warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
+2025-10-20-14-24-58
+[main 6ab2ca6] add existing files
+ 1 file changed, 67 insertions(+), 309 deletions(-)
+2025-10-20-14-24-58
 * remote origin
   Fetch URL: https://github.com/collabskus/MyOpenTelemetryApi.git
   Push  URL: https://github.com/collabskus/MyOpenTelemetryApi.git
@@ -97,18 +98,16 @@ Build succeeded in 0.6s
     main merges with remote main
   Local ref configured for 'git push':
     main pushes to main (fast-forwardable)
-2025-10-20-14-24-19
-2025-10-20-14-24-19
+2025-10-20-14-24-58
+2025-10-20-14-24-59
 Current branch main is up to date.
-2025-10-20-14-24-19
+2025-10-20-14-24-59
 On branch main
-Your branch is ahead of 'origin/main' by 2 commits.
+Your branch is ahead of 'origin/main' by 1 commit.
   (use "git push" to publish your local commits)
 
 nothing to commit, working tree clean
-2025-10-20-14-24-19
-Removing .vs/
-Removing src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj.user
+2025-10-20-14-24-59
 Removing src/MyOpenTelemetryApi.Api/bin/
 Removing src/MyOpenTelemetryApi.Api/obj/
 Removing src/MyOpenTelemetryApi.Application/bin/
@@ -123,7 +122,7 @@ Removing tests/MyOpenTelemetryApi.Application.Tests/bin/
 Removing tests/MyOpenTelemetryApi.Application.Tests/obj/
 Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/bin/
 Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/obj/
-2025-10-20-14-24-19
+2025-10-20-14-24-59
 Starting project export...
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 Output File: my_project_export.txt
@@ -217,9 +216,9 @@ Export completed successfully!
 Output file: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 Total files exported: 82
 Output file size: 0.21 MB
-2025-10-20-14-24-20
+2025-10-20-14-25-00
 On branch main
-Your branch is ahead of 'origin/main' by 2 commits.
+Your branch is ahead of 'origin/main' by 1 commit.
   (use "git push" to publish your local commits)
 
 Changes not staged for commit:
@@ -228,26 +227,2911 @@ Changes not staged for commit:
         modified:   my_project_export.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
-2025-10-20-14-24-20
+2025-10-20-14-25-00
 warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
-2025-10-20-14-24-20
-[main 8a79067] add all files
- 1 file changed, 143 insertions(+), 163 deletions(-)
-2025-10-20-14-24-20
-Enumerating objects: 61, done.
-Counting objects: 100% (61/61), done.
+2025-10-20-14-25-00
+[main 9adb254] add all files
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+2025-10-20-14-25-00
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
 Delta compression using up to 12 threads
-Compressing objects: 100% (36/36), done.
-Writing objects: 100% (36/36), 9.91 KiB | 1.65 MiB/s, done.
-Total 36 (delta 24), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (24/24), completed with 15 local objects.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 1.43 KiB | 1.43 MiB/s, done.
+Total 7 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (5/5), completed with 4 local objects.
 To https://github.com/collabskus/MyOpenTelemetryApi.git
-   c2757af..8a79067  main -> main
-2025-10-20-14-24-21
+   8a79067..9adb254  main -> main
+2025-10-20-14-25-01
 Discovering projects...
 Analyzing project(s)...
 Analyzing dependencies...
 No outdated dependencies were detected
-Elapsed: 00:00:02.1458616
-2025-10-20-14-24-24
-PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi>
+Elapsed: 00:00:02.1471833
+2025-10-20-14-25-03
+PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\"; dotnet run --configuration RELEASE --verbosity detailed
+Using launch settings from C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\Properties\launchSettings.json...
+Building...
+Restore succeeded with 2 warning(s) in 0.6s
+    Determining projects to restore...
+    Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj (in 99 ms).
+    C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj (in 203 ms).
+    Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj (in 206 ms).
+    Restored C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj (in 242 ms).
+    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+  MyOpenTelemetryApi.Domain net10.0 succeeded (0.2s) → C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Domain\bin\RELEASE\net10.0\MyOpenTelemetryApi.Domain.dll
+    NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+    Building MyOpenTelemetryApi.Domain - RELEASE - net10.0
+  MyOpenTelemetryApi.Application net10.0 succeeded with 1 warning(s) (0.3s) → C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Application\bin\RELEASE\net10.0\MyOpenTelemetryApi.Application.dll
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Application\Services\TagService.cs(81,24): warning CS8601: Possible null reference assignment.
+    Building MyOpenTelemetryApi.Application - RELEASE - net10.0
+  MyOpenTelemetryApi.Infrastructure net10.0 succeeded with 2 warning(s) (0.6s) → C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\bin\RELEASE\net10.0\MyOpenTelemetryApi.Infrastructure.dll
+    NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
+    Building MyOpenTelemetryApi.Infrastructure - RELEASE - net10.0
+  MyOpenTelemetryApi.Api net10.0 succeeded (0.7s) → bin\RELEASE\net10.0\MyOpenTelemetryApi.Api.dll
+    Building MyOpenTelemetryApi.Api - RELEASE - net10.0
+    Copied appsettings files to output directory
+
+Build succeeded with 5 warning(s) in 2.6s
+LogRecord.Timestamp:               2025-10-20T18:25:59.0100304Z
+LogRecord.CategoryName:            Program
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Checking for pending database migrations...
+LogRecord.Body:                    Checking for pending database migrations...
+LogRecord.Attributes (Key:Value):
+    OriginalFormat (a.k.a Body): Checking for pending database migrations...
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-20T18:26:02.5663207Z
+LogRecord.CategoryName:            Microsoft.EntityFrameworkCore.Database.Command
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Executed DbCommand (66ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+LogRecord.Body:                    Executed DbCommand ({elapsed}ms) [Parameters=[{parameters}], CommandType='{commandType}', CommandTimeout='{commandTimeout}']{newLine}{commandText}
+LogRecord.Attributes (Key:Value):
+    elapsed: 66
+    parameters:
+    commandType: Text
+    commandTimeout: 30
+    newLine:
+
+    commandText: SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+    OriginalFormat (a.k.a Body): Executed DbCommand ({elapsed}ms) [Parameters=[{parameters}], CommandType='{commandType}', CommandTimeout='{commandTimeout}']{newLine}{commandText}
+LogRecord.EventId:                 20101
+LogRecord.EventName:               Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-20T18:26:02.6123038Z
+LogRecord.CategoryName:            Program
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Database is up to date - no migrations needed.
+LogRecord.Body:                    Database is up to date - no migrations needed.
+LogRecord.Attributes (Key:Value):
+    OriginalFormat (a.k.a Body): Database is up to date - no migrations needed.
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-20T18:26:02.6157188Z
+LogRecord.CategoryName:            MyOpenTelemetryApi.Api
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Starting MyOpenTelemetryApi version 1.0.0
+LogRecord.Body:                    Starting {ServiceName} version {ServiceVersion}
+LogRecord.Attributes (Key:Value):
+    ServiceName: MyOpenTelemetryApi
+    ServiceVersion: 1.0.0
+    OriginalFormat (a.k.a Body): Starting {ServiceName} version {ServiceVersion}
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-20T18:26:02.6179277Z
+LogRecord.CategoryName:            Microsoft.Extensions.Hosting.Internal.Host
+LogRecord.Severity:                Debug
+LogRecord.SeverityText:            Debug
+LogRecord.FormattedMessage:        Hosting starting
+LogRecord.Body:                    Hosting starting
+LogRecord.Attributes (Key:Value):
+    OriginalFormat (a.k.a Body): Hosting starting
+LogRecord.EventId:                 1
+LogRecord.EventName:               Starting
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-20T18:26:02.6327933Z
+LogRecord.CategoryName:            Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        User profile is available. Using 'C:\Users\kushal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+LogRecord.Body:                    User profile is available. Using '{FullName}' as key repository and Windows DPAPI to encrypt keys at rest.
+LogRecord.Attributes (Key:Value):
+    FullName: C:\Users\kushal\AppData\Local\ASP.NET\DataProtection-Keys
+    OriginalFormat (a.k.a Body): User profile is available. Using '{FullName}' as key repository and Windows DPAPI to encrypt keys at rest.
+LogRecord.EventId:                 63
+LogRecord.EventName:               UsingProfileAsKeyRepositoryWithDPAPI
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-20T18:26:02.7815497Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Now listening on: http://0.0.0.0:5174
+LogRecord.Body:                    Now listening on: {address}
+LogRecord.Attributes (Key:Value):
+    address: http://0.0.0.0:5174
+    OriginalFormat (a.k.a Body): Now listening on: {address}
+LogRecord.EventId:                 14
+LogRecord.EventName:               ListeningOnAddress
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-20T18:26:02.7829700Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Application started. Press Ctrl+C to shut down.
+LogRecord.Body:                    Application started. Press Ctrl+C to shut down.
+LogRecord.Attributes (Key:Value):
+    OriginalFormat (a.k.a Body): Application started. Press Ctrl+C to shut down.
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-20T18:26:02.7838342Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Hosting environment: Development
+LogRecord.Body:                    Hosting environment: {EnvName}
+LogRecord.Attributes (Key:Value):
+    EnvName: Development
+    OriginalFormat (a.k.a Body): Hosting environment: {EnvName}
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-20T18:26:02.7863900Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Content root path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api
+LogRecord.Body:                    Content root path: {ContentRoot}
+LogRecord.Attributes (Key:Value):
+    ContentRoot: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api
+    OriginalFormat (a.k.a Body): Content root path: {ContentRoot}
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+LogRecord.Timestamp:               2025-10-20T18:26:02.7872777Z
+LogRecord.CategoryName:            Microsoft.Extensions.Hosting.Internal.Host
+LogRecord.Severity:                Debug
+LogRecord.SeverityText:            Debug
+LogRecord.FormattedMessage:        Hosting started
+LogRecord.Body:                    Hosting started
+LogRecord.Attributes (Key:Value):
+    OriginalFormat (a.k.a Body): Hosting started
+LogRecord.EventId:                 2
+LogRecord.EventName:               Started
+
+Resource associated with LogRecord:
+service.name: MyOpenTelemetryApi
+service.version: 1.0.0
+service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+environment: Development
+deployment.environment: Development
+host.name: DESKTOP-3J5HTD8
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.13.1
+
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:26:12.6561881Z]
+Value: 115511296
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:26:12.6562278Z]
+Value: 2481032667136
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:26:12.6562500Z] process.cpu.state: user
+Value: 1.421875
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:26:12.6562500Z] process.cpu.state: system
+Value: 0.3125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:26:12.6562503Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:26:12.6562505Z]
+Value: 32
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:12.6562546Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:12.6562546Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:12.6562546Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:26:12.6562548Z]
+Value: 114827264
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:26:12.6562550Z]
+Value: 15940128
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:26:12.6562553Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:12.6562555Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:12.6562555Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:12.6562555Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:12.6562555Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:12.6562555Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:12.6562556Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:12.6562556Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:12.6562556Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:12.6562556Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:12.6562556Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:26:12.6562559Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:26:12.6562561Z]
+Value: 761251
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:26:12.6562563Z]
+Value: 10183
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:26:12.6562565Z]
+Value: 2.4555309
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:26:12.6562566Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:26:12.6562568Z]
+Value: 2
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:26:12.6562569Z]
+Value: 38
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:26:12.6562571Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:26:12.6562572Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:26:12.6562573Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:26:12.6562577Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:26:12.6562579Z] cpu.mode: user
+Value: 1.421875
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:26:12.6562579Z] cpu.mode: system
+Value: 0.3125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:26:22.6550288Z]
+Value: 115531776
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:26:22.6550295Z]
+Value: 2481036468224
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:26:22.6550299Z] process.cpu.state: user
+Value: 1.46875
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:26:22.6550299Z] process.cpu.state: system
+Value: 0.3125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:26:22.6550301Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:26:22.6550304Z]
+Value: 34
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:22.6550350Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:22.6550350Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:22.6550350Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:26:22.6550352Z]
+Value: 115552256
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:26:22.6550354Z]
+Value: 16063128
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:26:22.6550356Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:22.6550359Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:22.6550359Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:22.6550359Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:22.6550359Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:22.6550359Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:22.6550361Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:22.6550361Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:22.6550361Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:22.6550361Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:22.6550361Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:26:22.6550365Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:26:22.6550368Z]
+Value: 777782
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:26:22.6550370Z]
+Value: 10336
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:26:22.6550372Z]
+Value: 2.4978508
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:26:22.6550374Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:26:22.6550376Z]
+Value: 4
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:26:22.6550385Z]
+Value: 52
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:26:22.6550407Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:26:22.6550422Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:26:22.6550424Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:26:22.6550428Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:26:22.6550432Z] cpu.mode: user
+Value: 1.46875
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:26:22.6550432Z] cpu.mode: system
+Value: 0.3125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:26:32.6539735Z]
+Value: 117014528
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:26:32.6539740Z]
+Value: 2481039613952
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:26:32.6539750Z] process.cpu.state: user
+Value: 1.5
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:26:32.6539750Z] process.cpu.state: system
+Value: 0.3125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:26:32.6539753Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:26:32.6539755Z]
+Value: 36
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:32.6539800Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:32.6539800Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:32.6539800Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:26:32.6539801Z]
+Value: 117039104
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:26:32.6539804Z]
+Value: 16169696
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:26:32.6539806Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:32.6539808Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:32.6539808Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:32.6539808Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:32.6539808Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:32.6539808Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:32.6539810Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:32.6539810Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:32.6539810Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:32.6539810Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:32.6539810Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:26:32.6539812Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:26:32.6539815Z]
+Value: 791379
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:26:32.6539839Z]
+Value: 10456
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:26:32.6539841Z]
+Value: 2.5332411
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:26:32.6539847Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:26:32.6539848Z]
+Value: 4
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:26:32.6539849Z]
+Value: 66
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:26:32.6539887Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:26:32.6539893Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:26:32.6539894Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:26:32.6539900Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:26:32.6539904Z] cpu.mode: user
+Value: 1.5
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:26:32.6539904Z] cpu.mode: system
+Value: 0.3125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:26:42.6531825Z]
+Value: 115408896
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:26:42.6531829Z]
+Value: 2481038172160
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:26:42.6531832Z] process.cpu.state: user
+Value: 1.515625
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:26:42.6531832Z] process.cpu.state: system
+Value: 0.3125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:26:42.6531835Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:26:42.6531836Z]
+Value: 35
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:42.6531863Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:42.6531863Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:42.6531863Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:26:42.6531864Z]
+Value: 115412992
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:26:42.6531865Z]
+Value: 16266992
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:26:42.6531866Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:42.6531868Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:42.6531868Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:42.6531868Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:42.6531868Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:42.6531868Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:42.6531869Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:42.6531869Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:42.6531869Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:42.6531869Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:42.6531869Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:26:42.6531871Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:26:42.6531872Z]
+Value: 799795
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:26:42.6531873Z]
+Value: 10581
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:26:42.6531875Z]
+Value: 2.5598396
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:26:42.6531877Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:26:42.6531878Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:26:42.6531879Z]
+Value: 80
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:26:42.6531882Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:26:42.6531883Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:26:42.6531884Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:26:42.6531887Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:26:42.6531888Z] cpu.mode: user
+Value: 1.515625
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:26:42.6531888Z] cpu.mode: system
+Value: 0.3125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:26:52.6592896Z]
+Value: 116240384
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:26:52.6592903Z]
+Value: 2481038172160
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:26:52.6592907Z] process.cpu.state: user
+Value: 1.53125
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:26:52.6592907Z] process.cpu.state: system
+Value: 0.3125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:26:52.6592910Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:26:52.6592911Z]
+Value: 35
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:52.6592938Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:52.6592938Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:26:52.6592938Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:26:52.6592939Z]
+Value: 116277248
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:26:52.6592940Z]
+Value: 16373576
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:26:52.6592942Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:52.6592944Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:52.6592944Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:52.6592944Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:52.6592944Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:26:52.6592944Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:52.6592944Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:52.6592944Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:52.6592944Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:52.6592944Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:26:52.6592944Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:26:52.6592947Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:26:52.6592948Z]
+Value: 802544
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:26:52.6592949Z]
+Value: 10613
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:26:52.6592950Z]
+Value: 2.577632
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:26:52.6592952Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:26:52.6592953Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:26:52.6592954Z]
+Value: 94
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:26:52.6592956Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:26:52.6592957Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:26:52.6592961Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:26:52.6592964Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:26:52.6592965Z] cpu.mode: user
+Value: 1.53125
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:26:52.6592965Z] cpu.mode: system
+Value: 0.3125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:27:02.6536905Z]
+Value: 116518912
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:27:02.6536911Z]
+Value: 2481033519104
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:02.6536916Z] process.cpu.state: user
+Value: 1.59375
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:02.6536916Z] process.cpu.state: system
+Value: 0.3125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:27:02.6536919Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:27:02.6536920Z]
+Value: 32
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:02.6536948Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:02.6536948Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:02.6536948Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:27:02.6536950Z]
+Value: 116518912
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:27:02.6536951Z]
+Value: 16480120
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:27:02.6536953Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:02.6536954Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:02.6536954Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:02.6536954Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:02.6536954Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:02.6536954Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:02.6536956Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:02.6536956Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:02.6536956Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:02.6536956Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:02.6536956Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:27:02.6536958Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:27:02.6536962Z]
+Value: 807655
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:27:02.6536963Z]
+Value: 10667
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:27:02.6536965Z]
+Value: 2.5947782
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:27:02.6536966Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:27:02.6536967Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:27:02.6536969Z]
+Value: 108
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:27:02.6536971Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:27:02.6536972Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:27:02.6536973Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:27:02.6536978Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:02.6536979Z] cpu.mode: user
+Value: 1.59375
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:02.6536979Z] cpu.mode: system
+Value: 0.3125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:27:12.6482431Z]
+Value: 115859456
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:27:12.6482440Z]
+Value: 2481033584640
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:12.6482447Z] process.cpu.state: user
+Value: 1.609375
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:12.6482447Z] process.cpu.state: system
+Value: 0.3125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:27:12.6482450Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:27:12.6482452Z]
+Value: 32
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:12.6482482Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:12.6482482Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:12.6482482Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:27:12.6482483Z]
+Value: 115863552
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:27:12.6482486Z]
+Value: 16578520
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:27:12.6482487Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:12.6482488Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:12.6482488Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:12.6482488Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:12.6482488Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:12.6482488Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:12.6482490Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:12.6482490Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:12.6482490Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:12.6482490Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:12.6482490Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:27:12.6482492Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:27:12.6482493Z]
+Value: 813070
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:27:12.6482495Z]
+Value: 10712
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:27:12.6482496Z]
+Value: 2.6113342
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:27:12.6482497Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:27:12.6482498Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:27:12.6482500Z]
+Value: 122
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:27:12.6482502Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:27:12.6482503Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:27:12.6482504Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:27:12.6482507Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:12.6482508Z] cpu.mode: user
+Value: 1.609375
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:12.6482508Z] cpu.mode: system
+Value: 0.3125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:27:22.6484259Z]
+Value: 116170752
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:27:22.6484264Z]
+Value: 2481033584640
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:22.6484268Z] process.cpu.state: user
+Value: 1.609375
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:22.6484268Z] process.cpu.state: system
+Value: 0.3125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:27:22.6484275Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:27:22.6484277Z]
+Value: 32
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:22.6484320Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:22.6484320Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:22.6484320Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:27:22.6484322Z]
+Value: 116183040
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:27:22.6484323Z]
+Value: 16676920
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:27:22.6484325Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:22.6484326Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:22.6484326Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:22.6484326Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:22.6484326Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:22.6484326Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:22.6484328Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:22.6484328Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:22.6484328Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:22.6484328Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:22.6484328Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:27:22.6484330Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:27:22.6484331Z]
+Value: 814460
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:27:22.6484332Z]
+Value: 10727
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:27:22.6484334Z]
+Value: 2.6186329
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:27:22.6484335Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:27:22.6484336Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:27:22.6484338Z]
+Value: 136
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:27:22.6484340Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:27:22.6484341Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:27:22.6484343Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:27:22.6484347Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:22.6484349Z] cpu.mode: user
+Value: 1.609375
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:22.6484349Z] cpu.mode: system
+Value: 0.3125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:27:32.6566261Z]
+Value: 116322304
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:27:32.6566267Z]
+Value: 2481033584640
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:32.6566271Z] process.cpu.state: user
+Value: 1.609375
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:32.6566271Z] process.cpu.state: system
+Value: 0.3125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:27:32.6566276Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:27:32.6566277Z]
+Value: 33
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:32.6566308Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:32.6566308Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:32.6566308Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:27:32.6566310Z]
+Value: 116350976
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:27:32.6566312Z]
+Value: 16782576
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:27:32.6566313Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:32.6566315Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:32.6566315Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:32.6566315Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:32.6566315Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:32.6566315Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:32.6566316Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:32.6566316Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:32.6566316Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:32.6566316Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:32.6566316Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:27:32.6566319Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:27:32.6566320Z]
+Value: 814810
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:27:32.6566322Z]
+Value: 10733
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:27:32.6566323Z]
+Value: 2.6204903
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:27:32.6566325Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:27:32.6566326Z]
+Value: 4
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:27:32.6566327Z]
+Value: 150
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:27:32.6566330Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:27:32.6566331Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:27:32.6566332Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:27:32.6566335Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:32.6566336Z] cpu.mode: user
+Value: 1.609375
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:32.6566336Z] cpu.mode: system
+Value: 0.3125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:27:42.6585223Z]
+Value: 116588544
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:27:42.6585227Z]
+Value: 2481035223040
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:42.6585234Z] process.cpu.state: user
+Value: 1.625
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:42.6585234Z] process.cpu.state: system
+Value: 0.3125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:27:42.6585236Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:27:42.6585237Z]
+Value: 33
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:42.6585269Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:42.6585269Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:42.6585269Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:27:42.6585270Z]
+Value: 116649984
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:27:42.6585273Z]
+Value: 16888536
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:27:42.6585274Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:42.6585276Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:42.6585276Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:42.6585276Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:42.6585276Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:42.6585276Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:42.6585278Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:42.6585278Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:42.6585278Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:42.6585278Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:42.6585278Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:27:42.6585279Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:27:42.6585280Z]
+Value: 818305
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:27:42.6585281Z]
+Value: 10762
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:27:42.6585283Z]
+Value: 2.638893
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:27:42.6585284Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:27:42.6585285Z]
+Value: 4
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:27:42.6585286Z]
+Value: 164
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:27:42.6585288Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:27:42.6585290Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:27:42.6585291Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:27:42.6585294Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:42.6585295Z] cpu.mode: user
+Value: 1.625
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:42.6585295Z] cpu.mode: system
+Value: 0.3125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:27:52.6558779Z]
+Value: 115937280
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:27:52.6558783Z]
+Value: 2481033650176
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:52.6558786Z] process.cpu.state: user
+Value: 1.6875
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:27:52.6558786Z] process.cpu.state: system
+Value: 0.328125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:27:52.6558788Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:27:52.6558793Z]
+Value: 32
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:52.6558821Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:52.6558821Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:27:52.6558821Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:27:52.6558823Z]
+Value: 115978240
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:27:52.6558825Z]
+Value: 16980984
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:27:52.6558826Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:52.6558827Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:52.6558827Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:52.6558827Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:52.6558827Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:27:52.6558827Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:52.6558829Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:52.6558829Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:52.6558829Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:52.6558829Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:27:52.6558829Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:27:52.6558831Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:27:52.6558833Z]
+Value: 820518
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:27:52.6558834Z]
+Value: 10781
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:27:52.6558835Z]
+Value: 2.6490373
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:27:52.6558837Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:27:52.6558838Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:27:52.6558839Z]
+Value: 178
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:27:52.6558841Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:27:52.6558843Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:27:52.6558844Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:27:52.6558847Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:52.6558848Z] cpu.mode: user
+Value: 1.6875
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:27:52.6558848Z] cpu.mode: system
+Value: 0.328125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:28:02.6618657Z]
+Value: 115720192
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:28:02.6618663Z]
+Value: 2481032142848
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:28:02.6618665Z] process.cpu.state: user
+Value: 1.703125
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:28:02.6618665Z] process.cpu.state: system
+Value: 0.328125
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:28:02.6618667Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:28:02.6618668Z]
+Value: 31
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:02.6618703Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:02.6618703Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:02.6618703Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:28:02.6618704Z]
+Value: 115720192
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:28:02.6618706Z]
+Value: 17079384
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:28:02.6618707Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:02.6618709Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:02.6618709Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:02.6618709Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:02.6618709Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:02.6618709Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:02.6618710Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:02.6618710Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:02.6618710Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:02.6618710Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:02.6618710Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:28:02.6618712Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:28:02.6618714Z]
+Value: 823396
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:28:02.6618716Z]
+Value: 10812
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:28:02.6618717Z]
+Value: 2.6647527
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:28:02.6618718Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:28:02.6618719Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:28:02.6618721Z]
+Value: 192
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:28:02.6618723Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:28:02.6618724Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:28:02.6618725Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:28:02.6618729Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:28:02.6618730Z] cpu.mode: user
+Value: 1.703125
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:28:02.6618730Z] cpu.mode: system
+Value: 0.328125
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:28:12.6607205Z]
+Value: 116322304
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:28:12.6607210Z]
+Value: 2481024278528
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:28:12.6607218Z] process.cpu.state: user
+Value: 1.703125
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:28:12.6607218Z] process.cpu.state: system
+Value: 0.34375
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:28:12.6607221Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:28:12.6607222Z]
+Value: 26
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:12.6607267Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:12.6607267Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:12.6607267Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:28:12.6607269Z]
+Value: 116322304
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:28:12.6607272Z]
+Value: 17177784
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:28:12.6607273Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:12.6607275Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:12.6607275Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:12.6607275Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:12.6607275Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:12.6607275Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:12.6607276Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:12.6607276Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:12.6607276Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:12.6607276Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:12.6607276Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:28:12.6607278Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:28:12.6607279Z]
+Value: 825564
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:28:12.6607281Z]
+Value: 10822
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:28:12.6607282Z]
+Value: 2.6693363
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:28:12.6607284Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:28:12.6607285Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:28:12.6607286Z]
+Value: 206
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:28:12.6607289Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:28:12.6607290Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:28:12.6607292Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:28:12.6607299Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:28:12.6607300Z] cpu.mode: user
+Value: 1.703125
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:28:12.6607300Z] cpu.mode: system
+Value: 0.34375
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:28:22.6644375Z]
+Value: 116432896
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:28:22.6644382Z]
+Value: 2481024344064
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:28:22.6644388Z] process.cpu.state: user
+Value: 1.703125
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:28:22.6644388Z] process.cpu.state: system
+Value: 0.34375
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:28:22.6644395Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:28:22.6644397Z]
+Value: 26
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:22.6644429Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:22.6644429Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:22.6644429Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:28:22.6644431Z]
+Value: 116432896
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:28:22.6644434Z]
+Value: 17267984
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:28:22.6644435Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:22.6644436Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:22.6644436Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:22.6644436Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:22.6644436Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:22.6644436Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:22.6644438Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:22.6644438Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:22.6644438Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:22.6644438Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:22.6644438Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:28:22.6644441Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:28:22.6644442Z]
+Value: 825868
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:28:22.6644444Z]
+Value: 10829
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:28:22.6644445Z]
+Value: 2.6722904
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:28:22.6644447Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:28:22.6644451Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:28:22.6644452Z]
+Value: 220
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:28:22.6644455Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:28:22.6644456Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:28:22.6644457Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:28:22.6644460Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:28:22.6644462Z] cpu.mode: user
+Value: 1.703125
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:28:22.6644462Z] cpu.mode: system
+Value: 0.34375
+Resource associated with Metrics:
+        service.name: MyOpenTelemetryApi
+        service.version: 1.0.0
+        service.instance.id: c3aaa090-f206-4699-9901-4bb990aacb3b
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: dotnet
+        telemetry.sdk.version: 1.13.1
+
+Metric Name: process.memory.usage, Description: The amount of physical memory in use., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6683409Z, 2025-10-20T18:28:32.6546536Z]
+Value: 116363264
+
+Metric Name: process.memory.virtual, Description: The amount of committed virtual memory., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6692514Z, 2025-10-20T18:28:32.6546541Z]
+Value: 2481024278528
+
+Metric Name: process.cpu.time, Description: Total CPU seconds broken down by different states., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:28:32.6546545Z] process.cpu.state: user
+Value: 1.703125
+(2025-10-20T18:26:02.6694420Z, 2025-10-20T18:28:32.6546545Z] process.cpu.state: system
+Value: 0.359375
+
+Metric Name: process.cpu.count, Description: The number of processors (CPU cores) available to the current process., Unit: {processors}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694613Z, 2025-10-20T18:28:32.6546549Z]
+Value: 12
+
+Metric Name: process.thread.count, Description: Process threads count., Unit: {thread}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: OpenTelemetry.Instrumentation.Process
+        Version: 1.12.0-beta.1
+(2025-10-20T18:26:02.6694700Z, 2025-10-20T18:28:32.6546550Z]
+Value: 26
+
+Metric Name: dotnet.gc.collections, Description: The number of garbage collections that have occurred since the process has started., Unit: {collection}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:32.6546580Z] gc.heap.generation: gen2
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:32.6546580Z] gc.heap.generation: gen1
+Value: 1
+(2025-10-20T18:26:02.6702676Z, 2025-10-20T18:28:32.6546580Z] gc.heap.generation: gen0
+Value: 1
+
+Metric Name: dotnet.process.memory.working_set, Description: The number of bytes of physical memory mapped to the process context., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6702729Z, 2025-10-20T18:28:32.6546582Z]
+Value: 116367360
+
+Metric Name: dotnet.gc.heap.total_allocated, Description: The approximate number of bytes allocated on the managed GC heap since the process has started. The returned value does not include any native allocations., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708680Z, 2025-10-20T18:28:32.6546583Z]
+Value: 17374480
+
+Metric Name: dotnet.gc.last_collection.memory.committed_size, Description: The amount of committed virtual memory in use by the .NET GC, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708885Z, 2025-10-20T18:28:32.6546584Z]
+Value: 12218368
+
+Metric Name: dotnet.gc.last_collection.heap.size, Description: The managed GC heap size (including fragmentation), as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:32.6546586Z] gc.heap.generation: gen0
+Value: 560
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:32.6546586Z] gc.heap.generation: gen1
+Value: 1210848
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:32.6546586Z] gc.heap.generation: gen2
+Value: 2020144
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:32.6546586Z] gc.heap.generation: loh
+Value: 3270784
+(2025-10-20T18:26:02.6708985Z, 2025-10-20T18:28:32.6546586Z] gc.heap.generation: poh
+Value: 58240
+
+Metric Name: dotnet.gc.last_collection.heap.fragmentation.size, Description: The heap fragmentation, as observed during the latest garbage collection., Unit: By, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:32.6546587Z] gc.heap.generation: gen0
+Value: 456
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:32.6546587Z] gc.heap.generation: gen1
+Value: 15360
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:32.6546587Z] gc.heap.generation: gen2
+Value: 9216
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:32.6546587Z] gc.heap.generation: loh
+Value: 736
+(2025-10-20T18:26:02.6709051Z, 2025-10-20T18:28:32.6546587Z] gc.heap.generation: poh
+Value: 0
+
+Metric Name: dotnet.gc.pause.time, Description: The total amount of time paused in GC since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771214Z, 2025-10-20T18:28:32.6546590Z]
+Value: 0.011796
+
+Metric Name: dotnet.jit.compiled_il.size, Description: Count of bytes of intermediate language that have been compiled since the process has started., Unit: By, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771494Z, 2025-10-20T18:28:32.6546591Z]
+Value: 826668
+
+Metric Name: dotnet.jit.compiled_methods, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: {method}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771624Z, 2025-10-20T18:28:32.6546592Z]
+Value: 10839
+
+Metric Name: dotnet.jit.compilation.time, Description: The number of times the JIT compiler (re)compiled methods since the process has started., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771702Z, 2025-10-20T18:28:32.6546594Z]
+Value: 2.6758728
+
+Metric Name: dotnet.monitor.lock_contentions, Description: The number of times there was contention when trying to acquire a monitor lock since the process has started., Unit: {contention}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771769Z, 2025-10-20T18:28:32.6546595Z]
+Value: 0
+
+Metric Name: dotnet.thread_pool.thread.count, Description: The number of thread pool threads that currently exist., Unit: {thread}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771834Z, 2025-10-20T18:28:32.6546596Z]
+Value: 3
+
+Metric Name: dotnet.thread_pool.work_item.count, Description: The number of work items that the thread pool has completed since the process has started., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6771925Z, 2025-10-20T18:28:32.6546598Z]
+Value: 234
+
+Metric Name: dotnet.thread_pool.queue.length, Description: The number of work items that are currently queued to be processed by the thread pool., Unit: {work_item}, Metric Type: LongSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772005Z, 2025-10-20T18:28:32.6546600Z]
+Value: 0
+
+Metric Name: dotnet.timer.count, Description: The number of timer instances that are currently active. An active timer is registered to tick at some point in the future and has not yet been canceled., Unit: {timer}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772078Z, 2025-10-20T18:28:32.6546601Z]
+Value: 2
+
+Metric Name: dotnet.assembly.count, Description: The number of .NET assemblies that are currently loaded., Unit: {assembly}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772146Z, 2025-10-20T18:28:32.6546602Z]
+Value: 158
+
+Metric Name: dotnet.process.cpu.count, Description: The number of processors available to the process., Unit: {cpu}, Metric Type: LongSumNonMonotonic
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772316Z, 2025-10-20T18:28:32.6546606Z]
+Value: 12
+
+Metric Name: dotnet.process.cpu.time, Description: CPU time used by the process., Unit: s, Metric Type: DoubleSum
+Instrumentation scope (Meter):
+        Name: System.Runtime
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:28:32.6546607Z] cpu.mode: user
+Value: 1.703125
+(2025-10-20T18:26:02.6772393Z, 2025-10-20T18:28:32.6546607Z] cpu.mode: system
+Value: 0.359375
