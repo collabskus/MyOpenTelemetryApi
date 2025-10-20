@@ -29,22 +29,6 @@ public class ContactService(
     private readonly Histogram<double> _searchDuration = meterFactory.Create("MyOpenTelemetryApi.Contacts")
         .CreateHistogram<double>("contacts.search.duration", "seconds", "Duration of contact search operations");
 
-    public async Task<List<ContactDto>> GetAllAsync(CancellationToken cancellationToken = default)
-    {
-        using Activity? activity = _activitySource.StartActivity("GetAllContacts", ActivityKind.Internal);
-
-        _logger.LogInformation("Getting all contacts");
-
-        IEnumerable<Contact> contacts = await _unitOfWork.Contacts.GetAllAsync();
-        List<ContactDto> contactDtos = [];
-        foreach (Contact contact in contacts)
-        {
-            contactDtos.Add(MapToDto(contact));
-        }
-
-        return contactDtos;
-    }
-
     public async Task<ContactDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
         using Activity? activity = _activitySource.StartActivity("GetContactById", ActivityKind.Internal);
@@ -52,7 +36,7 @@ public class ContactService(
 
         _logger.LogInformation("Getting contact by ID: {ContactId}", id);
 
-        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id);
+        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id, cancellationToken);
         if (contact == null)
         {
             _logger.LogWarning("Contact not found: {ContactId}", id);
@@ -69,7 +53,7 @@ public class ContactService(
 
         _logger.LogInformation("Getting contact with details: {ContactId}", id);
 
-        Contact? contact = await _unitOfWork.Contacts.GetContactWithDetailsAsync(id);
+        Contact? contact = await _unitOfWork.Contacts.GetContactWithDetailsAsync(id, cancellationToken);
         if (contact == null)
         {
             _logger.LogWarning("Contact not found: {ContactId}", id);
@@ -112,11 +96,10 @@ public class ContactService(
 
         _logger.LogInformation("Searching contacts with term: {SearchTerm}", searchTerm);
 
-        // Record search metric and measure duration
         _contactSearches.Add(1, new KeyValuePair<string, object?>("search.term.length", searchTerm.Length));
 
         var stopwatch = Stopwatch.StartNew();
-        var contacts = await _unitOfWork.Contacts.SearchContactsAsync(searchTerm);
+        var contacts = await _unitOfWork.Contacts.SearchContactsAsync(searchTerm, cancellationToken);
         stopwatch.Stop();
 
         _searchDuration.Record(stopwatch.Elapsed.TotalSeconds,
@@ -134,7 +117,7 @@ public class ContactService(
 
         _logger.LogInformation("Getting contacts by group: {GroupId}", groupId);
 
-        var contacts = await _unitOfWork.Contacts.GetContactsByGroupAsync(groupId);
+        var contacts = await _unitOfWork.Contacts.GetContactsByGroupAsync(groupId, cancellationToken);
         return contacts.Select(MapToSummaryDto).ToList();
     }
 
@@ -145,7 +128,7 @@ public class ContactService(
 
         _logger.LogInformation("Getting contacts by tag: {TagId}", tagId);
 
-        var contacts = await _unitOfWork.Contacts.GetContactsByTagAsync(tagId);
+        var contacts = await _unitOfWork.Contacts.GetContactsByTagAsync(tagId, cancellationToken);
         return contacts.Select(MapToSummaryDto).ToList();
     }
 
@@ -214,14 +197,14 @@ public class ContactService(
             }).ToList();
         }
 
-        await _unitOfWork.Contacts.AddAsync(contact);
+        await _unitOfWork.Contacts.AddAsync(contact, cancellationToken);
 
         // Handle groups
         if (dto.GroupIds != null && dto.GroupIds.Count != 0)
         {
             foreach (Guid groupId in dto.GroupIds)
             {
-                Group? group = await _unitOfWork.Groups.GetByIdAsync(groupId);
+                Group? group = await _unitOfWork.Groups.GetByIdAsync(groupId, cancellationToken);
                 if (group != null)
                 {
                     contact.ContactGroups ??= [];
@@ -239,7 +222,7 @@ public class ContactService(
         {
             foreach (Guid tagId in dto.TagIds)
             {
-                Tag? tag = await _unitOfWork.Tags.GetByIdAsync(tagId);
+                Tag? tag = await _unitOfWork.Tags.GetByIdAsync(tagId, cancellationToken);
                 if (tag != null)
                 {
                     contact.Tags ??= [];
@@ -254,7 +237,6 @@ public class ContactService(
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        // Record metric after successful creation
         _contactsCreated.Add(1,
             new KeyValuePair<string, object?>("company", dto.Company ?? "none"),
             new KeyValuePair<string, object?>("has.email", dto.EmailAddresses?.Count > 0),
@@ -273,7 +255,7 @@ public class ContactService(
 
         _logger.LogInformation("Updating contact: {ContactId}", id);
 
-        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id);
+        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id, cancellationToken);
         if (contact == null)
         {
             _logger.LogWarning("Contact not found for update: {ContactId}", id);
@@ -305,7 +287,7 @@ public class ContactService(
 
         _logger.LogInformation("Deleting contact: {ContactId}", id);
 
-        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id);
+        Contact? contact = await _unitOfWork.Contacts.GetByIdAsync(id, cancellationToken);
         if (contact == null)
         {
             _logger.LogWarning("Contact not found for deletion: {ContactId}", id);
@@ -315,9 +297,7 @@ public class ContactService(
         _unitOfWork.Contacts.Delete(contact);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        // Record deletion metric
-        _contactsDeleted.Add(1,
-            new KeyValuePair<string, object?>("company", contact.Company ?? "none"));
+        _contactsDeleted.Add(1);
 
         _logger.LogInformation("Contact deleted successfully: {ContactId}", id);
 

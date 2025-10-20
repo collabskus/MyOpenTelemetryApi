@@ -10,16 +10,16 @@ namespace MyOpenTelemetryApi.Api.Controllers;
 public class TagsController(ITagService tagService, ILogger<TagsController> logger) : ControllerBase
 {
     [HttpGet]
-    public async Task<ActionResult<List<TagDto>>> GetTags()
+    public async Task<ActionResult<List<TagDto>>> GetTags(CancellationToken cancellationToken = default)
     {
-        List<TagDto> tags = await tagService.GetAllAsync();
+        List<TagDto> tags = await tagService.GetAllAsync(cancellationToken);
         return Ok(tags);
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<TagDto>> GetTag(Guid id)
+    public async Task<ActionResult<TagDto>> GetTag(Guid id, CancellationToken cancellationToken = default)
     {
-        TagDto? tag = await tagService.GetByIdAsync(id);
+        TagDto? tag = await tagService.GetByIdAsync(id, cancellationToken);
         if (tag == null)
         {
             return NotFound();
@@ -28,16 +28,16 @@ public class TagsController(ITagService tagService, ILogger<TagsController> logg
     }
 
     [HttpPost]
-    public async Task<ActionResult<TagDto>> CreateTag(CreateTagDto dto)
+    public async Task<ActionResult<TagDto>> CreateTag(CreateTagDto dto, CancellationToken cancellationToken = default)
     {
         try
         {
-            TagDto tag = await tagService.CreateAsync(dto);
+            TagDto tag = await tagService.CreateAsync(dto, cancellationToken);
             return CreatedAtAction(nameof(GetTag), new { id = tag.Id }, tag);
         }
         catch (InvalidOperationException ex)
         {
-            return Conflict(ex.Message);
+            return BadRequest(ex.Message);
         }
         catch (Exception ex)
         {
@@ -47,11 +47,11 @@ public class TagsController(ITagService tagService, ILogger<TagsController> logg
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<TagDto>> UpdateTag(Guid id, CreateTagDto dto)
+    public async Task<ActionResult<TagDto>> UpdateTag(Guid id, CreateTagDto dto, CancellationToken cancellationToken = default)
     {
         try
         {
-            TagDto? tag = await tagService.UpdateAsync(id, dto);
+            TagDto? tag = await tagService.UpdateAsync(id, dto, cancellationToken);
             if (tag == null)
             {
                 return NotFound();
@@ -60,7 +60,7 @@ public class TagsController(ITagService tagService, ILogger<TagsController> logg
         }
         catch (InvalidOperationException ex)
         {
-            return Conflict(ex.Message);
+            return BadRequest(ex.Message);
         }
         catch (Exception ex)
         {
@@ -70,9 +70,9 @@ public class TagsController(ITagService tagService, ILogger<TagsController> logg
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteTag(Guid id)
+    public async Task<IActionResult> DeleteTag(Guid id, CancellationToken cancellationToken = default)
     {
-        bool deleted = await tagService.DeleteAsync(id);
+        bool deleted = await tagService.DeleteAsync(id, cancellationToken);
         if (!deleted)
         {
             return NotFound();

@@ -8,23 +8,23 @@ namespace MyOpenTelemetryApi.Infrastructure.Repositories;
 
 public class ContactRepository(AppDbContext context) : Repository<Contact>(context), IContactRepository
 {
-    public async Task<IEnumerable<Contact>> GetContactsByGroupAsync(Guid groupId)
+    public async Task<IEnumerable<Contact>> GetContactsByGroupAsync(Guid groupId, CancellationToken cancellationToken = default)
     {
         return await _context.Contacts
             .Include(c => c.ContactGroups)
             .Where(c => c.ContactGroups.Any(cg => cg.GroupId == groupId))
-            .ToListAsync();
+            .ToListAsync(cancellationToken);
     }
 
-    public async Task<IEnumerable<Contact>> GetContactsByTagAsync(Guid tagId)
+    public async Task<IEnumerable<Contact>> GetContactsByTagAsync(Guid tagId, CancellationToken cancellationToken = default)
     {
         return await _context.Contacts
             .Include(c => c.Tags)
             .Where(c => c.Tags.Any(ct => ct.TagId == tagId))
-            .ToListAsync();
+            .ToListAsync(cancellationToken);
     }
 
-    public async Task<Contact?> GetContactWithDetailsAsync(Guid id)
+    public async Task<Contact?> GetContactWithDetailsAsync(Guid id, CancellationToken cancellationToken = default)
     {
         return await _context.Contacts
             .Include(c => c.EmailAddresses)
@@ -34,10 +34,10 @@ public class ContactRepository(AppDbContext context) : Repository<Contact>(conte
                 .ThenInclude(cg => cg.Group)
             .Include(c => c.Tags)
                 .ThenInclude(ct => ct.Tag)
-            .FirstOrDefaultAsync(c => c.Id == id);
+            .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
     }
 
-    public async Task<IEnumerable<Contact>> SearchContactsAsync(string searchTerm)
+    public async Task<IEnumerable<Contact>> SearchContactsAsync(string searchTerm, CancellationToken cancellationToken = default)
     {
         string lowerSearchTerm = searchTerm.ToLower();
 
@@ -51,6 +51,6 @@ public class ContactRepository(AppDbContext context) : Repository<Contact>(conte
                 (c.Company != null && c.Company.ToLower().Contains(lowerSearchTerm)) ||
                 c.EmailAddresses.Any(e => e.Email.ToLower().Contains(lowerSearchTerm)) ||
                 c.PhoneNumbers.Any(p => p.Number.Contains(searchTerm)))
-            .ToListAsync();
+            .ToListAsync(cancellationToken);
     }
 }

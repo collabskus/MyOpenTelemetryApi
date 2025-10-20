@@ -5,9 +5,9 @@ namespace MyOpenTelemetryApi.Application.Services;
 
 public interface IGroupService
 {
-    Task<GroupDto?> GetByIdAsync(Guid id);
-    Task<List<GroupDto>> GetAllAsync();
-    Task<GroupDto> CreateAsync(CreateGroupDto dto);
-    Task<GroupDto?> UpdateAsync(Guid id, UpdateGroupDto dto);
-    Task<bool> DeleteAsync(Guid id);
+    Task<GroupDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<List<GroupDto>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<GroupDto> CreateAsync(CreateGroupDto dto, CancellationToken cancellationToken = default);
+    Task<GroupDto?> UpdateAsync(Guid id, UpdateGroupDto dto, CancellationToken cancellationToken = default);
+    Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default);
 }

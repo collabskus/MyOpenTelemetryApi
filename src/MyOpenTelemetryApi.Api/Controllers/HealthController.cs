@@ -10,7 +10,7 @@ namespace MyOpenTelemetryApi.Api.Controllers;
 public class HealthController(AppDbContext dbContext, ILogger<HealthController> logger) : ControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> GetHealth()
+    public async Task<IActionResult> GetHealth(CancellationToken cancellationToken = default)
     {
         var health = new
         {
@@ -22,7 +22,7 @@ public class HealthController(AppDbContext dbContext, ILogger<HealthController> 
         try
         {
             // Test database connectivity
-            await dbContext.Database.CanConnectAsync();
+            await dbContext.Database.CanConnectAsync(cancellationToken);
             return Ok(health);
         }
         catch (Exception ex)
@@ -39,13 +39,13 @@ public class HealthController(AppDbContext dbContext, ILogger<HealthController> 
     }
 
     [HttpGet("ready")]
-    public async Task<IActionResult> GetReadiness()
+    public async Task<IActionResult> GetReadiness(CancellationToken cancellationToken = default)
     {
         try
         {
             // Check if database is accessible and migrations are applied
-            await dbContext.Database.CanConnectAsync();
-            IEnumerable<string> pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync();
+            await dbContext.Database.CanConnectAsync(cancellationToken);
+            IEnumerable<string> pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync(cancellationToken);
 
             if (pendingMigrations.Any())
             {

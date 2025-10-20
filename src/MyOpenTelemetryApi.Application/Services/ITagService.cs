@@ -5,9 +5,9 @@ namespace MyOpenTelemetryApi.Application.Services;
 
 public interface ITagService
 {
-    Task<TagDto?> GetByIdAsync(Guid id);
-    Task<List<TagDto>> GetAllAsync();
-    Task<TagDto> CreateAsync(CreateTagDto dto);
-    Task<TagDto?> UpdateAsync(Guid id, CreateTagDto dto);
-    Task<bool> DeleteAsync(Guid id);
+    Task<TagDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<List<TagDto>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<TagDto> CreateAsync(CreateTagDto dto, CancellationToken cancellationToken = default);
+    Task<TagDto?> UpdateAsync(Guid id, CreateTagDto dto, CancellationToken cancellationToken = default);
+    Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default);
 }

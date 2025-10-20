@@ -7,15 +7,15 @@ namespace MyOpenTelemetryApi.Application.Services;
 
 public class GroupService(IUnitOfWork unitOfWork) : IGroupService
 {
-    public async Task<GroupDto?> GetByIdAsync(Guid id)
+    public async Task<GroupDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        Group? group = await unitOfWork.Groups.GetByIdAsync(id);
+        Group? group = await unitOfWork.Groups.GetByIdAsync(id, cancellationToken);
         return group == null ? null : MapToDto(group);
     }
 
-    public async Task<List<GroupDto>> GetAllAsync()
+    public async Task<List<GroupDto>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        IEnumerable<Group> groups = await unitOfWork.Groups.GetAllAsync();
+        IEnumerable<Group> groups = await unitOfWork.Groups.GetAllAsync(cancellationToken);
         List<GroupDto> groupDtos = [];
 
         foreach (Group group in groups)
@@ -26,7 +26,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
         return groupDtos;
     }
 
-    public async Task<GroupDto> CreateAsync(CreateGroupDto dto)
+    public async Task<GroupDto> CreateAsync(CreateGroupDto dto, CancellationToken cancellationToken = default)
     {
         Group group = new()
         {
@@ -36,33 +36,33 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
             CreatedAt = DateTime.UtcNow
         };
 
-        await unitOfWork.Groups.AddAsync(group);
-        await unitOfWork.SaveChangesAsync();
+        await unitOfWork.Groups.AddAsync(group, cancellationToken);
+        await unitOfWork.SaveChangesAsync(cancellationToken);
 
         return MapToDto(group);
     }
 
-    public async Task<GroupDto?> UpdateAsync(Guid id, UpdateGroupDto dto)
+    public async Task<GroupDto?> UpdateAsync(Guid id, UpdateGroupDto dto, CancellationToken cancellationToken = default)
     {
-        Group? group = await unitOfWork.Groups.GetByIdAsync(id);
+        Group? group = await unitOfWork.Groups.GetByIdAsync(id, cancellationToken);
         if (group == null) return null;
 
         group.Name = dto.Name;
         group.Description = dto.Description;
 
         unitOfWork.Groups.Update(group);
-        await unitOfWork.SaveChangesAsync();
+        await unitOfWork.SaveChangesAsync(cancellationToken);
 
         return MapToDto(group);
     }
 
-    public async Task<bool> DeleteAsync(Guid id)
+    public async Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        Group? group = await unitOfWork.Groups.GetByIdAsync(id);
+        Group? group = await unitOfWork.Groups.GetByIdAsync(id, cancellationToken);
         if (group == null) return false;
 
         unitOfWork.Groups.Delete(group);
-        await unitOfWork.SaveChangesAsync();
+        await unitOfWork.SaveChangesAsync(cancellationToken);
         return true;
     }
 

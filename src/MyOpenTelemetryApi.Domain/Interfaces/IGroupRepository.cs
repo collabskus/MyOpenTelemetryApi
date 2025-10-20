@@ -5,5 +5,5 @@ namespace MyOpenTelemetryApi.Domain.Interfaces;
 
 public interface IGroupRepository : IRepository<Group>
 {
-    Task<Group?> GetGroupWithContactsAsync(Guid id);
+    Task<Group?> GetGroupWithContactsAsync(Guid id, CancellationToken cancellationToken = default);
 }

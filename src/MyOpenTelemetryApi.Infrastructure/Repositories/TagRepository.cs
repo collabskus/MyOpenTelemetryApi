@@ -8,9 +8,9 @@ namespace MyOpenTelemetryApi.Infrastructure.Repositories;
 
 public class TagRepository(AppDbContext context) : Repository<Tag>(context), ITagRepository
 {
-    public async Task<Tag?> GetByNameAsync(string name)
+    public async Task<Tag?> GetByNameAsync(string name, CancellationToken cancellationToken = default)
     {
         return await _context.Tags
-            .FirstOrDefaultAsync(t => t.Name.ToLower() == name.ToLower());
+            .FirstOrDefaultAsync(t => t.Name.ToLower() == name.ToLower(), cancellationToken);
     }
 }

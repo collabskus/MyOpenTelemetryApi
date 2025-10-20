@@ -5,5 +5,5 @@ namespace MyOpenTelemetryApi.Domain.Interfaces;
 
 public interface ITagRepository : IRepository<Tag>
 {
-    Task<Tag?> GetByNameAsync(string name);
+    Task<Tag?> GetByNameAsync(string name, CancellationToken cancellationToken = default);
 }

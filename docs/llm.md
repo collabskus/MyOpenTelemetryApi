@@ -1,50 +1,144 @@
-10:49:19:236	Clean started at 10:49 AM...
-10:49:19:262	1>------ Clean started: Project: MyOpenTelemetryApi.Infrastructure.Tests, Configuration: Debug Any CPU ------
-10:49:19:263	2>------ Clean started: Project: MyOpenTelemetryApi.Application.Tests, Configuration: Debug Any CPU ------
-10:49:19:263	3>------ Clean started: Project: MyOpenTelemetryApi.Api.Tests, Configuration: Debug Any CPU ------
-10:49:19:322	1>C:\Program Files\dotnet\sdk\10.0.100-rc.2.25502.107\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(351,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-10:49:19:334	2>C:\Program Files\dotnet\sdk\10.0.100-rc.2.25502.107\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(351,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-10:49:19:336	3>C:\Program Files\dotnet\sdk\10.0.100-rc.2.25502.107\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(351,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-10:49:19:402	4>------ Clean started: Project: MyOpenTelemetryApi.Api, Configuration: Debug Any CPU ------
-10:49:19:497	5>------ Clean started: Project: MyOpenTelemetryApi.Infrastructure, Configuration: Debug Any CPU ------
-10:49:19:497	6>------ Clean started: Project: MyOpenTelemetryApi.Application, Configuration: Debug Any CPU ------
-10:49:19:608	7>------ Clean started: Project: MyOpenTelemetryApi.Domain, Configuration: Debug Any CPU ------
-10:49:19:642	========== Clean: 7 succeeded, 0 failed, 0 skipped ==========
-10:49:19:642	========== Clean completed at 10:49 AM and took 00.416 seconds ==========
-10:49:37:437	Rebuild started at 10:49 AM...
-10:49:37:596	Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj (in 0.8 ms).
-10:49:37:596	Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj (in 65 ms).
-10:49:37:596	Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj (in 73 ms).
-10:49:37:673	1>------ Rebuild All started: Project: MyOpenTelemetryApi.Domain, Configuration: Debug Any CPU ------
-10:49:37:673	Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj (in 112 ms).
-10:49:37:673	Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj (in 112 ms).
-10:49:37:673	Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj (in 112 ms).
-10:49:37:673	Restored C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj (in 158 ms).
-10:49:37:724	1>C:\Program Files\dotnet\sdk\10.0.100-rc.2.25502.107\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(351,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-10:49:37:861	1>  MyOpenTelemetryApi.Domain -> C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-10:49:37:867	1>  Building MyOpenTelemetryApi.Domain - Debug - net10.0
-10:49:37:871	2>------ Rebuild All started: Project: MyOpenTelemetryApi.Infrastructure, Configuration: Debug Any CPU ------
-10:49:37:872	3>------ Rebuild All started: Project: MyOpenTelemetryApi.Application, Configuration: Debug Any CPU ------
-10:49:37:928	3>C:\Program Files\dotnet\sdk\10.0.100-rc.2.25502.107\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(351,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-10:49:37:931	2>C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Tasks.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
-10:49:37:931	2>C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Build.Utilities.Core' 17.15.0-preview-25277-114 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq
-10:49:38:207	2>  MyOpenTelemetryApi.Infrastructure -> C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
-10:49:38:214	2>  Building MyOpenTelemetryApi.Infrastructure - Debug - net10.0
-10:49:38:592	3>  MyOpenTelemetryApi.Application -> C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-10:49:38:592	3>  Building MyOpenTelemetryApi.Application - Debug - net10.0
-10:49:38:595	4>------ Rebuild All started: Project: MyOpenTelemetryApi.Api, Configuration: Debug Any CPU ------
-10:49:39:436	4>  MyOpenTelemetryApi.Api -> C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-10:49:39:446	4>  Building MyOpenTelemetryApi.Api - Debug - net10.0
-10:49:39:446	4>  Copied appsettings files to output directory
-10:49:39:449	5>------ Rebuild All started: Project: MyOpenTelemetryApi.Infrastructure.Tests, Configuration: Debug Any CPU ------
-10:49:39:450	6>------ Rebuild All started: Project: MyOpenTelemetryApi.Application.Tests, Configuration: Debug Any CPU ------
-10:49:39:450	7>------ Rebuild All started: Project: MyOpenTelemetryApi.Api.Tests, Configuration: Debug Any CPU ------
-10:49:39:510	7>C:\Program Files\dotnet\sdk\10.0.100-rc.2.25502.107\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(351,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
-10:49:39:887	6>  MyOpenTelemetryApi.Application.Tests -> C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
-10:49:39:894	6>  Building MyOpenTelemetryApi.Application.Tests - Debug - net10.0
-10:49:40:241	5>  MyOpenTelemetryApi.Infrastructure.Tests -> C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
-10:49:40:241	5>  Building MyOpenTelemetryApi.Infrastructure.Tests - Debug - net10.0
-10:49:40:264	7>  MyOpenTelemetryApi.Api.Tests -> C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
-10:49:40:264	7>  Building MyOpenTelemetryApi.Api.Tests - Debug - net10.0
-10:49:40:275	========== Rebuild All: 7 succeeded, 0 failed, 0 skipped ==========
-10:49:40:275	========== Rebuild completed at 10:49 AM and took 02.854 seconds ==========
+Looking at your repository code, **you're absolutely right** - it's missing cancellation tokens, which is a significant oversight for production code.
+
+## Why This Matters
+
+Cancellation tokens are essential for:
+
+1. **Graceful shutdown** - When your API shuts down, requests can be cancelled cleanly
+2. **Request timeouts** - If a client disconnects or times out, the database query should stop
+3. **Resource efficiency** - No point continuing expensive DB operations nobody is waiting for
+4. **Best practice** - ASP.NET Core automatically provides cancellation tokens through the request pipeline
+
+## The Corrected Version
+
+```csharp
+// src/MyOpenTelemetryApi.Infrastructure/Repositories/ContactRepository.cs
+using Microsoft.EntityFrameworkCore;
+using MyOpenTelemetryApi.Domain.Entities;
+using MyOpenTelemetryApi.Domain.Interfaces;
+using MyOpenTelemetryApi.Infrastructure.Data;
+
+namespace MyOpenTelemetryApi.Infrastructure.Repositories;
+
+public class ContactRepository(AppDbContext context) : Repository<Contact>(context), IContactRepository
+{
+    public async Task<IEnumerable<Contact>> GetContactsByGroupAsync(Guid groupId, CancellationToken cancellationToken = default)
+    {
+        return await _context.Contacts
+            .Include(c => c.ContactGroups)
+            .Where(c => c.ContactGroups.Any(cg => cg.GroupId == groupId))
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IEnumerable<Contact>> GetContactsByTagAsync(Guid tagId, CancellationToken cancellationToken = default)
+    {
+        return await _context.Contacts
+            .Include(c => c.Tags)
+            .Where(c => c.Tags.Any(ct => ct.TagId == tagId))
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<Contact?> GetContactWithDetailsAsync(Guid id, CancellationToken cancellationToken = default)
+    {
+        return await _context.Contacts
+            .Include(c => c.EmailAddresses)
+            .Include(c => c.PhoneNumbers)
+            .Include(c => c.Addresses)
+            .Include(c => c.ContactGroups)
+                .ThenInclude(cg => cg.Group)
+            .Include(c => c.Tags)
+                .ThenInclude(ct => ct.Tag)
+            .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+    }
+
+    public async Task<IEnumerable<Contact>> SearchContactsAsync(string searchTerm, CancellationToken cancellationToken = default)
+    {
+        string lowerSearchTerm = searchTerm.ToLower();
+        
+        return await _context.Contacts
+            .Include(c => c.EmailAddresses)
+            .Include(c => c.PhoneNumbers)
+            .Where(c =>
+                c.FirstName.ToLower().Contains(lowerSearchTerm) ||
+                c.LastName.ToLower().Contains(lowerSearchTerm) ||
+                (c.Nickname != null && c.Nickname.ToLower().Contains(lowerSearchTerm)) ||
+                (c.Company != null && c.Company.ToLower().Contains(lowerSearchTerm)) ||
+                c.EmailAddresses.Any(e => e.Email.ToLower().Contains(lowerSearchTerm)) ||
+                c.PhoneNumbers.Any(p => p.Number.Contains(searchTerm)))
+            .ToListAsync(cancellationToken);
+    }
+}
+```
+
+## What You Need to Update
+
+1. **Repository interface** (`IContactRepository`) - Add `CancellationToken` parameters to method signatures
+2. **Base repository** (`Repository<T>`) - Add cancellation token support to base CRUD operations
+3. **Service layer** - Pass cancellation tokens through from controllers
+4. **Controllers** - Accept `CancellationToken` parameters (ASP.NET Core automatically provides them)
+
+The `= default` parameter makes it backward compatible during migration, though for your educational project you might prefer making them required parameters to enforce the pattern throughout.
+
+Would you like me to show you the complete updates needed for the interface and base repository as well?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Let me search for more service files to complete the picture.Perfect! Now I have a complete picture. Let me create all the updated files with cancellation token support throughout your entire project.Perfect! I've created all the updated files with proper cancellation token support throughout your entire project. Here's a summary of what was updated:
+
+## Summary of Changes
+
+### **Domain Layer (Interfaces)**
+1. ✅ **IRepository.cs** - Base repository interface with CancellationToken
+2. ✅ **IContactRepository.cs** - Contact-specific repository interface
+3. ✅ **IGroupRepository.cs** - Group repository interface
+4. ✅ **ITagRepository.cs** - Tag repository interface
+
+### **Infrastructure Layer (Repository Implementations)**
+5. ✅ **Repository.cs** - Base repository implementation with cancellation token support in all async methods
+6. ✅ **ContactRepository.cs** - All query methods now accept cancellation tokens
+7. ✅ **GroupRepository.cs** - Updated with cancellation token
+8. ✅ **TagRepository.cs** - Updated with cancellation token
+
+### **Application Layer (Service Interfaces & Implementations)**
+9. ✅ **IGroupService.cs** - Updated interface
+10. ✅ **ITagService.cs** - Updated interface
+11. ✅ **GroupService.cs** - All async methods pass cancellation tokens through
+12. ✅ **TagService.cs** - All async methods pass cancellation tokens through
+13. ✅ **ContactService.cs** - Comprehensive update with cancellation token propagation
+
+### **API Layer (Controllers)**
+14. ✅ **GroupsController.cs** - All endpoints accept and pass cancellation tokens
+15. ✅ **TagsController.cs** - All endpoints accept and pass cancellation tokens
+16. ✅ **ContactsController.cs** - Already had cancellation tokens (no changes needed)
+17. ✅ **HealthController.cs** - Updated health check endpoints
+
+## Key Implementation Details
+
+- **Default parameters**: Used `CancellationToken cancellationToken = default` to make it backward compatible
+- **Synchronous methods**: Methods like `Update()` and `Delete()` don't need cancellation tokens as they're synchronous operations
+- **Proper propagation**: Cancellation tokens flow from controllers → services → repositories → EF Core
+- **ASP.NET Core integration**: Controllers automatically receive cancellation tokens from the HTTP request pipeline
+
+## Benefits You'll Get
+
+1. **Graceful shutdown** - When your API stops, in-flight requests can be cancelled cleanly
+2. **Client disconnect handling** - If a client times out or disconnects, database queries stop
+3. **Resource efficiency** - No wasted CPU/DB resources on abandoned operations
+4. **Production ready** - Follows .NET best practices for async/await patterns
+
+All files are ready for you to copy and paste directly into your project!
