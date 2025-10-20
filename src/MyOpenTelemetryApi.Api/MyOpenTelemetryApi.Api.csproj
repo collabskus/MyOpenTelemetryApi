@@ -5,26 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Humanizer.Core" />
+    <!-- ASP.NET Core OpenAPI support -->
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
-    <PackageReference Include="Microsoft.Build.Framework">
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Build.Locator" />
-    <PackageReference Include="Microsoft.Build.Tasks.Core">
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Build.Utilities.Core">
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
+    
+    <!-- Entity Framework Core Design-time tools (migrations, scaffolding) -->
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.OpenApi" />
-    <PackageReference Include="Newtonsoft.Json" />
-    <PackageReference Include="Npgsql" />
+    
+    <!-- PostgreSQL provider for EF Core -->
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"/>
+    
+    <!-- OpenTelemetry packages -->
     <PackageReference Include="OpenTelemetry"/>
     <PackageReference Include="OpenTelemetry.Exporter.Console" />
     <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol"/>
@@ -34,19 +27,11 @@
     <PackageReference Include="OpenTelemetry.Instrumentation.Http"/>
     <PackageReference Include="OpenTelemetry.Instrumentation.Process"/>
     <PackageReference Include="OpenTelemetry.Instrumentation.Runtime"/>
-    <PackageReference Include="System.CodeDom"/>
-    <PackageReference Include="System.Configuration.ConfigurationManager"/>
-    <PackageReference Include="System.Formats.Nrbf"/>
-    <PackageReference Include="System.Resources.Extensions"/>
-    <PackageReference Include="System.Security.Cryptography.Pkcs"/>
-    <PackageReference Include="System.Security.Cryptography.ProtectedData"/>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference
-      Include="..\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj" />
-    <ProjectReference
-      Include="..\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj" />
+    <ProjectReference Include="..\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
