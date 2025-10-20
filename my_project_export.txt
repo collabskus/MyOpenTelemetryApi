@@ -158,9 +158,14 @@ D:\DEV\MYOPENTELEMETRYAPI
     |       UnitTest1.cs
     |       
     +---MyOpenTelemetryApi.Application.Tests
-    |       MyOpenTelemetryApi.Application.Tests.csproj
-    |       UnitTest1.cs
-    |       
+    |   |   MyOpenTelemetryApi.Application.Tests.csproj
+    |   |   UnitTest1.cs
+    |   |   
+    |   \---obj
+    |       \---Debug
+    |           \---net10.0
+    |                   MyOpenTelemetryApi.Application.Tests.AssemblyInfo.cs
+    |                   
     \---MyOpenTelemetryApi.Infrastructure.Tests
             MyOpenTelemetryApi.Infrastructure.Tests.csproj
             UnitTest1.cs
