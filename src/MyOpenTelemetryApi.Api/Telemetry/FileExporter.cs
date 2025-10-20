@@ -2,13 +2,14 @@
 using System.Text.Json;
 using OpenTelemetry;
 using OpenTelemetry.Logs;
+using OpenTelemetry.Resources;
 
 namespace MyOpenTelemetryApi.Api.Telemetry;
 
 public class FileLogExporter : BaseExporter<LogRecord>
 {
     private readonly string _filePath;
-    private readonly Lock _lockObject = new();
+    private readonly object _lockObject = new();
     private readonly JsonSerializerOptions _jsonOptions;
 
     public FileLogExporter(string filePath)
@@ -40,17 +41,18 @@ public class FileLogExporter : BaseExporter<LogRecord>
                 {
                     var logEntry = new
                     {
-                        logRecord.Timestamp,
+                        Timestamp = logRecord.Timestamp,
                         TraceId = logRecord.TraceId.ToString(),
                         SpanId = logRecord.SpanId.ToString(),
                         TraceFlags = logRecord.TraceFlags.ToString(),
-                        logRecord.CategoryName,
+                        CategoryName = logRecord.CategoryName,
                         LogLevel = logRecord.LogLevel.ToString(),
-                        logRecord.FormattedMessage,
-                        logRecord.Body,
+                        FormattedMessage = logRecord.FormattedMessage,
+                        Body = logRecord.Body,
                         ScopeValues = ExtractScopeValues(logRecord),
                         Exception = logRecord.Exception?.ToString(),
-                        Attributes = ExtractAttributes(logRecord)
+                        Attributes = ExtractAttributes(logRecord),
+                        Resource = ExtractResourceAttributes(logRecord)
                     };
 
                     string json = JsonSerializer.Serialize(logEntry, _jsonOptions);
@@ -67,15 +69,23 @@ public class FileLogExporter : BaseExporter<LogRecord>
         }
     }
 
-    private static List<object> ExtractScopeValues(LogRecord logRecord)
+    private static List<Dictionary<string, object?>> ExtractScopeValues(LogRecord logRecord)
     {
-        List<object> scopes = [];
+        List<Dictionary<string, object?>> scopes = [];
 
         logRecord.ForEachScope((scope, state) =>
         {
-            if (!scope.Equals(default(LogRecordScope)))
+            if (scope is IEnumerable<KeyValuePair<string, object?>> scopeItems)
             {
-                scopes.Add(scope.ToString() ?? "null");
+                var scopeDict = new Dictionary<string, object?>();
+                foreach (var item in scopeItems)
+                {
+                    scopeDict[item.Key] = item.Value;
+                }
+                if (scopeDict.Count > 0)
+                {
+                    scopes.Add(scopeDict);
+                }
             }
         }, scopes);
 
@@ -95,5 +105,22 @@ public class FileLogExporter : BaseExporter<LogRecord>
         }
 
         return attributes;
+    }
+
+    private static Dictionary<string, object?> ExtractResourceAttributes(LogRecord logRecord)
+    {
+        Dictionary<string, object?> resourceAttrs = [];
+
+        Resource? resource = logRecord.Logger?.ProviderSdk?.GetResource();
+
+        if (resource != null)
+        {
+            foreach (var attr in resource.Attributes)
+            {
+                resourceAttrs[attr.Key] = attr.Value;
+            }
+        }
+
+        return resourceAttrs;
     }
 }

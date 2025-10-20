@@ -1,4 +1,4 @@
-﻿// src/MyOpenTelemetryApi.Application/Services/ContactService.cs
+﻿// src/MyOpenTelemetryApi.Application/Services/ContactService.cs - Enhanced version
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
 using Microsoft.Extensions.Logging;
@@ -136,116 +136,147 @@ public class ContactService(
     {
         using Activity? activity = _activitySource.StartActivity("CreateContact", ActivityKind.Internal);
 
-        _logger.LogInformation("Creating new contact: {FirstName} {LastName}", dto.FirstName, dto.LastName);
-
-        Contact contact = new()
+        // Enhanced logging with more context
+        using (_logger.BeginScope(new Dictionary<string, object>
         {
-            Id = Guid.NewGuid(),
-            FirstName = dto.FirstName,
-            LastName = dto.LastName,
-            MiddleName = dto.MiddleName,
-            Nickname = dto.Nickname,
-            Company = dto.Company,
-            JobTitle = dto.JobTitle,
-            DateOfBirth = dto.DateOfBirth,
-            Notes = dto.Notes,
-            CreatedAt = DateTime.UtcNow,
-            UpdatedAt = DateTime.UtcNow
-        };
-
-        // Map email addresses
-        if (dto.EmailAddresses != null)
+            ["Operation"] = "CreateContact",
+            ["HasEmail"] = dto.EmailAddresses?.Count > 0,
+            ["HasPhone"] = dto.PhoneNumbers?.Count > 0,
+            ["HasAddress"] = dto.Addresses?.Count > 0,
+            ["Company"] = dto.Company ?? "None"
+        }))
         {
-            contact.EmailAddresses = dto.EmailAddresses.Select(e => new EmailAddress
+            _logger.LogInformation(
+                "Creating new contact: {FirstName} {LastName} with {EmailCount} emails, {PhoneCount} phones, {AddressCount} addresses",
+                dto.FirstName,
+                dto.LastName,
+                dto.EmailAddresses?.Count ?? 0,
+                dto.PhoneNumbers?.Count ?? 0,
+                dto.Addresses?.Count ?? 0
+            );
+
+            Contact contact = new()
             {
                 Id = Guid.NewGuid(),
-                ContactId = contact.Id,
-                Email = e.Email,
-                Type = Enum.Parse<EmailType>(e.Type, ignoreCase: true),
-                IsPrimary = e.IsPrimary
-            }).ToList();
-        }
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                MiddleName = dto.MiddleName,
+                Nickname = dto.Nickname,
+                Company = dto.Company,
+                JobTitle = dto.JobTitle,
+                DateOfBirth = dto.DateOfBirth,
+                Notes = dto.Notes,
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow
+            };
 
-        // Map phone numbers
-        if (dto.PhoneNumbers != null)
-        {
-            contact.PhoneNumbers = dto.PhoneNumbers.Select(p => new PhoneNumber
+            // Add generated contact ID to activity and log scope
+            activity?.SetTag("contact.id", contact.Id);
+            activity?.SetTag("contact.has_email", dto.EmailAddresses?.Count > 0);
+            activity?.SetTag("contact.has_phone", dto.PhoneNumbers?.Count > 0);
+            activity?.SetTag("contact.company", dto.Company ?? "none");
+
+            // Map email addresses
+            if (dto.EmailAddresses != null)
             {
-                Id = Guid.NewGuid(),
-                ContactId = contact.Id,
-                Number = p.Number,
-                Type = Enum.Parse<PhoneType>(p.Type, ignoreCase: true),
-                IsPrimary = p.IsPrimary
-            }).ToList();
-        }
-
-        // Map addresses
-        if (dto.Addresses != null)
-        {
-            contact.Addresses = dto.Addresses.Select(a => new Address
-            {
-                Id = Guid.NewGuid(),
-                ContactId = contact.Id,
-                StreetLine1 = a.StreetLine1,
-                StreetLine2 = a.StreetLine2,
-                City = a.City,
-                StateProvince = a.StateProvince,
-                PostalCode = a.PostalCode,
-                Country = a.Country,
-                Type = Enum.Parse<AddressType>(a.Type, ignoreCase: true),
-                IsPrimary = a.IsPrimary
-            }).ToList();
-        }
-
-        await _unitOfWork.Contacts.AddAsync(contact, cancellationToken);
-
-        // Handle groups
-        if (dto.GroupIds != null && dto.GroupIds.Count != 0)
-        {
-            foreach (Guid groupId in dto.GroupIds)
-            {
-                Group? group = await _unitOfWork.Groups.GetByIdAsync(groupId, cancellationToken);
-                if (group != null)
+                contact.EmailAddresses = dto.EmailAddresses.Select(e => new EmailAddress
                 {
-                    contact.ContactGroups ??= [];
-                    contact.ContactGroups.Add(new ContactGroup
-                    {
-                        ContactId = contact.Id,
-                        GroupId = groupId
-                    });
-                }
+                    Id = Guid.NewGuid(),
+                    ContactId = contact.Id,
+                    Email = e.Email,
+                    Type = Enum.Parse<EmailType>(e.Type, ignoreCase: true),
+                    IsPrimary = e.IsPrimary
+                }).ToList();
             }
-        }
 
-        // Handle tags
-        if (dto.TagIds != null && dto.TagIds.Count != 0)
-        {
-            foreach (Guid tagId in dto.TagIds)
+            // Map phone numbers
+            if (dto.PhoneNumbers != null)
             {
-                Tag? tag = await _unitOfWork.Tags.GetByIdAsync(tagId, cancellationToken);
-                if (tag != null)
+                contact.PhoneNumbers = dto.PhoneNumbers.Select(p => new PhoneNumber
                 {
-                    contact.Tags ??= [];
-                    contact.Tags.Add(new ContactTag
-                    {
-                        ContactId = contact.Id,
-                        TagId = tagId
-                    });
-                }
+                    Id = Guid.NewGuid(),
+                    ContactId = contact.Id,
+                    Number = p.Number,
+                    Type = Enum.Parse<PhoneType>(p.Type, ignoreCase: true),
+                    IsPrimary = p.IsPrimary
+                }).ToList();
             }
+
+            // Map addresses
+            if (dto.Addresses != null)
+            {
+                contact.Addresses = dto.Addresses.Select(a => new Address
+                {
+                    Id = Guid.NewGuid(),
+                    ContactId = contact.Id,
+                    StreetLine1 = a.StreetLine1,
+                    StreetLine2 = a.StreetLine2,
+                    City = a.City,
+                    StateProvince = a.StateProvince,
+                    PostalCode = a.PostalCode,
+                    Country = a.Country,
+                    Type = Enum.Parse<AddressType>(a.Type, ignoreCase: true),
+                    IsPrimary = a.IsPrimary
+                }).ToList();
+            }
+
+            await _unitOfWork.Contacts.AddAsync(contact, cancellationToken);
+
+            // Handle groups
+            if (dto.GroupIds != null && dto.GroupIds.Count != 0)
+            {
+                foreach (Guid groupId in dto.GroupIds)
+                {
+                    Group? group = await _unitOfWork.Groups.GetByIdAsync(groupId, cancellationToken);
+                    if (group != null)
+                    {
+                        contact.ContactGroups ??= [];
+                        contact.ContactGroups.Add(new ContactGroup
+                        {
+                            ContactId = contact.Id,
+                            GroupId = groupId
+                        });
+                    }
+                }
+                activity?.SetTag("contact.group_count", dto.GroupIds.Count);
+            }
+
+            // Handle tags
+            if (dto.TagIds != null && dto.TagIds.Count != 0)
+            {
+                foreach (Guid tagId in dto.TagIds)
+                {
+                    Tag? tag = await _unitOfWork.Tags.GetByIdAsync(tagId, cancellationToken);
+                    if (tag != null)
+                    {
+                        contact.Tags ??= [];
+                        contact.Tags.Add(new ContactTag
+                        {
+                            ContactId = contact.Id,
+                            TagId = tagId
+                        });
+                    }
+                }
+                activity?.SetTag("contact.tag_count", dto.TagIds.Count);
+            }
+
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+            // Record metric after successful creation
+            _contactsCreated.Add(1,
+                new KeyValuePair<string, object?>("company", dto.Company ?? "none"),
+                new KeyValuePair<string, object?>("has.email", dto.EmailAddresses?.Count > 0),
+                new KeyValuePair<string, object?>("has.phone", dto.PhoneNumbers?.Count > 0));
+
+            _logger.LogInformation(
+                "Contact created successfully: {ContactId} - {FirstName} {LastName}",
+                contact.Id,
+                contact.FirstName,
+                contact.LastName
+            );
+
+            return MapToDto(contact);
         }
-
-        await _unitOfWork.SaveChangesAsync(cancellationToken);
-
-        _contactsCreated.Add(1,
-            new KeyValuePair<string, object?>("company", dto.Company ?? "none"),
-            new KeyValuePair<string, object?>("has.email", dto.EmailAddresses?.Count > 0),
-            new KeyValuePair<string, object?>("has.phone", dto.PhoneNumbers?.Count > 0));
-
-        activity?.SetTag("contact.id", contact.Id);
-        _logger.LogInformation("Contact created successfully: {ContactId}", contact.Id);
-
-        return MapToDto(contact);
     }
 
     public async Task<ContactDto?> UpdateAsync(Guid id, UpdateContactDto dto, CancellationToken cancellationToken = default)
