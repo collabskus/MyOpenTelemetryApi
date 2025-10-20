@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/20/2025 10:26:26
+Generated: 10/20/2025 10:31:07
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -79,6 +79,9 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   +---MyOpenTelemetryApi.Application
 |   |   |   MyOpenTelemetryApi.Application.csproj
 |   |   |   
+|   |   +---bin
+|   |   |   \---Debug
+|   |   |       \---net10.0
 |   |   +---DTOs
 |   |   |       AddressDto.cs
 |   |   |       ContactDto.cs
@@ -91,6 +94,17 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   |   |       TagDto.cs
 |   |   |       UpdateContactDto.cs
 |   |   |       
+|   |   +---obj
+|   |   |   \---Debug
+|   |   |       \---net10.0
+|   |   |           |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+|   |   |           |   MyOpenTelemetryApi.Application.AssemblyInfo.cs
+|   |   |           |   MyOpenTelemetryApi.Application.AssemblyInfoInputs.cache
+|   |   |           |   MyOpenTelemetryApi.Application.GeneratedMSBuildEditorConfig.editorconfig
+|   |   |           |   MyOpenTelemetryApi.Application.GlobalUsings.g.cs
+|   |   |           |   
+|   |   |           +---ref
+|   |   |           \---refint
 |   |   \---Services
 |   |           ContactService.cs
 |   |           GroupService.cs
@@ -158,23 +172,9 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
     |       UnitTest1.cs
     |       
     +---MyOpenTelemetryApi.Application.Tests
-    |   |   MyOpenTelemetryApi.Application.Tests.csproj
-    |   |   UnitTest1.cs
-    |   |   
-    |   +---bin
-    |   |   \---Debug
-    |   |       \---net10.0
-    |   \---obj
-    |       \---Debug
-    |           \---net10.0
-    |               |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-    |               |   MyOpenTelemetryApi.Application.Tests.AssemblyInfo.cs
-    |               |   MyOpenTelemetryApi.Application.Tests.AssemblyInfoInputs.cache
-    |               |   MyOpenTelemetryApi.Application.Tests.GeneratedMSBuildEditorConfig.editorconfig
-    |               |   MyOpenTelemetryApi.Application.Tests.GlobalUsings.g.cs
-    |               |   
-    |               +---ref
-    |               \---refint
+    |       MyOpenTelemetryApi.Application.Tests.csproj
+    |       UnitTest1.cs
+    |       
     \---MyOpenTelemetryApi.Infrastructure.Tests
             MyOpenTelemetryApi.Infrastructure.Tests.csproj
             UnitTest1.cs
@@ -1566,8 +1566,8 @@ MODIFIED: 09/14/2025 21:12:26
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj
-SIZE: 1.66 KB
-MODIFIED: 10/20/2025 10:25:25
+SIZE: 1.29 KB
+MODIFIED: 10/20/2025 10:29:54
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -1579,15 +1579,6 @@ MODIFIED: 10/20/2025 10:25:25
   <ItemGroup>
     <!-- ASP.NET Core OpenAPI support -->
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
-    
-    <!-- Entity Framework Core Design-time tools (migrations, scaffolding) -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    
-    <!-- PostgreSQL provider for EF Core -->
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"/>
     
     <!-- OpenTelemetry packages -->
     <PackageReference Include="OpenTelemetry"/>
@@ -1602,6 +1593,7 @@ MODIFIED: 10/20/2025 10:25:25
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Project references - these bring in EF Core transitively -->
     <ProjectReference Include="..\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj" />
     <ProjectReference Include="..\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj" />
   </ItemGroup>
@@ -6169,7 +6161,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/20/2025 10:26:27
+EXPORT COMPLETED: 10/20/2025 10:31:08
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
