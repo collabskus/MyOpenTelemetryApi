@@ -74,38 +74,12 @@ public class FileLogExporter : BaseExporter<LogRecord>
 
         logRecord.ForEachScope((scope, state) =>
         {
-            // In .NET 10, LogRecordScope needs to be accessed differently
             var scopeDict = new Dictionary<string, object?>();
 
-            // Try to extract scope values using reflection or ToString()
-            // Since we can't directly cast to IEnumerable anymore
-            if (scope != null)
+            // In .NET 10, LogRecordScope is directly iterable
+            foreach (var scopeItem in scope)
             {
-                // Get the type and try to iterate if it's enumerable
-                var scopeType = scope.GetType();
-                if (scope is System.Collections.IEnumerable enumerable and not string)
-                {
-                    try
-                    {
-                        foreach (var item in enumerable)
-                        {
-                            if (item is KeyValuePair<string, object?> kvp)
-                            {
-                                scopeDict[kvp.Key] = kvp.Value;
-                            }
-                        }
-                    }
-                    catch
-                    {
-                        // If iteration fails, store as string
-                        scopeDict["Scope"] = scope.ToString();
-                    }
-                }
-                else
-                {
-                    // Store non-enumerable scope as string
-                    scopeDict["Scope"] = scope.ToString();
-                }
+                scopeDict[scopeItem.Key] = scopeItem.Value;
             }
 
             if (scopeDict.Count > 0)
