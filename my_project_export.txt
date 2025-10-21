@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/21/2025 10:19:38
+Generated: 10/21/2025 11:11:02
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -115,20 +115,13 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   |   |       PhoneType.cs
 |   |   |       Tag.cs
 |   |   |       
-|   |   +---Interfaces
-|   |   |       IContactRepository.cs
-|   |   |       IGroupRepository.cs
-|   |   |       IRepository.cs
-|   |   |       ITagRepository.cs
-|   |   |       IUnitOfWork.cs
-|   |   |       
-|   |   \---obj
-|   |       \---Debug
-|   |           \---net10.0
-|   |                   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|   |                   MyOpenTelemetryApi.Domain.AssemblyInfo.cs
-|   |                   MyOpenTelemetryApi.Domain.AssemblyInfoInputs.cache
-|   |                   
+|   |   \---Interfaces
+|   |           IContactRepository.cs
+|   |           IGroupRepository.cs
+|   |           IRepository.cs
+|   |           ITagRepository.cs
+|   |           IUnitOfWork.cs
+|   |           
 |   \---MyOpenTelemetryApi.Infrastructure
 |       |   MyOpenTelemetryApi.Infrastructure.csproj
 |       |   
@@ -6172,7 +6165,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/21/2025 10:19:39
+EXPORT COMPLETED: 10/21/2025 11:11:03
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
