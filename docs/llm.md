@@ -558,3 +558,79 @@ The fixed `FileExporter.cs` should now compile without errors. The solution was 
 
 
 
+{"timestamp":"2025-10-20T19:03:14.9356899Z","traceId":"0467298114f5790a60f2bbf56d7c65e5","spanId":"98e205e91bd3a99b","traceFlags":"Recorded","categoryName":"MyOpenTelemetryApi.Application.Services.ContactService","logLevel":"Information","formattedMessage":"Contact created successfully: 1ceb657c-ced5-4fa1-8bf3-0c4add1eee69 - Peter-2025-10-20-15-03-12 Parker-2025-10-20-15-03-12","body":"Contact created successfully: {ContactId} - {FirstName} {LastName}","scopeValues":[{"SpanId":"98e205e91bd3a99b","TraceId":"0467298114f5790a60f2bbf56d7c65e5","ParentId":"a40ccb08c9c19067"},{"ConnectionId":"0HNGG19VJR517"},{"RequestId":"0HNGG19VJR517:00000001","RequestPath":"/api/Contacts"},{"ActionId":"26248983-7253-4375-b6cd-ae51d9e8567d","ActionName":"MyOpenTelemetryApi.Api.Controllers.ContactsController.CreateContact (MyOpenTelemetryApi.Api)"},{"Operation":"CreateContact","HasEmail":true,"HasPhone":true,"HasAddress":true,"Company":"Daily Bugle-2025-10-20-15-03-12"}],"exception":null,"attributes":{"ContactId":"1ceb657c-ced5-4fa1-8bf3-0c4add1eee69","FirstName":"Peter-2025-10-20-15-03-12","LastName":"Parker-2025-10-20-15-03-12","{OriginalFormat}":"Contact created successfully: {ContactId} - {FirstName} {LastName}"}}
+
+Excellent! The FileExporter is now working perfectly! 🎉
+
+Looking at that JSON log output, you're getting comprehensive telemetry data with:
+
+**Trace Context:**
+- `traceId`: Full distributed trace ID
+- `spanId`: Current span identifier  
+- `traceFlags`: Showing it's being recorded
+- Parent/child span relationships in the scope values
+
+**Structured Logging:**
+- `formattedMessage`: Human-readable output
+- `body`: Original template with placeholders
+- `attributes`: Extracted structured data (ContactId, FirstName, LastName)
+
+**Rich Scope Information:**
+- OpenTelemetry trace context (SpanId, TraceId, ParentId)
+- ASP.NET Core context (ConnectionId, RequestId, RequestPath)
+- Controller/action metadata (ActionId, ActionName)
+- Your custom business context (Operation, HasEmail, HasPhone, HasAddress, Company)
+
+This is exactly what you want for observability - the log entry tells a complete story about:
+1. **What happened**: Contact created successfully
+2. **Where**: ContactsController.CreateContact endpoint
+3. **When**: Precise timestamp
+4. **Context**: Which request, which trace, what operation
+5. **Data**: Specific contact details with structured attributes
+
+Your OpenTelemetry instrumentation is working beautifully! This level of detail will make debugging and monitoring in production much easier. You can now trace requests across your entire system, correlate logs with traces, and have full context for every operation.
+
+```json
+{
+    "timestamp": "2025-10-20T19:03:14.9356899Z",
+    "traceId": "0467298114f5790a60f2bbf56d7c65e5",
+    "spanId": "98e205e91bd3a99b",
+    "traceFlags": "Recorded",
+    "categoryName": "MyOpenTelemetryApi.Application.Services.ContactService",
+    "logLevel": "Information",
+    "formattedMessage": "Contact created successfully: 1ceb657c-ced5-4fa1-8bf3-0c4add1eee69 - Peter-2025-10-20-15-03-12 Parker-2025-10-20-15-03-12",
+    "body": "Contact created successfully: {ContactId} - {FirstName} {LastName}",
+    "scopeValues": [
+        {
+            "SpanId": "98e205e91bd3a99b",
+            "TraceId": "0467298114f5790a60f2bbf56d7c65e5",
+            "ParentId": "a40ccb08c9c19067"
+        },
+        {
+            "ConnectionId": "0HNGG19VJR517"
+        },
+        {
+            "RequestId": "0HNGG19VJR517:00000001",
+            "RequestPath": "/api/Contacts"
+        },
+        {
+            "ActionId": "26248983-7253-4375-b6cd-ae51d9e8567d",
+            "ActionName": "MyOpenTelemetryApi.Api.Controllers.ContactsController.CreateContact (MyOpenTelemetryApi.Api)"
+        },
+        {
+            "Operation": "CreateContact",
+            "HasEmail": true,
+            "HasPhone": true,
+            "HasAddress": true,
+            "Company": "Daily Bugle-2025-10-20-15-03-12"
+        }
+    ],
+    "exception": null,
+    "attributes": {
+        "ContactId": "1ceb657c-ced5-4fa1-8bf3-0c4add1eee69",
+        "FirstName": "Peter-2025-10-20-15-03-12",
+        "LastName": "Parker-2025-10-20-15-03-12",
+        "{OriginalFormat}": "Contact created successfully: {ContactId} - {FirstName} {LastName}"
+    }
+}
+```
