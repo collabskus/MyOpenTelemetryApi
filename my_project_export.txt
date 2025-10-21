@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/21/2025 11:11:02
+Generated: 10/21/2025 11:16:45
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -1550,8 +1550,8 @@ MODIFIED: 09/14/2025 21:12:26
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj
-SIZE: 1.29 KB
-MODIFIED: 10/20/2025 10:29:54
+SIZE: 1.69 KB
+MODIFIED: 10/21/2025 11:16:23
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -1563,6 +1563,13 @@ MODIFIED: 10/20/2025 10:29:54
   <ItemGroup>
     <!-- ASP.NET Core OpenAPI support -->
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    
+    <!-- EF Core Design - Required when using startup-project flag with dotnet-ef -->
+    <!-- PrivateAssets means this doesn't flow to consuming projects -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     
     <!-- OpenTelemetry packages -->
     <PackageReference Include="OpenTelemetry"/>
@@ -6165,7 +6172,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/21/2025 11:11:03
+EXPORT COMPLETED: 10/21/2025 11:16:46
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
