@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/21/2025 11:16:45
+Generated: 10/21/2025 11:41:20
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -162,9 +162,19 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
     |       UnitTest1.cs
     |       
     \---MyOpenTelemetryApi.Infrastructure.Tests
-            MyOpenTelemetryApi.Infrastructure.Tests.csproj
-            UnitTest1.cs
-            
+        |   MyOpenTelemetryApi.Infrastructure.Tests.csproj
+        |   UnitTest1.cs
+        |   
+        +---bin
+        |   \---Debug
+        |       \---net10.0
+        \---obj
+            \---Debug
+                \---net10.0
+                    |   MyOpenTelemetryApi.Infrastructure.Tests.GlobalUsings.g.cs
+                    |   
+                    +---ref
+                    \---refint
 
 
 FILE CONTENTS:
@@ -684,8 +694,8 @@ EndGlobal
 
 ================================================================================
 FILE: podman-compose.yml
-SIZE: 3.52 KB
-MODIFIED: 10/06/2025 15:49:57
+SIZE: 2.23 KB
+MODIFIED: 10/21/2025 11:40:42
 ================================================================================
 
 # podman-compose.yml - Alternative compose file optimized for Podman
@@ -714,6 +724,7 @@ services:
     networks:
       - myotel-network
     restart: unless-stopped
+
   api:
     build:
       context: .
@@ -727,7 +738,7 @@ services:
       - OpenTelemetry__ServiceName=MyOpenTelemetryApi-Podman
       - OpenTelemetry__ServiceVersion=1.0.0-podman
       - OpenTelemetry__Exporter__Console__Enabled=true
-      - OpenTelemetry__Exporter__File__Enabled=false
+      - OpenTelemetry__Exporter__File__Enabled=true
       - OpenTelemetry__Exporter__File__LogPath=/app/logs/otel-logs.json
       - OpenTelemetry__Exporter__OTLP__Enabled=false
       - OpenTelemetry__Sampling__AlwaysOn=true
@@ -740,8 +751,6 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    # volumes:
-    #   - ./logs:/app/logs:Z
     networks:
       - myotel-network
     healthcheck:
@@ -751,56 +760,14 @@ services:
       retries: 3
       start_period: 40s
     restart: unless-stopped
-  # Optional: Jaeger for OpenTelemetry tracing (uncomment if needed)
-  # jaeger:
-  #   image: docker.io/jaegertracing/all-in-one:latest
-  #   container_name: myotel-jaeger
-  #   ports:
-  #     - "16686:16686"
-  #     - "14250:14250"
-  #     - "14268:14268"
-  #     - "6831:6831/udp"
-  #     - "6832:6832/udp"
-  #   environment:
-  #     - COLLECTOR_OTLP_ENABLED=true
-  #   networks:
-  #     - myotel-network
-  #   profiles:
-  #     - observability
-  # Optional: Prometheus for metrics collection (uncomment if needed)
-  # prometheus:
-  #   image: docker.io/prom/prometheus:latest
-  #   container_name: myotel-prometheus
-  #   ports:
-  #     - "9090:9090"
-  #   volumes:
-  #     - ./prometheus.yml:/etc/prometheus/prometheus.yml:Z
-  #   networks:
-  #     - myotel-network
-  #   profiles:
-  #     - observability
-  # Optional: Grafana for visualization (uncomment if needed)
-  # grafana:
-  #   image: docker.io/grafana/grafana:latest
-  #   container_name: myotel-grafana
-  #   ports:
-  #     - "3000:3000"
-  #   environment:
-  #     - GF_SECURITY_ADMIN_PASSWORD=admin123
-  #   volumes:
-  #     - grafana_data:/var/lib/grafana:Z
-  #   networks:
-  #     - myotel-network
-  #   profiles:
-  #     - observability
-volumes:
-  postgres_data:
-    driver: local
-  # grafana_data:
-  #   driver: local
+
 networks:
   myotel-network:
     driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
 
 
 
@@ -6172,7 +6139,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/21/2025 11:16:46
+EXPORT COMPLETED: 10/21/2025 11:41:21
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
