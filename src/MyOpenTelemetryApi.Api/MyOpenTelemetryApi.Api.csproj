@@ -8,7 +8,7 @@
     <!-- ASP.NET Core OpenAPI support -->
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
     
-    <!-- EF Core Design - Required when using --startup-project flag with dotnet-ef -->
+    <!-- EF Core Design - Required when using startup-project flag with dotnet-ef -->
     <!-- PrivateAssets means this doesn't flow to consuming projects -->
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
       <PrivateAssets>all</PrivateAssets>
