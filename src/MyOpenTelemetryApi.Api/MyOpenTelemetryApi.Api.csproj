@@ -8,6 +8,13 @@
     <!-- ASP.NET Core OpenAPI support -->
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
     
+    <!-- EF Core Design - Required when using --startup-project flag with dotnet-ef -->
+    <!-- PrivateAssets means this doesn't flow to consuming projects -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    
     <!-- OpenTelemetry packages -->
     <PackageReference Include="OpenTelemetry"/>
     <PackageReference Include="OpenTelemetry.Exporter.Console" />

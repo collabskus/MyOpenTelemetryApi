@@ -528,3 +528,153 @@ jobs:
 
 
 
+You're right - the error message is clear. When using `--startup-project`, the EF tools DO need the Design package in the startup project (Api) to work properly. This is different from running migrations directly from the Infrastructure project.
+
+Let me search the updated project files:I can see the Api.csproj still doesn't have the Design package. The error message is explicit: when using `--startup-project`, **the startup project MUST have Microsoft.EntityFrameworkCore.Design**.
+
+This is the reality of how `dotnet-ef` works with the `--startup-project` flag. Let me create the correct solution:## I Was Wrong - Here's the Truth
+
+The error message is crystal clear and I should have listened to it from the start:
+
+> Your startup project 'MyOpenTelemetryApi.Api' doesn't reference Microsoft.EntityFrameworkCore.Design
+
+When using `--startup-project` flag, the **startup project MUST have the Design package**. This is how `dotnet-ef` works.
+
+## What You Need to Do
+
+**Add the Design package to the Api project** (see the artifact above). 
+
+The key points:
+1. ✅ Design package needed in **BOTH** Api and Infrastructure when using `--project --startup-project` flags
+2. ✅ `PrivateAssets="all"` keeps it design-time only - won't be in published output
+3. ✅ This is standard for CI/CD workflows that run from root directory
+4. ✅ Clean architecture is maintained because it's a build-time dependency only
+
+## My Apologies
+
+I gave you conflicting advice and caused confusion:
+- First, I incorrectly said to add it
+- Then you correctly questioned me based on yesterday's conversation  
+- Then I incorrectly removed it again
+
+The CI error message was right all along. When using the `--startup-project` flag (which CI needs), the startup project must have the Design package. This is non-negotiable - it's how the EF tools work.
+
+
+
+
+
+
+
+
+
+
+# EF Core Tools: The Complete Picture
+
+## I Was Wrong - Here's Why
+
+I gave you conflicting advice because I misunderstood how `dotnet-ef` works with the `--startup-project` flag. Let me explain the complete truth.
+
+## The Two Approaches for Running Migrations
+
+### Approach 1: Run from Infrastructure (No Design in Api)
+```bash
+cd src/MyOpenTelemetryApi.Infrastructure
+dotnet ef migrations add MyMigration --startup-project ../MyOpenTelemetryApi.Api
+```
+
+**Requirements:**
+- ✅ Design package in Infrastructure project
+- ❌ Design package NOT needed in Api project
+- This works locally but is awkward in CI
+
+### Approach 2: Run from Anywhere with --project flag (Design in BOTH)
+```bash
+dotnet ef migrations add MyMigration --project src/MyOpenTelemetryApi.Infrastructure --startup-project src/MyOpenTelemetryApi.Api
+```
+
+**Requirements:**
+- ✅ Design package in Infrastructure project
+- ✅ **Design package ALSO needed in Api project**
+- This is what CI needs to do
+
+## Why Both Projects Need the Design Package (Approach 2)
+
+When you use BOTH `--project` and `--startup-project` flags:
+
+1. `dotnet-ef` loads the **startup project** first to get configuration
+2. It tries to find the DbContext and Design tools in the startup project
+3. **It requires Design package in the startup project to do this discovery**
+4. Then it uses `--project` to know where to place migration files
+
+The error message is explicit:
+> Your startup project 'MyOpenTelemetryApi.Api' doesn't reference Microsoft.EntityFrameworkCore.Design
+
+## The Solution: Design Package in Both Projects
+
+### Api Project (MyOpenTelemetryApi.Api.csproj)
+```xml
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+  <PrivateAssets>all</PrivateAssets>
+  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+</PackageReference>
+```
+
+**Why it's okay:**
+- `PrivateAssets="all"` means it stays design-time only
+- Won't be included in published output
+- Won't flow to consuming projects
+- Only used by `dotnet-ef` tool
+
+### Infrastructure Project (Keep as-is)
+```xml
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+  <PrivateAssets>all</PrivateAssets>
+  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+</PackageReference>
+```
+
+## My Mistake
+
+Yesterday I told you:
+- ❌ "Remove Design from Api"
+- ❌ "Run migrations from Infrastructure directory"
+
+This was partially correct for **local development**, but I didn't consider:
+1. CI workflows run from the root directory
+2. CI uses `--project` and `--startup-project` flags together
+3. This pattern **requires** Design in both projects
+
+## The Reality Check
+
+Microsoft's own documentation and countless Stack Overflow answers confirm:
+- When using `--startup-project` flag, the startup project **must** have the Design package
+- This is by design (no pun intended)
+- It's not a bug or version mismatch
+- It's how the EF tools architecture works
+
+## What You Need to Do
+
+1. **Add Design package to Api project** (use the artifact I just created)
+2. **Keep Design package in Infrastructure project** (already there)
+3. **Update CI workflow** (already done in previous artifact)
+
+Both changes are necessary for CI to work.
+
+## Apology
+
+I apologize for:
+1. Initially giving you advice that worked locally but not in CI
+2. Then doubting myself and giving the right answer
+3. Then letting you talk me out of the right answer
+4. Causing you to waste time with back-and-forth
+
+The error message was telling us exactly what to do. I should have trusted it from the beginning.
+
+## Going Forward
+
+For your project:
+- ✅ Design package in **both** Api and Infrastructure (design-time only)
+- ✅ Use `--project` and `--startup-project` flags in CI
+- ✅ Migrations stay in Infrastructure project
+- ✅ Clean architecture maintained (Design is PrivateAssets)
+
