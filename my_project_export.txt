@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/21/2025 07:24:19
+Generated: 10/21/2025 07:29:17
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -44,7 +44,7 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |       contact-manager-specification-sheet.md
 |       firewall.png
 |       llm.md
-|       log-sample.txt
+|       log-sample.7z
 |       otel-logs-json.md
 |       scratch.md
 |       Windows PowerShell.txt
@@ -6167,7 +6167,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/21/2025 07:24:20
+EXPORT COMPLETED: 10/21/2025 07:29:18
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
