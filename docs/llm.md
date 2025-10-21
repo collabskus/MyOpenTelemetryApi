@@ -1,474 +1,525 @@
-Looking at your repository code, **you're absolutely right** - it's missing cancellation tokens, which is a significant oversight for production code.
+I need to examine the current project structure and CI configuration to understand where the EF tools should be referenced.Perfect! I can see the issue. The error shows that `dotnet-ef` is looking for `Microsoft.EntityFrameworkCore.Design` but can't find it. I can see from the project files that:
 
-## Why This Matters
+1. `Microsoft.EntityFrameworkCore.Design` is currently referenced in the **Infrastructure** project
+2. The CI workflow is trying to run `dotnet ef` commands with `--project src/MyOpenTelemetryApi.Infrastructure`
+3. However, `dotnet-ef` needs to find the Design package in the **startup project** (Api), not just the Infrastructure project
 
-Cancellation tokens are essential for:
+Let me search for more information about the current setup:Now I need to see the full Directory.Packages.props file:Let me search more specifically for Directory.Packages.props:Perfect! Now I have all the information I need. Based on the error and the project structure, here's what needs to be fixed:
 
-1. **Graceful shutdown** - When your API shuts down, requests can be cancelled cleanly
-2. **Request timeouts** - If a client disconnects or times out, the database query should stop
-3. **Resource efficiency** - No point continuing expensive DB operations nobody is waiting for
-4. **Best practice** - ASP.NET Core automatically provides cancellation tokens through the request pipeline
+## Problem Analysis
 
-## The Corrected Version
+The CI workflow is failing because:
+1. `dotnet-ef` tool needs `Microsoft.EntityFrameworkCore.Design` package to be available
+2. The Design package is currently in the **Infrastructure** project, but `dotnet-ef` also needs it in the **startup project** (Api) when running commands
+3. The CI yml is currently installing `dotnet-ef` globally and trying to use it, but the Design package isn't accessible
 
-```csharp
-// src/MyOpenTelemetryApi.Infrastructure/Repositories/ContactRepository.cs
-using Microsoft.EntityFrameworkCore;
-using MyOpenTelemetryApi.Domain.Entities;
-using MyOpenTelemetryApi.Domain.Interfaces;
-using MyOpenTelemetryApi.Infrastructure.Data;
+## Solution
 
-namespace MyOpenTelemetryApi.Infrastructure.Repositories;
+Here are the files that need to be updated:Now let me create a summary document explaining all the changes:## Summary
 
-public class ContactRepository(AppDbContext context) : Repository<Contact>(context), IContactRepository
-{
-    public async Task<IEnumerable<Contact>> GetContactsByGroupAsync(Guid groupId, CancellationToken cancellationToken = default)
-    {
-        return await _context.Contacts
-            .Include(c => c.ContactGroups)
-            .Where(c => c.ContactGroups.Any(cg => cg.GroupId == groupId))
-            .ToListAsync(cancellationToken);
-    }
+I've identified and fixed the EF Core tools issue in your CI workflow. Here's what was wrong and what needs to change:
 
-    public async Task<IEnumerable<Contact>> GetContactsByTagAsync(Guid tagId, CancellationToken cancellationToken = default)
-    {
-        return await _context.Contacts
-            .Include(c => c.Tags)
-            .Where(c => c.Tags.Any(ct => ct.TagId == tagId))
-            .ToListAsync(cancellationToken);
-    }
+### The Problem
+`dotnet-ef` couldn't find `Microsoft.EntityFrameworkCore.Design` because it was only in the Infrastructure project, but the tool needs it in the **startup project** (Api) to work correctly.
 
-    public async Task<Contact?> GetContactWithDetailsAsync(Guid id, CancellationToken cancellationToken = default)
-    {
-        return await _context.Contacts
-            .Include(c => c.EmailAddresses)
-            .Include(c => c.PhoneNumbers)
-            .Include(c => c.Addresses)
-            .Include(c => c.ContactGroups)
-                .ThenInclude(cg => cg.Group)
-            .Include(c => c.Tags)
-                .ThenInclude(ct => ct.Tag)
-            .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
-    }
+### The Fix - Two Files to Update:
 
-    public async Task<IEnumerable<Contact>> SearchContactsAsync(string searchTerm, CancellationToken cancellationToken = default)
-    {
-        string lowerSearchTerm = searchTerm.ToLower();
-        
-        return await _context.Contacts
-            .Include(c => c.EmailAddresses)
-            .Include(c => c.PhoneNumbers)
-            .Where(c =>
-                c.FirstName.ToLower().Contains(lowerSearchTerm) ||
-                c.LastName.ToLower().Contains(lowerSearchTerm) ||
-                (c.Nickname != null && c.Nickname.ToLower().Contains(lowerSearchTerm)) ||
-                (c.Company != null && c.Company.ToLower().Contains(lowerSearchTerm)) ||
-                c.EmailAddresses.Any(e => e.Email.ToLower().Contains(lowerSearchTerm)) ||
-                c.PhoneNumbers.Any(p => p.Number.Contains(searchTerm)))
-            .ToListAsync(cancellationToken);
-    }
-}
+1. **`src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj`** - Add the Design package (shown in first artifact)
+2. **`.github/workflows/ci.yml`** - Install the correct version of dotnet-ef tool explicitly (shown in second artifact)
+
+### Key Changes:
+- Added `Microsoft.EntityFrameworkCore.Design` to the Api project with `PrivateAssets="all"` (design-time only)
+- Changed CI to install `dotnet-ef --version 10.0.0-rc.2.*` to match your .NET 10 SDK
+- Separated the tool installation into its own step for clarity
+
+This is a standard pattern when using EF Core with layered architecture - both the startup project and the project with DbContext need the Design package for the tools to work properly.
+
+The third artifact is a detailed markdown document explaining all the changes, the reasoning, and best practices.
+
+
+
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <UserSecretsId>8932c83d-67db-4264-b312-6e638ad396db</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- ASP.NET Core OpenAPI support -->
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    
+    <!-- EF Core Design tools - needed for migrations in both local dev and CI -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    
+    <!-- OpenTelemetry packages -->
+    <PackageReference Include="OpenTelemetry"/>
+    <PackageReference Include="OpenTelemetry.Exporter.Console" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol"/>
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting"/>
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore"/>
+    <PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore"/>
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http"/>
+    <PackageReference Include="OpenTelemetry.Instrumentation.Process"/>
+    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Project references - these bring in EF Core transitively -->
+    <ProjectReference Include="..\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj" />
+    <ProjectReference Include="..\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
+
+
+
+
+
+# EF Core Tools CI/CD Fix
+
+## Problem
+The GitHub Actions CI workflow was failing with the error:
+```
+System.IO.FileNotFoundException: Could not load file or assembly 
+'Microsoft.EntityFrameworkCore.Design, Culture=neutral, PublicKeyToken=null'
 ```
 
-## What You Need to Update
+## Root Cause
+`dotnet-ef` CLI tool requires `Microsoft.EntityFrameworkCore.Design` package to be available in the **startup project** (Api), not just the Infrastructure project where the DbContext lives. This is because:
 
-1. **Repository interface** (`IContactRepository`) - Add `CancellationToken` parameters to method signatures
-2. **Base repository** (`Repository<T>`) - Add cancellation token support to base CRUD operations
-3. **Service layer** - Pass cancellation tokens through from controllers
-4. **Controllers** - Accept `CancellationToken` parameters (ASP.NET Core automatically provides them)
+1. `dotnet-ef` runs in the context of the startup project
+2. It needs the Design package to discover and load the DbContext
+3. Even though we specify `--project` for the Infrastructure layer, the tool still needs Design packages in the startup project
 
-The `= default` parameter makes it backward compatible during migration, though for your educational project you might prefer making them required parameters to enforce the pattern throughout.
+## Changes Made
 
-Would you like me to show you the complete updates needed for the interface and base repository as well?
+### 1. Updated `src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj`
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Let me search for more service files to complete the picture.Perfect! Now I have a complete picture. Let me create all the updated files with cancellation token support throughout your entire project.Perfect! I've created all the updated files with proper cancellation token support throughout your entire project. Here's a summary of what was updated:
-
-## Summary of Changes
-
-### **Domain Layer (Interfaces)**
-1. ✅ **IRepository.cs** - Base repository interface with CancellationToken
-2. ✅ **IContactRepository.cs** - Contact-specific repository interface
-3. ✅ **IGroupRepository.cs** - Group repository interface
-4. ✅ **ITagRepository.cs** - Tag repository interface
-
-### **Infrastructure Layer (Repository Implementations)**
-5. ✅ **Repository.cs** - Base repository implementation with cancellation token support in all async methods
-6. ✅ **ContactRepository.cs** - All query methods now accept cancellation tokens
-7. ✅ **GroupRepository.cs** - Updated with cancellation token
-8. ✅ **TagRepository.cs** - Updated with cancellation token
-
-### **Application Layer (Service Interfaces & Implementations)**
-9. ✅ **IGroupService.cs** - Updated interface
-10. ✅ **ITagService.cs** - Updated interface
-11. ✅ **GroupService.cs** - All async methods pass cancellation tokens through
-12. ✅ **TagService.cs** - All async methods pass cancellation tokens through
-13. ✅ **ContactService.cs** - Comprehensive update with cancellation token propagation
-
-### **API Layer (Controllers)**
-14. ✅ **GroupsController.cs** - All endpoints accept and pass cancellation tokens
-15. ✅ **TagsController.cs** - All endpoints accept and pass cancellation tokens
-16. ✅ **ContactsController.cs** - Already had cancellation tokens (no changes needed)
-17. ✅ **HealthController.cs** - Updated health check endpoints
-
-## Key Implementation Details
-
-- **Default parameters**: Used `CancellationToken cancellationToken = default` to make it backward compatible
-- **Synchronous methods**: Methods like `Update()` and `Delete()` don't need cancellation tokens as they're synchronous operations
-- **Proper propagation**: Cancellation tokens flow from controllers → services → repositories → EF Core
-- **ASP.NET Core integration**: Controllers automatically receive cancellation tokens from the HTTP request pipeline
-
-## Benefits You'll Get
-
-1. **Graceful shutdown** - When your API stops, in-flight requests can be cancelled cleanly
-2. **Client disconnect handling** - If a client times out or disconnects, database queries stop
-3. **Resource efficiency** - No wasted CPU/DB resources on abandoned operations
-4. **Production ready** - Follows .NET best practices for async/await patterns
-
-All files are ready for you to copy and paste directly into your project!
-
-
-
-
-
-
-System.OperationCanceledException
-  HResult=0x8013153B
-  Message=The operation was canceled.
-  Source=System.Private.CoreLib
-  StackTrace:
-   at System.Threading.CancellationToken.ThrowOperationCanceledException()
-   at Npgsql.Internal.NpgsqlConnector.<StartUserAction>g__DoStartUserAction|285_0(ConnectorState newState, NpgsqlCommand command, CancellationToken cancellationToken, Boolean attemptPgCancellation)
-   at Npgsql.NpgsqlTransaction.<Commit>d__17.MoveNext()
-   at Microsoft.EntityFrameworkCore.Storage.RelationalTransaction.<CommitAsync>d__17.MoveNext()
-   at Microsoft.EntityFrameworkCore.Storage.RelationalTransaction.<CommitAsync>d__17.MoveNext()
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.<ExecuteAsync>d__9.MoveNext()
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.<ExecuteAsync>d__9.MoveNext()
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.<ExecuteAsync>d__9.MoveNext()
-   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.<SaveChangesAsync>d__8.MoveNext()
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__113.MoveNext()
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__117.MoveNext()
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<ExecuteImplementationAsync>d__31`2.MoveNext()
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<ExecuteImplementationAsync>d__31`2.MoveNext()
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<ExecuteAsync>d__30`2.MoveNext()
-   at Microsoft.EntityFrameworkCore.DbContext.<SaveChangesAsync>d__63.MoveNext()
-   at Microsoft.EntityFrameworkCore.DbContext.<SaveChangesAsync>d__63.MoveNext()
-   at MyOpenTelemetryApi.Infrastructure.Repositories.UnitOfWork.<SaveChangesAsync>d__12.MoveNext() in C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Infrastructure\Repositories\UnitOfWork.cs:line 26
-   at MyOpenTelemetryApi.Application.Services.ContactService.<CreateAsync>d__15.MoveNext() in C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Application\Services\ContactService.cs:line 238
-   at MyOpenTelemetryApi.Api.Controllers.ContactsController.<CreateContact>d__4.MoveNext() in C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\Controllers\ContactsController.cs:line 45
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.<Execute>d__0.MoveNext()
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<<InvokeActionMethodAsync>g__Logged|12_1>d.MoveNext()
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<<InvokeNextActionFilterAsync>g__Awaited|10_0>d.MoveNext()
-
-# OpenTelemetry Logging Improvements
-
-## Your Current Log Entry (Before)
-
-```json
-{
-  "timestamp": "2025-10-20T18:41:56.8869486Z",
-  "traceId": "171fc4639df599318e08798250dfb668",
-  "spanId": "725593e2f2b949a0",
-  "traceFlags": "Recorded",
-  "categoryName": "MyOpenTelemetryApi.Application.Services.ContactService",
-  "logLevel": "Information",
-  "formattedMessage": "Creating new contact: Adam-2025-10-20-14-41-57 West-2025-10-20-14-41-57",
-  "body": "Creating new contact: {FirstName} {LastName}",
-  "scopeValues": [
-    "OpenTelemetry.Logs.LogRecordScope",
-    "OpenTelemetry.Logs.LogRecordScope",
-    "OpenTelemetry.Logs.LogRecordScope",
-    "OpenTelemetry.Logs.LogRecordScope"
-  ],
-  "exception": null,
-  "attributes": {
-    "FirstName": "Adam-2025-10-20-14-41-57",
-    "LastName": "West-2025-10-20-14-41-57",
-    "{OriginalFormat}": "Creating new contact: {FirstName} {LastName}"
-  }
-}
+**Added:**
+```xml
+<!-- EF Core Design tools - needed for migrations in both local dev and CI -->
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+  <PrivateAssets>all</PrivateAssets>
+  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+</PackageReference>
 ```
 
-### Issues:
-1. ❌ **Missing Contact ID** - Can't track the created contact
-2. ❌ **Generic scope values** - Just showing type names, not actual data
-3. ❌ **Limited context** - No info about emails/phones/addresses/company
-4. ❌ **No resource attributes** - Missing service name, version, environment
-5. ❌ **Incomplete story** - Hard to understand what's happening
+**Why:**
+- `PrivateAssets="all"` ensures the Design package doesn't flow to projects that reference the Api project
+- `IncludeAssets` specifies what assets to include from the package
+- This is a design-time dependency only, not needed at runtime
 
----
+### 2. Updated `.github/workflows/ci.yml`
 
-## Enhanced Log Entry (After Improvements)
+**Changed:**
+```yaml
+# OLD - was installing latest/incompatible version
+- name: Run EF Core migrations check
+  run: |
+    dotnet tool install --global dotnet-ef
+    dotnet ef migrations has-pending-model-changes ...
 
-```json
-{
-  "timestamp": "2025-10-20T18:41:56.8869486Z",
-  "traceId": "171fc4639df599318e08798250dfb668",
-  "spanId": "725593e2f2b949a0",
-  "traceFlags": "Recorded",
-  "categoryName": "MyOpenTelemetryApi.Application.Services.ContactService",
-  "logLevel": "Information",
-  "formattedMessage": "Creating new contact: Adam West with 2 emails, 1 phones, 1 addresses",
-  "body": "Creating new contact: {FirstName} {LastName} with {EmailCount} emails, {PhoneCount} phones, {AddressCount} addresses",
-  "scopeValues": [
-    {
-      "Operation": "CreateContact",
-      "HasEmail": true,
-      "HasPhone": true,
-      "HasAddress": true,
-      "Company": "Acme Corp"
-    }
-  ],
-  "exception": null,
-  "attributes": {
-    "FirstName": "Adam",
-    "LastName": "West",
-    "EmailCount": 2,
-    "PhoneCount": 1,
-    "AddressCount": 1,
-    "{OriginalFormat}": "Creating new contact: {FirstName} {LastName} with {EmailCount} emails, {PhoneCount} phones, {AddressCount} addresses"
-  },
-  "resource": {
-    "service.name": "MyOpenTelemetryApi",
-    "service.version": "1.0.0",
-    "service.instance.id": "725593e2f2b949a0",
-    "deployment.environment": "Production",
-    "host.name": "api-server-01",
-    "telemetry.sdk.name": "opentelemetry",
-    "telemetry.sdk.language": "dotnet",
-    "telemetry.sdk.version": "1.9.0"
-  }
-}
+# NEW - installs correct RC version matching .NET 10
+- name: Install EF Core tools
+  run: dotnet tool install --global dotnet-ef --version 10.0.0-rc.2.*
+
+- name: Run EF Core migrations check
+  run: |
+    dotnet ef migrations has-pending-model-changes --project src/MyOpenTelemetryApi.Infrastructure --startup-project src/MyOpenTelemetryApi.Api
 ```
 
-### Improvements:
-1. ✅ **Rich context** - Shows email/phone/address counts
-2. ✅ **Structured scopes** - Actual data instead of type names
-3. ✅ **Resource attributes** - Service name, version, environment, host
-4. ✅ **Complete story** - Can see exactly what's being created
-5. ✅ **Better searchability** - Easy to filter by company, operation type
+**Why:**
+- Separated tool installation into its own step for clarity
+- Added explicit version `10.0.0-rc.2.*` to match .NET 10 RC2 SDK
+- This prevents installing incompatible versions (like stable 9.x when using .NET 10 preview)
+- The wildcard `*` allows for the latest RC2 patch version
 
----
+### 3. Infrastructure Project - No Changes Needed
 
-## Additional Log Entry (Success Message)
+The `src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj` already has the Design package correctly configured and should remain as-is:
 
-After the contact is created, you'll also see:
-
-```json
-{
-  "timestamp": "2025-10-20T18:41:57.1234567Z",
-  "traceId": "171fc4639df599318e08798250dfb668",
-  "spanId": "725593e2f2b949a0",
-  "traceFlags": "Recorded",
-  "categoryName": "MyOpenTelemetryApi.Application.Services.ContactService",
-  "logLevel": "Information",
-  "formattedMessage": "Contact created successfully: 3fa85f64-5717-4562-b3fc-2c963f66afa6 - Adam West",
-  "body": "Contact created successfully: {ContactId} - {FirstName} {LastName}",
-  "attributes": {
-    "ContactId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "FirstName": "Adam",
-    "LastName": "West",
-    "{OriginalFormat}": "Contact created successfully: {ContactId} - {FirstName} {LastName}"
-  },
-  "resource": { /* same as above */ }
-}
+```xml
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+  <PrivateAssets>all</PrivateAssets>
+  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+</PackageReference>
 ```
 
-Now you can track the exact contact ID that was created!
+## Version Compatibility
 
----
+Current setup after fix:
+- **.NET SDK:** 10.0.x RC2
+- **EF Core packages:** 10.0.0-rc.2.* (from Directory.Packages.props)
+- **dotnet-ef tool:** 10.0.0-rc.2.* (explicitly specified in CI)
 
-## Corresponding Trace Span Tags
+This ensures all EF Core components are version-aligned.
 
-The Activity/Span will also include these tags for correlation:
+## Testing the Fix
 
-```json
-{
-  "name": "CreateContact",
-  "kind": "Internal",
-  "traceId": "171fc4639df599318e08798250dfb668",
-  "spanId": "725593e2f2b949a0",
-  "tags": {
-    "contact.id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "contact.has_email": true,
-    "contact.has_phone": true,
-    "contact.company": "Acme Corp",
-    "contact.group_count": 2,
-    "contact.tag_count": 3
-  }
-}
+After applying these changes:
+
+1. **Locally:** Run `dotnet ef migrations has-pending-model-changes` to verify the tool works
+2. **CI:** Push to GitHub and verify the workflow completes successfully
+3. **Migrations:** The CI will now properly check for pending migrations and apply them to test database
+
+## Best Practices Applied
+
+✅ **Explicit version specification:** Don't rely on "latest" when using preview SDKs  
+✅ **Design package in startup project:** Required for EF tools to work correctly  
+✅ **PrivateAssets configuration:** Prevents design-time dependencies from leaking  
+✅ **Separation of concerns:** Tool installation separate from usage  
+✅ **Environment consistency:** Same versions in local dev, CI, and production
+
+## Additional Notes
+
+- The `Microsoft.EntityFrameworkCore.Design` package is **only needed at design/build time**
+- It will NOT be included in the published application
+- Both Api and Infrastructure projects need it because of how `dotnet-ef` discovers contexts
+- This is a standard pattern for .NET projects using EF Core with separate layers
+
+
+
+
+
+
+
+
+
+You're absolutely right! I apologize for the confusion. Looking at our conversation history from yesterday, I specifically told you to **remove** the EF Core packages from the API layer and run migrations from the Infrastructure project using the `--startup-project` flag.
+
+However, there's a critical difference between:
+1. **Local development** (where you run commands manually)
+2. **CI/CD pipelines** (where GitHub Actions runs commands)
+
+Let me search for what we discussed about CI/CD:Let me search more specifically:You're absolutely correct, and I apologize for the contradiction. Yesterday I specifically recommended keeping the EF Core packages **only in the Infrastructure layer** and running migrations using the `--startup-project` flag.
+
+## The Real Issue
+
+Looking at the CI error again, the problem isn't that we need the Design package in the Api project. The problem is that **the CI workflow is trying to install `dotnet-ef` version 9.x (the latest stable) when it should be installing version 10.x RC2 to match your .NET 10 SDK**.
+
+## The Correct Solution
+
+You should **NOT add the Design package back to the Api project**. Instead, we need to fix the CI workflow to:
+
+1. Install the correct version of `dotnet-ef` tool (10.0.0-rc.2.*)
+2. Keep using the `--startup-project` flag like you do locally
+
+Let me update the CI workflow file:You're absolutely right to call me out on that! I apologize for the confusion.
+
+## What Actually Happened
+
+Yesterday, I correctly advised you to:
+- ✅ Remove EF Core packages from the Api layer
+- ✅ Keep them only in Infrastructure  
+- ✅ Use `--startup-project` flag for migrations
+- ✅ Maintain clean architecture separation
+
+Today, I initially gave you the **wrong advice** by suggesting to add the Design package back to the Api project.
+
+## The Real Problem
+
+The CI error wasn't about missing packages - it was about **version mismatch**:
+
+- Your project uses **.NET 10 RC2** with EF Core **10.0.0-rc.2.***
+- The CI was installing `dotnet-ef` without specifying a version
+- This installed the latest **stable 9.x** version
+- **dotnet-ef 9.x cannot load EF Core 10.x assemblies** → FileNotFoundException
+
+## The Correct Fix
+
+**Only change the CI workflow** - your project files are already correct!
+
+The updated ci.yml (in the artifact) now:
+1. Installs `dotnet-ef --version 10.0.0-rc.2.*` (matching your SDK)
+2. Uses the same `--startup-project` approach you use locally
+3. No changes to any .csproj files needed
+
+Your project structure should remain exactly as it was after yesterday's cleanup - with EF packages only in the Infrastructure layer. Thank you for catching my mistake!
+
+
+
+
+
+
+
+
+
+
+# EF Core Tools CI/CD Fix
+
+## Problem
+The GitHub Actions CI workflow was failing with the error:
+```
+System.IO.FileNotFoundException: Could not load file or assembly 
+'Microsoft.EntityFrameworkCore.Design, Culture=neutral, PublicKeyToken=null'
 ```
 
----
+## Root Cause
+`dotnet-ef` CLI tool requires `Microsoft.EntityFrameworkCore.Design` package to be available in the **startup project** (Api), not just the Infrastructure project where the DbContext lives. This is because:
 
-## Key Benefits
+1. `dotnet-ef` runs in the context of the startup project
+2. It needs the Design package to discover and load the DbContext
+3. Even though we specify `--project` for the Infrastructure layer, the tool still needs Design packages in the startup project
 
-### 1. **Debugging**
-- Quickly find all operations for a specific contact ID
-- See the full context of what was created
-- Track down issues with specific companies
+## Changes Made
 
-### 2. **Monitoring**
-- Filter logs by operation type
-- Track patterns (e.g., contacts without emails)
-- Identify resource-intensive operations
+### 1. Updated `src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj`
 
-### 3. **Correlation**
-- Match logs to traces using traceId/spanId
-- See the full request flow across services
-- Connect metrics to logs to traces
-
-### 4. **Analysis**
-- Query by environment (Production vs Development)
-- Group by service version for A/B testing
-- Identify performance issues by host
-
----
-
-## Query Examples
-
-With these improvements, you can now query your logs effectively:
-
-### Find all contact creations for a specific company:
-```
-scopeValues.Company = "Acme Corp" AND body CONTAINS "Creating new contact"
+**Added:**
+```xml
+<!-- EF Core Design tools - needed for migrations in both local dev and CI -->
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+  <PrivateAssets>all</PrivateAssets>
+  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+</PackageReference>
 ```
 
-### Find operations that created contacts without emails:
+**Why:**
+- `PrivateAssets="all"` ensures the Design package doesn't flow to projects that reference the Api project
+- `IncludeAssets` specifies what assets to include from the package
+- This is a design-time dependency only, not needed at runtime
+
+### 2. Updated `.github/workflows/ci.yml`
+
+**Changed:**
+```yaml
+# OLD - was installing latest/incompatible version
+- name: Run EF Core migrations check
+  run: |
+    dotnet tool install --global dotnet-ef
+    dotnet ef migrations has-pending-model-changes ...
+
+# NEW - installs correct RC version matching .NET 10
+- name: Install EF Core tools
+  run: dotnet tool install --global dotnet-ef --version 10.0.0-rc.2.*
+
+- name: Run EF Core migrations check
+  run: |
+    dotnet ef migrations has-pending-model-changes --project src/MyOpenTelemetryApi.Infrastructure --startup-project src/MyOpenTelemetryApi.Api
 ```
-scopeValues.HasEmail = false AND attributes.Operation = "CreateContact"
+
+**Why:**
+- Separated tool installation into its own step for clarity
+- Added explicit version `10.0.0-rc.2.*` to match .NET 10 RC2 SDK
+- This prevents installing incompatible versions (like stable 9.x when using .NET 10 preview)
+- The wildcard `*` allows for the latest RC2 patch version
+
+### 3. Infrastructure Project - No Changes Needed
+
+The `src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj` already has the Design package correctly configured and should remain as-is:
+
+```xml
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+  <PrivateAssets>all</PrivateAssets>
+  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+</PackageReference>
 ```
 
-### Find all operations in Production environment:
-```
-resource.deployment.environment = "Production"
-```
-
-### Find specific contact by ID:
-```
-attributes.ContactId = "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-```
-
----
-
-## Implementation Summary
-
-The enhanced version adds:
-
-1. **Structured logging scopes** with `BeginScope(Dictionary<>)`
-2. **Additional log parameters** for counts and context
-3. **Contact ID logging** after entity creation
-4. **Resource attribute extraction** in FileExporter
-5. **Activity tags** that mirror important log attributes
+## Version Compatibility
 
-This transforms your logs from simple messages into a rich, queryable observability platform!
+Current setup after fix:
+- **.NET SDK:** 10.0.x RC2
+- **EF Core packages:** 10.0.0-rc.2.* (from Directory.Packages.props)
+- **dotnet-ef tool:** 10.0.0-rc.2.* (explicitly specified in CI)
 
-{
-  "timestamp": "2025-10-20T18:41:56.8869486Z",
-  "traceId": "171fc4639df599318e08798250dfb668",
-  "spanId": "725593e2f2b949a0",
-  "traceFlags": "Recorded",
-  "categoryName": "MyOpenTelemetryApi.Application.Services.ContactService",
-  "logLevel": "Information",
-  "formattedMessage": "Creating new contact: Adam-2025-10-20-14-41-57 West-2025-10-20-14-41-57 with 1 emails, 1 phones, 1 addresses",
-  "body": "Creating new contact: {FirstName} {LastName} with {EmailCount} emails, {PhoneCount} phones, {AddressCount} addresses",
-  "scopeValues": [
-    {
-      "Operation": "CreateContact",
-      "HasEmail": true,
-      "HasPhone": true,
-      "HasAddress": true,
-      "Company": "Acme Corp"
-    }
-  ],
-  "exception": null,
-  "attributes": {
-    "FirstName": "Adam-2025-10-20-14-41-57",
-    "LastName": "West-2025-10-20-14-41-57",
-    "EmailCount": 1,
-    "PhoneCount": 1,
-    "AddressCount": 1,
-    "{OriginalFormat}": "Creating new contact: {FirstName} {LastName} with {EmailCount} emails, {PhoneCount} phones, {AddressCount} addresses"
-  },
-  "resource": {
-    "service.name": "MyOpenTelemetryApi",
-    "service.version": "1.0.0",
-    "deployment.environment": "Development",
-    "host.name": "MYDEVMACHINE"
-  }
-}
+This ensures all EF Core components are version-aligned.
 
-Great log entry! Let me analyze what we're seeing and suggest some improvements for better observability.
+## Testing the Fix
 
-## Current Log Analysis
+After applying these changes:
 
-**Good things:**
-- ✅ Structured logging with proper template parameters
-- ✅ Trace correlation (traceId and spanId present)
-- ✅ Timestamp in ISO 8601 format
-- ✅ Proper log level (Information)
-- ✅ Category name showing the service class
+1. **Locally:** Run `dotnet ef migrations has-pending-model-changes` to verify the tool works
+2. **CI:** Push to GitHub and verify the workflow completes successfully
+3. **Migrations:** The CI will now properly check for pending migrations and apply them to test database
 
-**Areas for improvement:**
-- ⚠️ Missing contact ID (generated during creation)
-- ⚠️ No resource attributes (service name, version, environment)
-- ⚠️ `scopeValues` shows generic types instead of actual scope data
-- ⚠️ Could benefit from additional context attributes
+## Best Practices Applied
 
-## Recommended Improvements
+✅ **Explicit version specification:** Don't rely on "latest" when using preview SDKs  
+✅ **Design package in startup project:** Required for EF tools to work correctly  
+✅ **PrivateAssets configuration:** Prevents design-time dependencies from leaking  
+✅ **Separation of concerns:** Tool installation separate from usage  
+✅ **Environment consistency:** Same versions in local dev, CI, and production
 
-Let me search for your logging configuration to see how we can enhance it:Perfect! I can see your OpenTelemetry configuration. Now let me create an enhanced version of your ContactService with better logging attributes and an improved Program.cs configuration:Now let me show you what an enhanced log entry would look like:Now let me create an improved FileExporter that captures resource attributes properly:Perfect! Now let me create a comparison document showing before and after:## Summary
+## Additional Notes
 
-I've analyzed your log entry and created **three enhanced files** for you:
+- The `Microsoft.EntityFrameworkCore.Design` package is **only needed at design/build time**
+- It will NOT be included in the published application
+- Both Api and Infrastructure projects need it because of how `dotnet-ef` discovers contexts
+- This is a standard pattern for .NET projects using EF Core with separate layers
 
-### 1. **Enhanced ContactService.cs**
-- ✅ Added structured logging scopes with `BeginScope(Dictionary<>)` 
-- ✅ Includes email/phone/address counts in log messages
-- ✅ Logs the generated contact ID after creation
-- ✅ Adds rich activity tags for trace correlation
-- ✅ Better context for debugging and monitoring
 
-### 2. **Enhanced FileExporter.cs**
-- ✅ Properly extracts scope values as structured data
-- ✅ Captures resource attributes (service name, version, environment, host)
-- ✅ Returns clean dictionaries instead of type names
-- ✅ Makes logs much more queryable
 
-### 3. **Logging Improvements Document**
-- Shows side-by-side comparison of before/after
-- Explains the benefits of each improvement
-- Provides query examples for log analysis
-- Demonstrates how to leverage the enhanced data
 
-## Key Improvements to Your Logs
 
-**Before:** Simple message with names only  
-**After:** Rich context with contact ID, counts, company, environment, and structured scopes
 
-Your current log was missing critical information that makes debugging and monitoring difficult. The enhanced version transforms each log entry into a complete story that's easy to search, filter, and analyze.
 
-Would you like me to also show you how to set up log aggregation queries or create dashboards based on these enhanced logs?
 
 
+# .github/workflows/ci.yml
+name: CI
 
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
 
+env:
+  DOTNET_VERSION: '10.0.x'
+  DOTNET_NOLOGO: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: testdb
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore --configuration Release
+
+    - name: Run unit tests
+      run: dotnet test --no-build --configuration Release --verbosity normal --logger "console;verbosity=detailed" --collect:"XPlat Code Coverage" --results-directory ./coverage
+
+    - name: Generate coverage report
+      uses: danielpalme/ReportGenerator-GitHub-Action@5.4.17
+      with:
+        reports: coverage/**/coverage.cobertura.xml
+        targetdir: coverage-report
+        reporttypes: 'HtmlInline;Cobertura;MarkdownSummaryGithub'
+        verbosity: 'Info'
+
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage-report/Cobertura.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+
+    - name: Add coverage PR comment
+      uses: marocchino/sticky-pull-request-comment@v2
+      if: github.event_name == 'pull_request'
+      with:
+        path: coverage-report/SummaryGithub.md
+
+    - name: Check code formatting
+      run: dotnet format --verify-no-changes --verbosity diagnostic
+
+    - name: Install EF Core tools
+      run: dotnet tool install --global dotnet-ef --version 10.0.0-rc.2.*
+
+    - name: Run EF Core migrations check
+      run: dotnet ef migrations has-pending-model-changes --project src/MyOpenTelemetryApi.Infrastructure --startup-project src/MyOpenTelemetryApi.Api
+      env:
+        ConnectionStrings__DefaultConnection: "Host=localhost;Port=5432;Database=testdb;Username=postgres;Password=postgres"
+
+    - name: Test database migrations
+      run: dotnet ef database update --project src/MyOpenTelemetryApi.Infrastructure --startup-project src/MyOpenTelemetryApi.Api
+      env:
+        ConnectionStrings__DefaultConnection: "Host=localhost;Port=5432;Database=testdb;Username=postgres;Password=postgres"
+
+    - name: Run integration tests (if any)
+      run: |
+        echo "No integration tests yet - placeholder for future tests"
+      env:
+        ConnectionStrings__DefaultConnection: "Host=localhost;Port=5432;Database=testdb;Username=postgres;Password=postgres"
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      with:
+        name: build-artifacts
+        path: |
+          src/MyOpenTelemetryApi.Api/bin/Release/net10.0/
+          !src/MyOpenTelemetryApi.Api/bin/Release/net10.0/*.pdb
+        retention-days: 7
+
+  code-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
+      with:
+        fetch-depth: 0  # Shallow clones should be disabled for better analysis
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Install .NET tools
+      run: |
+        dotnet tool install --global dotnet-outdated-tool
+        dotnet tool install --global dotnet-reportgenerator-globaltool
+
+    - name: Check for outdated packages
+      run: dotnet outdated --fail-on-updates
+      continue-on-error: true
+
+    - name: Security scan
+      run: |
+        dotnet list package --vulnerable --include-transitive
+
+  docker-build:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
+
+    - name: Build Docker image
+      run: docker build -t myopentelemetryapi:${{ github.sha }} .
+
+    - name: Run Docker container test
+      run: |
+        echo "Skipping container health check - requires database setup"
+        # Will implement proper container testing later
+
+    - name: Save Docker image
+      if: github.ref == 'refs/heads/main'
+      run: |
+        docker save myopentelemetryapi:${{ github.sha }} | gzip > myopentelemetryapi.tar.gz
+
+    - name: Upload Docker image
+      if: github.ref == 'refs/heads/main'
+      uses: actions/upload-artifact@v4
+      with:
+        name: docker-image
+        path: myopentelemetryapi.tar.gz
+        retention-days: 7
 
 
 
@@ -477,160 +528,3 @@ Would you like me to also show you how to set up log aggregation queries or crea
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-I'll search the project knowledge for the full source code to understand the compilation errors.I found the FileExporter.cs file! The issue is that the OpenTelemetry API has changed in .NET 10. Let me search for more context on the exact errors:Perfect! I can see the issues. The OpenTelemetry API has changed in .NET 10. Here are the two compilation errors:
-
-1. **Line 78**: `LogRecordScope` is no longer directly castable to `IEnumerable<KeyValuePair<string, object?>>`
-2. **Line 114**: `LogRecord` no longer has a `Logger` property - the API has changed
-
-Let me create the fixed version of FileExporter.cs:## Summary of Changes
-
-I've fixed the two compilation errors in `FileExporter.cs` for .NET 10 compatibility:
-
-### **Error 1 (Line 78):** Pattern matching issue with `LogRecordScope`
-**Problem:** `LogRecordScope` can no longer be directly cast to `IEnumerable<KeyValuePair<string, object?>>` in .NET 10.
-
-**Solution:** Updated `ExtractScopeValues()` to:
-- Check if scope is `System.Collections.IEnumerable` (excluding strings)
-- Use dynamic iteration to extract `KeyValuePair` items
-- Fall back to `ToString()` if iteration fails or scope is not enumerable
-- Wrapped in try-catch for safety
-
-### **Error 2 (Line 114):** Missing `Logger` property
-**Problem:** `LogRecord.Logger` property no longer exists in .NET 10.
-
-**Solution:** Removed the `ExtractResourceAttributes()` method entirely and removed it from the log entry creation. Resource attributes can't be accessed this way in .NET 10's OpenTelemetry implementation. If you need resource information, it should be configured at the OpenTelemetry pipeline level rather than extracted from individual log records.
-
-### Additional Changes:
-- Simplified the scope extraction logic to handle the new API more robustly
-- Maintained backward compatibility where possible
-- Kept error handling to prevent export failures
-
-Replace your current `src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs` with this fixed version and the project should compile successfully.
-
-
-
-
-
-
-
-
-
-
-
-Severity	Code	Description	Project	File	Line	Suppression State
-Error (active)	CS0019	Operator '!=' cannot be applied to operands of type 'LogRecordScope' and '<null>'	MyOpenTelemetryApi.Api	C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs	82	
-Error (active)	CS8121	An expression of type 'LogRecordScope' cannot be handled by a pattern of type 'IEnumerable'.	MyOpenTelemetryApi.Api	C:\Users\kushal\source\repos\MyOpenTelemetryApi\src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs	86	
-
-
-
-
-
-
-
-The `LogRecordScope` type has changed significantly in .NET 10. Let me search for more information about the new API:Let me fetch the actual example from the OpenTelemetry repository to see how they handle `LogRecordScope`:Let me try a more direct search for the raw file:Perfect! I found the answer in the search results. The key insight is from the OTLP exporter code which shows `foreach (var scopeItem in scope)` - meaning `LogRecordScope` is directly iterable! Let me update the code:Perfect! Now the code is much cleaner and follows the official OpenTelemetry pattern. The key changes:
-
-1. **`LogRecordScope` is directly iterable** - In the official OpenTelemetry OTLP exporter code, they use `foreach (var scopeItem in scope)` directly
-2. Each iteration gives you a `KeyValuePair<string, object?>` that you can access with `.Key` and `.Value`
-3. This is the proper way to handle `LogRecordScope` in .NET 10
-
-The fixed `FileExporter.cs` should now compile without errors. The solution was simpler than I initially thought - `LogRecordScope` implements `IEnumerable<KeyValuePair<string, object?>>` and can be iterated directly without any type checking or casting.
-
-
-
-{"timestamp":"2025-10-20T19:03:14.9356899Z","traceId":"0467298114f5790a60f2bbf56d7c65e5","spanId":"98e205e91bd3a99b","traceFlags":"Recorded","categoryName":"MyOpenTelemetryApi.Application.Services.ContactService","logLevel":"Information","formattedMessage":"Contact created successfully: 1ceb657c-ced5-4fa1-8bf3-0c4add1eee69 - Peter-2025-10-20-15-03-12 Parker-2025-10-20-15-03-12","body":"Contact created successfully: {ContactId} - {FirstName} {LastName}","scopeValues":[{"SpanId":"98e205e91bd3a99b","TraceId":"0467298114f5790a60f2bbf56d7c65e5","ParentId":"a40ccb08c9c19067"},{"ConnectionId":"0HNGG19VJR517"},{"RequestId":"0HNGG19VJR517:00000001","RequestPath":"/api/Contacts"},{"ActionId":"26248983-7253-4375-b6cd-ae51d9e8567d","ActionName":"MyOpenTelemetryApi.Api.Controllers.ContactsController.CreateContact (MyOpenTelemetryApi.Api)"},{"Operation":"CreateContact","HasEmail":true,"HasPhone":true,"HasAddress":true,"Company":"Daily Bugle-2025-10-20-15-03-12"}],"exception":null,"attributes":{"ContactId":"1ceb657c-ced5-4fa1-8bf3-0c4add1eee69","FirstName":"Peter-2025-10-20-15-03-12","LastName":"Parker-2025-10-20-15-03-12","{OriginalFormat}":"Contact created successfully: {ContactId} - {FirstName} {LastName}"}}
-
-Excellent! The FileExporter is now working perfectly! 🎉
-
-Looking at that JSON log output, you're getting comprehensive telemetry data with:
-
-**Trace Context:**
-- `traceId`: Full distributed trace ID
-- `spanId`: Current span identifier  
-- `traceFlags`: Showing it's being recorded
-- Parent/child span relationships in the scope values
-
-**Structured Logging:**
-- `formattedMessage`: Human-readable output
-- `body`: Original template with placeholders
-- `attributes`: Extracted structured data (ContactId, FirstName, LastName)
-
-**Rich Scope Information:**
-- OpenTelemetry trace context (SpanId, TraceId, ParentId)
-- ASP.NET Core context (ConnectionId, RequestId, RequestPath)
-- Controller/action metadata (ActionId, ActionName)
-- Your custom business context (Operation, HasEmail, HasPhone, HasAddress, Company)
-
-This is exactly what you want for observability - the log entry tells a complete story about:
-1. **What happened**: Contact created successfully
-2. **Where**: ContactsController.CreateContact endpoint
-3. **When**: Precise timestamp
-4. **Context**: Which request, which trace, what operation
-5. **Data**: Specific contact details with structured attributes
-
-Your OpenTelemetry instrumentation is working beautifully! This level of detail will make debugging and monitoring in production much easier. You can now trace requests across your entire system, correlate logs with traces, and have full context for every operation.
-
-```json
-{
-    "timestamp": "2025-10-20T19:03:14.9356899Z",
-    "traceId": "0467298114f5790a60f2bbf56d7c65e5",
-    "spanId": "98e205e91bd3a99b",
-    "traceFlags": "Recorded",
-    "categoryName": "MyOpenTelemetryApi.Application.Services.ContactService",
-    "logLevel": "Information",
-    "formattedMessage": "Contact created successfully: 1ceb657c-ced5-4fa1-8bf3-0c4add1eee69 - Peter-2025-10-20-15-03-12 Parker-2025-10-20-15-03-12",
-    "body": "Contact created successfully: {ContactId} - {FirstName} {LastName}",
-    "scopeValues": [
-        {
-            "SpanId": "98e205e91bd3a99b",
-            "TraceId": "0467298114f5790a60f2bbf56d7c65e5",
-            "ParentId": "a40ccb08c9c19067"
-        },
-        {
-            "ConnectionId": "0HNGG19VJR517"
-        },
-        {
-            "RequestId": "0HNGG19VJR517:00000001",
-            "RequestPath": "/api/Contacts"
-        },
-        {
-            "ActionId": "26248983-7253-4375-b6cd-ae51d9e8567d",
-            "ActionName": "MyOpenTelemetryApi.Api.Controllers.ContactsController.CreateContact (MyOpenTelemetryApi.Api)"
-        },
-        {
-            "Operation": "CreateContact",
-            "HasEmail": true,
-            "HasPhone": true,
-            "HasAddress": true,
-            "Company": "Daily Bugle-2025-10-20-15-03-12"
-        }
-    ],
-    "exception": null,
-    "attributes": {
-        "ContactId": "1ceb657c-ced5-4fa1-8bf3-0c4add1eee69",
-        "FirstName": "Peter-2025-10-20-15-03-12",
-        "LastName": "Parker-2025-10-20-15-03-12",
-        "{OriginalFormat}": "Contact created successfully: {ContactId} - {FirstName} {LastName}"
-    }
-}
-```
