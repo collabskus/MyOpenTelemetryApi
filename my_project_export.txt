@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/22/2025 08:18:10
+Generated: 10/22/2025 09:17:30
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -162,19 +162,9 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
     |       UnitTest1.cs
     |       
     \---MyOpenTelemetryApi.Infrastructure.Tests
-        |   MyOpenTelemetryApi.Infrastructure.Tests.csproj
-        |   UnitTest1.cs
-        |   
-        +---bin
-        |   \---Debug
-        |       \---net10.0
-        \---obj
-            \---Debug
-                \---net10.0
-                    |   MyOpenTelemetryApi.Infrastructure.Tests.GlobalUsings.g.cs
-                    |   
-                    +---ref
-                    \---refint
+            MyOpenTelemetryApi.Infrastructure.Tests.csproj
+            UnitTest1.cs
+            
 
 
 FILE CONTENTS:
@@ -1562,8 +1552,8 @@ MODIFIED: 10/21/2025 11:16:23
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Program.cs
-SIZE: 17.5 KB
-MODIFIED: 10/08/2025 10:09:54
+SIZE: 17.79 KB
+MODIFIED: 10/22/2025 09:12:13
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Program.cs - Updated version with configuration-based setup
@@ -1658,8 +1648,13 @@ builder.Services.AddOpenTelemetry()
             })
             .AddEntityFrameworkCoreInstrumentation(options =>
             {
-                options.SetDbStatementForText = true;
-                options.SetDbStatementForStoredProcedure = true;
+                // The new API doesn't have SetDbStatementForText or SetDbStatementForStoredProcedure
+                // These are now enabled by default in the beta version
+                options.EnrichWithIDbCommand = (activity, command) =>
+                {
+                    // Optional: Add custom enrichment if needed
+                    activity.SetTag("db.system", "postgresql");
+                };
             })
             .AddSource("MyOpenTelemetryApi.*"); // Add custom activity sources
 
@@ -2125,8 +2120,8 @@ MODIFIED: 10/06/2025 11:32:06
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs
-SIZE: 3.32 KB
-MODIFIED: 10/20/2025 14:54:28
+SIZE: 3.58 KB
+MODIFIED: 10/22/2025 09:16:42
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Telemetry/FileExporter.cs
@@ -2177,7 +2172,9 @@ public class FileLogExporter : BaseExporter<LogRecord>
                         SpanId = logRecord.SpanId.ToString(),
                         TraceFlags = logRecord.TraceFlags.ToString(),
                         CategoryName = logRecord.CategoryName,
-                        LogLevel = logRecord.LogLevel.ToString(),
+                        #pragma warning disable OTEL1001
+                        Severity = logRecord.Severity.ToString(), // 'OpenTelemetry.Logs.LogRecord.Severity' is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+                        #pragma warning restore
                         FormattedMessage = logRecord.FormattedMessage,
                         Body = logRecord.Body,
                         ScopeValues = ExtractScopeValues(logRecord),
@@ -6139,7 +6136,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/22/2025 08:18:12
+EXPORT COMPLETED: 10/22/2025 09:17:32
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
