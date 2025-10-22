@@ -21,13 +21,12 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication("ApiKey")
     .AddScheme<ApiKeyAuthenticationOptions, ApiKeyAuthenticationHandler>("ApiKey", null);
 
-
 // Define service name and version for OpenTelemetry
 string serviceName = builder.Configuration.GetValue<string>("OpenTelemetry:ServiceName") ?? "MyOpenTelemetryApi";
 string serviceVersion = builder.Configuration.GetValue<string>("OpenTelemetry:ServiceVersion") ??
                     Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "1.0.0";
 
-// Configure OpenTelemetry Resource
+// Configure OpenTelemetry Resource with Git commit hash
 ResourceBuilder resourceBuilder = ResourceBuilder.CreateDefault()
     .AddService(serviceName: serviceName, serviceVersion: serviceVersion)
     .AddTelemetrySdk()
@@ -35,7 +34,9 @@ ResourceBuilder resourceBuilder = ResourceBuilder.CreateDefault()
     {
         ["environment"] = builder.Environment.EnvironmentName,
         ["deployment.environment"] = builder.Environment.EnvironmentName,
-        ["host.name"] = Environment.MachineName
+        ["host.name"] = Environment.MachineName,
+        ["git.commit.sha"] = GetGitCommitHash(),
+        ["build.timestamp"] = GetBuildTimestamp()
     });
 
 // Configure OpenTelemetry Logging
@@ -73,18 +74,17 @@ builder.Logging.AddOpenTelemetry(options =>
     }
 });
 
-// Configure OpenTelemetry Tracing
+// Configure OpenTelemetry Tracing and Metrics
 builder.Services.AddOpenTelemetry()
-    .ConfigureResource(resource =>
-        resource
-            .AddService(serviceName: serviceName, serviceVersion: serviceVersion))
-            .AddAttributes(new Dictionary<string, object>
-            {
-                ["deployment.environment"] = builder.Environment.EnvironmentName,
-                ["service.instance.id"] = Environment.MachineName,
-                ["git.commit.sha"] = GetGitCommitHash(), // Your helper method
-                ["build.timestamp"] = GetBuildTimestamp() // Optional
-            })
+    .ConfigureResource(resource => resource
+        .AddService(serviceName: serviceName, serviceVersion: serviceVersion)
+        .AddAttributes(new Dictionary<string, object>
+        {
+            ["deployment.environment"] = builder.Environment.EnvironmentName,
+            ["service.instance.id"] = Environment.MachineName,
+            ["git.commit.sha"] = GetGitCommitHash(),
+            ["build.timestamp"] = GetBuildTimestamp()
+        }))
     .WithTracing(tracing =>
     {
         tracing
@@ -99,15 +99,12 @@ builder.Services.AddOpenTelemetry()
             })
             .AddEntityFrameworkCoreInstrumentation(options =>
             {
-                // The new API doesn't have SetDbStatementForText or SetDbStatementForStoredProcedure
-                // These are now enabled by default in the beta version
                 options.EnrichWithIDbCommand = (activity, command) =>
                 {
-                    // Optional: Add custom enrichment if needed
                     activity.SetTag("db.system", "postgresql");
                 };
             })
-            .AddSource("MyOpenTelemetryApi.*"); // Add custom activity sources
+            .AddSource("MyOpenTelemetryApi.*");
 
         // Configure sampling
         bool alwaysOn = builder.Configuration.GetValue<bool>("OpenTelemetry:Sampling:AlwaysOn");
@@ -145,7 +142,7 @@ builder.Services.AddOpenTelemetry()
             .AddHttpClientInstrumentation()
             .AddRuntimeInstrumentation()
             .AddProcessInstrumentation()
-            .AddMeter("MyOpenTelemetryApi.*"); // Add custom meters
+            .AddMeter("MyOpenTelemetryApi.*");
 
         // Configure exporters
         if (builder.Configuration.GetValue<bool>("OpenTelemetry:Exporter:Console:Enabled"))
@@ -165,28 +162,10 @@ builder.Services.AddOpenTelemetry()
         }
     });
 
-    // builder.Services.AddOpenTelemetry()
-    // .ConfigureResource(resource => resource
-    //     .AddService(
-    //         serviceName: "MyOpenTelemetryApi",
-    //         serviceVersion: Assembly.GetExecutingAssembly().GetName().Version?.ToString())
-    //     .AddAttributes(new Dictionary<string, object>
-    //     {
-    //         ["deployment.environment"] = builder.Environment.EnvironmentName,
-    //         ["service.instance.id"] = Environment.MachineName,
-    //         ["git.commit.sha"] = GetGitCommitHash(), // Your helper method
-    //         ["build.timestamp"] = GetBuildTimestamp() // Optional
-    //     }))
-    // .WithTracing(tracing => /* your existing config */)
-    // .WithLogging(logging => /* your existing config */);
-
 // Add services to the container.
 builder.Services.AddControllers();
 
-// Configure PostgreSQL
-//builder.Services.AddDbContext<AppDbContext>(options =>
-//    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-// Program.cs - Add retry policies for database operations
+// Configure PostgreSQL with retry policies
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), npgsqlOptions =>
@@ -212,16 +191,13 @@ builder.Services.AddScoped<ITagService, TagService>();
 // Add HTTP context accessor for tracing context
 builder.Services.AddHttpContextAccessor();
 
-// Add this to your Program.cs
-builder.Services.AddOpenApi(); // Built-in OpenAPI support
+// Add built-in OpenAPI support
+builder.Services.AddOpenApi();
 
 WebApplication app = builder.Build();
 
-// Add OpenAPI endpoint
-//if (app.Environment.IsDevelopment())
-//{
-app.MapOpenApi(); // Serves OpenAPI JSON at /openapi/v1.json
-//}
+// Serve OpenAPI JSON
+app.MapOpenApi();
 
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();
@@ -247,10 +223,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Replace the migration section in src/MyOpenTelemetryApi.Api/Program.cs
-// Find this section (around line 140-160) and replace it with this code:
-
-// Apply migrations on startup - safe for educational/small production deployments
+// Apply migrations on startup
 using (IServiceScope scope = app.Services.CreateScope())
 {
     AppDbContext dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -296,12 +269,14 @@ using (IServiceScope scope = app.Services.CreateScope())
     {
         logger.LogError(ex, "Error applying database migrations");
         activity?.SetStatus(ActivityStatusCode.Error, ex.Message);
-        throw; // Fail startup if migrations fail
+        throw;
     }
 }
+
 if (app.Logger.IsEnabled(LogLevel.Information))
 {
-    app.Logger.LogInformation("Starting {ServiceName} version {ServiceVersion}", serviceName, serviceVersion);
+    app.Logger.LogInformation("Starting {ServiceName} version {ServiceVersion} (commit: {GitCommit})", 
+        serviceName, serviceVersion, GetGitCommitHash());
 }
 
 // Add a friendly landing page at the root
@@ -552,7 +527,7 @@ app.Run();
 
 static string GetGitCommitHash()
 {
-    // Option 1: From environment variable
+    // Option 1: From environment variable (preferred for containers)
     var commitHash = Environment.GetEnvironmentVariable("GIT_COMMIT");
     if (!string.IsNullOrEmpty(commitHash))
         return commitHash;
@@ -563,4 +538,22 @@ static string GetGitCommitHash()
         .InformationalVersion;
 
     return version ?? "unknown";
+}
+
+static string GetBuildTimestamp()
+{
+    // From environment variable set during build
+    var timestamp = Environment.GetEnvironmentVariable("BUILD_TIMESTAMP");
+    if (!string.IsNullOrEmpty(timestamp))
+        return timestamp;
+
+    // Fallback to assembly build time if available
+    var assembly = Assembly.GetEntryAssembly();
+    if (assembly != null)
+    {
+        var buildDate = new FileInfo(assembly.Location).LastWriteTimeUtc;
+        return buildDate.ToString("yyyy-MM-ddTHH:mm:ssZ");
+    }
+
+    return DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
 }
