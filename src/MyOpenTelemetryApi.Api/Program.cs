@@ -90,8 +90,13 @@ builder.Services.AddOpenTelemetry()
             })
             .AddEntityFrameworkCoreInstrumentation(options =>
             {
-                options.SetDbStatementForText = true;
-                options.SetDbStatementForStoredProcedure = true;
+                // The new API doesn't have SetDbStatementForText or SetDbStatementForStoredProcedure
+                // These are now enabled by default in the beta version
+                options.EnrichWithIDbCommand = (activity, command) =>
+                {
+                    // Optional: Add custom enrichment if needed
+                    activity.SetTag("db.system", "postgresql");
+                };
             })
             .AddSource("MyOpenTelemetryApi.*"); // Add custom activity sources
 

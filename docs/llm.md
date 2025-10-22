@@ -678,3 +678,102 @@ For your project:
 - ✅ Migrations stay in Infrastructure project
 - ✅ Clean architecture maintained (Design is PrivateAssets)
 
+I'll search the project knowledge to understand the current code structure and then provide a solution for these build errors.Based on the error analysis and the project files you've provided, here are the solutions to fix the build errors:
+
+## **Build Errors Solution**
+
+### **Issue 1: EntityFrameworkInstrumentationOptions API Changes**
+The properties `SetDbStatementForText` and `SetDbStatementForStoredProcedure` have been removed in the latest beta version of `OpenTelemetry.Instrumentation.EntityFrameworkCore` (1.12.0-beta.2). These have been replaced with a simpler configuration.
+
+### **Issue 2: LogRecord.LogLevel is Obsolete**
+The `LogLevel` property has been deprecated in favor of `Severity`.
+
+## **Required File Changes**
+
+### **1. Fix Program.cs (lines 93-94)**
+Replace the EntityFramework instrumentation configuration:
+
+```csharp
+// OLD CODE (lines 91-95):
+.AddEntityFrameworkCoreInstrumentation(options =>
+{
+    options.SetDbStatementForText = true;
+    options.SetDbStatementForStoredProcedure = true;
+})
+
+// NEW CODE:
+.AddEntityFrameworkCoreInstrumentation(options =>
+{
+    // The new API doesn't have SetDbStatementForText or SetDbStatementForStoredProcedure
+    // These are now enabled by default in the beta version
+    options.EnrichWithIDbCommand = (activity, command) =>
+    {
+        // Optional: Add custom enrichment if needed
+        activity.SetTag("db.system", "postgresql");
+    };
+})
+```
+
+Or if you don't need any custom configuration, simply use:
+```csharp
+.AddEntityFrameworkCoreInstrumentation()
+```
+
+### **2. Fix FileExporter.cs (line 49)**
+Replace the obsolete `LogLevel` property with `Severity`:
+
+```csharp
+// OLD CODE (line 49):
+LogLevel = logRecord.LogLevel.ToString(),
+
+// NEW CODE:
+Severity = logRecord.Severity.ToString(),
+```
+
+## **Complete Updated Code Sections**
+
+### **Program.cs (around lines 86-97):**
+```csharp
+.WithTracing(tracing =>
+{
+    tracing
+        .AddAspNetCoreInstrumentation(options =>
+        {
+            options.RecordException = true;
+            options.Filter = (httpContext) => !httpContext.Request.Path.StartsWithSegments("/health");
+        })
+        .AddHttpClientInstrumentation(options =>
+        {
+            options.RecordException = true;
+        })
+        .AddEntityFrameworkCoreInstrumentation() // Simplified - default options are sufficient
+        .AddSource("MyOpenTelemetryApi.*")
+        .AddSource(TelemetryConstants.ServiceName);
+```
+
+### **FileExporter.cs (around lines 42-56):**
+```csharp
+var logEntry = new
+{
+    Timestamp = logRecord.Timestamp,
+    TraceId = logRecord.TraceId.ToString(),
+    SpanId = logRecord.SpanId.ToString(),
+    TraceFlags = logRecord.TraceFlags.ToString(),
+    CategoryName = logRecord.CategoryName,
+    Severity = logRecord.Severity.ToString(), // Changed from LogLevel
+    FormattedMessage = logRecord.FormattedMessage,
+    Body = logRecord.Body,
+    ScopeValues = ExtractScopeValues(logRecord),
+    Exception = logRecord.Exception?.ToString(),
+    Attributes = ExtractAttributes(logRecord)
+};
+```
+
+## **Regarding Security Warnings**
+The warnings about `Microsoft.Build.Tasks.Core` and `Microsoft.Build.Utilities.Core` are related to a known vulnerability. These are transitive dependencies brought in by Entity Framework Core tools. To address these:
+
+1. Wait for the official .NET 10 RC2 release which should have updated packages
+2. Or, if critical, you can add explicit package references with newer versions in your `Directory.Packages.props` to override the transitive dependencies
+
+## **Summary**
+The main issues are due to API changes in the OpenTelemetry.Instrumentation.EntityFrameworkCore beta package. The fixes above will resolve both compilation errors. The security warnings are non-blocking and will be resolved when Microsoft releases updated packages.
