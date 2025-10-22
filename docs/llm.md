@@ -777,3 +777,193 @@ The warnings about `Microsoft.Build.Tasks.Core` and `Microsoft.Build.Utilities.C
 
 ## **Summary**
 The main issues are due to API changes in the OpenTelemetry.Instrumentation.EntityFrameworkCore beta package. The fixes above will resolve both compilation errors. The security warnings are non-blocking and will be resolved when Microsoft releases updated packages.
+
+Looking at your changes in the updated Program.cs and FileExporter.cs files, the implementation looks good. Here's my code review:
+
+## **✅ Successful Fixes**
+
+### **1. EntityFrameworkCore Instrumentation (Program.cs)**
+The updated configuration correctly handles the API changes:
+```csharp
+.AddEntityFrameworkCoreInstrumentation(options =>
+{
+    options.EnrichWithIDbCommand = (activity, command) =>
+    {
+        activity.SetTag("db.system", "postgresql");
+    };
+})
+```
+This is the proper approach for the beta version. The enrichment callback is optional but useful for adding database-specific tags.
+
+### **2. LogRecord.Severity (FileExporter.cs)**
+The change from `LogLevel` to `Severity` is correct:
+```csharp
+Severity = logRecord.Severity.ToString(),
+```
+You've also properly added the pragma directive to suppress the warning about the experimental API, which is appropriate since this is expected behavior in the preview version.
+
+## **🔍 Additional Observations**
+
+### **Good Practices Maintained:**
+- Proper use of `#pragma warning disable/restore` for the experimental API
+- Clean implementation without unnecessary complexity
+- The EnrichWithIDbCommand callback adds meaningful context
+
+### **Minor Suggestions:**
+1. **Consider simplifying further** - If you don't need the custom enrichment, you could just use:
+   ```csharp
+   .AddEntityFrameworkCoreInstrumentation()
+   ```
+
+2. **Documentation** - Consider adding a comment explaining why the pragma is needed:
+   ```csharp
+   // Severity is marked experimental in preview but is the replacement for LogLevel
+   #pragma warning disable OTEL1001
+   ```
+
+## **✅ Build Status**
+With these changes, your project should now build successfully. The errors are resolved and the warnings about the security vulnerabilities in Microsoft.Build packages are non-blocking (they'll be fixed when Microsoft releases updated packages).
+
+## **Next Steps**
+1. Run `dotnet build` to confirm everything compiles
+2. Test the application to ensure telemetry is still being captured correctly
+3. Monitor for the RC2 package updates to address the security warnings
+
+The fixes are clean and appropriate for the current OpenTelemetry beta packages. Well done adapting to the API changes!
+
+
+
+
+
+
+
+
+```json
+{"timestamp":"2025-10-22T14:03:36.5400836Z","traceId":"9b657efa2002243e256495134972ff99","spanId":"92f4b091edb011c7","traceFlags":"Recorded","categoryName":"MyOpenTelemetryApi.Application.Services.ContactService","severity":"Info","formattedMessage":"Contact created successfully: 855e9600-c08b-463a-abc3-cba98fcd9709 - Clark-2025-10-22-10-03-33 Kent-2025-10-22-10-03-33","body":"Contact created successfully: {ContactId} - {FirstName} {LastName}","scopeValues":[{"SpanId":"92f4b091edb011c7","TraceId":"9b657efa2002243e256495134972ff99","ParentId":"17bc4400b5ba9d72"},{"ConnectionId":"0HNGHDSO7G2BF"},{"RequestId":"0HNGHDSO7G2BF:00000001","RequestPath":"/api/Contacts"},{"ActionId":"7703c897-60d6-4f37-9208-1fd8322e0b61","ActionName":"MyOpenTelemetryApi.Api.Controllers.ContactsController.CreateContact (MyOpenTelemetryApi.Api)"},{"Operation":"CreateContact","HasEmail":true,"HasPhone":true,"HasAddress":true,"Company":"Daily Planet-2025-10-22-10-03-33"}],"exception":null,"attributes":{"ContactId":"855e9600-c08b-463a-abc3-cba98fcd9709","FirstName":"Clark-2025-10-22-10-03-33","LastName":"Kent-2025-10-22-10-03-33","{OriginalFormat}":"Contact created successfully: {ContactId} - {FirstName} {LastName}"}}
+```
+
+or formatted 
+
+```json
+{
+    "timestamp": "2025-10-22T14:03:36.5400836Z",
+    "traceId": "9b657efa2002243e256495134972ff99",
+    "spanId": "92f4b091edb011c7",
+    "traceFlags": "Recorded",
+    "categoryName": "MyOpenTelemetryApi.Application.Services.ContactService",
+    "severity": "Info",
+    "formattedMessage": "Contact created successfully: 855e9600-c08b-463a-abc3-cba98fcd9709 - Clark-2025-10-22-10-03-33 Kent-2025-10-22-10-03-33",
+    "body": "Contact created successfully: {ContactId} - {FirstName} {LastName}",
+    "scopeValues": [
+        {
+            "SpanId": "92f4b091edb011c7",
+            "TraceId": "9b657efa2002243e256495134972ff99",
+            "ParentId": "17bc4400b5ba9d72"
+        },
+        {
+            "ConnectionId": "0HNGHDSO7G2BF"
+        },
+        {
+            "RequestId": "0HNGHDSO7G2BF:00000001",
+            "RequestPath": "/api/Contacts"
+        },
+        {
+            "ActionId": "7703c897-60d6-4f37-9208-1fd8322e0b61",
+            "ActionName": "MyOpenTelemetryApi.Api.Controllers.ContactsController.CreateContact (MyOpenTelemetryApi.Api)"
+        },
+        {
+            "Operation": "CreateContact",
+            "HasEmail": true,
+            "HasPhone": true,
+            "HasAddress": true,
+            "Company": "Daily Planet-2025-10-22-10-03-33"
+        }
+    ],
+    "exception": null,
+    "attributes": {
+        "ContactId": "855e9600-c08b-463a-abc3-cba98fcd9709",
+        "FirstName": "Clark-2025-10-22-10-03-33",
+        "LastName": "Kent-2025-10-22-10-03-33",
+        "{OriginalFormat}": "Contact created successfully: {ContactId} - {FirstName} {LastName}"
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+You're right that Git and your ASP.NET application are separate systems, but you can access Git information from your .NET code in a few ways:
+
+**1. Read it at build time and embed it**
+
+This is the cleanest approach. Add this to your `.csproj` file:
+
+```xml
+<ItemGroup>
+  <SourceRoot Include="$(MSBuildProjectDirectory)/" />
+</ItemGroup>
+
+<Target Name="GetGitCommitHash" BeforeTargets="Build">
+  <Exec Command="git rev-parse HEAD" ConsoleToMSBuild="true" CaptureStdErr="true">
+    <Output TaskParameter="ConsoleOutput" PropertyName="GitCommitHash" />
+  </Exec>
+  <ItemGroup>
+    <CompileItem Include="GitCommitHash.cs" />
+  </ItemGroup>
+  <WriteLinesToFile File="$(MSBuildProjectDirectory)\GitCommitHash.cs" Lines="public static class GitInfo { public const string CommitHash = &quot;$(GitCommitHash)&quot;; }" Overwrite="true" />
+</Target>
+```
+
+Then access it in your code:
+```csharp
+var commitHash = GitInfo.CommitHash;
+```
+
+**2. Call git from your application at runtime**
+
+```csharp
+using System.Diagnostics;
+
+public static string GetGitCommitHash()
+{
+    try
+    {
+        var process = new Process
+        {
+            StartInfo = new ProcessStartInfo
+            {
+                FileName = "git",
+                Arguments = "rev-parse HEAD",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                CreateNoWindow = true,
+                WorkingDirectory = AppContext.BaseDirectory
+            }
+        };
+        
+        process.Start();
+        string output = process.StandardOutput.ReadToEnd();
+        process.WaitForExit();
+        
+        return output.Trim();
+    }
+    catch
+    {
+        return "Unknown";
+    }
+}
+```
+
+**3. Use a NuGet package**
+
+Libraries like `GitVersioning` or `MinVer` can handle this automatically during your build process.
+
+For most applications, **approach #1** is best—it embeds the commit hash at build time so you don't have a runtime dependency on Git being installed. This is especially useful for production deployments where Git might not be available on the server.
+
+Which approach fits your use case best?
