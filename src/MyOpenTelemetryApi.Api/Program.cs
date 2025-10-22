@@ -275,7 +275,7 @@ using (IServiceScope scope = app.Services.CreateScope())
 
 if (app.Logger.IsEnabled(LogLevel.Information))
 {
-    app.Logger.LogInformation("Starting {ServiceName} version {ServiceVersion} (commit: {GitCommit})", 
+    app.Logger.LogInformation("Starting {ServiceName} version {ServiceVersion} (commit: {GitCommit})",
         serviceName, serviceVersion, GetGitCommitHash());
 }
 

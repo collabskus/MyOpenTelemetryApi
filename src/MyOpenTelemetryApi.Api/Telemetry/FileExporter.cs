@@ -46,9 +46,9 @@ public class FileLogExporter : BaseExporter<LogRecord>
                         SpanId = logRecord.SpanId.ToString(),
                         TraceFlags = logRecord.TraceFlags.ToString(),
                         CategoryName = logRecord.CategoryName,
-                        #pragma warning disable OTEL1001
+#pragma warning disable OTEL1001
                         Severity = logRecord.Severity.ToString(), // 'OpenTelemetry.Logs.LogRecord.Severity' is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
-                        #pragma warning restore
+#pragma warning restore
                         FormattedMessage = logRecord.FormattedMessage,
                         Body = logRecord.Body,
                         ScopeValues = ExtractScopeValues(logRecord),
