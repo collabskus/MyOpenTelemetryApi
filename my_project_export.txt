@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 10/22/2025 14:43:26
+Generated: 10/22/2025 14:47:42
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -103,6 +103,9 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   +---MyOpenTelemetryApi.Domain
 |   |   |   MyOpenTelemetryApi.Domain.csproj
 |   |   |   
+|   |   +---bin
+|   |   |   \---Debug
+|   |   |       \---net10.0
 |   |   +---Entities
 |   |   |       Address.cs
 |   |   |       AddressType.cs
@@ -116,13 +119,22 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   |   |       PhoneType.cs
 |   |   |       Tag.cs
 |   |   |       
-|   |   \---Interfaces
-|   |           IContactRepository.cs
-|   |           IGroupRepository.cs
-|   |           IRepository.cs
-|   |           ITagRepository.cs
-|   |           IUnitOfWork.cs
-|   |           
+|   |   +---Interfaces
+|   |   |       IContactRepository.cs
+|   |   |       IGroupRepository.cs
+|   |   |       IRepository.cs
+|   |   |       ITagRepository.cs
+|   |   |       IUnitOfWork.cs
+|   |   |       
+|   |   \---obj
+|   |       \---Debug
+|   |           \---net10.0
+|   |               |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+|   |               |   MyOpenTelemetryApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+|   |               |   MyOpenTelemetryApi.Domain.GlobalUsings.g.cs
+|   |               |   
+|   |               +---ref
+|   |               \---refint
 |   \---MyOpenTelemetryApi.Infrastructure
 |       |   MyOpenTelemetryApi.Infrastructure.csproj
 |       |   
@@ -6177,7 +6189,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 10/22/2025 14:43:27
+EXPORT COMPLETED: 10/22/2025 14:47:43
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
