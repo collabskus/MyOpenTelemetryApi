@@ -75,7 +75,16 @@ builder.Logging.AddOpenTelemetry(options =>
 
 // Configure OpenTelemetry Tracing
 builder.Services.AddOpenTelemetry()
-    .ConfigureResource(resource => resource.AddService(serviceName: serviceName, serviceVersion: serviceVersion))
+    .ConfigureResource(resource =>
+        resource
+            .AddService(serviceName: serviceName, serviceVersion: serviceVersion))
+            .AddAttributes(new Dictionary<string, object>
+            {
+                ["deployment.environment"] = builder.Environment.EnvironmentName,
+                ["service.instance.id"] = Environment.MachineName,
+                ["git.commit.sha"] = GetGitCommitHash(), // Your helper method
+                ["build.timestamp"] = GetBuildTimestamp() // Optional
+            })
     .WithTracing(tracing =>
     {
         tracing
@@ -155,6 +164,21 @@ builder.Services.AddOpenTelemetry()
             });
         }
     });
+
+    // builder.Services.AddOpenTelemetry()
+    // .ConfigureResource(resource => resource
+    //     .AddService(
+    //         serviceName: "MyOpenTelemetryApi",
+    //         serviceVersion: Assembly.GetExecutingAssembly().GetName().Version?.ToString())
+    //     .AddAttributes(new Dictionary<string, object>
+    //     {
+    //         ["deployment.environment"] = builder.Environment.EnvironmentName,
+    //         ["service.instance.id"] = Environment.MachineName,
+    //         ["git.commit.sha"] = GetGitCommitHash(), // Your helper method
+    //         ["build.timestamp"] = GetBuildTimestamp() // Optional
+    //     }))
+    // .WithTracing(tracing => /* your existing config */)
+    // .WithLogging(logging => /* your existing config */);
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -525,3 +549,18 @@ app.Map("/error", (HttpContext context) =>
 });
 
 app.Run();
+
+static string GetGitCommitHash()
+{
+    // Option 1: From environment variable
+    var commitHash = Environment.GetEnvironmentVariable("GIT_COMMIT");
+    if (!string.IsNullOrEmpty(commitHash))
+        return commitHash;
+
+    // Option 2: From assembly attribute
+    var version = Assembly.GetEntryAssembly()?
+        .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
+        .InformationalVersion;
+
+    return version ?? "unknown";
+}

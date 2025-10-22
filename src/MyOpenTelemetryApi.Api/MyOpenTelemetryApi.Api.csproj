@@ -32,5 +32,13 @@
     <ProjectReference Include="..\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj" />
     <ProjectReference Include="..\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj" />
   </ItemGroup>
+  <PropertyGroup>
+    <SourceRevisionId>$(GITHUB_SHA)</SourceRevisionId>
+  </PropertyGroup>
 
+  <Target Name="SetSourceRevisionId" BeforeTargets="InitializeSourceControlInformation">
+    <Exec Command="git rev-parse --short HEAD" ConsoleToMSBuild="true" IgnoreExitCode="true">
+      <Output TaskParameter="ConsoleOutput" PropertyName="SourceRevisionId" />
+    </Exec>
+  </Target>
 </Project>
