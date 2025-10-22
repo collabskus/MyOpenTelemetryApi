@@ -1,5 +1,10 @@
-# Stage 1: Build - Updated 2025-10-06 16:05
+# Stage 1: Build - Updated 2025-10-22 with Git commit tracking
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+
+# Accept build arguments for Git commit and timestamp
+ARG GIT_COMMIT=unknown
+ARG BUILD_TIMESTAMP=unknown
+
 WORKDIR /src
 
 # CRITICAL: Copy MSBuild property files FIRST (before .csproj files)
@@ -18,10 +23,23 @@ RUN dotnet restore "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj"
 # Copy source code
 COPY src/ .
 
-RUN dotnet publish "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj" -c Release -o /app/publish
+# Build and publish with Git commit info embedded
+RUN dotnet publish "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj" \
+    -c Release \
+    -o /app/publish \
+    -p:InformationalVersion="${GIT_COMMIT}"
 
 # Stage 2: Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
+
+# Re-declare ARGs for runtime stage
+ARG GIT_COMMIT=unknown
+ARG BUILD_TIMESTAMP=unknown
+
+# Set environment variables from build args
+ENV GIT_COMMIT=${GIT_COMMIT}
+ENV BUILD_TIMESTAMP=${BUILD_TIMESTAMP}
+
 WORKDIR /app
 
 # Install curl for health checks
