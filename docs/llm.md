@@ -967,3 +967,82 @@ Libraries like `GitVersioning` or `MinVer` can handle this automatically during 
 For most applications, **approach #1** is best—it embeds the commit hash at build time so you don't have a runtime dependency on Git being installed. This is especially useful for production deployments where Git might not be available on the server.
 
 Which approach fits your use case best?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```json
+{"timestamp":"2025-10-22T19:28:03.0772566Z","traceId":"7d4dfd2e6b407fa9e60e499b7b89f56f","spanId":"d7b7243df2357a56","traceFlags":"Recorded","categoryName":"MyOpenTelemetryApi.Application.Services.ContactService","severity":"Info","formattedMessage":"Contact created successfully: 8db0c910-727f-47f8-973e-a1b143057397 - Adam-2025-10-22-15-28-02 West-2025-10-22-15-28-02","body":"Contact created successfully: {ContactId} - {FirstName} {LastName}","scopeValues":[{"SpanId":"d7b7243df2357a56","TraceId":"7d4dfd2e6b407fa9e60e499b7b89f56f","ParentId":"8b4679f7ddd701f1"},{"ConnectionId":"0HNGHJGE2F9KU"},{"RequestId":"0HNGHJGE2F9KU:00000001","RequestPath":"/api/Contacts"},{"ActionId":"320ac70a-ad2c-4e33-90a5-41fd29dbf78c","ActionName":"MyOpenTelemetryApi.Api.Controllers.ContactsController.CreateContact (MyOpenTelemetryApi.Api)"},{"Operation":"CreateContact","HasEmail":true,"HasPhone":true,"HasAddress":true,"Company":"Wayne Enterprises-2025-10-22-15-28-02"}],"exception":null,"attributes":{"ContactId":"8db0c910-727f-47f8-973e-a1b143057397","FirstName":"Adam-2025-10-22-15-28-02","LastName":"West-2025-10-22-15-28-02","{OriginalFormat}":"Contact created successfully: {ContactId} - {FirstName} {LastName}"}}
+```
+
+```json
+{
+    "timestamp": "2025-10-22T19:28:03.0772566Z",
+    "traceId": "7d4dfd2e6b407fa9e60e499b7b89f56f",
+    "spanId": "d7b7243df2357a56",
+    "traceFlags": "Recorded",
+    "categoryName": "MyOpenTelemetryApi.Application.Services.ContactService",
+    "severity": "Info",
+    "formattedMessage": "Contact created successfully: 8db0c910-727f-47f8-973e-a1b143057397 - Adam-2025-10-22-15-28-02 West-2025-10-22-15-28-02",
+    "body": "Contact created successfully: {ContactId} - {FirstName} {LastName}",
+    "scopeValues": [
+        {
+            "SpanId": "d7b7243df2357a56",
+            "TraceId": "7d4dfd2e6b407fa9e60e499b7b89f56f",
+            "ParentId": "8b4679f7ddd701f1"
+        },
+        {
+            "ConnectionId": "0HNGHJGE2F9KU"
+        },
+        {
+            "RequestId": "0HNGHJGE2F9KU:00000001",
+            "RequestPath": "/api/Contacts"
+        },
+        {
+            "ActionId": "320ac70a-ad2c-4e33-90a5-41fd29dbf78c",
+            "ActionName": "MyOpenTelemetryApi.Api.Controllers.ContactsController.CreateContact (MyOpenTelemetryApi.Api)"
+        },
+        {
+            "Operation": "CreateContact",
+            "HasEmail": true,
+            "HasPhone": true,
+            "HasAddress": true,
+            "Company": "Wayne Enterprises-2025-10-22-15-28-02"
+        }
+    ],
+    "exception": null,
+    "attributes": {
+        "ContactId": "8db0c910-727f-47f8-973e-a1b143057397",
+        "FirstName": "Adam-2025-10-22-15-28-02",
+        "LastName": "West-2025-10-22-15-28-02",
+        "{OriginalFormat}": "Contact created successfully: {ContactId} - {FirstName} {LastName}"
+    }
+}
+```
