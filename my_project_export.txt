@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 11/03/2025 09:01:31
+Generated: 11/03/2025 09:14:42
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -163,9 +163,19 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
     |       UnitTest1.cs
     |       
     \---MyOpenTelemetryApi.Infrastructure.Tests
-            MyOpenTelemetryApi.Infrastructure.Tests.csproj
-            UnitTest1.cs
-            
+        |   MyOpenTelemetryApi.Infrastructure.Tests.csproj
+        |   UnitTest1.cs
+        |   
+        +---bin
+        |   \---Debug
+        |       \---net10.0
+        \---obj
+            \---Debug
+                \---net10.0
+                    |   MyOpenTelemetryApi.Infrastructure.Tests.GlobalUsings.g.cs
+                    |   
+                    +---ref
+                    \---refint
 
 
 FILE CONTENTS:
@@ -6177,7 +6187,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 11/03/2025 09:01:32
+EXPORT COMPLETED: 11/03/2025 09:14:43
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
