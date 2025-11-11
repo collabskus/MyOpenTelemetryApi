@@ -17,9 +17,9 @@
     <PackageVersion Include="OpenTelemetry.Instrumentation.Process" Version="1.13.0-beta.1" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.13.0" />
     <!-- Entity Framework Core - All RC1 to match Npgsql -->
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.0-rc.2.25502.107" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0-rc.2.25502.107" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.0-rc.2.25502.107" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.0" />
     <!-- PostgreSQL / Npgsql -->
     <PackageVersion Include="Npgsql" Version="10.0.0-rc.1" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0-rc.2" />
@@ -29,25 +29,25 @@
     <PackageVersion Include="Microsoft.Build.Tasks.Core" Version="17.15.0-preview-25277-114" />
     <PackageVersion Include="Microsoft.Build.Utilities.Core" Version="17.15.0-preview-25277-114" />
     <!-- ASP.NET Core - Downgraded to RC1 -->
-    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0-rc.2.25502.107" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
     <!-- Testing -->
     <PackageVersion Include="xunit" Version="2.9.3" />
     <PackageVersion Include="xunit.analyzers" Version="1.25.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <!-- Other - All System.* packages downgraded to RC1 -->
     <PackageVersion Include="Humanizer.Core" Version="3.0.0-rc.6" />
     <PackageVersion Include="Microsoft.OpenApi" Version="2.3.5" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0-rc.2.25502.107" />
-    <PackageVersion Include="System.CodeDom" Version="10.0.0-rc.2.25502.107" />
-    <PackageVersion Include="System.Configuration.ConfigurationManager" Version="10.0.0-rc.2.25502.107" />
-    <PackageVersion Include="System.Formats.Nrbf" Version="10.0.0-rc.2.25502.107" />
-    <PackageVersion Include="System.Resources.Extensions" Version="10.0.0-rc.2.25502.107" />
-    <PackageVersion Include="System.Security.Cryptography.Pkcs" Version="10.0.0-rc.2.25502.107" />
-    <PackageVersion Include="System.Security.Cryptography.ProtectedData" Version="10.0.0-rc.2.25502.107" />
-    <PackageVersion Include="System.Diagnostics.EventLog" Version="10.0.0-rc.2.25502.107" />
-    <PackageVersion Include="System.Security.Cryptography.Xml" Version="10.0.0-rc.2.25502.107" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="System.CodeDom" Version="10.0.0" />
+    <PackageVersion Include="System.Configuration.ConfigurationManager" Version="10.0.0" />
+    <PackageVersion Include="System.Formats.Nrbf" Version="10.0.0" />
+    <PackageVersion Include="System.Resources.Extensions" Version="10.0.0" />
+    <PackageVersion Include="System.Security.Cryptography.Pkcs" Version="10.0.0" />
+    <PackageVersion Include="System.Security.Cryptography.ProtectedData" Version="10.0.0" />
+    <PackageVersion Include="System.Diagnostics.EventLog" Version="10.0.0" />
+    <PackageVersion Include="System.Security.Cryptography.Xml" Version="10.0.0" />
   </ItemGroup>
 </Project>
