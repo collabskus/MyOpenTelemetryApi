@@ -277,3 +277,8 @@ Your configuration is **still correct** for now:
 **Recommendation:** Your current approach of aligning all related packages to the **RC2 version** is the best way to maintain a working build until the **Npgsql RTM version** (`10.0.0`) is released. Keep checking for that final Npgsql release!
 
 Would you like me to set a **reminder** to check for the stable Npgsql 10.0.0 release in a few weeks?
+
+Confirmed: 
+We need to wait for the postgresql package to RTM. 
+See here for more details: 
+https://github.com/npgsql/efcore.pg/issues/3656
