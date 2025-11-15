@@ -118,3 +118,73 @@ dotnet build
 ```
 
 This should resolve the version conflict errors and most of the warnings.
+
+
+
+
+
+
+
+
+
+
+Thank you, I have made the changes. 
+Does this mean I am not ready to upgrade these nuget packages? 
+```powershell
+Discovering projects...
+Analyzing project(s)...
+Analyzing dependencies...
+» MyOpenTelemetryApi.Api
+  [net10.0]
+  Microsoft.EntityFrameworkCore.Design  10.0.0-rc.2.25502.107 -> 10.0.0
+
+» MyOpenTelemetryApi.Infrastructure
+  [net10.0]
+  Microsoft.EntityFrameworkCore         10.0.0-rc.2.25502.107 -> 10.0.0
+  Microsoft.EntityFrameworkCore.Design  10.0.0-rc.2.25502.107 -> 10.0.0
+
+Version color legend:
+<red>   : Major version update or pre-release version. Possible breaking changes.
+<yellow>: Minor version update. Backwards-compatible features added.
+<green> : Patch version update. Backwards-compatible bug fixes.
+
+You can upgrade packages to the latest version by passing the -u or -u:prompt option.
+Elapsed: 00:00:03.1657669
+2025-11-15-05-24-48
+PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi>
+```
+
+
+
+
+
+Correct - **you should NOT upgrade these packages yet**. The `dotnet outdated` tool is suggesting you upgrade from RC2 back to RTM (10.0.0), but this would break your build again.
+
+Here's the situation:
+
+## Why You Can't Upgrade
+
+The Npgsql PostgreSQL provider for Entity Framework Core 10.0.0-rc.2 has strict version requirements. It specifically requires the **exact** RC2 versions of Entity Framework Core packages (`10.0.0-rc.2.25502.107`). The RTM versions (`10.0.0`) are incompatible with this RC2 provider.
+
+## Your Options
+
+1. **Stay on RC2** (current approach) - Keep using the RC2 versions until Npgsql releases an RTM-compatible version
+   
+2. **Wait for Npgsql RTM** - Monitor for when `Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0` (RTM) is released, which should be compatible with the Entity Framework Core 10.0.0 RTM packages
+
+3. **Downgrade everything to .NET 9** - If you need stability now, you could downgrade to .NET 9 where all packages have stable, compatible versions
+
+## How to Check for Updates
+
+Keep an eye on the Npgsql releases:
+```powershell
+# Check specifically for Npgsql updates
+dotnet list package --outdated | Select-String "Npgsql"
+```
+
+When you see `Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0` (without `-rc.2`) become available, then you can upgrade all your Entity Framework Core packages to their RTM versions.
+
+For now, your current RC2 configuration is the correct approach for maintaining compatibility between Npgsql and Entity Framework Core in .NET 10.
+
+
+
