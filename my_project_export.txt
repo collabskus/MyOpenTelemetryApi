@@ -295,7 +295,7 @@ jobs:
       run: dotnet format --verify-no-changes --verbosity diagnostic
 
     - name: Install EF Core tools
-      run: dotnet tool install --global dotnet-ef --version 10.0.0-rc.2.*
+      run: dotnet tool install --global dotnet-ef
 
     - name: Run EF Core migrations check
       run: dotnet ef migrations has-pending-model-changes --project src/MyOpenTelemetryApi.Infrastructure --startup-project src/MyOpenTelemetryApi.Api
