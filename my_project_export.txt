@@ -1,16 +1,16 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 11/28/2025 13:06:42
-Project Path: D:\DEV\MyOpenTelemetryApi
+Generated: 11/28/2025 13:23:21
+Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
 DIRECTORY STRUCTURE:
 ===================
 
-Folder PATH listing for volume DATA
-Volume serial number is 128B-05C1
-D:\DEV\MYOPENTELEMETRYAPI
+Folder PATH listing
+Volume serial number is 9892-5BAD
+C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   .dockerignore
 |   .editorconfig
 |   .gitattributes
@@ -63,12 +63,22 @@ D:\DEV\MYOPENTELEMETRYAPI
 |   |   +---Authentication
 |   |   |       ApiKeyAuthenticationHandler.cs
 |   |   |       
+|   |   +---bin
+|   |   |   \---Debug
+|   |   |       \---net10.0
 |   |   +---Controllers
 |   |   |       ContactsController.cs
 |   |   |       GroupsController.cs
 |   |   |       HealthController.cs
 |   |   |       TagsController.cs
 |   |   |       
+|   |   +---obj
+|   |   |   \---Debug
+|   |   |       \---net10.0
+|   |   |           |   MyOpenTelemetryApi.Api.GlobalUsings.g.cs
+|   |   |           |   
+|   |   |           +---ref
+|   |   |           \---refint
 |   |   +---Properties
 |   |   |       launchSettings.json
 |   |   |       
@@ -80,6 +90,9 @@ D:\DEV\MYOPENTELEMETRYAPI
 |   +---MyOpenTelemetryApi.Application
 |   |   |   MyOpenTelemetryApi.Application.csproj
 |   |   |   
+|   |   +---bin
+|   |   |   \---Debug
+|   |   |       \---net10.0
 |   |   +---DTOs
 |   |   |       AddressDto.cs
 |   |   |       ContactDto.cs
@@ -92,6 +105,13 @@ D:\DEV\MYOPENTELEMETRYAPI
 |   |   |       TagDto.cs
 |   |   |       UpdateContactDto.cs
 |   |   |       
+|   |   +---obj
+|   |   |   \---Debug
+|   |   |       \---net10.0
+|   |   |           |   MyOpenTelemetryApi.Application.GlobalUsings.g.cs
+|   |   |           |   
+|   |   |           +---ref
+|   |   |           \---refint
 |   |   \---Services
 |   |           ContactService.cs
 |   |           GroupService.cs
@@ -103,6 +123,9 @@ D:\DEV\MYOPENTELEMETRYAPI
 |   +---MyOpenTelemetryApi.Domain
 |   |   |   MyOpenTelemetryApi.Domain.csproj
 |   |   |   
+|   |   +---bin
+|   |   |   \---Debug
+|   |   |       \---net10.0
 |   |   +---Entities
 |   |   |       Address.cs
 |   |   |       AddressType.cs
@@ -116,16 +139,30 @@ D:\DEV\MYOPENTELEMETRYAPI
 |   |   |       PhoneType.cs
 |   |   |       Tag.cs
 |   |   |       
-|   |   \---Interfaces
-|   |           IContactRepository.cs
-|   |           IGroupRepository.cs
-|   |           IRepository.cs
-|   |           ITagRepository.cs
-|   |           IUnitOfWork.cs
-|   |           
+|   |   +---Interfaces
+|   |   |       IContactRepository.cs
+|   |   |       IGroupRepository.cs
+|   |   |       IRepository.cs
+|   |   |       ITagRepository.cs
+|   |   |       IUnitOfWork.cs
+|   |   |       
+|   |   \---obj
+|   |       \---Debug
+|   |           \---net10.0
+|   |               |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+|   |               |   MyOpenTelemetryApi.Domain.AssemblyInfo.cs
+|   |               |   MyOpenTelemetryApi.Domain.AssemblyInfoInputs.cache
+|   |               |   MyOpenTelemetryApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+|   |               |   MyOpenTelemetryApi.Domain.GlobalUsings.g.cs
+|   |               |   
+|   |               +---ref
+|   |               \---refint
 |   \---MyOpenTelemetryApi.Infrastructure
 |       |   MyOpenTelemetryApi.Infrastructure.csproj
 |       |   
+|       +---bin
+|       |   \---Debug
+|       |       \---net10.0
 |       +---Data
 |       |   |   AppDbContext.cs
 |       |   |   
@@ -146,6 +183,13 @@ D:\DEV\MYOPENTELEMETRYAPI
 |       |           20251003222820_AddContactPaginationIndexes.Designer.cs
 |       |           AppDbContextModelSnapshot.cs
 |       |           
+|       +---obj
+|       |   \---Debug
+|       |       \---net10.0
+|       |           |   MyOpenTelemetryApi.Infrastructure.GlobalUsings.g.cs
+|       |           |   
+|       |           +---ref
+|       |           \---refint
 |       \---Repositories
 |               ContactRepository.cs
 |               GroupRepository.cs
@@ -155,26 +199,344 @@ D:\DEV\MYOPENTELEMETRYAPI
 |               
 \---tests
     +---MyOpenTelemetryApi.Api.Tests
-    |       MyOpenTelemetryApi.Api.Tests.csproj
-    |       UnitTest1.cs
-    |       
+    |   |   MyOpenTelemetryApi.Api.Tests.csproj
+    |   |   UnitTest1.cs
+    |   |   
+    |   \---obj
+    |       \---Debug
+    |           \---net10.0
+    |                   MyOpenTelemetryApi.Api.Tests.AssemblyInfo.cs
+    |                   MyOpenTelemetryApi.Api.Tests.AssemblyInfoInputs.cache
+    |                   
     +---MyOpenTelemetryApi.Application.Tests
-    |       MyOpenTelemetryApi.Application.Tests.csproj
-    |       UnitTest1.cs
-    |       
+    |   |   MyOpenTelemetryApi.Application.Tests.csproj
+    |   |   UnitTest1.cs
+    |   |   
+    |   +---bin
+    |   |   \---Debug
+    |   |       \---net10.0
+    |   \---obj
+    |       \---Debug
+    |           \---net10.0
+    |               |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+    |               |   MyOpenTelemetryApi.Application.Tests.AssemblyInfo.cs
+    |               |   MyOpenTelemetryApi.Application.Tests.AssemblyInfoInputs.cache
+    |               |   MyOpenTelemetryApi.Application.Tests.GeneratedMSBuildEditorConfig.editorconfig
+    |               |   MyOpenTelemetryApi.Application.Tests.GlobalUsings.g.cs
+    |               |   
+    |               +---ref
+    |               \---refint
     \---MyOpenTelemetryApi.Infrastructure.Tests
-            MyOpenTelemetryApi.Infrastructure.Tests.csproj
-            UnitTest1.cs
-            
+        |   MyOpenTelemetryApi.Infrastructure.Tests.csproj
+        |   UnitTest1.cs
+        |   
+        +---bin
+        |   \---Debug
+        |       \---net10.0
+        \---obj
+            \---Debug
+                \---net10.0
+                    |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+                    |   MyOpenTelemetryApi.Infrastructure.Tests.AssemblyInfo.cs
+                    |   MyOpenTelemetryApi.Infrastructure.Tests.AssemblyInfoInputs.cache
+                    |   MyOpenTelemetryApi.Infrastructure.Tests.GeneratedMSBuildEditorConfig.editorconfig
+                    |   MyOpenTelemetryApi.Infrastructure.Tests.GlobalUsings.g.cs
+                    |   
+                    +---ref
+                    \---refint
 
 
 FILE CONTENTS:
 ==============
 
 ================================================================================
+FILE: .dockerignore
+SIZE: 0.76 KB
+MODIFIED: 09/14/2025 21:12:26
+================================================================================
+
+# .dockerignore
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/.idea
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/azds.yaml
+**/bin
+**/charts
+**/docker-compose*
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md
+**/*.md
+logs/
+*.log
+
+# Exclude build artifacts
+**/bin/
+**/obj/
+**/out/
+
+# Exclude OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Exclude IDE files
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Exclude test results
+TestResults/
+[Tt]est[Rr]esult*/
+*.Coverage
+*.coverage
+*.coveragexml
+
+# Exclude packages
+*.nupkg
+*.snupkg
+
+
+================================================================================
+FILE: .editorconfig
+SIZE: 6.11 KB
+MODIFIED: 09/17/2025 16:29:23
+================================================================================
+
+###############################
+# Core EditorConfig Options   #
+###############################
+root = true
+# All files
+[*]
+indent_style = space
+
+# XML project files
+[*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]
+indent_size = 2
+
+# XML config files
+[*.{props,targets,ruleset,config,nuspec,resx,vsixmanifest,vsct}]
+indent_size = 2
+
+# Code files
+[*.{cs,csx,vb,vbx}]
+indent_size = 4
+insert_final_newline = true
+charset = utf-8-bom
+###############################
+# .NET Coding Conventions     #
+###############################
+[*.{cs,vb}]
+# Organize usings
+dotnet_sort_system_directives_first = true
+# this. preferences
+dotnet_style_qualification_for_field = false:silent
+dotnet_style_qualification_for_property = false:silent
+dotnet_style_qualification_for_method = false:silent
+dotnet_style_qualification_for_event = false:silent
+# Language keywords vs BCL types preferences
+dotnet_style_predefined_type_for_locals_parameters_members = true:silent
+dotnet_style_predefined_type_for_member_access = true:silent
+# Parentheses preferences
+dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:silent
+dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:silent
+dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:silent
+dotnet_style_parentheses_in_other_operators = never_if_unnecessary:silent
+# Modifier preferences
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:silent
+dotnet_style_readonly_field = true:suggestion
+# Expression-level preferences
+dotnet_style_object_initializer = true:suggestion
+dotnet_style_collection_initializer = true:suggestion
+dotnet_style_explicit_tuple_names = true:suggestion
+dotnet_style_null_propagation = true:suggestion
+dotnet_style_coalesce_expression = true:suggestion
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:silent
+dotnet_style_prefer_inferred_tuple_names = true:suggestion
+dotnet_style_prefer_inferred_anonymous_type_member_names = true:suggestion
+dotnet_style_prefer_auto_properties = true:silent
+dotnet_style_prefer_conditional_expression_over_assignment = true:silent
+dotnet_style_prefer_conditional_expression_over_return = true:silent
+###############################
+# Naming Conventions          #
+###############################
+# Style Definitions
+dotnet_naming_style.pascal_case_style.capitalization             = pascal_case
+# Use PascalCase for constant fields
+dotnet_naming_rule.constant_fields_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.constant_fields_should_be_pascal_case.symbols  = constant_fields
+dotnet_naming_rule.constant_fields_should_be_pascal_case.style    = pascal_case_style
+dotnet_naming_symbols.constant_fields.applicable_kinds            = field
+dotnet_naming_symbols.constant_fields.applicable_accessibilities  = *
+dotnet_naming_symbols.constant_fields.required_modifiers          = const
+###############################
+# C# Coding Conventions       #
+###############################
+[*.cs]
+# var preferences
+csharp_style_var_for_built_in_types = true:silent
+csharp_style_var_when_type_is_apparent = true:silent
+csharp_style_var_elsewhere = true:silent
+# Expression-bodied members
+csharp_style_expression_bodied_methods = false:silent
+csharp_style_expression_bodied_constructors = false:silent
+csharp_style_expression_bodied_operators = false:silent
+csharp_style_expression_bodied_properties = true:silent
+csharp_style_expression_bodied_indexers = true:silent
+csharp_style_expression_bodied_accessors = true:silent
+# Pattern matching preferences
+csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
+csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
+# Null-checking preferences
+csharp_style_throw_expression = true:suggestion
+csharp_style_conditional_delegate_call = true:suggestion
+# Modifier preferences
+csharp_preferred_modifier_order = public,private,protected,internal,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async:suggestion
+# Expression-level preferences
+csharp_prefer_braces = true:silent
+csharp_style_deconstructed_variable_declaration = true:suggestion
+csharp_prefer_simple_default_expression = true:suggestion
+csharp_style_prefer_local_over_anonymous_function = true:suggestion
+csharp_style_inlined_variable_declaration = true:suggestion
+###############################
+# C# Formatting Rules         #
+###############################
+# New line preferences
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+csharp_new_line_before_members_in_anonymous_types = true
+csharp_new_line_between_query_expression_clauses = true
+# Indentation preferences
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+csharp_indent_labels = flush_left
+# Space preferences
+csharp_space_after_cast = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_parentheses = false
+csharp_space_before_colon_in_inheritance_clause = true
+csharp_space_after_colon_in_inheritance_clause = true
+csharp_space_around_binary_operators = before_and_after
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+csharp_space_between_method_call_empty_parameter_list_parentheses = false
+# Wrapping preferences
+csharp_preserve_single_line_statements = true
+csharp_preserve_single_line_blocks = true
+###############################
+# VB Coding Conventions       #
+###############################
+[*.vb]
+# Modifier preferences
+visual_basic_preferred_modifier_order = Partial,Default,Private,Protected,Public,Friend,NotOverridable,Overridable,MustOverride,Overloads,Overrides,MustInherit,NotInheritable,Static,Shared,Shadows,ReadOnly,WriteOnly,Dim,Const,WithEvents,Widening,Narrowing,Custom,Async:suggestion
+
+
+
+================================================================================
+FILE: .gitattributes
+SIZE: 2.52 KB
+MODIFIED: 09/14/2025 21:12:26
+================================================================================
+
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto
+
+###############################################################################
+# Set default behavior for command prompt diff.
+#
+# This is need for earlier builds of msysgit that does not have it on by
+# default for csharp files.
+# Note: This is only used by command line
+###############################################################################
+#*.cs     diff=csharp
+
+###############################################################################
+# Set the merge driver for project and solution files
+#
+# Merging from the command prompt will add diff markers to the files if there
+# are conflicts (Merging from VS is not affected by the settings below, in VS
+# the diff markers are never inserted). Diff markers may cause the following 
+# file extensions to fail to load in VS. An alternative would be to treat
+# these files as binary and thus will always conflict and require user
+# intervention with every merge. To do so, just uncomment the entries below
+###############################################################################
+#*.sln       merge=binary
+#*.csproj    merge=binary
+#*.vbproj    merge=binary
+#*.vcxproj   merge=binary
+#*.vcproj    merge=binary
+#*.dbproj    merge=binary
+#*.fsproj    merge=binary
+#*.lsproj    merge=binary
+#*.wixproj   merge=binary
+#*.modelproj merge=binary
+#*.sqlproj   merge=binary
+#*.wwaproj   merge=binary
+
+###############################################################################
+# behavior for image files
+#
+# image files are treated as binary by default.
+###############################################################################
+#*.jpg   binary
+#*.png   binary
+#*.gif   binary
+
+###############################################################################
+# diff behavior for common document formats
+# 
+# Convert binary document formats to text before diffing them. This feature
+# is only available from the command line. Turn it on by uncommenting the 
+# entries below.
+###############################################################################
+#*.doc   diff=astextplain
+#*.DOC   diff=astextplain
+#*.docx  diff=astextplain
+#*.DOCX  diff=astextplain
+#*.dot   diff=astextplain
+#*.DOT   diff=astextplain
+#*.pdf   diff=astextplain
+#*.PDF   diff=astextplain
+#*.rtf   diff=astextplain
+#*.RTF   diff=astextplain
+
+
+
+================================================================================
 FILE: .github\dependabot.yml
 SIZE: 0.63 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 # .github/dependabot.yml
@@ -213,7 +575,7 @@ updates:
 ================================================================================
 FILE: .github\workflows\ci.yml
 SIZE: 5.02 KB
-MODIFIED: 10/21/2025 10:17:42
+MODIFIED: 10/21/2025 09:05:47
 ================================================================================
 
 # .github/workflows/ci.yml
@@ -384,7 +746,7 @@ jobs:
 ================================================================================
 FILE: .github\workflows\codeql.yml
 SIZE: 0.92 KB
-MODIFIED: 10/20/2025 10:31:15
+MODIFIED: 10/20/2025 10:18:55
 ================================================================================
 
 # .github/workflows/codeql.yml
@@ -438,9 +800,380 @@ jobs:
 
 
 ================================================================================
+FILE: .gitignore
+SIZE: 6.43 KB
+MODIFIED: 09/14/2025 21:12:26
+================================================================================
+
+## Ignore Visual Studio temporary files, build results, and
+## files generated by popular Visual Studio add-ons.
+##
+## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Mono auto generated files
+mono_crash.*
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+# Uncomment if you have tasks that create the project's static files in wwwroot
+#wwwroot/
+
+# Visual Studio 2017 auto generated files
+Generated\ Files/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUnit
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# Build Results of an ATL Project
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
+
+# Benchmark Results
+BenchmarkDotNet.Artifacts/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# StyleCop
+StyleCopReport.xml
+
+# Files built by Visual Studio
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# Chutzpah Test files
+_Chutzpah*
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# Visual Studio Trace Files
+*.e2e
+
+# TFS 2012 Local Workspace
+$tf/
+
+# Guidance Automation Toolkit
+*.gpState
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# TeamCity is a build add-in
+_TeamCity*
+
+# DotCover is a Code Coverage Tool
+*.dotCover
+
+# AxoCover is a Code Coverage Tool
+.axoCover/*
+!.axoCover/settings.json
+
+# Coverlet is a free, cross platform Code Coverage Tool
+coverage*.json
+coverage*.xml
+coverage*.info
+
+# Visual Studio code coverage results
+*.coverage
+*.coveragexml
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# MightyMoose
+*.mm.*
+AutoTest.Net/
+
+# Web workbench (sass)
+.sass-cache/
+
+# Installshield output folder
+[Ee]xpress/
+
+# DocProject is a documentation generator add-in
+DocProject/buildhelp/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/*.hhc
+DocProject/Help/*.hhk
+DocProject/Help/*.hhp
+DocProject/Help/Html2
+DocProject/Help/html
+
+# Click-Once directory
+publish/
+
+# Publish Web Output
+*.[Pp]ublish.xml
+*.azurePubxml
+# Note: Comment the next line if you want to checkin your web deploy settings,
+# but database connection strings (with potential passwords) will be unencrypted
+*.pubxml
+*.publishproj
+
+# Microsoft Azure Web App publish settings. Comment the next line if you want to
+# checkin your Azure Web App publish settings, but sensitive information contained
+# in these scripts will be unencrypted
+PublishScripts/
+
+# NuGet Packages
+*.nupkg
+# NuGet Symbol Packages
+*.snupkg
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/[Pp]ackages/repositories.config
+# NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
+
+# Microsoft Azure Build Output
+csx/
+*.build.csdef
+
+# Microsoft Azure Emulator
+ecf/
+rcf/
+
+# Windows Store app package directories and files
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt
+*.appx
+*.appxbundle
+*.appxupload
+
+# Visual Studio cache files
+# files ending in .cache can be ignored
+*.[Cc]ache
+# but keep track of directories ending in .cache
+!?*.[Cc]ache/
+
+# Others
+ClientBin/
+~$*
+*~
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+orleans.codegen.cs
+
+# Including strong name files can present a security risk
+# (https://github.com/github/gitignore/pull/2483#issue-259490424)
+#*.snk
+
+# Since there are multiple workflows, uncomment next line to ignore bower_components
+# (https://github.com/github/gitignore/pull/1529#issuecomment-104372622)
+#bower_components/
+
+# RIA/Silverlight projects
+Generated_Code/
+
+# Backup & report files from converting an old project file
+# to a newer Visual Studio version. Backup files are not needed,
+# because we have git ;-)
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+UpgradeLog*.htm
+ServiceFabricBackup/
+*.rptproj.bak
+
+# SQL Server files
+*.mdf
+*.ldf
+*.ndf
+
+# Business Intelligence projects
+*.rdl.data
+*.bim.layout
+*.bim_*.settings
+*.rptproj.rsuser
+*- [Bb]ackup.rdl
+*- [Bb]ackup ([0-9]).rdl
+*- [Bb]ackup ([0-9][0-9]).rdl
+
+# Microsoft Fakes
+FakesAssemblies/
+
+# GhostDoc plugin setting file
+*.GhostDoc.xml
+
+# Node.js Tools for Visual Studio
+.ntvs_analysis.dat
+node_modules/
+
+# Visual Studio 6 build log
+*.plg
+
+# Visual Studio 6 workspace options file
+*.opt
+
+# Visual Studio 6 auto-generated workspace file (contains which files were open etc.)
+*.vbw
+
+# Visual Studio LightSwitch build output
+**/*.HTMLClient/GeneratedArtifacts
+**/*.DesktopClient/GeneratedArtifacts
+**/*.DesktopClient/ModelManifest.xml
+**/*.Server/GeneratedArtifacts
+**/*.Server/ModelManifest.xml
+_Pvt_Extensions
+
+# Paket dependency manager
+.paket/paket.exe
+paket-files/
+
+# FAKE - F# Make
+.fake/
+
+# CodeRush personal settings
+.cr/personal
+
+# Python Tools for Visual Studio (PTVS)
+__pycache__/
+*.pyc
+
+# Cake - Uncomment if you are using it
+# tools/**
+# !tools/packages.config
+
+# Tabs Studio
+*.tss
+
+# Telerik's JustMock configuration file
+*.jmconfig
+
+# BizTalk build output
+*.btp.cs
+*.btm.cs
+*.odx.cs
+*.xsd.cs
+
+# OpenCover UI analysis results
+OpenCover/
+
+# Azure Stream Analytics local run output
+ASALocalRun/
+
+# MSBuild Binary and Structured Log
+*.binlog
+
+# NVidia Nsight GPU debugger configuration file
+*.nvuser
+
+# MFractors (Xamarin productivity tool) working folder
+.mfractor/
+
+# Local History for Visual Studio
+.localhistory/
+
+# BeatPulse healthcheck temp database
+healthchecksdb
+
+# Backup folder for Package Reference Convert tool in Visual Studio 2017
+MigrationBackup/
+
+# Ionide (cross platform F# VS Code tools) working folder
+.ionide/
+
+# Fody - auto-generated XML schema
+FodyWeavers.xsd
+
+
+================================================================================
 FILE: appsettings.Container.json
 SIZE: 1.12 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 {
@@ -486,9 +1219,157 @@ MODIFIED: 09/17/2025 11:07:20
 
 
 ================================================================================
+FILE: Directory.Build.props
+SIZE: 0.51 KB
+MODIFIED: 10/06/2025 15:32:23
+================================================================================
+
+<Project>
+  <!-- Common properties for all projects -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <!-- Test project properties -->
+  <PropertyGroup Condition="$(MSBuildProjectName.Contains('.Tests'))">
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  
+  <!-- Note: Package versions are now managed in Directory.Packages.props -->
+</Project>
+
+
+
+================================================================================
+FILE: Directory.Build.targets
+SIZE: 2.69 KB
+MODIFIED: 10/06/2025 14:09:01
+================================================================================
+
+<Project>
+ 
+  <!-- Custom Build Targets -->
+ 
+  <!-- Display build information -->
+  <Target Name="DisplayBuildInfo" BeforeTargets="Build">
+    <Message Importance="high" Text="Building $(MSBuildProjectName) - $(Configuration) - $(TargetFramework)" />
+  </Target>
+
+  <!-- Clean artifacts on rebuild -->
+  <Target Name="CleanArtifacts" BeforeTargets="Clean">
+    <RemoveDir Directories="$(BaseOutputPath)" Condition="Exists('$(BaseOutputPath)')" />
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" Condition="Exists('$(BaseIntermediateOutputPath)')" />
+  </Target>
+
+  <!-- Copy appsettings files to output for API project -->
+  <Target Name="CopyAppSettings" AfterTargets="Build" Condition="'$(MSBuildProjectName)' == 'MyOpenTelemetryApi.Api'">
+    <!-- Copy base appsettings.json -->
+    <Copy SourceFiles="$(ProjectDir)appsettings.json" 
+          DestinationFolder="$(OutDir)" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('$(ProjectDir)appsettings.json')" />
+    
+    <!-- Copy environment-specific appsettings -->
+    <Copy SourceFiles="$(ProjectDir)appsettings.Development.json" 
+          DestinationFolder="$(OutDir)" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('$(ProjectDir)appsettings.Development.json')" />
+    
+    <Copy SourceFiles="$(ProjectDir)appsettings.Production.json" 
+          DestinationFolder="$(OutDir)" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('$(ProjectDir)appsettings.Production.json')" />
+    
+    <!-- Copy Container-specific appsettings from root -->
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)appsettings.Container.json" 
+          DestinationFolder="$(OutDir)" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('$(MSBuildThisFileDirectory)appsettings.Container.json')" />
+    
+    <Message Importance="high" Text="Copied appsettings files to output directory" />
+  </Target>
+
+  <!-- Copy OpenTelemetry configuration files to output if they exist -->
+  <Target Name="CopyOpenTelemetryConfig" AfterTargets="Build" Condition="Exists('$(ProjectDir)otel-config.json')">
+    <Copy SourceFiles="$(ProjectDir)otel-config.json" 
+          DestinationFolder="$(OutDir)" 
+          SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="Copied OpenTelemetry configuration to output directory" />
+  </Target>
+
+  <!-- Ensure bin and obj directories exist before clean -->
+  <Target Name="EnsureCleanDirectories" BeforeTargets="Clean">
+    <MakeDir Directories="$(BaseOutputPath)" Condition="!Exists('$(BaseOutputPath)')" />
+    <MakeDir Directories="$(BaseIntermediateOutputPath)" Condition="!Exists('$(BaseIntermediateOutputPath)')" />
+  </Target>
+
+</Project>
+
+
+
+================================================================================
+FILE: Directory.Packages.props
+SIZE: 3.25 KB
+MODIFIED: 11/28/2025 12:47:50
+================================================================================
+
+<Project>
+  <PropertyGroup>
+    <!-- Enable Central Package Management -->
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <!-- Optional: Enforce that all projects must use centrally managed versions -->
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- OpenTelemetry -->
+    <PackageVersion Include="OpenTelemetry" Version="1.14.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.14.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.14.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.14.0-beta.2" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.14.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Process" Version="1.14.0-beta.2" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.14.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.0" />
+    <PackageVersion Include="Npgsql" Version="10.0.0" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Build.Framework" Version="18.0.2" />
+    <PackageVersion Include="Microsoft.Build.Locator" Version="1.11.2" />
+    <PackageVersion Include="Microsoft.Build.Tasks.Core" Version="18.0.2" />
+    <PackageVersion Include="Microsoft.Build.Utilities.Core" Version="18.0.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
+    <!-- Testing -->
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.analyzers" Version="1.25.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.4" />
+    <PackageVersion Include="Humanizer.Core" Version="3.0.1" />
+    <PackageVersion Include="Microsoft.OpenApi" Version="2.3.5" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="System.CodeDom" Version="10.0.0" />
+    <PackageVersion Include="System.Configuration.ConfigurationManager" Version="10.0.0" />
+    <PackageVersion Include="System.Formats.Nrbf" Version="10.0.0" />
+    <PackageVersion Include="System.Resources.Extensions" Version="10.0.0" />
+    <PackageVersion Include="System.Security.Cryptography.Pkcs" Version="10.0.0" />
+    <PackageVersion Include="System.Security.Cryptography.ProtectedData" Version="10.0.0" />
+    <PackageVersion Include="System.Diagnostics.EventLog" Version="10.0.0" />
+    <PackageVersion Include="System.Security.Cryptography.Xml" Version="10.0.0" />
+  </ItemGroup>
+</Project>
+
+
+================================================================================
 FILE: docker-compose.yml
-SIZE: 1.33 KB
-MODIFIED: 10/06/2025 16:30:03
+SIZE: 1.9 KB
+MODIFIED: 11/28/2025 13:23:21
 ================================================================================
 
 version: '3.8'
@@ -506,10 +1387,11 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-contactmanager}"]
       interval: 10s
       timeout: 5s
       retries: 5
+      start_period: 10s
     restart: unless-stopped
 
   api:
@@ -519,18 +1401,29 @@ services:
     container_name: myopentelemetryapi-api
     environment:
       ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Production}
-      ASPNETCORE_URLS: "http://+:8080;http://+:8081"
-      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=${POSTGRES_DB:-contactmanager};Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres}"
+      ASPNETCORE_URLS: "http://+:8080"
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=${POSTGRES_DB:-contactmanager};Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres};Include Error Detail=true;"
       ApiKey: ${API_KEY:-your-secret-api-key-change-in-production}
+      OpenTelemetry__ServiceName: MyOpenTelemetryApi-Docker
+      OpenTelemetry__ServiceVersion: 1.0.0-docker
+      OpenTelemetry__Exporter__Console__Enabled: "true"
+      OpenTelemetry__Exporter__File__Enabled: "true"
+      OpenTelemetry__Exporter__File__LogPath: /app/logs/otel-logs.json
+      OpenTelemetry__Exporter__OTLP__Enabled: "false"
     ports:
       - "8080:8080"
-      - "8081:8081"
     depends_on:
       postgres:
         condition: service_healthy
     volumes:
       - ./logs:/app/logs
       - ./appsettings.Container.json:/app/appsettings.Production.json:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
     restart: unless-stopped
 
 volumes:
@@ -539,9 +1432,115 @@ volumes:
 
 
 ================================================================================
+FILE: Dockerfile
+SIZE: 1.87 KB
+MODIFIED: 11/28/2025 13:21:56
+================================================================================
+
+# Stage 1: Build - Updated 2025-10-22 with Git commit tracking
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+
+# Accept build arguments for Git commit and timestamp
+ARG GIT_COMMIT=unknown
+ARG BUILD_TIMESTAMP=unknown
+
+WORKDIR /src
+
+# CRITICAL: Copy MSBuild property files FIRST (before .csproj files)
+# These files define TargetFramework and package versions
+COPY ["Directory.Build.props", "./"]
+COPY ["Directory.Packages.props", "./"]
+
+# Copy .csproj files for restore
+COPY ["src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj", "MyOpenTelemetryApi.Api/"]
+COPY ["src/MyOpenTelemetryApi.Application/MyOpenTelemetryApi.Application.csproj", "MyOpenTelemetryApi.Application/"]
+COPY ["src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj", "MyOpenTelemetryApi.Domain/"]
+COPY ["src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj", "MyOpenTelemetryApi.Infrastructure/"]
+
+RUN dotnet restore "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj"
+
+# Copy source code
+COPY src/ .
+
+# Build and publish with Git commit info embedded
+RUN dotnet publish "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj" \
+    -c Release \
+    -o /app/publish \
+    -p:InformationalVersion="${GIT_COMMIT}"
+
+# Stage 2: Runtime
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
+
+# Re-declare ARGs for runtime stage
+ARG GIT_COMMIT=unknown
+ARG BUILD_TIMESTAMP=unknown
+
+# Set environment variables from build args
+ENV GIT_COMMIT=${GIT_COMMIT}
+ENV BUILD_TIMESTAMP=${BUILD_TIMESTAMP}
+
+WORKDIR /app
+
+# Install curl for health checks
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+COPY --from=build /app/publish .
+
+# Create directory for logs with proper permissions
+RUN mkdir -p /app/logs && chmod 777 /app/logs
+
+# Use non-root user
+USER app
+
+EXPOSE 8080
+EXPOSE 8081
+
+ENTRYPOINT ["dotnet", "MyOpenTelemetryApi.Api.dll"]
+
+
+
+================================================================================
+FILE: Dockerfile.migrations
+SIZE: 1.19 KB
+MODIFIED: 10/06/2025 15:51:03
+================================================================================
+
+# Dockerfile.migrations - Dedicated container for running EF migrations
+FROM mcr.microsoft.com/dotnet/sdk:10.0
+WORKDIR /src
+
+# CRITICAL: Copy MSBuild property files FIRST (before .csproj files)
+COPY ["Directory.Build.props", "./"]
+COPY ["Directory.Packages.props", "./"]
+
+# Copy project files for restore
+COPY ["src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj", "src/MyOpenTelemetryApi.Api/"]
+COPY ["src/MyOpenTelemetryApi.Application/MyOpenTelemetryApi.Application.csproj", "src/MyOpenTelemetryApi.Application/"]
+COPY ["src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj", "src/MyOpenTelemetryApi.Domain/"]
+COPY ["src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj", "src/MyOpenTelemetryApi.Infrastructure/"]
+
+# Restore dependencies
+RUN dotnet restore "src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj"
+
+# Copy source code
+COPY . .
+
+WORKDIR "/src/src/MyOpenTelemetryApi.Api"
+
+# Install EF Core tools (using .NET 10 RC version)
+RUN dotnet tool install --global dotnet-ef --version 10.0.0-rc.1.25451.107
+
+ENV PATH="$PATH:/root/.dotnet/tools"
+
+# Default command runs migrations
+CMD ["dotnet", "ef", "database", "update", "--verbose"]
+
+
+
+================================================================================
 FILE: MyOpenTelemetryApi.sln
 SIZE: 9.79 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 
@@ -685,8 +1684,8 @@ EndGlobal
 
 ================================================================================
 FILE: podman-compose.yml
-SIZE: 2.23 KB
-MODIFIED: 10/21/2025 12:04:25
+SIZE: 2.35 KB
+MODIFIED: 11/28/2025 13:23:21
 ================================================================================
 
 # podman-compose.yml - Alternative compose file optimized for Podman
@@ -742,6 +1741,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    volumes:
+      # Persistent logs volume for telemetry data
+      - api_logs:/app/logs:Z
     networks:
       - myotel-network
     healthcheck:
@@ -759,13 +1761,15 @@ networks:
 volumes:
   postgres_data:
     driver: local
+  api_logs:
+    driver: local
 
 
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\appsettings.Development.json
 SIZE: 0.5 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/appsettings.Development.json - Updated
@@ -797,7 +1801,7 @@ MODIFIED: 09/17/2025 11:07:20
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\appsettings.json
 SIZE: 1.22 KB
-MODIFIED: 09/17/2025 14:33:44
+MODIFIED: 09/17/2025 14:20:56
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/appsettings.json - Updated with OpenTelemetry settings
@@ -846,7 +1850,7 @@ MODIFIED: 09/17/2025 14:33:44
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\appsettings.Production.json
 SIZE: 0.55 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/appsettings.Production.json - New file
@@ -882,7 +1886,7 @@ MODIFIED: 09/17/2025 11:07:20
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Authentication\ApiKeyAuthenticationHandler.cs
 SIZE: 1.87 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // Api/Authentication/ApiKeyAuthenticationHandler.cs
@@ -945,7 +1949,7 @@ public class ApiKeyAuthenticationOptions : AuthenticationSchemeOptions { }
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\ContactsController.cs
 SIZE: 3.29 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/ContactsController.cs
@@ -1053,8 +2057,8 @@ public class ContactsController : ControllerBase
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\GroupsController.cs
-SIZE: 2.47 KB
-MODIFIED: 10/20/2025 15:48:31
+SIZE: 2.39 KB
+MODIFIED: 10/20/2025 14:14:33
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/GroupsController.cs
@@ -1136,8 +2140,8 @@ public class GroupsController(IGroupService groupService, ILogger<GroupsControll
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\HealthController.cs
-SIZE: 2.4 KB
-MODIFIED: 10/20/2025 15:48:31
+SIZE: 2.33 KB
+MODIFIED: 10/20/2025 14:14:08
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/HealthController.cs
@@ -1222,8 +2226,8 @@ public class HealthController(AppDbContext dbContext, ILogger<HealthController> 
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Controllers\TagsController.cs
-SIZE: 2.6 KB
-MODIFIED: 10/20/2025 15:48:31
+SIZE: 2.52 KB
+MODIFIED: 10/20/2025 14:14:21
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Controllers/TagsController.cs
@@ -1314,7 +2318,7 @@ public class TagsController(ITagService tagService, ILogger<TagsController> logg
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\dependencies.json
 SIZE: 5.83 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 {
@@ -1509,7 +2513,7 @@ MODIFIED: 09/17/2025 11:07:20
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\MyOpenTelemetryApi.Api.csproj
 SIZE: 2.07 KB
-MODIFIED: 10/22/2025 11:42:22
+MODIFIED: 10/22/2025 10:50:59
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -1562,7 +2566,7 @@ MODIFIED: 10/22/2025 11:42:22
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Program.cs
 SIZE: 18.53 KB
-MODIFIED: 10/23/2025 06:41:19
+MODIFIED: 10/22/2025 14:43:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Program.cs - Updated version with configuration-based setup
@@ -2130,7 +3134,7 @@ static string GetBuildTimestamp()
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Properties\launchSettings.json
 SIZE: 0.73 KB
-MODIFIED: 10/06/2025 12:44:28
+MODIFIED: 10/06/2025 11:32:06
 ================================================================================
 
 {
@@ -2162,7 +3166,7 @@ MODIFIED: 10/06/2025 12:44:28
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs
 SIZE: 3.69 KB
-MODIFIED: 11/28/2025 13:06:40
+MODIFIED: 11/28/2025 12:55:19
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Telemetry/FileExporter.cs
@@ -2280,7 +3284,7 @@ public class FileLogExporter : BaseExporter<LogRecord>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Telemetry\TelemetryConstants.cs
 SIZE: 1.2 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/15/2025 08:15:28
 ================================================================================
 
 namespace MyOpenTelemetryApi.Api.Telemetry;
@@ -2324,7 +3328,7 @@ public static class TelemetryConstants
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Telemetry\TelemetryExtensions.cs
 SIZE: 1.09 KB
-MODIFIED: 09/17/2025 12:34:45
+MODIFIED: 09/17/2025 11:56:32
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Telemetry/TelemetryExtensions.cs
@@ -2365,7 +3369,7 @@ public static class TelemetryExtensions
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\AddressDto.cs
 SIZE: 0.92 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/AddressDto.cs
@@ -2401,7 +3405,7 @@ public class CreateAddressDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\ContactDto.cs
 SIZE: 0.92 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/ContactDto.cs
@@ -2433,7 +3437,7 @@ public class ContactDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\ContactSummaryDto.cs
 SIZE: 0.43 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/ContactSummaryDto.cs
@@ -2454,7 +3458,7 @@ public class ContactSummaryDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\CreateContactDto.cs
 SIZE: 0.83 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/CreateContactDto.cs
@@ -2483,7 +3487,7 @@ public class CreateContactDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\EmailAddressDto.cs
 SIZE: 0.52 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/EmailAddressDto.cs
@@ -2509,7 +3513,7 @@ public class CreateEmailAddressDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\GroupDto.cs
 SIZE: 0.62 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/GroupDto.cs
@@ -2541,7 +3545,7 @@ public class UpdateGroupDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\PaginatedResultDto.cs
 SIZE: 0.53 KB
-MODIFIED: 09/17/2025 16:15:00
+MODIFIED: 09/17/2025 16:09:08
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/PaginatedResultDto.cs
@@ -2564,7 +3568,7 @@ public class PaginatedResultDto<T>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\PhoneNumberDto.cs
 SIZE: 0.52 KB
-MODIFIED: 09/17/2025 15:30:19
+MODIFIED: 09/17/2025 15:28:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/PhoneNumberDto.cs
@@ -2590,7 +3594,7 @@ public class CreatePhoneNumberDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\TagDto.cs
 SIZE: 0.46 KB
-MODIFIED: 11/28/2025 13:06:40
+MODIFIED: 11/28/2025 12:51:22
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/TagDto.cs
@@ -2614,7 +3618,7 @@ public class CreateTagDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\DTOs\UpdateContactDto.cs
 SIZE: 0.52 KB
-MODIFIED: 09/17/2025 15:30:19
+MODIFIED: 09/17/2025 15:28:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/DTOs/UpdateContactDto.cs
@@ -2637,7 +3641,7 @@ public class UpdateContactDto
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\MyOpenTelemetryApi.Application.csproj
 SIZE: 0.29 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:35:46
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -2656,8 +3660,8 @@ MODIFIED: 10/06/2025 16:30:03
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ContactService.cs
-SIZE: 15.85 KB
-MODIFIED: 10/20/2025 15:48:31
+SIZE: 15.47 KB
+MODIFIED: 10/20/2025 14:46:10
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ContactService.cs - Enhanced version
@@ -3057,7 +4061,7 @@ public class ContactService(
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\GroupService.cs
 SIZE: 2.59 KB
-MODIFIED: 10/20/2025 15:48:31
+MODIFIED: 10/20/2025 14:15:35
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/GroupService.cs
@@ -3146,7 +4150,7 @@ public class GroupService(IUnitOfWork unitOfWork) : IGroupService
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\IContactService.cs
 SIZE: 1.16 KB
-MODIFIED: 09/17/2025 15:30:19
+MODIFIED: 09/17/2025 15:28:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/IContactService.cs
@@ -3172,7 +4176,7 @@ public interface IContactService
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\IGroupService.cs
 SIZE: 0.66 KB
-MODIFIED: 10/20/2025 15:48:31
+MODIFIED: 10/20/2025 14:16:03
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/IGroupService.cs
@@ -3194,7 +4198,7 @@ public interface IGroupService
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\ITagService.cs
 SIZE: 0.65 KB
-MODIFIED: 10/20/2025 15:48:31
+MODIFIED: 10/20/2025 14:15:47
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/ITagService.cs
@@ -3215,8 +4219,8 @@ public interface ITagService
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Application\Services\TagService.cs
-SIZE: 2.89 KB
-MODIFIED: 11/28/2025 13:06:40
+SIZE: 2.8 KB
+MODIFIED: 11/28/2025 12:51:39
 ================================================================================
 
 // src/MyOpenTelemetryApi.Application/Services/TagService.cs
@@ -3309,7 +4313,7 @@ public class TagService(IUnitOfWork unitOfWork) : ITagService
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\Address.cs
 SIZE: 0.62 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/Address.cs
@@ -3337,7 +4341,7 @@ public class Address
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\AddressType.cs
 SIZE: 0.17 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Enums/AddressType.cs
@@ -3355,7 +4359,7 @@ public enum AddressType
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\Contact.cs
 SIZE: 0.95 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/Contact.cs
@@ -3388,7 +4392,7 @@ public class Contact
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\ContactGroup.cs
 SIZE: 0.4 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/ContactGroup.cs (Join table)
@@ -3410,7 +4414,7 @@ public class ContactGroup
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\ContactTag.cs
 SIZE: 0.35 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/ContactTag.cs (Join table)
@@ -3431,7 +4435,7 @@ public class ContactTag
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\EmailAddress.cs
 SIZE: 0.43 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/EmailAddress.cs
@@ -3454,7 +4458,7 @@ public class EmailAddress
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\EmailType.cs
 SIZE: 0.17 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Enums/EmailType.cs
@@ -3472,7 +4476,7 @@ public enum EmailType
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\Group.cs
 SIZE: 0.39 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/Group.cs
@@ -3494,7 +4498,7 @@ public class Group
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\PhoneNumber.cs
 SIZE: 0.43 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/PhoneNumber.cs
@@ -3517,7 +4521,7 @@ public class PhoneNumber
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\PhoneType.cs
 SIZE: 0.19 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Enums/PhoneType.cs
@@ -3537,7 +4541,7 @@ public enum PhoneType
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Entities\Tag.cs
 SIZE: 0.34 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Entities/Tag.cs
@@ -3558,7 +4562,7 @@ public class Tag
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IContactRepository.cs
 SIZE: 0.67 KB
-MODIFIED: 10/20/2025 15:48:31
+MODIFIED: 10/20/2025 14:18:53
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IContactRepository.cs
@@ -3579,7 +4583,7 @@ public interface IContactRepository : IRepository<Contact>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IGroupRepository.cs
 SIZE: 0.32 KB
-MODIFIED: 10/20/2025 15:48:31
+MODIFIED: 10/20/2025 14:18:57
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IGroupRepository.cs
@@ -3596,8 +4600,8 @@ public interface IGroupRepository : IRepository<Group>
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IRepository.cs
-SIZE: 0.69 KB
-MODIFIED: 10/20/2025 15:48:31
+SIZE: 0.68 KB
+MODIFIED: 10/20/2025 14:18:28
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IRepository.cs
@@ -3618,7 +4622,7 @@ public interface IRepository<T> where T : class
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\ITagRepository.cs
 SIZE: 0.3 KB
-MODIFIED: 10/20/2025 15:48:31
+MODIFIED: 10/20/2025 14:19:02
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/ITagRepository.cs
@@ -3636,7 +4640,7 @@ public interface ITagRepository : IRepository<Tag>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\Interfaces\IUnitOfWork.cs
 SIZE: 0.34 KB
-MODIFIED: 10/07/2025 12:27:06
+MODIFIED: 10/07/2025 10:18:23
 ================================================================================
 
 // src/MyOpenTelemetryApi.Domain/Interfaces/IUnitOfWork.cs
@@ -3655,7 +4659,7 @@ public interface IUnitOfWork
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Domain\MyOpenTelemetryApi.Domain.csproj
 SIZE: 0.14 KB
-MODIFIED: 10/06/2025 14:29:28
+MODIFIED: 10/06/2025 14:12:33
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -3669,7 +4673,7 @@ MODIFIED: 10/06/2025 14:29:28
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\AppDbContext.cs
 SIZE: 1.03 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/AppDbContext.cs
@@ -3703,7 +4707,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\AddressConfiguration.cs
 SIZE: 0.96 KB
-MODIFIED: 09/17/2025 16:46:24
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/AddressConfiguration.cs
@@ -3737,7 +4741,7 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactConfiguration.cs
 SIZE: 1.59 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/ContactConfiguration.cs
@@ -3798,7 +4802,7 @@ public class ContactConfiguration : IEntityTypeConfiguration<Contact>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactGroupConfiguration.cs
 SIZE: 0.79 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/ContactGroupConfiguration.cs
@@ -3829,7 +4833,7 @@ public class ContactGroupConfiguration : IEntityTypeConfiguration<ContactGroup>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\ContactTagConfiguration.cs
 SIZE: 0.76 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/ContactTagConfiguration.cs
@@ -3860,7 +4864,7 @@ public class ContactTagConfiguration : IEntityTypeConfiguration<ContactTag>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\EmailAddressConfiguration.cs
 SIZE: 0.73 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/EmailAddressConfiguration.cs
@@ -3891,7 +4895,7 @@ public class EmailAddressConfiguration : IEntityTypeConfiguration<EmailAddress>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\GroupConfiguration.cs
 SIZE: 0.64 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/GroupConfiguration.cs
@@ -3921,7 +4925,7 @@ public class GroupConfiguration : IEntityTypeConfiguration<Group>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\PhoneNumberConfiguration.cs
 SIZE: 0.7 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/PhoneNumberConfiguration.cs
@@ -3952,7 +4956,7 @@ public class PhoneNumberConfiguration : IEntityTypeConfiguration<PhoneNumber>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Configurations\TagConfiguration.cs
 SIZE: 0.7 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Data/Configurations/TagConfiguration.cs
@@ -3984,7 +4988,7 @@ public class TagConfiguration : IEntityTypeConfiguration<Tag>
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.cs
 SIZE: 11.04 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/15/2025 08:12:04
 ================================================================================
 
 using Microsoft.EntityFrameworkCore.Migrations;
@@ -4231,7 +5235,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20250804231722_InitialCreate.Designer.cs
 SIZE: 12.92 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // <auto-generated />
@@ -4599,7 +5603,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.cs
 SIZE: 1.96 KB
-MODIFIED: 10/03/2025 19:49:51
+MODIFIED: 10/03/2025 18:31:06
 ================================================================================
 
 // This is what to paste into the generated migration file
@@ -4661,7 +5665,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\20251003222820_AddContactPaginationIndexes.Designer.cs
 SIZE: 12.96 KB
-MODIFIED: 10/03/2025 19:49:51
+MODIFIED: 10/03/2025 18:28:20
 ================================================================================
 
 // <auto-generated />
@@ -5029,7 +6033,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Data\Migrations\AppDbContextModelSnapshot.cs
 SIZE: 12.83 KB
-MODIFIED: 10/03/2025 19:49:51
+MODIFIED: 10/03/2025 18:28:20
 ================================================================================
 
 // <auto-generated />
@@ -5394,7 +6398,7 @@ namespace MyOpenTelemetryApi.Infrastructure.Data.Migrations
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\MyOpenTelemetryApi.Infrastructure.csproj
 SIZE: 0.58 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/20/2025 14:21:31
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -5419,7 +6423,7 @@ MODIFIED: 10/06/2025 16:30:03
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\ContactRepository.cs
 SIZE: 2.46 KB
-MODIFIED: 10/20/2025 15:48:31
+MODIFIED: 10/20/2025 14:19:12
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/ContactRepository.cs
@@ -5484,7 +6488,7 @@ public class ContactRepository(AppDbContext context) : Repository<Contact>(conte
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\GroupRepository.cs
 SIZE: 0.73 KB
-MODIFIED: 10/20/2025 15:48:31
+MODIFIED: 10/20/2025 14:21:33
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/GroupRepository.cs
@@ -5510,8 +6514,8 @@ public class GroupRepository(AppDbContext context) : Repository<Group>(context),
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\Repository.cs
-SIZE: 1.26 KB
-MODIFIED: 10/20/2025 15:48:31
+SIZE: 1.22 KB
+MODIFIED: 10/20/2025 14:19:07
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/Repository.cs
@@ -5562,7 +6566,7 @@ public class Repository<T>(AppDbContext context) : IRepository<T> where T : clas
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\TagRepository.cs
 SIZE: 0.64 KB
-MODIFIED: 10/20/2025 15:48:31
+MODIFIED: 10/20/2025 14:21:01
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/TagRepository.cs
@@ -5586,8 +6590,8 @@ public class TagRepository(AppDbContext context) : Repository<Tag>(context), ITa
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Infrastructure\Repositories\UnitOfWork.cs
-SIZE: 1.31 KB
-MODIFIED: 09/17/2025 14:51:00
+SIZE: 1.26 KB
+MODIFIED: 09/17/2025 15:02:04
 ================================================================================
 
 // src/MyOpenTelemetryApi.Infrastructure/Repositories/UnitOfWork.cs
@@ -5642,7 +6646,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Api.Tests\MyOpenTelemetryApi.Api.Tests.csproj
 SIZE: 1.03 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:37:26
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -5679,7 +6683,7 @@ MODIFIED: 10/06/2025 16:30:03
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Api.Tests\UnitTest1.cs
 SIZE: 1.99 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/15/2025 08:12:07
 ================================================================================
 
 // tests/MyOpenTelemetryApi.Api.Tests/ApiTests.cs
@@ -5763,7 +6767,7 @@ public class ApiTests
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Application.Tests\MyOpenTelemetryApi.Application.Tests.csproj
 SIZE: 1.03 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:37:26
 ================================================================================
 
 
@@ -5801,7 +6805,7 @@ MODIFIED: 10/06/2025 16:30:03
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Application.Tests\UnitTest1.cs
 SIZE: 3.43 KB
-MODIFIED: 09/17/2025 11:07:20
+MODIFIED: 09/14/2025 21:12:26
 ================================================================================
 
 // tests/MyOpenTelemetryApi.Application.Tests/ApplicationTests.cs
@@ -5938,7 +6942,7 @@ public class ApplicationTests
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Infrastructure.Tests\MyOpenTelemetryApi.Infrastructure.Tests.csproj
 SIZE: 1.03 KB
-MODIFIED: 10/06/2025 16:30:03
+MODIFIED: 10/06/2025 15:37:13
 ================================================================================
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -5975,7 +6979,7 @@ MODIFIED: 10/06/2025 16:30:03
 ================================================================================
 FILE: tests\MyOpenTelemetryApi.Infrastructure.Tests\UnitTest1.cs
 SIZE: 5.61 KB
-MODIFIED: 09/17/2025 16:46:25
+MODIFIED: 09/17/2025 16:29:43
 ================================================================================
 
 // tests/MyOpenTelemetryApi.Infrastructure.Tests/InfrastructureTests.cs
@@ -6176,7 +7180,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 11/28/2025 13:06:44
-Total Files Exported: 82
-Output File: D:\DEV\MyOpenTelemetryApi\my_project_export.txt
+EXPORT COMPLETED: 11/28/2025 13:23:22
+Total Files Exported: 91
+Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
