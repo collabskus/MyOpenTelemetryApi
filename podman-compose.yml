@@ -51,6 +51,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    volumes:
+      # Persistent logs volume for telemetry data
+      - api_logs:/app/logs:Z
     networks:
       - myotel-network
     healthcheck:
@@ -67,4 +70,6 @@ networks:
 
 volumes:
   postgres_data:
+    driver: local
+  api_logs:
     driver: local

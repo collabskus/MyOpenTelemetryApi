@@ -13,10 +13,11 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-contactmanager}"]
       interval: 10s
       timeout: 5s
       retries: 5
+      start_period: 10s
     restart: unless-stopped
 
   api:
@@ -26,18 +27,29 @@ services:
     container_name: myopentelemetryapi-api
     environment:
       ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Production}
-      ASPNETCORE_URLS: "http://+:8080;http://+:8081"
-      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=${POSTGRES_DB:-contactmanager};Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres}"
+      ASPNETCORE_URLS: "http://+:8080"
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=${POSTGRES_DB:-contactmanager};Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres};Include Error Detail=true;"
       ApiKey: ${API_KEY:-your-secret-api-key-change-in-production}
+      OpenTelemetry__ServiceName: MyOpenTelemetryApi-Docker
+      OpenTelemetry__ServiceVersion: 1.0.0-docker
+      OpenTelemetry__Exporter__Console__Enabled: "true"
+      OpenTelemetry__Exporter__File__Enabled: "true"
+      OpenTelemetry__Exporter__File__LogPath: /app/logs/otel-logs.json
+      OpenTelemetry__Exporter__OTLP__Enabled: "false"
     ports:
       - "8080:8080"
-      - "8081:8081"
     depends_on:
       postgres:
         condition: service_healthy
     volumes:
       - ./logs:/app/logs
       - ./appsettings.Container.json:/app/appsettings.Production.json:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
     restart: unless-stopped
 
 volumes:
