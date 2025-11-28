@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 11/28/2025 12:53:08
+Generated: 11/28/2025 12:55:56
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -2161,15 +2161,14 @@ MODIFIED: 10/06/2025 11:32:06
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\Telemetry\FileExporter.cs
-SIZE: 3.65 KB
-MODIFIED: 11/15/2025 05:23:30
+SIZE: 3.69 KB
+MODIFIED: 11/28/2025 12:55:19
 ================================================================================
 
 // src/MyOpenTelemetryApi.Api/Telemetry/FileExporter.cs
 using System.Text.Json;
 using OpenTelemetry;
 using OpenTelemetry.Logs;
-using OpenTelemetry.Resources;
 
 namespace MyOpenTelemetryApi.Api.Telemetry;
 
@@ -2213,9 +2212,9 @@ public class FileLogExporter : BaseExporter<LogRecord>
                         SpanId = logRecord.SpanId.ToString(),
                         TraceFlags = logRecord.TraceFlags.ToString(),
                         CategoryName = logRecord.CategoryName,
-// #pragma warning disable OTEL1001
-//                         Severity = logRecord.Severity.ToString(), // 'OpenTelemetry.Logs.LogRecord.Severity' is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
-// #pragma warning restore
+                        // #pragma warning disable OTEL1001
+                        //                         Severity = logRecord.Severity.ToString(), // 'OpenTelemetry.Logs.LogRecord.Severity' is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+                        // #pragma warning restore
                         FormattedMessage = logRecord.FormattedMessage,
                         Body = logRecord.Body,
                         ScopeValues = ExtractScopeValues(logRecord),
@@ -6177,7 +6176,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 11/28/2025 12:53:09
+EXPORT COMPLETED: 11/28/2025 12:55:57
 Total Files Exported: 82
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
