@@ -22,7 +22,20 @@ $IncludeExtensions = @(
     "*.html",         # HTML files
     "*.yml",          # YAML files
     "*.yaml",         # YAML files
-    "*.sql"           # SQL files
+    "*.sql",          # SQL files
+    "*.props",        # MSBuild props files
+    "*.targets",      # MSBuild targets files
+    "*.sh"            # Shell scripts
+)
+
+# Specific files without extensions to include
+$IncludeSpecificFiles = @(
+    "Dockerfile",
+    "Dockerfile.*",
+    ".dockerignore",
+    ".editorconfig",
+    ".gitignore",
+    ".gitattributes"
 )
 
 # Directories to exclude
@@ -46,7 +59,7 @@ $ExcludeFiles = @(
     "*.cache",
     "*.log",
     "*.md",           # Markdown files
-    "*.txt",          # Text files
+    "*.txt",          # Text files (except specific ones)
     "LICENSE*",       # License files
     "LICENCE*"        # Alternative spelling
 )
@@ -122,6 +135,8 @@ try {
 Write-Host "Collecting files..." -ForegroundColor Cyan
 
 $AllFiles = @()
+
+# Collect files by extension
 foreach ($extension in $IncludeExtensions) {
     $files = Get-ChildItem -Path $ProjectPath -Recurse -Include $extension -File | Where-Object {
         $exclude = $false
@@ -149,8 +164,26 @@ foreach ($extension in $IncludeExtensions) {
     $AllFiles += $files
 }
 
+# Collect specific files without extensions (like Dockerfile)
+foreach ($specificFile in $IncludeSpecificFiles) {
+    $files = Get-ChildItem -Path $ProjectPath -Recurse -Include $specificFile -File | Where-Object {
+        $exclude = $false
+        
+        # Check excluded directories
+        foreach ($excludeDir in $ExcludeDirectories) {
+            if ($_.FullName -like "*\$excludeDir\*") {
+                $exclude = $true
+                break
+            }
+        }
+        
+        -not $exclude
+    }
+    $AllFiles += $files
+}
+
 # Remove duplicates and sort
-$AllFiles = $AllFiles | Sort-Object FullName | Get-Unique -AsString
+$AllFiles = $AllFiles | Sort-Object FullName -Unique
 
 Write-Host "Found $($AllFiles.Count) files to export" -ForegroundColor Green
 

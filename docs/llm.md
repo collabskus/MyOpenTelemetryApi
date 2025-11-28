@@ -418,3 +418,193 @@ The files are mostly solid. The main improvements are consistency between the tw
 
 
 
+You're right - the Dockerfile is missing from the export because the script excludes files without extensions. Let me update the export script and also provide the Dockerfile for .NET 10 RTM.Now let me create the Dockerfile for .NET 10 RTM:Now let me also update the `.dockerignore` file to ensure it's optimized:## Summary of Changes
+
+### 1. **Export-Project.ps1**
+
+| Change | Description |
+|--------|-------------|
+| Added `$IncludeSpecificFiles` array | New array for files without extensions like `Dockerfile`, `.dockerignore`, `.editorconfig`, `.gitignore`, `.gitattributes` |
+| Added `*.props`, `*.targets`, `*.sh` | Captures MSBuild configuration files and shell scripts |
+| Separate collection loop | Added second loop to collect specific files without extensions |
+| Fixed deduplication | Changed from `Get-Unique -AsString` to `Sort-Object -Unique` for proper deduplication |
+
+### 2. **Dockerfile**
+
+| Change | Description |
+|--------|-------------|
+| Copies `Directory.Build.props` and `Directory.Packages.props` first | Better layer caching for Central Package Management |
+| Added build arguments | `GIT_COMMIT` and `BUILD_TIMESTAMP` for traceability |
+| Added `HEALTHCHECK` instruction | Built-in container health monitoring |
+| Added `DOTNET_RUNNING_IN_CONTAINER=true` | Optimizes .NET runtime for container environment |
+| Removed port 8081 | You're only using port 8080 |
+| Single `EXPOSE` statement | Cleaner configuration |
+
+### 3. **.dockerignore**
+
+| Change | Description |
+|--------|-------------|
+| More comprehensive exclusions | Prevents unnecessary files from being copied to build context |
+| Excludes `appsettings.*.json` but keeps needed ones | Security - prevents dev secrets from being copied |
+| Excludes scripts | `.ps1`, `.sh` files not needed in container |
+
+These changes will ensure your project export captures all the important configuration files, and your Docker builds are optimized for .NET 10 RTM.
+
+
+
+
+
+
+
+
+
+# Dockerfile for MyOpenTelemetryApi - .NET 10 RTM
+# Multi-stage build for optimized image size
+
+# Build stage
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /src
+
+# Copy Directory.Build.props and Directory.Packages.props first for better layer caching
+COPY ["Directory.Build.props", "./"]
+COPY ["Directory.Packages.props", "./"]
+
+# Copy project files for restore
+COPY ["src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj", "MyOpenTelemetryApi.Api/"]
+COPY ["src/MyOpenTelemetryApi.Application/MyOpenTelemetryApi.Application.csproj", "MyOpenTelemetryApi.Application/"]
+COPY ["src/MyOpenTelemetryApi.Domain/MyOpenTelemetryApi.Domain.csproj", "MyOpenTelemetryApi.Domain/"]
+COPY ["src/MyOpenTelemetryApi.Infrastructure/MyOpenTelemetryApi.Infrastructure.csproj", "MyOpenTelemetryApi.Infrastructure/"]
+
+# Restore dependencies
+RUN dotnet restore "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj"
+
+# Copy source code
+COPY src/ .
+
+# Build and publish
+ARG BUILD_CONFIGURATION=Release
+ARG GIT_COMMIT=unknown
+ARG BUILD_TIMESTAMP=unknown
+
+RUN dotnet publish "MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj" \
+    -c $BUILD_CONFIGURATION \
+    -o /app/publish \
+    /p:UseAppHost=false \
+    /p:SourceRevisionId=$GIT_COMMIT
+
+# Runtime stage
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
+WORKDIR /app
+
+# Install curl for health checks
+RUN apt-get update && apt-get install -y --no-install-recommends curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create non-root user for security
+RUN groupadd -r appuser && useradd -r -g appuser -d /app -s /bin/false appuser \
+    && mkdir -p /app/logs \
+    && chown -R appuser:appuser /app
+
+# Copy published application
+COPY --from=build --chown=appuser:appuser /app/publish .
+
+# Switch to non-root user
+USER appuser
+
+# Expose ports
+EXPOSE 8080
+
+# Set environment variables
+ENV ASPNETCORE_URLS=http://+:8080
+ENV ASPNETCORE_ENVIRONMENT=Production
+ENV DOTNET_RUNNING_IN_CONTAINER=true
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+    CMD curl -f http://localhost:8080/api/health || exit 1
+
+# Entry point
+ENTRYPOINT ["dotnet", "MyOpenTelemetryApi.Api.dll"]
+
+
+# .dockerignore - Optimized for .NET 10 builds
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE and editor files
+.vs
+.vscode
+.idea
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+**/bin
+**/obj
+**/out
+
+# Test results
+**/TestResults
+**/coverage
+
+# NuGet
+**/packages
+*.nupkg
+
+# Documentation
+docs/
+*.md
+LICENSE*
+LICENCE*
+
+# Logs and telemetry
+logs/
+*.log
+otel-*.json
+
+# Environment and secrets
+.env
+.env.*
+*.env
+appsettings.*.json
+!appsettings.json
+!appsettings.Container.json
+!appsettings.Production.json
+
+# Docker files (don't need to copy these into the build context recursively)
+docker-compose*.yml
+podman-compose*.yml
+Dockerfile*
+.dockerignore
+
+# Scripts and tooling
+*.ps1
+*.sh
+*.bat
+*.cmd
+
+# Misc
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+Thumbs.db
+.DS_Store
+
+# Project export files
+my_project_export.txt
+project_export.txt
+
+
+
+
+
+
+
