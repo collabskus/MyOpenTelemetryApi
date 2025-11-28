@@ -608,3 +608,43 @@ project_export.txt
 
 
 
+I found the Dockerfile and .dockerignore content. Let me search for more details to see the complete files and check if there are any recent changes or additional context needed.Now I have a complete picture of both files. Let me search for the Directory.Build.props and Directory.Build.targets to understand if there's anything in the project structure that might be missing from the Docker context.I now have a complete picture. Looking at the current files, I can see some issues that need to be addressed:
+
+**Dockerfile Issues:**
+1. The Dockerfile is missing `Directory.Build.targets` - it only copies `Directory.Build.props` and `Directory.Packages.props`, but `Directory.Build.targets` is also present in the project root and is needed by MSBuild.
+
+**.dockerignore Issues:**
+1. Missing exclusion for `tests/` folder - this saves significant context during build
+2. Missing exclusion for `docs/` folder
+3. Missing exclusion for some project-specific files like `*.txt`, `*.7z`, `*.ps1` scripts
+4. Missing exclusion for backup files like `*.backup`
+
+Let me provide you with the updated files:Here's a summary of the changes:
+
+**Dockerfile Changes:**
+- Added `COPY ["Directory.Build.targets", "./"]` — this was missing! Your `Directory.Build.targets` file contains important build targets like `CopyAppSettings` and `CleanArtifacts` that MSBuild needs during the build process.
+- Updated the comment date and noted the addition
+
+**.dockerignore Changes:**
+- Added `tests/` folder exclusion — saves significant context during Docker build since test projects aren't needed for production
+- Added `docs/` folder exclusion
+- Added `*.ps1` exclusion for PowerShell scripts like `omnibus.ps1` and `Export-Project.ps1`
+- Added `*.backup` exclusion for files like `Directory.Packages.props.backup`
+- Added `*.txt` and `*.7z` exclusions for export files and archives
+- Added `podman-compose*` exclusion
+- Added `LICENSE.txt` and `CONTAINER_SETUP.md` specifically
+- Added `.env` and `.env.*` patterns for environment files
+- Better organized and grouped the exclusions with comments
+- Removed duplicate patterns (like `**/bin` vs `**/bin/`)
+
+The missing `Directory.Build.targets` was the most critical issue — without it, MSBuild might not execute the custom targets defined there, though in practice the publish might still work since the targets are primarily for development scenarios. However, it's best practice to include all MSBuild files for consistency.
+
+
+
+
+
+
+
+
+
+

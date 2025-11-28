@@ -1,39 +1,71 @@
-# .dockerignore
-**/.dockerignore
-**/.env
+# .dockerignore - Updated 2025-11-28
+
+# Git
 **/.git
 **/.gitignore
-**/.project
-**/.settings
-**/.toolstarget
+**/.gitattributes
+
+# IDE and editor files
 **/.vs
 **/.vscode
 **/.idea
+**/.project
+**/.settings
+**/.toolstarget
 **/*.*proj.user
-**/*.dbmdl
-**/*.jfm
-**/azds.yaml
-**/bin
-**/charts
-**/docker-compose*
-**/Dockerfile*
-**/node_modules
-**/npm-debug.log
-**/obj
-**/secrets.dev.yaml
-**/values.dev.yaml
-LICENSE
-README.md
-**/*.md
-logs/
-*.log
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Exclude build artifacts
+# Build artifacts
 **/bin/
 **/obj/
 **/out/
+**/*.dbmdl
+**/*.jfm
 
-# Exclude OS generated files
+# Docker files (don't need to copy themselves)
+**/.dockerignore
+**/docker-compose*
+**/podman-compose*
+**/Dockerfile*
+
+# Azure and Kubernetes
+**/azds.yaml
+**/charts
+**/secrets.dev.yaml
+**/values.dev.yaml
+
+# Node (if any frontend tooling)
+**/node_modules
+**/npm-debug.log
+
+# Documentation and non-essential files
+docs/
+**/*.md
+LICENSE
+LICENSE.txt
+README.md
+CONTAINER_SETUP.md
+
+# Test projects - not needed for production build
+tests/
+
+# Logs
+logs/
+**/*.log
+
+# Export and backup files
+*.txt
+*.7z
+*.backup
+my_project_export.txt
+
+# PowerShell scripts (build automation)
+*.ps1
+
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -42,22 +74,17 @@ logs/
 ehthumbs.db
 Thumbs.db
 
-# Exclude IDE files
-.vs/
-.vscode/
-.idea/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# Exclude test results
+# Test results
 TestResults/
 [Tt]est[Rr]esult*/
 *.Coverage
 *.coverage
 *.coveragexml
 
-# Exclude packages
+# NuGet packages (restored during build)
 *.nupkg
 *.snupkg
+
+# Environment files
+**/.env
+**/.env.*

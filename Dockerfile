@@ -1,4 +1,4 @@
-# Stage 1: Build - Updated 2025-10-22 with Git commit tracking
+# Stage 1: Build - Updated 2025-11-28 with Directory.Build.targets
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 
 # Accept build arguments for Git commit and timestamp
@@ -8,8 +8,9 @@ ARG BUILD_TIMESTAMP=unknown
 WORKDIR /src
 
 # CRITICAL: Copy MSBuild property files FIRST (before .csproj files)
-# These files define TargetFramework and package versions
+# These files define TargetFramework, package versions, and build targets
 COPY ["Directory.Build.props", "./"]
+COPY ["Directory.Build.targets", "./"]
 COPY ["Directory.Packages.props", "./"]
 
 # Copy .csproj files for restore
