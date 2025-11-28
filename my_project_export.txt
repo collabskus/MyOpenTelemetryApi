@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 11/28/2025 13:23:21
+Generated: 11/28/2025 13:29:08
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -63,22 +63,12 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   |   +---Authentication
 |   |   |       ApiKeyAuthenticationHandler.cs
 |   |   |       
-|   |   +---bin
-|   |   |   \---Debug
-|   |   |       \---net10.0
 |   |   +---Controllers
 |   |   |       ContactsController.cs
 |   |   |       GroupsController.cs
 |   |   |       HealthController.cs
 |   |   |       TagsController.cs
 |   |   |       
-|   |   +---obj
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   |           |   MyOpenTelemetryApi.Api.GlobalUsings.g.cs
-|   |   |           |   
-|   |   |           +---ref
-|   |   |           \---refint
 |   |   +---Properties
 |   |   |       launchSettings.json
 |   |   |       
@@ -90,9 +80,6 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   +---MyOpenTelemetryApi.Application
 |   |   |   MyOpenTelemetryApi.Application.csproj
 |   |   |   
-|   |   +---bin
-|   |   |   \---Debug
-|   |   |       \---net10.0
 |   |   +---DTOs
 |   |   |       AddressDto.cs
 |   |   |       ContactDto.cs
@@ -105,13 +92,6 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   |   |       TagDto.cs
 |   |   |       UpdateContactDto.cs
 |   |   |       
-|   |   +---obj
-|   |   |   \---Debug
-|   |   |       \---net10.0
-|   |   |           |   MyOpenTelemetryApi.Application.GlobalUsings.g.cs
-|   |   |           |   
-|   |   |           +---ref
-|   |   |           \---refint
 |   |   \---Services
 |   |           ContactService.cs
 |   |           GroupService.cs
@@ -123,9 +103,6 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   +---MyOpenTelemetryApi.Domain
 |   |   |   MyOpenTelemetryApi.Domain.csproj
 |   |   |   
-|   |   +---bin
-|   |   |   \---Debug
-|   |   |       \---net10.0
 |   |   +---Entities
 |   |   |       Address.cs
 |   |   |       AddressType.cs
@@ -139,30 +116,16 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |   |   |       PhoneType.cs
 |   |   |       Tag.cs
 |   |   |       
-|   |   +---Interfaces
-|   |   |       IContactRepository.cs
-|   |   |       IGroupRepository.cs
-|   |   |       IRepository.cs
-|   |   |       ITagRepository.cs
-|   |   |       IUnitOfWork.cs
-|   |   |       
-|   |   \---obj
-|   |       \---Debug
-|   |           \---net10.0
-|   |               |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-|   |               |   MyOpenTelemetryApi.Domain.AssemblyInfo.cs
-|   |               |   MyOpenTelemetryApi.Domain.AssemblyInfoInputs.cache
-|   |               |   MyOpenTelemetryApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
-|   |               |   MyOpenTelemetryApi.Domain.GlobalUsings.g.cs
-|   |               |   
-|   |               +---ref
-|   |               \---refint
+|   |   \---Interfaces
+|   |           IContactRepository.cs
+|   |           IGroupRepository.cs
+|   |           IRepository.cs
+|   |           ITagRepository.cs
+|   |           IUnitOfWork.cs
+|   |           
 |   \---MyOpenTelemetryApi.Infrastructure
 |       |   MyOpenTelemetryApi.Infrastructure.csproj
 |       |   
-|       +---bin
-|       |   \---Debug
-|       |       \---net10.0
 |       +---Data
 |       |   |   AppDbContext.cs
 |       |   |   
@@ -183,13 +146,6 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |       |           20251003222820_AddContactPaginationIndexes.Designer.cs
 |       |           AppDbContextModelSnapshot.cs
 |       |           
-|       +---obj
-|       |   \---Debug
-|       |       \---net10.0
-|       |           |   MyOpenTelemetryApi.Infrastructure.GlobalUsings.g.cs
-|       |           |   
-|       |           +---ref
-|       |           \---refint
 |       \---Repositories
 |               ContactRepository.cs
 |               GroupRepository.cs
@@ -199,51 +155,17 @@ C:\USERS\KUSHAL\SOURCE\REPOS\MYOPENTELEMETRYAPI
 |               
 \---tests
     +---MyOpenTelemetryApi.Api.Tests
-    |   |   MyOpenTelemetryApi.Api.Tests.csproj
-    |   |   UnitTest1.cs
-    |   |   
-    |   \---obj
-    |       \---Debug
-    |           \---net10.0
-    |                   MyOpenTelemetryApi.Api.Tests.AssemblyInfo.cs
-    |                   MyOpenTelemetryApi.Api.Tests.AssemblyInfoInputs.cache
-    |                   
+    |       MyOpenTelemetryApi.Api.Tests.csproj
+    |       UnitTest1.cs
+    |       
     +---MyOpenTelemetryApi.Application.Tests
-    |   |   MyOpenTelemetryApi.Application.Tests.csproj
-    |   |   UnitTest1.cs
-    |   |   
-    |   +---bin
-    |   |   \---Debug
-    |   |       \---net10.0
-    |   \---obj
-    |       \---Debug
-    |           \---net10.0
-    |               |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-    |               |   MyOpenTelemetryApi.Application.Tests.AssemblyInfo.cs
-    |               |   MyOpenTelemetryApi.Application.Tests.AssemblyInfoInputs.cache
-    |               |   MyOpenTelemetryApi.Application.Tests.GeneratedMSBuildEditorConfig.editorconfig
-    |               |   MyOpenTelemetryApi.Application.Tests.GlobalUsings.g.cs
-    |               |   
-    |               +---ref
-    |               \---refint
+    |       MyOpenTelemetryApi.Application.Tests.csproj
+    |       UnitTest1.cs
+    |       
     \---MyOpenTelemetryApi.Infrastructure.Tests
-        |   MyOpenTelemetryApi.Infrastructure.Tests.csproj
-        |   UnitTest1.cs
-        |   
-        +---bin
-        |   \---Debug
-        |       \---net10.0
-        \---obj
-            \---Debug
-                \---net10.0
-                    |   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
-                    |   MyOpenTelemetryApi.Infrastructure.Tests.AssemblyInfo.cs
-                    |   MyOpenTelemetryApi.Infrastructure.Tests.AssemblyInfoInputs.cache
-                    |   MyOpenTelemetryApi.Infrastructure.Tests.GeneratedMSBuildEditorConfig.editorconfig
-                    |   MyOpenTelemetryApi.Infrastructure.Tests.GlobalUsings.g.cs
-                    |   
-                    +---ref
-                    \---refint
+            MyOpenTelemetryApi.Infrastructure.Tests.csproj
+            UnitTest1.cs
+            
 
 
 FILE CONTENTS:
@@ -251,46 +173,78 @@ FILE CONTENTS:
 
 ================================================================================
 FILE: .dockerignore
-SIZE: 0.76 KB
-MODIFIED: 09/14/2025 21:12:26
+SIZE: 1.21 KB
+MODIFIED: 11/28/2025 13:28:05
 ================================================================================
 
-# .dockerignore
-**/.dockerignore
-**/.env
+# .dockerignore - Updated 2025-11-28
+
+# Git
 **/.git
 **/.gitignore
-**/.project
-**/.settings
-**/.toolstarget
+**/.gitattributes
+
+# IDE and editor files
 **/.vs
 **/.vscode
 **/.idea
+**/.project
+**/.settings
+**/.toolstarget
 **/*.*proj.user
-**/*.dbmdl
-**/*.jfm
-**/azds.yaml
-**/bin
-**/charts
-**/docker-compose*
-**/Dockerfile*
-**/node_modules
-**/npm-debug.log
-**/obj
-**/secrets.dev.yaml
-**/values.dev.yaml
-LICENSE
-README.md
-**/*.md
-logs/
-*.log
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Exclude build artifacts
+# Build artifacts
 **/bin/
 **/obj/
 **/out/
+**/*.dbmdl
+**/*.jfm
 
-# Exclude OS generated files
+# Docker files (don't need to copy themselves)
+**/.dockerignore
+**/docker-compose*
+**/podman-compose*
+**/Dockerfile*
+
+# Azure and Kubernetes
+**/azds.yaml
+**/charts
+**/secrets.dev.yaml
+**/values.dev.yaml
+
+# Node (if any frontend tooling)
+**/node_modules
+**/npm-debug.log
+
+# Documentation and non-essential files
+docs/
+**/*.md
+LICENSE
+LICENSE.txt
+README.md
+CONTAINER_SETUP.md
+
+# Test projects - not needed for production build
+tests/
+
+# Logs
+logs/
+**/*.log
+
+# Export and backup files
+*.txt
+*.7z
+*.backup
+my_project_export.txt
+
+# PowerShell scripts (build automation)
+*.ps1
+
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -299,25 +253,21 @@ logs/
 ehthumbs.db
 Thumbs.db
 
-# Exclude IDE files
-.vs/
-.vscode/
-.idea/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# Exclude test results
+# Test results
 TestResults/
 [Tt]est[Rr]esult*/
 *.Coverage
 *.coverage
 *.coveragexml
 
-# Exclude packages
+# NuGet packages (restored during build)
 *.nupkg
 *.snupkg
+
+# Environment files
+**/.env
+**/.env.*
+
 
 
 ================================================================================
@@ -1433,11 +1383,11 @@ volumes:
 
 ================================================================================
 FILE: Dockerfile
-SIZE: 1.87 KB
-MODIFIED: 11/28/2025 13:21:56
+SIZE: 1.93 KB
+MODIFIED: 11/28/2025 13:27:58
 ================================================================================
 
-# Stage 1: Build - Updated 2025-10-22 with Git commit tracking
+# Stage 1: Build - Updated 2025-11-28 with Directory.Build.targets
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 
 # Accept build arguments for Git commit and timestamp
@@ -1447,8 +1397,9 @@ ARG BUILD_TIMESTAMP=unknown
 WORKDIR /src
 
 # CRITICAL: Copy MSBuild property files FIRST (before .csproj files)
-# These files define TargetFramework and package versions
+# These files define TargetFramework, package versions, and build targets
 COPY ["Directory.Build.props", "./"]
+COPY ["Directory.Build.targets", "./"]
 COPY ["Directory.Packages.props", "./"]
 
 # Copy .csproj files for restore
@@ -7180,7 +7131,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 11/28/2025 13:23:22
+EXPORT COMPLETED: 11/28/2025 13:29:09
 Total Files Exported: 91
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
