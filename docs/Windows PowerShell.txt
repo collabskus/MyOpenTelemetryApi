@@ -4,6 +4,8 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
 
 PS C:\Users\kushal>
+PS C:\Users\kushal> Get-Date -Format "yyyy-MM-dd HH:mm:ss";
+2025-12-03 13:56:33
 PS C:\Users\kushal> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet --info; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
 .NET SDK:
  Version:           10.0.100
@@ -61,58 +63,56 @@ Download .NET:
   https://aka.ms/dotnet/download
 
 Build succeeded in 0.9s
-2025-12-03-12-55-14
-Restore complete (1.2s)
-  MyOpenTelemetryApi.Domain net10.0 succeeded (2.5s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
-  MyOpenTelemetryApi.Application net10.0 succeeded (0.7s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
-  MyOpenTelemetryApi.Infrastructure net10.0 succeeded (1.1s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
-  MyOpenTelemetryApi.Api net10.0 succeeded (2.4s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-  MyOpenTelemetryApi.Application.Tests net10.0 succeeded (1.5s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
-  MyOpenTelemetryApi.Api.Tests net10.0 succeeded (1.5s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
-  MyOpenTelemetryApi.Infrastructure.Tests net10.0 succeeded (1.5s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
+2025-12-03-13-56-37
+Restore complete (1.1s)
+  MyOpenTelemetryApi.Domain net10.0 succeeded (2.1s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
+  MyOpenTelemetryApi.Application net10.0 succeeded (0.6s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
+  MyOpenTelemetryApi.Infrastructure net10.0 succeeded (0.7s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
+  MyOpenTelemetryApi.Api net10.0 succeeded (1.9s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
+  MyOpenTelemetryApi.Api.Tests net10.0 succeeded (0.9s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
+  MyOpenTelemetryApi.Infrastructure.Tests net10.0 succeeded (1.0s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
+  MyOpenTelemetryApi.Application.Tests net10.0 succeeded (1.0s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
 
-Build succeeded in 8.7s
-2025-12-03-12-55-23
+Build succeeded in 6.8s
+2025-12-03-13-56-44
 Restore complete (0.6s)
   MyOpenTelemetryApi.Domain net10.0 succeeded (0.1s) → src\MyOpenTelemetryApi.Domain\bin\Debug\net10.0\MyOpenTelemetryApi.Domain.dll
   MyOpenTelemetryApi.Application net10.0 succeeded (0.1s) → src\MyOpenTelemetryApi.Application\bin\Debug\net10.0\MyOpenTelemetryApi.Application.dll
   MyOpenTelemetryApi.Infrastructure net10.0 succeeded (0.1s) → src\MyOpenTelemetryApi.Infrastructure\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.dll
   MyOpenTelemetryApi.Api net10.0 succeeded (0.4s) → src\MyOpenTelemetryApi.Api\bin\Debug\net10.0\MyOpenTelemetryApi.Api.dll
-  MyOpenTelemetryApi.Application.Tests net10.0 succeeded (0.2s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
   MyOpenTelemetryApi.Infrastructure.Tests net10.0 succeeded (0.2s) → tests\MyOpenTelemetryApi.Infrastructure.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Infrastructure.Tests.dll
   MyOpenTelemetryApi.Api.Tests net10.0 succeeded (0.2s) → tests\MyOpenTelemetryApi.Api.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Api.Tests.dll
+  MyOpenTelemetryApi.Application.Tests net10.0 succeeded (0.2s) → tests\MyOpenTelemetryApi.Application.Tests\bin\Debug\net10.0\MyOpenTelemetryApi.Application.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0)
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0)
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.0)
+[xUnit.net 00:00:00.27]   Discovering: MyOpenTelemetryApi.Infrastructure.Tests
 [xUnit.net 00:00:00.26]   Discovering: MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:00.25]   Discovering: MyOpenTelemetryApi.Infrastructure.Tests
 [xUnit.net 00:00:00.26]   Discovering: MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:00.29]   Discovered:  MyOpenTelemetryApi.Infrastructure.Tests
+[xUnit.net 00:00:00.32]   Discovered:  MyOpenTelemetryApi.Infrastructure.Tests
 [xUnit.net 00:00:00.30]   Discovered:  MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:00.31]   Starting:    MyOpenTelemetryApi.Infrastructure.Tests
-[xUnit.net 00:00:00.32]   Starting:    MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:00.32]   Discovered:  MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:00.35]   Starting:    MyOpenTelemetryApi.Application.Tests
-[xUnit.net 00:00:00.50]   Finished:    MyOpenTelemetryApi.Infrastructure.Tests
+[xUnit.net 00:00:00.34]   Starting:    MyOpenTelemetryApi.Infrastructure.Tests
+[xUnit.net 00:00:00.33]   Starting:    MyOpenTelemetryApi.Api.Tests
+[xUnit.net 00:00:00.34]   Discovered:  MyOpenTelemetryApi.Application.Tests
+[xUnit.net 00:00:00.37]   Starting:    MyOpenTelemetryApi.Application.Tests
+[xUnit.net 00:00:00.52]   Finished:    MyOpenTelemetryApi.Infrastructure.Tests
 [xUnit.net 00:00:00.51]   Finished:    MyOpenTelemetryApi.Api.Tests
-[xUnit.net 00:00:00.54]   Finished:    MyOpenTelemetryApi.Application.Tests
-  MyOpenTelemetryApi.Infrastructure.Tests test net10.0 succeeded (1.5s)
-  MyOpenTelemetryApi.Api.Tests test net10.0 succeeded (1.5s)
+[xUnit.net 00:00:00.55]   Finished:    MyOpenTelemetryApi.Application.Tests
+  MyOpenTelemetryApi.Infrastructure.Tests test net10.0 succeeded (1.6s)
+  MyOpenTelemetryApi.Api.Tests test net10.0 succeeded (1.6s)
   MyOpenTelemetryApi.Application.Tests test net10.0 succeeded (1.6s)
 
-Test summary: total: 44, failed: 0, succeeded: 44, skipped: 0, duration: 1.5s
-Build succeeded in 3.4s
-2025-12-03-12-55-26
+Test summary: total: 44, failed: 0, succeeded: 44, skipped: 0, duration: 1.6s
+Build succeeded in 3.3s
+2025-12-03-13-56-48
 
-Build succeeded in 0.7s
-2025-12-03-12-55-27
+Build succeeded in 0.6s
+2025-12-03-13-56-49
 warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
-2025-12-03-12-55-27
-On branch main
-Your branch is up to date with 'origin/main'.
-
-nothing to commit, working tree clean
-2025-12-03-12-55-27
+2025-12-03-13-56-49
+[main 5155c1e] add existing files
+ 1 file changed, 76 insertions(+), 898 deletions(-)
+2025-12-03-13-56-49
 * remote origin
   Fetch URL: https://github.com/collabskus/MyOpenTelemetryApi.git
   Push  URL: https://github.com/collabskus/MyOpenTelemetryApi.git
@@ -144,26 +144,19 @@ nothing to commit, working tree clean
   Local branch configured for 'git pull':
     main merges with remote main
   Local ref configured for 'git push':
-    main pushes to main (local out of date)
-2025-12-03-12-55-28
-remote: Enumerating objects: 38, done.
-remote: Counting objects: 100% (38/38), done.
-remote: Compressing objects: 100% (24/24), done.
-remote: Total 36 (delta 24), reused 24 (delta 12), pack-reused 0 (from 0)
-Unpacking objects: 100% (36/36), 4.20 KiB | 9.00 KiB/s, done.
-From https://github.com/collabskus/MyOpenTelemetryApi
-   a51abbb..d73921b  main       -> origin/main
-2025-12-03-12-55-28
-Updating a51abbb..d73921b
-Fast-forward
- my_project_export.txt | 212 +++++++++++++++++++++++++-------------------------
- 1 file changed, 106 insertions(+), 106 deletions(-)
-2025-12-03-12-55-29
+    main pushes to main (fast-forwardable)
+2025-12-03-13-56-49
+2025-12-03-13-56-49
+Current branch main is up to date.
+2025-12-03-13-56-50
 On branch main
-Your branch is up to date with 'origin/main'.
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
 
 nothing to commit, working tree clean
-2025-12-03-12-55-29
+2025-12-03-13-56-50
+Removing .vs/
+Removing src/MyOpenTelemetryApi.Api/MyOpenTelemetryApi.Api.csproj.user
 Removing src/MyOpenTelemetryApi.Api/bin/
 Removing src/MyOpenTelemetryApi.Api/obj/
 Removing src/MyOpenTelemetryApi.Application/bin/
@@ -178,7 +171,7 @@ Removing tests/MyOpenTelemetryApi.Application.Tests/bin/
 Removing tests/MyOpenTelemetryApi.Application.Tests/obj/
 Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/bin/
 Removing tests/MyOpenTelemetryApi.Infrastructure.Tests/obj/
-2025-12-03-12-55-29
+2025-12-03-13-56-50
 Starting project export...
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 Output File: my_project_export.txt
@@ -281,9 +274,10 @@ Export completed successfully!
 Output file: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 Total files exported: 91
 Output file size: 0.24 MB
-2025-12-03-12-55-30
+2025-12-03-13-56-50
 On branch main
-Your branch is up to date with 'origin/main'.
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -291,26 +285,29 @@ Changes not staged for commit:
         modified:   my_project_export.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
-2025-12-03-12-55-30
+2025-12-03-13-56-50
 warning: in the working copy of 'my_project_export.txt', LF will be replaced by CRLF the next time Git touches it
-2025-12-03-12-55-30
-[main 9382509] add all files
- 1 file changed, 106 insertions(+), 106 deletions(-)
-2025-12-03-12-55-30
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
+2025-12-03-13-56-51
+[main fb0857e] add all files
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+2025-12-03-13-56-51
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
 Delta compression using up to 12 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 1.50 KiB | 770.00 KiB/s, done.
-Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 1.38 KiB | 705.00 KiB/s, done.
+Total 7 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (5/5), completed with 4 local objects.
 To https://github.com/collabskus/MyOpenTelemetryApi.git
-   d73921b..9382509  main -> main
-2025-12-03-12-55-31
+   9382509..fb0857e  main -> main
+2025-12-03-13-56-52
 Discovering projects...
 Analyzing project(s)...
 Analyzing dependencies...
 No outdated dependencies were detected
-Elapsed: 00:00:02.5546666
-2025-12-03-12-55-34
+Elapsed: 00:00:02.2135442
+2025-12-03-13-56-55
+PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi>
+PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> Get-Date -Format "yyyy-MM-dd HH:mm:ss";
+2025-12-04 12:34:01
 PS C:\Users\kushal\Source\Repos\MyOpenTelemetryApi> Set-Location "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\"; dotnet --info; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet build; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet test; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet clean; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";  git commit --message "add existing files"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git remote show origin; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git fetch; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git pull; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git clean -dfx; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; .\Export-Project.ps1 -ProjectPath "C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\" -OutputFile "my_project_export.txt"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git status; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git add .; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git commit --message "add all files" --message "update project"; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; git push origin --all; Get-Date -Format "yyyy-MM-dd-HH-mm-ss"; dotnet outdated; Get-Date -Format "yyyy-MM-dd-HH-mm-ss";
