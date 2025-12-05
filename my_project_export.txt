@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 12/04/2025 18:48:41
+Generated: 12/04/2025 19:15:14
 Project Path: D:\DEV\MyOpenTelemetryApi
 ===============================================================================
 
@@ -7133,7 +7133,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 12/04/2025 18:48:44
+EXPORT COMPLETED: 12/04/2025 19:15:16
 Total Files Exported: 91
 Output File: D:\DEV\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
