@@ -502,8 +502,10 @@ app.MapGet("/", () => Results.Content($$"""
                 <span class="tech-badge">PostgreSQL</span>
                 <span class="tech-badge">OpenTelemetry</span>
                 <span class="tech-badge">Docker</span>
-                <span class="tech-badge">{{GetGitCommitHash()}}</span>
-                <span class="tech-badge">{{GetBuildTimestamp()}}</span>
+            </div>
+            <div class="version">
+                <span class="tech-badge">Build Version: {{GetGitCommitHash()}}</span>
+                <span class="tech-badge">Build Timestamp: {{GetBuildTimestamp()}}</span>
             </div>
         </div>
     </div>
