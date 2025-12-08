@@ -1598,3 +1598,103 @@ Or if you want to show just the short commit hash (first 7 characters), you coul
 
 
 
+Gemini 3 Thinking 
+To inject C\# values into that HTML string, you need to turn the string into an **Interpolated Raw String**.
+
+Because your HTML contains CSS (which uses `{` and `}` characters), the standard string interpolation (`$`) will break your code. You should use **two dollar signs** (`$$`) at the start of the string. This tells C\# to treat single `{` as text (for CSS) and double `{{` as code interpolation.
+
+Here is the corrected `app.MapGet` section:
+
+1.  Change `"""` to `$$"""` at the beginning.
+2.  Change `${Get...}` to `{{Get...}}`.
+
+<!-- end list -->
+
+```csharp
+// Add a friendly landing page at the root
+// Note the $$""" prefix below
+app.MapGet("/", () => Results.Content($$"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+       /* Because we used $$, these single braces for CSS are safe! */
+       body { font-family: ... } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="footer">
+            <p>Built with ❤️ using modern technologies</p>
+            <div class="tech-stack">
+                <span class="tech-badge">.NET 10</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">OpenTelemetry</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">{{GetGitCommitHash()}}</span>
+                <span class="tech-badge">{{GetBuildTimestamp()}}</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+""", "text/html"));
+```
+
+### Why this works:
+
+  * **`$$"""`**: The double dollar sign indicates that you need **two** braces `{{` to start a C\# expression.
+  * **CSS Safety**: This is perfect for HTML/CSS because it allows you to write `body { color: red; }` without getting compiler errors (since single braces remain treated as text).
+  * **`{{Value}}`**: This is how you actually inject the variable in this specific mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

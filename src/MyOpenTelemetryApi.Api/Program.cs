@@ -280,7 +280,7 @@ if (app.Logger.IsEnabled(LogLevel.Information))
 }
 
 // Add a friendly landing page at the root
-app.MapGet("/", () => Results.Content("""
+app.MapGet("/", () => Results.Content($$"""
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -502,8 +502,8 @@ app.MapGet("/", () => Results.Content("""
                 <span class="tech-badge">PostgreSQL</span>
                 <span class="tech-badge">OpenTelemetry</span>
                 <span class="tech-badge">Docker</span>
-                <span class="tech-badge">${GetGitCommitHash()}</span>
-                <span class="tech-badge">${GetBuildTimestamp()}</span>
+                <span class="tech-badge">{{GetGitCommitHash()}}</span>
+                <span class="tech-badge">{{GetBuildTimestamp()}}</span>
             </div>
         </div>
     </div>
