@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 12/17/2025 10:25:42
+Generated: 12/17/2025 10:28:49
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -1266,7 +1266,7 @@ MODIFIED: 10/06/2025 14:09:01
 ================================================================================
 FILE: Directory.Packages.props
 SIZE: 3.25 KB
-MODIFIED: 12/17/2025 10:24:23
+MODIFIED: 12/17/2025 10:26:49
 ================================================================================
 
 <Project>
@@ -1289,7 +1289,7 @@ MODIFIED: 12/17/2025 10:24:23
     <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.14.0" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.1" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.1" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.1" />
     <PackageVersion Include="Npgsql" Version="10.0.0" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
     <PackageVersion Include="Microsoft.Build.Framework" Version="18.0.2" />
@@ -7137,7 +7137,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 12/17/2025 10:25:43
+EXPORT COMPLETED: 12/17/2025 10:28:50
 Total Files Exported: 91
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
