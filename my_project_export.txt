@@ -1,7 +1,7 @@
 ﻿
 ===============================================================================
 ASP.NET PROJECT EXPORT
-Generated: 12/17/2025 10:15:56
+Generated: 12/17/2025 10:25:42
 Project Path: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\
 ===============================================================================
 
@@ -1266,7 +1266,7 @@ MODIFIED: 10/06/2025 14:09:01
 ================================================================================
 FILE: Directory.Packages.props
 SIZE: 3.25 KB
-MODIFIED: 11/29/2025 03:41:11
+MODIFIED: 12/17/2025 10:24:23
 ================================================================================
 
 <Project>
@@ -1287,8 +1287,8 @@ MODIFIED: 11/29/2025 03:41:11
     <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.14.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Process" Version="1.14.0-beta.2" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.14.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.1" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.1" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.0" />
     <PackageVersion Include="Npgsql" Version="10.0.0" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
@@ -1296,7 +1296,7 @@ MODIFIED: 11/29/2025 03:41:11
     <PackageVersion Include="Microsoft.Build.Locator" Version="1.11.2" />
     <PackageVersion Include="Microsoft.Build.Tasks.Core" Version="18.0.2" />
     <PackageVersion Include="Microsoft.Build.Utilities.Core" Version="18.0.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
     <!-- Testing -->
     <PackageVersion Include="xunit" Version="2.9.3" />
     <PackageVersion Include="xunit.analyzers" Version="1.26.0" />
@@ -1306,7 +1306,7 @@ MODIFIED: 11/29/2025 03:41:11
     <PackageVersion Include="Humanizer.Core" Version="3.0.1" />
     <PackageVersion Include="Microsoft.OpenApi" Version="2.3.5" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.1" />
     <PackageVersion Include="System.CodeDom" Version="10.0.0" />
     <PackageVersion Include="System.Configuration.ConfigurationManager" Version="10.0.0" />
     <PackageVersion Include="System.Formats.Nrbf" Version="10.0.0" />
@@ -1754,11 +1754,10 @@ MODIFIED: 09/14/2025 21:12:26
 
 ================================================================================
 FILE: src\MyOpenTelemetryApi.Api\appsettings.json
-SIZE: 1.22 KB
-MODIFIED: 12/08/2025 08:40:09
+SIZE: 1.14 KB
+MODIFIED: 12/17/2025 10:20:51
 ================================================================================
 
-// src/MyOpenTelemetryApi.Api/appsettings.json - Updated with OpenTelemetry settings
 {
     "Auth": {
         "ApiKey": "your-super-secret-key-here-use-guid-or-random-string"
@@ -7138,7 +7137,7 @@ public class InfrastructureTests
 
 
 ===============================================================================
-EXPORT COMPLETED: 12/17/2025 10:15:57
+EXPORT COMPLETED: 12/17/2025 10:25:43
 Total Files Exported: 91
 Output File: C:\Users\kushal\Source\Repos\MyOpenTelemetryApi\my_project_export.txt
 ===============================================================================
